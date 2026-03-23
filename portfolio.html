@@ -295,7 +295,29 @@ footer p{font-size:.8rem;color:var(--gray)}
 }
 @media(max-width:640px){
   .wrap{padding:0 20px}
-  .nav-links{display:none}
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+    background:#121212;
+    padding:24px 20px 32px;
+    border-top:1px solid rgba(255,255,255,.1);
+    z-index:999;
+    gap:0;
+  }
+  .nav-links.nav-open{display:flex}
+  .nav-links li{width:100%}
+  .nav-links li a{
+    display:block;
+    padding:16px 0;
+    font-size:1.1rem;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    color:var(--white);
+  }
+  .nav-links li:last-child a{border-bottom:none}
   .nav-mobile{display:block}
   .hero h1{font-size:2.2rem}
   .about-img{display:none}
@@ -1318,6 +1340,37 @@ function updateNav(){
   }
 }
 
+/* ── Mobile Nav Toggle ── */
+function initMobileNav(){
+  var btn = document.getElementById('navToggle');
+  var links = document.querySelector('.nav-links');
+  if(!btn || !links) return;
+
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = links.classList.toggle('nav-open');
+    btn.innerHTML = isOpen
+      ? '<i class="fa-solid fa-xmark"></i>'
+      : '<i class="fa-solid fa-bars"></i>';
+  });
+
+  // סגור תפריט בלחיצה על קישור
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('nav-open');
+      btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    });
+  });
+
+  // סגור תפריט בלחיצה מחוץ לנאב
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('nav')){
+      links.classList.remove('nav-open');
+      btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+  });
+}
+
 /* ── Cursor ── */
 function initCursor(){
   var dot = document.getElementById('cursorDot');
@@ -1346,6 +1399,7 @@ buildClients();
 buildFilters();
 buildProjects();
 initCursor();
+initMobileNav();
 window.addEventListener('scroll', updateNav);
 
 function sendForm(){
