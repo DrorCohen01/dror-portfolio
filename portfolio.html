@@ -64,11 +64,13 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .hero-stat .num{font-size:1.8rem;font-weight:700}
 .hero-stat .lbl{font-size:.8rem;color:var(--gray);font-weight:400}
 
-/* ── Clients Strip ── */
-.clients{padding:40px 0;overflow:hidden}
-.clients-wrap{display:flex;justify-content:center;align-items:center;padding:0 40px}
-.clients-wrap img{width:100%;max-width:1100px;height:auto;filter:invert(1);mix-blend-mode:screen;object-fit:contain;opacity:.7}
-@media(max-width:640px){.clients-wrap{padding:0 16px}.clients-wrap img{max-width:100%}}
+/* ── Clients Grid ── */
+.clients{padding:20px 0 60px}
+.clients-wrap{display:grid;grid-template-columns:repeat(6,1fr);gap:32px 40px;align-items:center;justify-items:center;max-width:1200px;margin:0 auto;padding:0 40px}
+.clients-wrap img{height:32px;width:auto;max-width:120px;object-fit:contain;opacity:.55;transition:opacity .3s}
+.clients-wrap img:hover{opacity:1}
+@media(max-width:1000px){.clients-wrap{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.clients-wrap{grid-template-columns:repeat(3,1fr);gap:24px 20px;padding:0 20px}.clients-wrap img{height:22px}}
 
 /* ── Section Titles ── */
 .sec-label{font-size:.78rem;font-weight:500;color:var(--gray);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
@@ -374,7 +376,7 @@ footer p{font-size:.8rem;color:var(--gray)}
     <div class="hero-grid">
       <div>
         <span class="hero-tag">UX Strategist & UI Designer</span>
-        <h1>היי, אני דרור <img src="dror-profile.jpg" alt="דרור כהן" class="hero-avatar"> מעצב UX/UI פרילנסר שעוזר לחברות וסטארט-אפים בכל שלב לצמוח</h1>
+        <h1>UX שמרגיש נכון. UI שנראה מדויק. אני דרור <img src="dror-profile.jpg" alt="דרור כהן" class="hero-avatar">, ואני בונה את שניהם</h1>
         <p class="hero-sub">20+ שנות ניסיון באפיון UX ועיצוב ממשקים לחברות הייטק, סטארטאפים ומותגים מובילים</p>
         <a href="#testimonials" onclick="return navTo('#testimonials')" class="hero-rating" style="cursor:pointer">
           <span class="stars">
@@ -1112,9 +1114,27 @@ var currentProject = 0;
 
 /* ── Clients ── */
 function buildClients(){
-  var logoUrl = 'https://static.wixstatic.com/media/aca116_feb4670b4082421fa98a85e35c7f5b40~mv2.jpg/v1/fill/w_2670,h_66,al_c,q_80,enc_avif,quality_auto/logos.jpg';
+  var logos = [
+    {src:'logos/ctera 1.png',alt:'CTERA'},
+    {src:'logos/gigya 1.png',alt:'Gigya'},
+    {src:'logos/kenshoo 1.png',alt:'Kenshoo'},
+    {src:'logos/5.-Guides_-Hero.png',alt:'Twist Bioscience'},
+    {src:'logos/Group 1.png',alt:'Ummanu'},
+    {src:'logos/Group-1.png',alt:'Femi'},
+    {src:'logos/Layer 2 1.png',alt:'Eshet'},
+    {src:'logos/Layer 3 1.png',alt:'סופר-פארם'},
+    {src:'logos/Layer 4 1.png',alt:'כללית'},
+    {src:'logos/Layer 6 1.png',alt:'מכבי'},
+    {src:'logos/Layer 7 1.png',alt:'Landa'},
+    {src:'logos/Layer 8 1.png',alt:'CaloSense'},
+    {src:'logos/Layer 10 1.png',alt:'לקוח'},
+    {src:'logos/Group.png',alt:'אידניה'},
+    {src:'logos/בן גוריון 1.png',alt:'נמל תעופה בן גוריון'}
+  ];
   var wrap = document.getElementById('clientsWrap');
-  wrap.innerHTML = '<img src="'+logoUrl+'" alt="לקוחות">';
+  wrap.innerHTML = logos.map(function(l){
+    return '<img src="'+l.src+'" alt="'+l.alt+'" loading="lazy">';
+  }).join('');
 }
 
 /* ── Filter Bar ── */
