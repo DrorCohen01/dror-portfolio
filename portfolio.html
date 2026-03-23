@@ -14,15 +14,12 @@
   --white:#FFFFFF;--gray:#888888;--orange:#F5A623;
   --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
 }
-html{scroll-behavior:smooth;cursor:none}
+html{scroll-behavior:smooth}
 body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
 
-/* ── Custom Cursor ── */
-.cursor-dot{position:fixed;width:8px;height:8px;background:var(--white);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(255,255,255,0.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .15s ease-out,width .3s,height .3s}
 
 /* ── Animations ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
@@ -39,10 +36,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .nav-logo span{color:var(--gray)}
 .nav-links{display:flex;gap:28px;list-style:none;font-size:.88rem;font-weight:400}
 .nav-links a{color:var(--gray);transition:color .25s}
-.nav-links a:hover,.nav-links a.active{color:var(--white)}
-.nav-cta{background:var(--white);color:#121212;border:none;padding:10px 24px;border-radius:100px;font-family:inherit;font-weight:600;font-size:.88rem;cursor:none;transition:opacity .25s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--white);color:#121212;border:none;padding:10px 24px;border-radius:100px;font-family:inherit;font-weight:600;font-size:.88rem;cursor:pointer;transition:opacity .25s}
 .nav-cta:hover{opacity:.85}
-.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:none}
+.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer}
 
 /* ── Hero ── */
 .hero{padding:100px 0 80px}
@@ -56,9 +53,9 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .hero-rating .score{font-weight:600}
 .hero-rating .count{color:var(--gray)}
 .hero-btns{display:flex;justify-content:center;gap:14px;margin-bottom:40px;animation:fu .7s ease both;animation-delay:.3s}
-.btn-primary{background:var(--white);color:#121212;border:none;padding:14px 32px;border-radius:100px;font-family:inherit;font-weight:600;font-size:.95rem;cursor:none;transition:opacity .25s}
+.btn-primary{background:var(--white);color:#121212;border:none;padding:14px 32px;border-radius:100px;font-family:inherit;font-weight:600;font-size:.95rem;cursor:pointer;transition:opacity .25s}
 .btn-primary:hover{opacity:.85}
-.btn-outline{background:transparent;color:var(--white);border:1px solid var(--border2);padding:14px 32px;border-radius:100px;font-family:inherit;font-weight:400;font-size:.95rem;cursor:none;transition:border-color .25s}
+.btn-outline{background:transparent;color:var(--white);border:1px solid var(--border2);padding:14px 32px;border-radius:100px;font-family:inherit;font-weight:400;font-size:.95rem;cursor:pointer;transition:border-color .25s}
 .btn-outline:hover{border-color:var(--white)}
 .hero-stats{display:flex;justify-content:center;gap:40px;animation:fu .7s ease both;animation-delay:.36s}
 .hero-stat .num{font-size:1.8rem;font-weight:700}
@@ -104,28 +101,28 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 /* ── Projects ── */
 .projects{padding:100px 0}
 .filter-bar{display:flex;gap:10px;margin-bottom:40px;flex-wrap:wrap}
-.filter-btn{background:transparent;color:var(--gray);border:1px solid var(--border2);padding:8px 20px;border-radius:100px;font-family:inherit;font-size:.82rem;font-weight:400;cursor:none;transition:all .25s}
+.filter-btn{background:transparent;color:var(--gray);border:1px solid var(--border2);padding:8px 20px;border-radius:100px;font-family:inherit;font-size:.82rem;font-weight:400;cursor:pointer;transition:all .25s}
 .filter-btn.on{background:var(--white);color:#121212;border-color:var(--white)}
 .proj-grid{display:flex;flex-direction:column;gap:40px}
-.proj-card{display:grid;grid-template-columns:1fr 1fr;background:var(--card);border-radius:20px;overflow:hidden;cursor:none;transition:transform .3s,box-shadow .3s;min-height:420px}
-.proj-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.proj-card{display:grid;grid-template-columns:1fr 1fr;background:#ffffff;border:1px solid #e0e0e0;border-radius:20px;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s;min-height:380px}
+.proj-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
 .proj-card:nth-child(even){direction:ltr}
 .proj-card:nth-child(even) .proj-body{direction:rtl}
 .proj-card[style*="display:none"]{display:none!important}
-.proj-thumb{background:var(--card2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:100%;padding:24px}
-.proj-thumb img{max-width:100%;max-height:100%;object-fit:contain}
-.proj-thumb i{font-size:3rem;color:var(--gray);opacity:.3}
-.proj-thumb .proj-label{position:absolute;top:16px;right:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);padding:5px 14px;border-radius:100px;font-size:.72rem;font-weight:500}
-.proj-body{padding:50px 44px;display:flex;flex-direction:column;justify-content:center}
-.proj-body h3{font-size:1.6rem;font-weight:700;margin-bottom:12px;line-height:1.3}
-.proj-body p{font-size:.95rem;color:#CCCCCC;margin-bottom:20px;line-height:1.7}
-.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
-.proj-tags span{font-size:.72rem;color:var(--gray);border:1px solid var(--border);padding:4px 12px;border-radius:100px}
-.proj-metric{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
-.proj-metric .proj-metric-num{font-size:2.2rem;font-weight:800}
-.proj-metric .proj-metric-desc{font-size:.85rem;color:var(--gray)}
-.proj-arrow{font-size:.85rem;color:var(--gray);transition:color .25s;margin-top:auto}
-.proj-card:hover .proj-arrow{color:var(--white)}
+.proj-thumb{background:#f5f5f5;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:100%;padding:20px}
+.proj-thumb img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.proj-thumb i{font-size:3rem;color:#aaa;opacity:.4}
+.proj-thumb .proj-label{position:absolute;top:16px;right:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);padding:5px 14px;border-radius:100px;font-size:.72rem;font-weight:500;color:#fff}
+.proj-body{padding:48px 44px;display:flex;flex-direction:column;justify-content:space-between}
+.proj-body h3{font-size:1.8rem;font-weight:700;margin-bottom:14px;line-height:1.25;color:#121212}
+.proj-body p{font-size:.95rem;color:#555555;margin-bottom:28px;line-height:1.7}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:0}
+.proj-tags span{font-size:.72rem;color:#666;border:1px solid #ddd;padding:4px 12px;border-radius:100px}
+.proj-metric{display:flex;align-items:baseline;gap:12px;margin-top:auto;padding-top:24px;border-top:1px solid #eee}
+.proj-metric .proj-metric-num{font-size:2.6rem;font-weight:800;color:#121212}
+.proj-metric .proj-metric-desc{font-size:.88rem;color:#666}
+.proj-arrow{font-size:.85rem;color:#aaa;transition:color .25s;margin-top:12px}
+.proj-card:hover .proj-arrow{color:#121212}
 
 /* ── Process ── */
 .process{padding:100px 0}
@@ -195,11 +192,11 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .contact-form input,.contact-form select,.contact-form textarea{background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:14px 18px;color:var(--white);font-family:inherit;font-size:.9rem;font-weight:300;outline:none;transition:border-color .25s}
 .contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--white)}
 .contact-form textarea{min-height:120px;resize:vertical}
-.contact-form select{cursor:none;appearance:none}
+.contact-form select{cursor:pointer;appearance:none}
 .contact-form button{align-self:flex-start}
 
 /* ── WhatsApp Button ── */
-.wa-btn{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .3s,box-shadow .3s;cursor:none}
+.wa-btn{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .3s,box-shadow .3s;cursor:pointer}
 .wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.55)}
 .wa-btn i{font-size:1.8rem;color:#fff}
 
@@ -238,10 +235,10 @@ footer p{font-size:.8rem;color:var(--gray)}
 #proj-detail{display:none}
 #proj-detail.open{display:block;animation:pdIn .5s ease both}
 .pd-back{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--border);margin-bottom:60px}
-.pd-back-link{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--gray);cursor:none;transition:color .25s;background:none;border:none;font-family:inherit}
+.pd-back-link{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--gray);cursor:pointer;transition:color .25s;background:none;border:none;font-family:inherit}
 .pd-back-link:hover{color:var(--white)}
 .pd-nav-btns{display:flex;gap:12px}
-.pd-nav-btn{background:var(--card);border:1px solid var(--border2);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:none;color:var(--gray);font-size:.85rem;transition:all .25s}
+.pd-nav-btn{background:var(--card);border:1px solid var(--border2);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--gray);font-size:.85rem;transition:all .25s}
 .pd-nav-btn:hover{color:var(--white);border-color:var(--white)}
 .pd-hero{text-align:center;margin-bottom:60px}
 .pd-cats{display:flex;gap:10px;justify-content:center;margin-bottom:18px}
@@ -257,6 +254,12 @@ footer p{font-size:.8rem;color:var(--gray)}
 .pd-hero-img i{font-size:5rem;color:var(--gray);opacity:.2}
 .pd-section{margin-bottom:80px}
 .pd-section .sec-label{margin-bottom:8px}
+#projects{background:#ffffff}
+#projects .sec-label,#projects .sec-sub{color:#333333}
+#projects .sec-title{color:#121212}
+#projects .filter-btn{color:#555555;border-color:rgba(0,0,0,0.2)}
+#projects .filter-btn:hover{color:#121212;border-color:#121212}
+#projects .filter-btn.on{background:#121212;color:#ffffff;border-color:#121212}
 .pd-section h3{font-size:1.6rem;font-weight:700;margin-bottom:20px}
 .pd-section p{color:#CCCCCC;font-size:1.05rem;line-height:1.85;margin-bottom:20px;max-width:100%}
 .pd-img-full{aspect-ratio:16/9;background:var(--card);border-radius:16px;margin:32px 0;display:flex;align-items:center;justify-content:center}
@@ -344,8 +347,6 @@ footer p{font-size:.8rem;color:var(--gray)}
 <body>
 
 <!-- Custom Cursor -->
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <!-- WhatsApp -->
 <a href="https://wa.me/972547179000" target="_blank" class="wa-btn" title="שלחו הודעה בוואטסאפ"><i class="fa-brands fa-whatsapp"></i></a>
@@ -376,7 +377,7 @@ footer p{font-size:.8rem;color:var(--gray)}
     <div class="hero-grid">
       <div>
         <span class="hero-tag">UX Strategist & UI Designer</span>
-        <h1>UX שמרגיש נכון. UI שנראה מדויק. אני דרור <img src="dror-profile.jpg" alt="דרור כהן" class="hero-avatar">, ואני בונה את שניהם</h1>
+        <h1>UX שמרגיש נכון. UI שנראה מדויק. אני דרור <a href="#" onclick="openAbout(); return false;" style="display:inline-block;vertical-align:middle;margin:0 8px"><img src="dror-profile.jpg" alt="דרור כהן" class="hero-avatar" style="margin:0;cursor:pointer;transition:opacity 0.2s" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"></a>, ואני בונה את שניהם</h1>
         <p class="hero-sub">20+ שנות ניסיון באפיון UX ועיצוב ממשקים לחברות הייטק, סטארטאפים ומותגים מובילים</p>
         <a href="#testimonials" onclick="return navTo('#testimonials')" class="hero-rating" style="cursor:pointer">
           <span class="stars">
@@ -962,7 +963,7 @@ footer p{font-size:.8rem;color:var(--gray)}
 var PROJECTS = [
   {
     id:'calosense', cats:'HealthTech', cat:'HealthTech', title:'CaloSense',
-    subtitle:'עיצוב פלטפורמת מסע מטופל מקיפה',
+    subtitle:'עיצוב פלטפורמת מסע מטופל מקיפה. CaloSense היא פלטפורמת ניטור מטופלים מרחוק (RPM) לטווח ארוך, המנהלת את מסע המטופל מקצה לקצה. הפלטפורמה אוספת נתונים ממכשירים מחוברים שונים מרחוק, ומספקת חוויית בריאות חלקה ורציפה.',
     date:'2024', role:'Lead UX/UI Designer', client:'CaloSense', duration:'6 חודשים',
     heroFA:'heart-pulse',
     thumb:'calosense-mockup.png',
@@ -984,7 +985,7 @@ var PROJECTS = [
   },
   {
     id:'propit', cats:'SaaS', cat:'SaaS', title:'PropIT',
-    subtitle:'פלטפורמת נדל"ן מסחרי מתקדמת עם חיפוש מפה וסיורים וירטואליים',
+    subtitle:'פלטפורמת נדל"ן מסחרי מתקדמת עם חיפוש מפה וסיורים וירטואליים. מהפכה למחפשי משרדים ונכסים מסחריים — מגדירים צרכים ומאות בעלי נכסים ומתווכים מחפשים עבורך את הנכס המדויק. הנכסים מגיעים אליך עם סיורים וירטואליים ומידע מקיף על כל נכס, בניין וסביבה.',
     date:'2023', role:'UX/UI Designer', client:'PropIT', duration:'5 חודשים',
     heroFA:'building',
     thumb:'https://static.wixstatic.com/media/aca116_ad47e5d16e4e4b08a44a49b814f0daa0~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_ad47e5d16e4e4b08a44a49b814f0daa0~mv2.png',
@@ -1005,7 +1006,7 @@ var PROJECTS = [
   },
   {
     id:'twist', cats:'Branding', cat:'Branding', title:'Twist Bioscience',
-    subtitle:'עיצוב חוויית משתמש ואתר לחברת ביוטכנולוגיה מובילה',
+    subtitle:'עיצוב חוויית משתמש ואתר לחברת ביוטכנולוגיה מובילה. Twist Bioscience מספקת כלי DNA סינתטי המסייעים ללקוחות לחדש ברפואה, חקלאות ותעשייה, במטרה לשפר את איכות החיים ולתמוך בכוכב לכת בר-קיימא יותר.',
     date:'2023', role:'UX/UI Designer', client:'Twist Bioscience', duration:'4 חודשים',
     heroFA:'dna',
     thumb:'twist.avif',
@@ -1023,7 +1024,7 @@ var PROJECTS = [
   },
   {
     id:'sensica', cats:'Mobile', cat:'Mobile', title:'Sensica',
-    subtitle:'עיצוב אפליקציית יופי ביתית מבוססת טכנולוגיה רפואית',
+    subtitle:'אפיון ועיצוב אפליקציית יופי ביתית מבוססת טכנולוגיה רפואית. Sensica, שנוסדה על ידי מומחים מובילים באסתטיקה רפואית מקצועית, מביאה את הטכנולוגיות החזקות של מרפאות האסתטיקה לפתרונות יופי חדשניים לשימוש ביתי.',
     date:'2023', role:'UX/UI Designer', client:'Sensica', duration:'6 חודשים',
     heroFA:'spa',
     thumb:'https://static.wixstatic.com/media/aca116_d56755881d99452dbfced1092d52c7f1~mv2.jpg/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_d56755881d99452dbfced1092d52c7f1~mv2.jpg',
@@ -1045,7 +1046,7 @@ var PROJECTS = [
   },
   {
     id:'jpu', cats:'SaaS', cat:'SaaS', title:'JpU',
-    subtitle:'פלטפורמת ניהול רשתות IoT ו-M2M מבוססת ווב',
+    subtitle:'פלטפורמת ניהול רשתות IoT ו-M2M מבוססת ווב. JpU מפתחת רשת ליבה סלולרית ייעודית לספקי IoT ו-M2M. פלטפורמת JpU HyperCore מפשטת את ניהול רשתות IoT מורכבות, מספקת אבטחה מובנית לכלל המכשירים המחוברים ומאחדת את פעולות העסק באפליקציית ווב אינטואיטיבית אחת.',
     date:'2022', role:'UX/UI Designer', client:'JpU', duration:'5 חודשים',
     heroFA:'network-wired',
     thumb:'https://static.wixstatic.com/media/aca116_ea086c0c9ae942ecb73a890d46be88c9~mv2.jpg/v1/fill/w_970,h_435,al_c,q_85,enc_avif,quality_auto/2.jpg',
@@ -1067,7 +1068,7 @@ var PROJECTS = [
   },
   {
     id:'ctera', cats:'SaaS', cat:'SaaS', title:'CTERA',
-    subtitle:'עיצוב פלטפורמת שירותי קבצים ארגונית מבוססת ענן',
+    subtitle:'עיצוב פלטפורמת שירותי קבצים ארגונית מבוססת ענן. שירותי קבצים מקיפים — ללא פשרות. CTERA היא החברה היחידה המשלבת שירותי קבצים לנקודות קצה, משרד וענן, עם אבטחת IT ללא פשרות, בחירת ענן וכלי אוטומציה.',
     date:'2022', role:'UX/UI Designer', client:'CTERA', duration:'6 חודשים',
     heroFA:'cloud',
     thumb:'https://static.wixstatic.com/media/aca116_74b88f30745f4e9687e2d7cedae5d216~mv2.jpg/v1/fill/w_970,h_558,al_c,q_85,enc_avif,quality_auto/5.jpg',
@@ -1088,7 +1089,7 @@ var PROJECTS = [
   },
   {
     id:'powercash21', cats:'SaaS', cat:'SaaS', title:'PowerCash21',
-    subtitle:'עיצוב פלטפורמת תשלומים מאובטחת לסוחרים',
+    subtitle:'עיצוב פלטפורמת תשלומים מאובטחת לסוחרים. PowerCash21 מסייעת לסוחרים לקבל תשלומים בפשטות, בבטחה ובעלות נמוכה. קליטה מהירה, אינטגרציה קלה, שיטות תשלום גלובליות ודיווח חכם — הכל במקום אחד.',
     date:'2021', role:'UX/UI Designer', client:'PowerCash21', duration:'4 חודשים',
     heroFA:'credit-card',
     thumb:'https://static.wixstatic.com/media/aca116_b7d515fd5e6049d7a8c8299bc2919000~mv2.jpg/v1/fill/w_970,h_375,al_c,q_85,enc_avif,quality_auto/4.jpg',
@@ -1391,34 +1392,11 @@ function initMobileNav(){
   });
 }
 
-/* ── Cursor ── */
-function initCursor(){
-  var dot = document.getElementById('cursorDot');
-  var ring = document.getElementById('cursorRing');
-  var mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', function(e){
-    mx = e.clientX;
-    my = e.clientY;
-    dot.style.left = mx + 'px';
-    dot.style.top = my + 'px';
-  });
-
-  function animateRing(){
-    rx += (mx - rx) * 0.15;
-    ry += (my - ry) * 0.15;
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(animateRing);
-  }
-  animateRing();
-}
 
 /* ── Init ── */
 buildClients();
 buildFilters();
 buildProjects();
-initCursor();
 initMobileNav();
 window.addEventListener('scroll', updateNav);
 
