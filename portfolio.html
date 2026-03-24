@@ -393,7 +393,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
   <div class="nav-inner">
     <a href="#" class="nav-logo" onclick="return navTo('#')">Dror<span>Cohen</span></a>
     <ul class="nav-links">
-      <li><a href="#" class="nav-link" onclick="openAbout(); return false;">אני דרור</a></li>
+      <li><a href="about.html" class="nav-link">אני דרור</a></li>
       <li><a href="#services" class="nav-link" onclick="return navTo('#services')">מה אני עושה</a></li>
       <li><a href="#projects" class="nav-link" onclick="return navTo('#projects')">פרויקטים</a></li>
       <li><a href="#testimonials" class="nav-link" onclick="return navTo('#testimonials')">המלצות</a></li>
@@ -414,7 +414,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
     <div class="hero-grid">
       <div>
         <span class="hero-tag">UX Strategist & UI Designer</span>
-        <h1>UX שמרגיש נכון. UI שנראה מדויק. אני דרור <a href="#" onclick="openAbout(); return false;" style="display:inline-block;vertical-align:middle;margin:0 8px"><img src="dror-profile.jpg" alt="דרור כהן" class="hero-avatar" style="margin:0;cursor:pointer;transition:opacity 0.2s" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"></a>, ואני בונה את שניהם</h1>
+        <h1>UX שמרגיש נכון. UI שנראה מדויק. אני דרור <a href="about.html" style="display:inline-block;vertical-align:middle;margin:0 8px"><img src="dror-profile.jpg" alt="דרור כהן" class="hero-avatar" style="margin:0;cursor:pointer;transition:opacity 0.2s" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1"></a>, ואני בונה את שניהם</h1>
         <p class="hero-sub">20+ שנות ניסיון באפיון UX ועיצוב ממשקים לחברות הייטק, סטארטאפים ומותגים מובילים</p>
         <a href="#testimonials" onclick="return navTo('#testimonials')" class="hero-rating" style="cursor:pointer">
           <span class="stars">
@@ -998,7 +998,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
       <div class="footer-col">
         <h4>ניווט</h4>
         <ul>
-          <li><a href="#" onclick="openAbout();return false;">אני דרור</a></li>
+          <li><a href="about.html">אני דרור</a></li>
           <li><a href="#services" onclick="return navTo('#services')">מה אני עושה</a></li>
           <li><a href="#projects" onclick="return navTo('#projects')">פרויקטים</a></li>
           <li><a href="#testimonials" onclick="return navTo('#testimonials')">המלצות</a></li>
@@ -1257,7 +1257,7 @@ function buildProjects(){
     for(var t=0;t<p.tags.length;t++){
       tagsHtml += '<span>'+p.tags[t]+'</span>';
     }
-    html += '<div class="proj-card reveal" data-c="'+p.cats+'" onclick="openProject('+i+')">';
+    html += '<div class="proj-card reveal" data-c="'+p.cats+'" onclick="window.location.href=\'projects/'+p.id+'.html\'">';
     var thumbContent = p.thumb ? '<img src="'+p.thumb+'" alt="'+p.title+'">' : icon(p.heroFA);
     html += '<div class="proj-thumb">'+thumbContent+'</div>';
     html += '<div class="proj-body">';
@@ -1301,7 +1301,7 @@ function openProject(idx){
     if(i === idx) continue;
     if(moreHtml.split('proj-card').length > 3) break;
     var mp = PROJECTS[i];
-    moreHtml += '<div class="proj-card" onclick="openProject('+i+')">';
+    moreHtml += '<div class="proj-card" onclick="window.location.href=\'projects/'+mp.id+'.html\'">';
     var moreThumb = mp.thumb ? '<img src="'+mp.thumb+'" alt="'+mp.title+'" style="width:100%;height:100%;object-fit:cover">' : icon(mp.heroFA);
     moreHtml += '<div class="proj-thumb">'+moreThumb+'<span class="proj-label">'+mp.cat+'</span></div>';
     moreHtml += '<div class="proj-body"><h3>'+mp.title+'</h3><p>'+mp.subtitle+'</p></div></div>';
