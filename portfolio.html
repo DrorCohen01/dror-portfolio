@@ -194,17 +194,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .micro-demo:hover i{transform:scale(1.2);color:var(--white)}
 
 /* ── Blog ── */
-.blog{padding:100px 0}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.blog-card{background:var(--card);border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:transform .3s}
-.blog-card:hover{transform:translateY(-4px)}
-.blog-thumb{aspect-ratio:16/10;background:var(--card2);display:flex;align-items:center;justify-content:center}
-.blog-thumb i{font-size:2.8rem;color:var(--gray);opacity:.3}
-.blog-body{padding:24px}
-.blog-cat{font-size:.72rem;color:var(--gray);font-weight:500;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-.blog-body h3{font-size:1rem;font-weight:600;margin-bottom:8px}
-.blog-body p{font-size:.85rem;color:var(--gray);line-height:1.55;margin-bottom:12px}
-.blog-date{font-size:.75rem;color:var(--gray)}
 
 /* ── Contact ── */
 .contact{padding:100px 0;background:var(--card3)}
@@ -398,8 +387,9 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
       <li><a href="#services" class="nav-link" onclick="return navTo('#services')">מה אני עושה</a></li>
       <li><a href="#projects" class="nav-link" onclick="return navTo('#projects')">פרויקטים</a></li>
       <li><a href="#testimonials" class="nav-link" onclick="return navTo('#testimonials')">המלצות</a></li>
-      <li><a href="#blog" class="nav-link" onclick="return navTo('#blog')">מחשבות</a></li>
-      <li><a href="#contact" class="nav-link" onclick="return navTo('#contact')">צור קשר</a></li>
+      <li><a href="blog.html">בלוג</a></li>
+      <li><a href="blog.html">בלוג</a>
+    <a href="#contact" class="nav-link" onclick="return navTo('#contact')">צור קשר</a></li>
     </ul>
     <a href="#contact" class="nav-cta" onclick="return navTo('#contact')">בואו נדבר</a>
     <button class="nav-mobile" id="navToggle"><i class="fa-solid fa-bars"></i></button>
@@ -777,43 +767,6 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
   </div>
 </section>
 
-<!-- Blog -->
-<section class="blog" id="blog">
-  <div class="wrap">
-    <span class="sec-label reveal">שיחות על UX</span>
-    <h2 class="sec-title reveal r1">מחשבות</h2>
-    <p class="sec-sub reveal r2">תובנות, טיפים ומחשבות על עיצוב, UX ומוצר</p>
-    <div class="blog-grid reveal r3">
-      <div class="blog-card">
-        <div class="blog-thumb"><i class="fa-solid fa-lightbulb"></i></div>
-        <div class="blog-body">
-          <div class="blog-cat">UX Strategy</div>
-          <h3>למה מחקר משתמשים הוא ההשקעה הכי חשובה</h3>
-          <p>איך מחקר נכון חוסך חודשים של פיתוח ומוביל למוצר שמשתמשים באמת צריכים</p>
-          <div class="blog-date">15 מרץ 2026</div>
-        </div>
-      </div>
-      <div class="blog-card">
-        <div class="blog-thumb"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-        <div class="blog-body">
-          <div class="blog-cat">AI & Design</div>
-          <h3>איך AI משנה את תהליך העיצוב שלי</h3>
-          <p>כלים, טכניקות ותהליכים שמאיצים את העבודה מבלי להתפשר על איכות</p>
-          <div class="blog-date">8 מרץ 2026</div>
-        </div>
-      </div>
-      <div class="blog-card">
-        <div class="blog-thumb"><i class="fa-solid fa-mobile-screen-button"></i></div>
-        <div class="blog-body">
-          <div class="blog-cat">Mobile UX</div>
-          <h3>5 טעויות נפוצות בעיצוב אפליקציות מובייל</h3>
-          <p>הטעויות הכי שכיחות שאני רואה ואיך להימנע מהן בפרויקט הבא</p>
-          <div class="blog-date">1 מרץ 2026</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Contact -->
 <section class="contact" id="contact">
@@ -1003,7 +956,8 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
           <li><a href="#services" onclick="return navTo('#services')">מה אני עושה</a></li>
           <li><a href="#projects" onclick="return navTo('#projects')">פרויקטים</a></li>
           <li><a href="#testimonials" onclick="return navTo('#testimonials')">המלצות</a></li>
-          <li><a href="#contact" onclick="return navTo('#contact')">צור קשר</a></li>
+          <li><a href="blog.html">בלוג</a></li>
+      <li><a href="#contact" onclick="return navTo('#contact')">צור קשר</a></li>
         </ul>
       </div>
       <div class="footer-col">

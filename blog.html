@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>בלוג — דרור כהן | UX/UI Designer</title>
+<meta name="description" content="תובנות, טיפים ומחשבות על עיצוב, UX ומוצר מאת דרור כהן — מעצב UX/UI פרילנסר עם 20+ שנות ניסיון.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#121212;--card:#1A1A1A;--card2:#222222;--card3:#2A2A2A;
+  --white:#FFFFFF;--gray:#888888;--orange:#F5A623;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+
+@keyframes fu{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.reveal{animation:fu .65s ease both}
+.r1{animation-delay:.09s}.r2{animation-delay:.18s}.r3{animation-delay:.27s}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo span{color:var(--gray)}
+.nav-links{display:flex;gap:28px;list-style:none;font-size:.88rem;font-weight:400}
+.nav-links a{color:var(--gray);transition:color .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--white);color:#121212;padding:10px 24px;border-radius:100px;font-family:inherit;font-weight:600;font-size:.88rem;display:inline-block;transition:opacity .25s}
+.nav-cta:hover{opacity:.85}
+.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer}
+.mobile-menu{display:none;position:fixed;top:72px;right:0;left:0;background:#1a1a1a;padding:24px 40px;border-bottom:1px solid var(--border);z-index:99;flex-direction:column;gap:20px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--gray);font-size:1rem;transition:color .2s}
+.mobile-menu a:hover{color:var(--white)}
+
+/* Grid BG */
+.grid-bg{position:relative;background-color:#111}
+.grid-bg::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.07) 1px,transparent 1px);background-size:72px 72px;pointer-events:none;z-index:0}
+.grid-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,transparent 30%,#111 100%);pointer-events:none;z-index:1}
+.grid-bg>*{position:relative;z-index:2}
+
+/* Hero */
+.blog-hero{padding:80px 0 64px;text-align:center}
+.blog-hero-tag{display:inline-block;font-size:.78rem;font-weight:500;color:var(--gray);border:1px solid var(--border2);padding:6px 16px;border-radius:100px;margin-bottom:20px}
+.blog-hero h1{font-size:3.2rem;font-weight:900;line-height:1.15;margin-bottom:16px}
+.blog-hero p{font-size:1.05rem;color:var(--gray);max-width:540px;margin:0 auto}
+
+/* Filter */
+.blog-filter{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:40px 0 60px}
+.filter-btn{background:transparent;color:var(--gray);border:1px solid var(--border2);padding:8px 20px;border-radius:100px;font-family:inherit;font-size:.82rem;cursor:pointer;transition:all .25s}
+.filter-btn:hover,.filter-btn.on{background:var(--white);color:#121212;border-color:var(--white)}
+
+/* Blog Grid */
+.blog-section{padding:0 0 100px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.blog-card{background:var(--card);border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:transform .3s,border-color .3s;cursor:pointer}
+.blog-card:hover{transform:translateY(-5px);border-color:var(--border2)}
+.blog-thumb{aspect-ratio:16/9;background:var(--card2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.blog-thumb i{font-size:3rem;color:var(--gray);opacity:.25}
+.blog-thumb .thumb-bg{position:absolute;inset:0;opacity:.06;font-size:8rem;display:flex;align-items:center;justify-content:center}
+.blog-body{padding:28px}
+.blog-cat{font-size:.72rem;color:var(--orange);font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
+.blog-body h3{font-size:1.05rem;font-weight:600;margin-bottom:10px;line-height:1.45}
+.blog-body p{font-size:.85rem;color:var(--gray);line-height:1.65;margin-bottom:16px}
+.blog-meta{display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:var(--gray)}
+.blog-read{font-size:.75rem;color:var(--gray);display:flex;align-items:center;gap:6px}
+.blog-card.featured{grid-column:span 2}
+.blog-card.featured .blog-thumb{aspect-ratio:21/9}
+
+/* Featured big card */
+@media(max-width:900px){
+  .blog-card.featured{grid-column:span 1}
+  .blog-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .blog-grid{grid-template-columns:1fr}
+  .blog-hero h1{font-size:2.2rem}
+  .wrap{padding:0 20px}
+}
+
+/* Newsletter */
+.newsletter{padding:80px 0;text-align:center}
+.newsletter-box{background:var(--card);border:1px solid var(--border2);border-radius:24px;padding:60px 48px;max-width:640px;margin:0 auto}
+.newsletter-box h2{font-size:1.8rem;font-weight:700;margin-bottom:12px}
+.newsletter-box p{color:var(--gray);font-size:.95rem;margin-bottom:32px}
+.newsletter-form{display:flex;gap:12px}
+.newsletter-form input{flex:1;background:var(--card2);border:1px solid var(--border2);border-radius:100px;padding:13px 20px;color:var(--white);font-family:inherit;font-size:.9rem;outline:none;transition:border-color .25s}
+.newsletter-form input:focus{border-color:rgba(255,255,255,.4)}
+.newsletter-form input::placeholder{color:rgba(255,255,255,.2)}
+.newsletter-form button{background:var(--white);color:#121212;border:none;padding:13px 28px;border-radius:100px;font-family:inherit;font-weight:600;font-size:.88rem;cursor:pointer;white-space:nowrap;transition:opacity .25s}
+.newsletter-form button:hover{opacity:.88}
+@media(max-width:560px){.newsletter-form{flex-direction:column}}
+
+/* Footer */
+footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-color:#111}
+.footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:48px;padding-bottom:64px}
+.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Noto Sans Display',sans-serif}
+.footer-brand span{color:rgba(255,255,255,0.4)}
+.footer-col h4{font-size:.72rem;font-weight:600;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.footer-col ul li a{color:rgba(255,255,255,0.75);font-size:.95rem;transition:color .2s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:24px 0;display:flex;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,0.35)}
+.ext{font-size:.75rem;opacity:.6}
+
+/* WhatsApp */
+.whatsapp-float{position:fixed;bottom:28px;left:28px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:999;transition:transform .25s}
+.whatsapp-float:hover{transform:scale(1.08)}
+
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none}
+  .nav-mobile{display:block}
+  .footer-main{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:560px){.footer-main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="portfolio.html" class="nav-logo">Dror<span>Cohen</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">אני דרור</a></li>
+      <li><a href="uxui.html">UX/UI</a></li>
+      <li><a href="portfolio.html#services">מה אני עושה</a></li>
+      <li><a href="portfolio.html#projects">פרויקטים</a></li>
+      <li><a href="portfolio.html#testimonials">המלצות</a></li>
+      <li><a href="blog.html" class="active">בלוג</a></li>
+      <li><a href="contact.html">צור קשר</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">בואו נדבר</a>
+    <button class="nav-mobile" id="navToggle" aria-label="תפריט"><i class="fa fa-bars"></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html">אני דרור</a>
+    <a href="uxui.html">UX/UI</a>
+    <a href="portfolio.html#services">מה אני עושה</a>
+    <a href="portfolio.html#projects">פרויקטים</a>
+    <a href="portfolio.html#testimonials">המלצות</a>
+    <a href="blog.html" class="active">בלוג</a>
+    <a href="contact.html">צור קשר</a>
+    <a href="contact.html" style="background:var(--white);color:#121212;padding:12px 24px;border-radius:100px;font-weight:600;text-align:center">בואו נדבר</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="blog-hero grid-bg">
+  <div class="wrap">
+    <span class="blog-hero-tag reveal">מחשבות על עיצוב</span>
+    <h1 class="reveal r1">בלוג</h1>
+    <p class="reveal r2">תובנות, טיפים ומחשבות על UX, UI ומוצר — מהשטח, מ-20 שנות ניסיון</p>
+  </div>
+</section>
+
+<!-- Filter + Grid -->
+<section class="blog-section">
+  <div class="wrap">
+    <div class="blog-filter reveal">
+      <button class="filter-btn on" onclick="filterBlog(this,'הכל')">הכל</button>
+      <button class="filter-btn" onclick="filterBlog(this,'UX Strategy')">UX Strategy</button>
+      <button class="filter-btn" onclick="filterBlog(this,'AI & Design')">AI & Design</button>
+      <button class="filter-btn" onclick="filterBlog(this,'Mobile UX')">Mobile UX</button>
+      <button class="filter-btn" onclick="filterBlog(this,'Design System')">Design System</button>
+      <button class="filter-btn" onclick="filterBlog(this,'Process')">Process</button>
+    </div>
+
+    <div class="blog-grid" id="blogGrid">
+
+      <div class="blog-card featured" data-cat="UX Strategy">
+        <div class="blog-thumb">
+          <div class="thumb-bg"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">UX Strategy</div>
+          <h3>למה מחקר משתמשים הוא ההשקעה הכי חשובה שתעשו לפני שמתחילים לעצב</h3>
+          <p>חברות רבות קופצות ישר לעיצוב בלי לבדוק אם הן פותרות את הבעיה הנכונה. מחקר נכון חוסך חודשים של פיתוח ומוביל למוצר שמשתמשים באמת צריכים — ולא מה שחשבנו שהם צריכים.</p>
+          <div class="blog-meta">
+            <span>15 מרץ 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 6 דקות קריאה</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="AI & Design">
+        <div class="blog-thumb">
+          <div class="thumb-bg"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">AI & Design</div>
+          <h3>איך AI משנה את תהליך העיצוב שלי</h3>
+          <p>כלים, טכניקות ותהליכים שמאיצים את העבודה מבלי להתפשר על איכות. מה עובד, מה לא, ואיפה שמים את הגבול.</p>
+          <div class="blog-meta">
+            <span>8 מרץ 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 5 דקות קריאה</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="Mobile UX">
+        <div class="blog-thumb">
+          <div class="thumb-bg"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <i class="fa-solid fa-mobile-screen-button"></i>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">Mobile UX</div>
+          <h3>5 טעויות נפוצות בעיצוב אפליקציות מובייל</h3>
+          <p>הטעויות הכי שכיחות שאני רואה שוב ושוב ואיך להימנע מהן בפרויקט הבא שלכם.</p>
+          <div class="blog-meta">
+            <span>1 מרץ 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 4 דקות קריאה</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="Design System">
+        <div class="blog-thumb">
+          <div class="thumb-bg"><i class="fa-solid fa-layer-group"></i></div>
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">Design System</div>
+          <h3>Design System — למה כל סטארטאפ צריך אחד מגיל אפס</h3>
+          <p>כשבונים Design System מוקדם חוסכים שבועות של עבודה בהמשך. איך מתחילים נכון ומה הטעויות שכדאי להימנע מהן.</p>
+          <div class="blog-meta">
+            <span>20 פברואר 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 7 דקות קריאה</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="UX Strategy">
+        <div class="blog-thumb">
+          <div class="thumb-bg"><i class="fa-solid fa-chess-knight"></i></div>
+          <i class="fa-solid fa-chess-knight"></i>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">UX Strategy</div>
+          <h3>מה ההבדל בין UX טוב ל-UX מצוין — ומה זה שווה כסף</h3>
+          <p>UX טוב פותר בעיות. UX מצוין גורם למשתמשים לאהוב את המוצר שלכם. ההבדל הוא ברמת הפירוט, ובהחלטות שמסתירים מהמשתמש.</p>
+          <div class="blog-meta">
+            <span>12 פברואר 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 5 דקות קריאה</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="Process">
+        <div class="blog-thumb">
+          <div class="thumb-bg"><i class="fa-solid fa-arrows-rotate"></i></div>
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">Process</div>
+          <h3>איך מנהלים פרויקט עיצוב עם צוות פיתוח — מה עובד ומה לא</h3>
+          <p>אחרי מאות פרויקטים, למדתי מה גורם לשיתוף הפעולה בין עיצוב לפיתוח להצליח — ומה הורג אותו. המדריך המלא.</p>
+          <div class="blog-meta">
+            <span>5 פברואר 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 8 דקות קריאה</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="AI & Design">
+        <div class="blog-thumb">
+          <div class="thumb-bg"><i class="fa-solid fa-robot"></i></div>
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">AI & Design</div>
+          <h3>Figma AI — כלי עזר או איום על עיצוב?</h3>
+          <p>פיצ'רי ה-AI החדשים של Figma מבטיחים לשנות את המשחק. בדקתי אותם לעומק — הנה מה שמצאתי.</p>
+          <div class="blog-meta">
+            <span>28 ינואר 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 4 דקות קריאה</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="Mobile UX">
+        <div class="blog-thumb">
+          <div class="thumb-bg"><i class="fa-solid fa-hand-pointer"></i></div>
+          <i class="fa-solid fa-hand-pointer"></i>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">Mobile UX</div>
+          <h3>RTL Design — אתגרים ופתרונות לעיצוב בעברית וערבית</h3>
+          <p>עיצוב לשפות RTL הוא לא רק הפיכת הממשק. יש דקויות שרוב המעצבים מפספסים — ואני מראה אותן כאן.</p>
+          <div class="blog-meta">
+            <span>20 ינואר 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 6 דקות קריאה</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="Process">
+        <div class="blog-thumb">
+          <div class="thumb-bg"><i class="fa-solid fa-comments"></i></div>
+          <i class="fa-solid fa-comments"></i>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">Process</div>
+          <h3>איך מציגים עיצוב ללקוח — שיטה שעובדת תמיד</h3>
+          <p>פרזנטציה טובה היא חלק מהעבודה. אם הלקוח לא מבין את ההחלטות שלך — הוא ידחה אותן. כך מציגים עיצוב נכון.</p>
+          <div class="blog-meta">
+            <span>10 ינואר 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 5 דקות קריאה</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <div class="wrap">
+    <div class="newsletter-box reveal">
+      <h2>רוצים לקבל תוכן כזה ישירות למייל?</h2>
+      <p>אחת לשבועיים — טיפ, תובנה או case study קצר. ללא ספאם, רק תוכן שווה.</p>
+      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="האימייל שלכם" required>
+        <button type="submit">הרשמה</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="grid-bg">
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <a href="portfolio.html" class="footer-brand">Dror<span>Cohen</span></a>
+      </div>
+      <div class="footer-col">
+        <h4>ניווט</h4>
+        <ul>
+          <li><a href="about.html">אני דרור</a></li>
+          <li><a href="portfolio.html#services">מה אני עושה</a></li>
+          <li><a href="portfolio.html#projects">פרויקטים</a></li>
+          <li><a href="portfolio.html#testimonials">המלצות</a></li>
+          <li><a href="blog.html">בלוג</a></li>
+          <li><a href="contact.html">צור קשר</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>שירותים</h4>
+        <ul>
+          <li><a href="uxui.html">UX/UI Design</a></li>
+          <li><a href="portfolio.html#services">אפיון מוצר</a></li>
+          <li><a href="portfolio.html#services">Design System</a></li>
+          <li><a href="portfolio.html#services">מחקר משתמשים</a></li>
+          <li><a href="portfolio.html#services">Branding</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>סושיאל</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
+          <li><a href="https://wa.me/972526204625" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>Made with ❤️ by Dror Cohen</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/972526204625" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+// Mobile menu
+document.getElementById('navToggle').addEventListener('click',function(){
+  var m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+  this.innerHTML=m.classList.contains('open')
+    ?'<i class="fa fa-xmark"></i>'
+    :'<i class="fa fa-bars"></i>';
+});
+
+// Filter
+function filterBlog(btn, cat){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('on')});
+  btn.classList.add('on');
+  document.querySelectorAll('.blog-card').forEach(function(card){
+    if(cat==='הכל'||card.dataset.cat===cat){
+      card.style.display='';
+    } else {
+      card.style.display='none';
+    }
+  });
+}
+
+// Newsletter
+function subscribeNewsletter(e){
+  e.preventDefault();
+  var btn=e.target.querySelector('button');
+  btn.textContent='תודה! ✓';
+  btn.style.background='#4CAF50';
+  btn.style.color='#fff';
+  e.target.querySelector('input').value='';
+  setTimeout(function(){
+    btn.textContent='הרשמה';
+    btn.style.background='';
+    btn.style.color='';
+  },3000);
+}
+</script>
+</body>
+</html>
