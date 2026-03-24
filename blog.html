@@ -60,7 +60,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 /* Blog Grid */
 .blog-section{padding:0 0 100px}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.blog-card{background:var(--card);border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:transform .3s,border-color .3s;cursor:pointer}
+.blog-card{background:var(--card);border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:transform .3s,border-color .3s;cursor:pointer;display:block;color:inherit;text-decoration:none}
 .blog-card:hover{transform:translateY(-5px);border-color:var(--border2)}
 .blog-thumb{aspect-ratio:16/9;background:var(--card2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .blog-thumb i{font-size:3rem;color:var(--gray);opacity:.25}
@@ -175,7 +175,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 
     <div class="blog-grid" id="blogGrid">
 
-      <div class="blog-card featured" data-cat="UX Strategy">
+      <a class="blog-card featured" data-cat="UX Strategy" href="blog/ux-research.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-magnifying-glass"></i></div>
           <i class="fa-solid fa-magnifying-glass-chart"></i>
@@ -189,9 +189,9 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
             <span class="blog-read"><i class="fa-solid fa-clock"></i> 6 דקות קריאה</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="blog-card" data-cat="AI & Design">
+      <a class="blog-card" data-cat="AI & Design" href="blog/ai-design.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
           <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -205,9 +205,9 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
             <span class="blog-read"><i class="fa-solid fa-clock"></i> 5 דקות קריאה</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="blog-card" data-cat="Mobile UX">
+      <a class="blog-card" data-cat="Mobile UX" href="blog/mobile-ux-mistakes.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-mobile-screen-button"></i></div>
           <i class="fa-solid fa-mobile-screen-button"></i>
@@ -221,9 +221,9 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
             <span class="blog-read"><i class="fa-solid fa-clock"></i> 4 דקות קריאה</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="blog-card" data-cat="Design System">
+      <a class="blog-card" data-cat="Design System" href="blog/design-system.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-layer-group"></i></div>
           <i class="fa-solid fa-layer-group"></i>
@@ -237,9 +237,9 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
             <span class="blog-read"><i class="fa-solid fa-clock"></i> 7 דקות קריאה</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="blog-card" data-cat="UX Strategy">
+      <a class="blog-card" data-cat="UX Strategy" href="blog/ux-vs-great-ux.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-chess-knight"></i></div>
           <i class="fa-solid fa-chess-knight"></i>
@@ -253,9 +253,9 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
             <span class="blog-read"><i class="fa-solid fa-clock"></i> 5 דקות קריאה</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="blog-card" data-cat="Process">
+      <a class="blog-card" data-cat="Process" href="blog/design-and-dev.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-arrows-rotate"></i></div>
           <i class="fa-solid fa-arrows-rotate"></i>
@@ -269,9 +269,9 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
             <span class="blog-read"><i class="fa-solid fa-clock"></i> 8 דקות קריאה</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="blog-card" data-cat="AI & Design">
+      <a class="blog-card" data-cat="AI & Design" href="blog/figma-ai.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-robot"></i></div>
           <i class="fa-solid fa-robot"></i>
@@ -285,9 +285,9 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
             <span class="blog-read"><i class="fa-solid fa-clock"></i> 4 דקות קריאה</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="blog-card" data-cat="Mobile UX">
+      <a class="blog-card" data-cat="Mobile UX" href="blog/rtl-design.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-hand-pointer"></i></div>
           <i class="fa-solid fa-hand-pointer"></i>
@@ -301,9 +301,9 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
             <span class="blog-read"><i class="fa-solid fa-clock"></i> 6 דקות קריאה</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="blog-card" data-cat="Process">
+      <a class="blog-card" data-cat="Process" href="blog/presenting-design.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-comments"></i></div>
           <i class="fa-solid fa-comments"></i>
@@ -317,7 +317,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
             <span class="blog-read"><i class="fa-solid fa-clock"></i> 5 דקות קריאה</span>
           </div>
         </div>
-      </div>
+      </a>
 
     </div>
   </div>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>איך AI משנה את תהליך העיצוב שלי — דרור כהן | UX/UI Designer</title>
+<meta name="description" content="כלים, טכניקות ותהליכים שמאיצים את העבודה מבלי להתפשר על איכות. מה עובד, מה לא, ואיפה שמים את הגבול.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#121212;--card:#1A1A1A;--card2:#222222;--white:#FFFFFF;--gray:#888888;--orange:#F5A623;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14)}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+@keyframes fu{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.reveal{animation:fu .65s ease both}
+nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo span{color:var(--gray)}
+.nav-links{display:flex;gap:28px;list-style:none;font-size:.88rem}
+.nav-links a{color:var(--gray);transition:color .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--white);color:#121212;padding:10px 24px;border-radius:100px;font-weight:600;font-size:.88rem;display:inline-block;transition:opacity .25s}
+.nav-cta:hover{opacity:.85}
+.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer}
+.mobile-menu{display:none;position:fixed;top:72px;right:0;left:0;background:#1a1a1a;padding:24px 40px;border-bottom:1px solid var(--border);z-index:99;flex-direction:column;gap:20px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--gray);font-size:1rem;transition:color .2s}
+.mobile-menu a:hover{color:var(--white)}
+.grid-bg{position:relative;background-color:#111}
+.grid-bg::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.07) 1px,transparent 1px);background-size:72px 72px;pointer-events:none;z-index:0}
+.grid-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,transparent 30%,#111 100%);pointer-events:none;z-index:1}
+.grid-bg>*{position:relative;z-index:2}
+.article-hero{padding:80px 0 64px;text-align:center}
+.article-back{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--gray);margin-bottom:32px;transition:color .2s}
+.article-back:hover{color:var(--white)}
+.article-cat{display:inline-block;font-size:.78rem;font-weight:600;color:var(--orange);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
+.article-hero h1{font-size:2.8rem;font-weight:900;line-height:1.2;margin-bottom:24px;max-width:760px;margin-left:auto;margin-right:auto}
+.article-meta{display:flex;justify-content:center;align-items:center;gap:24px;font-size:.85rem;color:var(--gray)}
+.article-meta span{display:flex;align-items:center;gap:6px}
+.article-content{padding:0 0 100px}
+.article-hero-img{aspect-ratio:21/9;background:#1a1a1a;border-radius:20px;margin:48px 0;border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.article-hero-img i{font-size:4rem;color:rgba(255,255,255,0.1)}
+.article-body{max-width:760px;margin:0 auto}
+.article-body h2{font-size:1.8rem;font-weight:700;margin:56px 0 20px;line-height:1.3}
+.article-body h3{font-size:1.2rem;font-weight:600;margin:36px 0 14px;color:rgba(255,255,255,0.9)}
+.article-body p{font-size:1rem;color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:20px}
+.article-body ul,.article-body ol{padding-right:24px;margin-bottom:20px}
+.article-body li{color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:10px;font-size:1rem}
+.article-body strong{color:#fff;font-weight:600}
+.article-img{background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid var(--border)}
+.article-img i{font-size:3rem;color:rgba(255,255,255,0.12)}
+blockquote{border-right:4px solid var(--orange);padding:20px 28px;margin:40px 0;background:#1a1a1a;border-radius:0 12px 12px 0;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.85)}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:40px 0}
+.tag{background:#222;border:1px solid var(--border2);padding:6px 14px;border-radius:100px;font-size:.8rem;color:var(--gray)}
+footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111}
+.footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:48px;padding-bottom:64px}
+.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Noto Sans Display',sans-serif}
+.footer-brand span{color:rgba(255,255,255,0.4)}
+.footer-col h4{font-size:.72rem;font-weight:600;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.footer-col ul li a{color:rgba(255,255,255,0.75);font-size:.95rem;transition:color .2s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid var(--border);padding:24px 0;display:flex;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,0.35)}
+.ext{font-size:.75rem;opacity:.6}
+.whatsapp-float{position:fixed;bottom:28px;left:28px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:999;transition:transform .25s}
+.whatsapp-float:hover{transform:scale(1.08)}
+@media(max-width:900px){.nav-links,.nav-cta{display:none}.nav-mobile{display:block}.article-hero h1{font-size:2rem}.footer-main{grid-template-columns:1fr 1fr;gap:32px}.wrap{padding:0 24px}}
+@media(max-width:560px){.footer-main{grid-template-columns:1fr}.article-hero h1{font-size:1.7rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../portfolio.html" class="nav-logo">Dror<span>Cohen</span></a>
+    <ul class="nav-links">
+      <li><a href="../about.html">אני דרור</a></li>
+      <li><a href="../uxui.html">UX/UI</a></li>
+      <li><a href="../portfolio.html#services">מה אני עושה</a></li>
+      <li><a href="../portfolio.html#projects">פרויקטים</a></li>
+      <li><a href="../portfolio.html#testimonials">המלצות</a></li>
+      <li><a href="../blog.html" class="active">בלוג</a></li>
+      <li><a href="../contact.html">צור קשר</a></li>
+    </ul>
+    <a href="../contact.html" class="nav-cta">בואו נדבר</a>
+    <button class="nav-mobile" id="navToggle"><i class="fa fa-bars"></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../about.html">אני דרור</a>
+    <a href="../uxui.html">UX/UI</a>
+    <a href="../portfolio.html#services">מה אני עושה</a>
+    <a href="../portfolio.html#projects">פרויקטים</a>
+    <a href="../portfolio.html#testimonials">המלצות</a>
+    <a href="../blog.html">בלוג</a>
+    <a href="../contact.html">צור קשר</a>
+  </div>
+</nav>
+
+<section class="article-hero grid-bg">
+  <div class="wrap">
+    <a href="../blog.html" class="article-back reveal"><i class="fa fa-arrow-right"></i> חזרה לבלוג</a>
+    <div class="article-cat reveal">AI & Design</div>
+    <h1 class="reveal">איך AI משנה את תהליך העיצוב שלי</h1>
+    <div class="article-meta reveal">
+      <span><i class="fa fa-calendar"></i> 8 מרץ 2026</span>
+      <span><i class="fa fa-clock"></i> 5 דקות קריאה</span>
+      <span><i class="fa fa-user"></i> דרור כהן</span>
+    </div>
+  </div>
+</section>
+
+<section class="article-content">
+  <div class="wrap">
+    <div class="article-hero-img reveal">
+      <i class="fa-solid fa-robot"></i>
+    </div>
+    <div class="article-body reveal">
+
+      <p>לפני שנה וחצי, הייתי סקפטי לגמרי לגבי AI בעיצוב. חשבתי שזה בועה, שזה לא רלוונטי לעבודה האמיתית, ושמעצבים שמשתמשים בכלים האלה מייצרים תוצאות גנריות וחסרות נשמה. טעיתי. לא לגמרי — אבל ברובו.</p>
+
+      <p>היום AI הוא חלק אינטגרלי מהתהליך שלי. לא כתחליף לחשיבה, לא כקיצורי דרך שפוגמים באיכות — אלא כשכבה שמאיצה את החלקים המייגעים ומפנה זמן לחלקים שבאמת דורשים ניסיון ויצירתיות. במאמר הזה אני הולך לפרק לגמרי את כל מה שלמדתי: אילו כלים משתמשים בהם, איך הם משתלבים בתהליך, מה עובד, ומה עדיין רחוק מלהיות מושלם.</p>
+
+      <h2>שלב א׳: הבנה — איפה AI יכול באמת לעזור</h2>
+
+      <p>הטעות הנפוצה ביותר שאני רואה אצל מעצבים שמתחילים לשלב AI היא שהם מנסים להשתמש בו בכל מקום. הם מבקשים מ-AI לתכנן את כל הממשק, לקבל את כל ההחלטות, לכתוב את כל הקופי. התוצאות מגנריות, ניכרות מרחוק כ"AI-made", ולעיתים פשוט שגויות מבחינה UX.</p>
+
+      <p>הגישה הנכונה היא לחשוב על AI כעל עוזר שמצוין בדברים ספציפיים ופחות טוב באחרים. הוא מצוין ב:</p>
+
+      <ul>
+        <li><strong>יצירת וריאנטים מהירים</strong> — כאשר אתה צריך 10 אפשרויות לכותרת, לאייקון, לפריסה</li>
+        <li><strong>תרגום ועיבוד טקסט</strong> — לקחת טקסט גולמי ולהפוך אותו ל-UX copy מוצלח</li>
+        <li><strong>מחקר ראשוני</strong> — סיכום מחקרי UX, pattern libraries, benchmark</li>
+        <li><strong>קוד ופרוטוטייפינג</strong> — יצירת קומפוננטות, אנימציות, כתיבת CSS</li>
+        <li><strong>דוקומנטציה</strong> — כתיבת spec, הסברים למפתחים, עדכון wiki</li>
+      </ul>
+
+      <p>הוא פחות טוב ב:</p>
+
+      <ul>
+        <li>הבנה עמוקה של ה-context העסקי הספציפי</li>
+        <li>החלטות שדורשות אמפתיה ושיפוט אנושי</li>
+        <li>עקביות לאורך פרויקט מורכב</li>
+        <li>הבנת מגבלות טכניות מורכבות</li>
+      </ul>
+
+      <div class="article-img"><i class="fa-solid fa-brain"></i></div>
+
+      <h2>הכלים שאני משתמש בהם יומיומית</h2>
+
+      <h3>1. Claude ו-ChatGPT — לחשיבה ולכתיבה</h3>
+
+      <p>אלה הכלים שמשפיעים הכי הרבה על הפרודוקטיביות שלי. אני משתמש בהם בצורות שונות לאורך כל יום עבודה:</p>
+
+      <p><strong>כתיבת UX Copy:</strong> במקום לשבת חצי שעה מול מסך ריק ולנסות לנסח הודעת שגיאה, אני מתאר את ה-context ומבקש 5 גרסאות. בוחר אחת, מעדן אותה, ומתקדם. מה שלקח 30 דקות לוקח 5.</p>
+
+      <p><strong>ניתוח מחקר:</strong> אחרי ראיונות משתמשים, אני מכניס את הסיכומים ומבקש לזהות themes, pain points, ולארגן ל-affinity map. זה לא מחליף ניתוח אמיתי, אבל זה נקודת התחלה מעולה.</p>
+
+      <p><strong>הכנה לפגישות:</strong> "אני הולך לפגישה עם CMO שרוצה להפחית את מסך ה-onboarding מ-5 שלבים ל-2. הנה הנתונים. איך אציג את הנגד שלי?" — AI עוזר לי לבנות את הטיעונים ולחשוב על התנגדויות.</p>
+
+      <blockquote>
+        "AI לא מחליף את השיפוט שלי — הוא מאיץ את היכולת שלי לבחון יותר אפשרויות בפחות זמן."
+      </blockquote>
+
+      <h3>2. Midjourney ו-DALL-E — לויזואליזציה ומוקאפים</h3>
+
+      <p>כלים לגנרציית תמונות שינו לחלוטין איך אני עובד עם לקוחות בשלב המוקדם של הפרויקט. במקום לשבת שעות על Adobe Stock ולחפש תמונות שמתאימות לוויזיה, אני מתאר בדיוק מה אני רוצה ומקבל תמונה ייחודית.</p>
+
+      <p>דוגמה קונקרטית: בפרויקט עבור חברת בריאות דיגיטלית, הייתי צריך תמונת hero שמציגה "חוויית בריאות עתידנית אבל חמה ואנושית". זה משהו שאף stock photo לא יתן בדיוק. עם Midjourney, ב-20 דקות קיבלתי 6 אפשרויות, בחרנו יחד עם הלקוח, ויצאנו לדרך.</p>
+
+      <div class="article-img"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+
+      <h3>3. Figma AI — ישירות בכלי העבודה</h3>
+
+      <p>הפיצ'רים האחרונים של Figma AI הם אלה שמשפיעים הכי הרבה על השגרה שלי כי הם קיימים בתוך הכלי שאני עובד בו ממילא:</p>
+
+      <ul>
+        <li><strong>Rename layers automatically:</strong> מי מאיתנו לא מצא עצמו עם שכבות בשם "Rectangle 247"? הפיצ'ר הזה מנקה את הפאנל בשניות.</li>
+        <li><strong>Auto Layout suggestions:</strong> מציע auto layout לפי הבחירה, חוסך זמן רב.</li>
+        <li><strong>Translate:</strong> תרגום מיידי לכל שפה — שימושי מאוד כשעובדים על RTL ו-LTR במקביל.</li>
+        <li><strong>First Draft / Make Designs:</strong> עדיין בבטא, אבל מציג טרנד ברור לאן הדברים הולכים.</li>
+      </ul>
+
+      <h3>4. Uizard ו-Galileo AI — מ-sketch ל-wireframe</h3>
+
+      <p>כלים אלה מאפשרים להפוך סקיצות ידניות (או תיאורים טקסטואליים) לפרוטוטיפים. הם פחות שימושיים לעבודה מוגמרת, אבל מצוינים לשלב ה-ideation כשאתה רוצה להמחיש במהירות רעיון בפני לקוח.</p>
+
+      <h2>תהליך עבודה מלא עם AI — יום בחיי</h2>
+
+      <p>בואו נלך על ספציפי. הנה כיצד נראה יום עבודה אמיתי שלי על פרויקט חדש:</p>
+
+      <h3>בוקר: Kickoff עם לקוח חדש</h3>
+      <p>לפני הפגישה: אני מזין ל-Claude את מה שאני יודע על החברה, הנישה, ו-3 מתחרים. מבקש ניתוח ראשוני של pattern נפוצים בתעשייה ו-10 שאלות מפתח לשאול. זה מכין אותי הרבה יותר טוב תוך 20 דקות ממה שהייתי מגיע בשעה של research עצמאי.</p>
+
+      <h3>אחרי הפגישה: ניתוח ותיעוד</h3>
+      <p>אני מעביר את הנוטס (או transcript אם הפגישה הוקלטה) ל-AI ומבקש: סיכום, pain points שזוהו, הנחות שצריך לוודא, והמלצות לשלבים הבאים. זה חוסך שעה של כתיבת תקציר.</p>
+
+      <h3>אחר הצהריים: עבודה על Wireframes</h3>
+      <p>בשלב ה-wireframing, AI עוזר לי לחשוב על מבנה המידע. "כאן יש flow של onboarding ל-SaaS B2B — מה הם ה-patterns הנפוצים ביותר ואיך חברות כמו Slack, Notion ו-Linear פותרות את שלב ה-first-run experience?" תוך דקות יש לי reference points שיכלו לקחת שעות לאסוף.</p>
+
+      <div class="article-img"><i class="fa-solid fa-diagram-project"></i></div>
+
+      <h2>מה AI לא יכול לעשות — ואל תשכחו את זה</h2>
+
+      <p>אחרי כל מה שאמרתי, חשוב להיות כנה לגבי המגבלות. כי יש לקוחות שמתחילים לשאול "אז למה אנחנו צריכים מעצב אם יש AI?" — וזו שאלה שמגיעה מאי-הבנה בסיסית של מה עיצוב UX הוא.</p>
+
+      <h3>אמפתיה ושיפוט אנושי</h3>
+      <p>AI יכול לנתח נתונים, אבל לא יכול לשבת מול משתמש ולהרגיש את הפרוסטרציה שלו. לא יכול להבחין בשפת הגוף, בהיסוס, בצחוק הנבוך כשמשהו לא מובן. עיצוב טוב מגיע מהבנה עמוקה של בני אדם — וזה עדיין תחום אנושי לחלוטין.</p>
+
+      <h3>הקשר עסקי ייחודי</h3>
+      <p>AI לא מכיר את ההיסטוריה של הלקוח שלך, את הדינמיקה הפנימית שלו, את הפוליטיקה הארגונית, את ההחלטות שנלקחו ולמה. מעצב מנוסה שעובד עם לקוח 6 חודשים יודע דברים שאף AI לא יכול לדעת.</p>
+
+      <h3>יצירתיות פורצת גבולות</h3>
+      <p>AI מצוין ב-interpolation — ליצור דברים שנמצאים בין מה שכבר קיים. אבל חשיבה שבאמת יוצרת קטגוריות חדשות, שמאתגרת assumptions בסיסיות, שיוצרת חוויות שמשנות תעשיות — זה עדיין אנושי.</p>
+
+      <blockquote>
+        "AI הוא כלי. כמו Figma, כמו Sketch. מי שאמר שהמחשב יהרוג את המעצבים ב-1990 טעה — הוא סתם שינה את אופי העבודה. AI הוא אותה רמה של שינוי."
+      </blockquote>
+
+      <h2>החשש: האם AI יחליף מעצבים?</h2>
+
+      <p>זו השאלה שכולם שואלים. התשובה הכנה שלי: AI יחליף חלק מהמעצבים — אלה שעושים עבודה גנרית, שלא משקיעים בהבנה עמוקה של בעיות, שמייצרים את אותו עיצוב תמיד. אבל מעצבים שמבינים עסקים, שיש להם שיפוט, שיכולים לתרגם בין צרכי עסק לחוויות משתמש — אלה ייצאו מחוזקים מהמהפכה הזו.</p>
+
+      <p>למה? כי AI מוריד את העלויות של ייצור עיצוב בסיסי, מה שמגדיל את הביקוש לעיצוב טוב. כי כשכולם יכולים לייצר עיצוב "סביר", הבידול הוא דווקא בעיצוב מצוין. כי הכלים הטובים ביותר עדיין דורשים הנחיה ממעצבים שיודעים מה הם רוצים.</p>
+
+      <h2>איך להתחיל — טיפים מעשיים</h2>
+
+      <p>אם אתם רוצים להתחיל לשלב AI בעבודה, הנה ה-5 הצעדים שאני ממליץ עליהם:</p>
+
+      <ol>
+        <li><strong>התחילו קטן:</strong> בחרו משימה אחת שאתם מכירים היטב ובדקו איך AI יכול לעזור. UX copy זה מקום מצוין להתחיל.</li>
+        <li><strong>למדו לנסח prompts:</strong> האיכות של ה-output תלויה ישירות באיכות ה-input. תנו context, תהיו ספציפיים, בקשו format מסוים.</li>
+        <li><strong>תמיד ערכו ביקורת:</strong> אל תלקחו AI output כ-final. תמיד עברו עליו עם העיניים של מקצוען.</li>
+        <li><strong>שמרו על ה-process שלכם:</strong> AI הוא כלי בתוך ה-process שלכם, לא תחליף לו.</li>
+        <li><strong>התעדכנו ברציפות:</strong> התחום מתפתח בקצב מסחרר. מה שנכון היום עשוי להשתנות בעוד 6 חודשים.</li>
+      </ol>
+
+      <div class="article-img"><i class="fa-solid fa-lightbulb"></i></div>
+
+      <h2>מה הכיוון שלי לעתיד</h2>
+
+      <p>אני מאמין שהמעצבים הכי טובים בעוד 3 שנים יהיו אלה שלמדו להשתמש ב-AI כאמצעי לחשיבה מהירה יותר, לא רק לייצור מהיר יותר. ה-competitive advantage לא יהיה "אני יכול לעצב 3x יותר מהר" — אלא "אני יכול לחקור 3x יותר כיוונים, לבדוק 3x יותר הנחות, ולהגיע לפתרון 3x טוב יותר."</p>
+
+      <p>זה אומר שהמיומנויות שנהיות יותר חשובות הן: שאלת שאלות נכונות, הבנת עסקים, עבודה עם נתונים, ותקשורת עם בעלי עניין. לא עיצוב ויזואלי מהיר — זה כבר לא מה שמבדל.</p>
+
+      <p>אני ממשיך לבחון כלים חדשים, לעדכן את ה-workflow שלי, ולשתף מה שאני לומד. אם יש לכם שאלות ספציפיות על כלי מסוים או על שילוב AI בסיטואציה מסוימת — שלחו לי הודעה. תמיד שמח לדבר על זה.</p>
+
+      <div class="tag-row">
+        <span class="tag">AI</span>
+        <span class="tag">Figma AI</span>
+        <span class="tag">UX Tools</span>
+        <span class="tag">Productivity</span>
+        <span class="tag">Design Process</span>
+        <span class="tag">Midjourney</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="grid-bg">
+  <div class="wrap">
+    <div class="footer-main">
+      <div><a href="../portfolio.html" class="footer-brand">Dror<span>Cohen</span></a></div>
+      <div class="footer-col">
+        <h4>ניווט</h4>
+        <ul>
+          <li><a href="../about.html">אני דרור</a></li>
+          <li><a href="../portfolio.html#services">מה אני עושה</a></li>
+          <li><a href="../portfolio.html#projects">פרויקטים</a></li>
+          <li><a href="../portfolio.html#testimonials">המלצות</a></li>
+          <li><a href="../blog.html">בלוג</a></li>
+          <li><a href="../contact.html">צור קשר</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>שירותים</h4>
+        <ul>
+          <li><a href="../uxui.html">UX/UI Design</a></li>
+          <li><a href="../portfolio.html#services">אפיון מוצר</a></li>
+          <li><a href="../portfolio.html#services">Design System</a></li>
+          <li><a href="../portfolio.html#services">מחקר משתמשים</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>סושיאל</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
+          <li><a href="https://wa.me/972547179000" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>Made with ❤️ by Dror Cohen</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/972547179000" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){
+  var m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+  this.innerHTML=m.classList.contains('open')?'<i class="fa fa-xmark"></i>':'<i class="fa fa-bars"></i>';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5 טעויות נפוצות בעיצוב אפליקציות מובייל — דרור כהן | UX/UI Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#121212;--card:#1A1A1A;--white:#FFFFFF;--gray:#888888;--orange:#F5A623;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14)}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+@keyframes fu{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.reveal{animation:fu .65s ease both}
+nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo span{color:var(--gray)}
+.nav-links{display:flex;gap:28px;list-style:none;font-size:.88rem}
+.nav-links a{color:var(--gray);transition:color .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--white);color:#121212;padding:10px 24px;border-radius:100px;font-weight:600;font-size:.88rem;display:inline-block;transition:opacity .25s}
+.nav-cta:hover{opacity:.85}
+.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer}
+.mobile-menu{display:none;position:fixed;top:72px;right:0;left:0;background:#1a1a1a;padding:24px 40px;border-bottom:1px solid var(--border);z-index:99;flex-direction:column;gap:20px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--gray);font-size:1rem;transition:color .2s}
+.mobile-menu a:hover{color:var(--white)}
+.grid-bg{position:relative;background-color:#111}
+.grid-bg::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.07) 1px,transparent 1px);background-size:72px 72px;pointer-events:none;z-index:0}
+.grid-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,transparent 30%,#111 100%);pointer-events:none;z-index:1}
+.grid-bg>*{position:relative;z-index:2}
+.article-hero{padding:80px 0 64px;text-align:center}
+.article-back{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--gray);margin-bottom:32px;transition:color .2s}
+.article-back:hover{color:var(--white)}
+.article-cat{display:inline-block;font-size:.78rem;font-weight:600;color:var(--orange);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
+.article-hero h1{font-size:2.8rem;font-weight:900;line-height:1.2;margin-bottom:24px;max-width:760px;margin-left:auto;margin-right:auto}
+.article-meta{display:flex;justify-content:center;align-items:center;gap:24px;font-size:.85rem;color:var(--gray)}
+.article-meta span{display:flex;align-items:center;gap:6px}
+.article-content{padding:0 0 100px}
+.article-hero-img{aspect-ratio:21/9;background:#1a1a1a;border-radius:20px;margin:48px 0;border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.article-hero-img i{font-size:4rem;color:rgba(255,255,255,0.1)}
+.article-body{max-width:760px;margin:0 auto}
+.article-body h2{font-size:1.8rem;font-weight:700;margin:56px 0 20px;line-height:1.3}
+.article-body h3{font-size:1.2rem;font-weight:600;margin:36px 0 14px;color:rgba(255,255,255,0.9)}
+.article-body p{font-size:1rem;color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:20px}
+.article-body ul,.article-body ol{padding-right:24px;margin-bottom:20px}
+.article-body li{color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:10px;font-size:1rem}
+.article-body strong{color:#fff;font-weight:600}
+.article-img{background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid var(--border)}
+.article-img i{font-size:3rem;color:rgba(255,255,255,0.12)}
+blockquote{border-right:4px solid var(--orange);padding:20px 28px;margin:40px 0;background:#1a1a1a;border-radius:0 12px 12px 0;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.85)}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:40px 0}
+.tag{background:#222;border:1px solid var(--border2);padding:6px 14px;border-radius:100px;font-size:.8rem;color:var(--gray)}
+footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111}
+.footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:48px;padding-bottom:64px}
+.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Noto Sans Display',sans-serif}
+.footer-brand span{color:rgba(255,255,255,0.4)}
+.footer-col h4{font-size:.72rem;font-weight:600;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.footer-col ul li a{color:rgba(255,255,255,0.75);font-size:.95rem;transition:color .2s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid var(--border);padding:24px 0;display:flex;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,0.35)}
+.ext{font-size:.75rem;opacity:.6}
+.whatsapp-float{position:fixed;bottom:28px;left:28px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:999;transition:transform .25s}
+.whatsapp-float:hover{transform:scale(1.08)}
+@media(max-width:900px){.nav-links,.nav-cta{display:none}.nav-mobile{display:block}.article-hero h1{font-size:2rem}.footer-main{grid-template-columns:1fr 1fr;gap:32px}.wrap{padding:0 24px}}
+@media(max-width:560px){.footer-main{grid-template-columns:1fr}.article-hero h1{font-size:1.7rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../portfolio.html" class="nav-logo">Dror<span>Cohen</span></a>
+    <ul class="nav-links">
+      <li><a href="../about.html">אני דרור</a></li>
+      <li><a href="../uxui.html">UX/UI</a></li>
+      <li><a href="../portfolio.html#services">מה אני עושה</a></li>
+      <li><a href="../portfolio.html#projects">פרויקטים</a></li>
+      <li><a href="../portfolio.html#testimonials">המלצות</a></li>
+      <li><a href="../blog.html" class="active">בלוג</a></li>
+      <li><a href="../contact.html">צור קשר</a></li>
+    </ul>
+    <a href="../contact.html" class="nav-cta">בואו נדבר</a>
+    <button class="nav-mobile" id="navToggle"><i class="fa fa-bars"></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../about.html">אני דרור</a>
+    <a href="../uxui.html">UX/UI</a>
+    <a href="../portfolio.html#services">מה אני עושה</a>
+    <a href="../portfolio.html#projects">פרויקטים</a>
+    <a href="../blog.html">בלוג</a>
+    <a href="../contact.html">צור קשר</a>
+  </div>
+</nav>
+<section class="article-hero grid-bg">
+  <div class="wrap">
+    <a href="../blog.html" class="article-back reveal"><i class="fa fa-arrow-right"></i> חזרה לבלוג</a>
+    <div class="article-cat reveal">Mobile UX</div>
+    <h1 class="reveal">5 טעויות נפוצות בעיצוב אפליקציות מובייל</h1>
+    <div class="article-meta reveal">
+      <span><i class="fa fa-calendar"></i> 1 מרץ 2026</span>
+      <span><i class="fa fa-clock"></i> 4 דקות קריאה</span>
+      <span><i class="fa fa-user"></i> דרור כהן</span>
+    </div>
+  </div>
+</section>
+<section class="article-content">
+  <div class="wrap">
+    <div class="article-hero-img reveal"><i class="fa-solid fa-mobile-screen-button"></i></div>
+    <div class="article-body reveal">
+
+      <p>אחרי עשרים שנה של עיצוב ממשקים, ואחרי שעברתי על עשרות אפליקציות במסגרת ביקורות UX שביצעתי ללקוחות — זיהיתי דפוסים שחוזרים על עצמם שוב ושוב. טעויות שגרמות למשתמשים לנטוש אפליקציות, שפוגעות ב-engagement, שמובילות לביקורות שליליות ב-App Store. הכי מצער? כולן נמנעות לגמרי.</p>
+      <p>במאמר הזה אני הולך לפרק לעומק את 5 הטעויות הנפוצות ביותר שאני רואה, ולהסביר בדיוק איך לפתור אותן. לא בתיאוריה — בדוגמאות אמיתיות ועם פתרונות מעשיים.</p>
+
+      <h2>טעות #1: התעלמות מ-Thumb Zones</h2>
+      <p>זו אולי הטעות הכי קלאסית, וגם הכי פשוטה לתיקון. בשנת 2016 פרסם Steven Hoober מחקר שהראה ש-49% מהמשתמשים מחזיקים את הטלפון ביד אחת ומשתמשים רק באגודל לניווט. עשור לאחר מכן, האחוז הזה רק גדל — במיוחד עם המסכים הגדולים של iPhone Pro Max ו-Samsung Ultra.</p>
+      <p>הבעיה: רוב המעצבים עדיין ממקמים אלמנטים חשובים בחלק העליון של המסך. כפתורי CTA, תפריט ניווט, כפתור "אישור" — כולם במקום שדורש מתיחה של האגודל או שימוש בשתי ידיים.</p>
+      <div class="article-img"><i class="fa-solid fa-hand-pointer"></i></div>
+      <h3>הפתרון המעשי</h3>
+      <p>עבדו עם ה-Thumb Zone Model של Apple ו-Google. המאזור הנוח ביותר לאגודל הוא השליש התחתון של המסך — זה המקום לאלמנטים ה-interactive החשובים ביותר. ה-tab bar בתחתית לא רק נהדר מבחינה visual — הוא שם מסיבה פונקציונלית.</p>
+      <p>כשמעצבים אני מגדיר שלוש אזורים: <strong>ירוק</strong> — נוח לאגודל, <strong>צהוב</strong> — נמתח קצת, <strong>אדום</strong> — דורש שתי ידיים. כל אינטראקציה עיקרית חייבת להיות בירוק.</p>
+      <blockquote>"אם המשתמש צריך לשנות את אחיזת הטלפון כדי לעשות את הפעולה הכי חשובה באפליקציה — כישלתם בעיצוב."</blockquote>
+      <p><strong>מספרים שכדאי לדעת:</strong> לפי מחקר של Nielsen Norman Group, זמן השלמת משימות יורד ב-20% בממוצע כשאלמנטים אינטראקטיביים ממוקמים ב-thumb zone תחתון לעומת עליון.</p>
+
+      <h2>טעות #2: עומס מידע בסקרין אחד</h2>
+      <p>אני קורא לזה "תסמונת ה-everything above the fold". מעצבים (ולרוב לקוחות) חושבים שצריך להציג כמה שיותר מידע לפני שמשתמשים גוללים. התוצאה: מסכים צפופים, מכריעים, שגורמים ל-cognitive overload ולנטישה.</p>
+      <p>מחקרי עין (eye tracking) מראים שמשתמשים במובייל סורקים מסכים ב-F-pattern — מה שנמצא בחלק השמאלי העליון מקבל את רוב תשומת הלב, ומהר מאוד הם מאבדים עניין. כשיש יותר מדי מידע, המוח פשוט מחליט לוותר.</p>
+      <div class="article-img"><i class="fa-solid fa-layer-group"></i></div>
+      <h3>כלל ה-One Primary Action</h3>
+      <p>כל מסך צריך פעולה עיקרית אחת ברורה. לא שלוש, לא שתיים — אחת. שאלו את עצמכם: "מה הדבר הכי חשוב שאני רוצה שהמשתמש יעשה במסך הזה?" התשובה היא ה-primary CTA. כל השאר הוא secondary.</p>
+      <p>דוגמה: מסך מוצר ב-e-commerce. הפעולה הראשית: "הוסף לסל". הכל השאר — תמונות, תיאור, ביקורות — הם supporting content שמסייעים להחלטה, לא CTAs מתחרים.</p>
+      <h3>Progressive Disclosure</h3>
+      <p>הטכניקה החזקה ביותר לניהול מידע מורכב היא Progressive Disclosure — הצגת המידע הכי חשוב תחילה, עם אפשרות להתרחבות. Accordion menus, "קרא עוד", tabs — כולם מממשים עיקרון זה. מחקרים מראים שמשתמשים מעדיפים לחשוף מידע בהדרגה על פני מסך מלא מדי.</p>
+
+      <h2>טעות #3: חוסר עקביות בניווט</h2>
+      <p>משתמשים בונים מודל מנטלי של האפליקציה שלכם. הם לומדים איפה הדברים נמצאים, איך לנווט בין מסכים, מה כל אייקון עושה. כשמשבשים את המודל הזה — ולו פעם אחת — נוצר פיקוחי.</p>
+      <p>טעויות ניווט נפוצות שאני רואה: כפתור "חזרה" שמופיע בצד שמאל בחלק מהמסכים ובצד ימין באחרים; tab bar שנעלם במסכים מסוימים; gesture שעובד בצורה אחת בהקשר אחד ובצורה אחרת בהקשר שני.</p>
+      <div class="article-img"><i class="fa-solid fa-compass"></i></div>
+      <h3>עקרונות ניווט עקבי</h3>
+      <ul>
+        <li><strong>Tab Bar:</strong> אם בחרתם ב-tab bar — הוא מופיע בכל מסך, תמיד. יוצאים מן הכלל רק ב-full-screen experiences כמו קריאת מאמר או הפעלת וידאו.</li>
+        <li><strong>Back behavior:</strong> כפתור חזרה תמיד מחזיר למסך הקודם בהיסטוריה, לא "לבית". זה הציפייה של המשתמשים ב-iOS ו-Android.</li>
+        <li><strong>Gestures:</strong> Swipe-to-go-back הוא חלק מ-iOS. אל תשברו אותו. אם יש לכם gesture משלכם שמתנגש — בחרו אחד.</li>
+        <li><strong>Modal vs Push:</strong> הגדירו מתי אתם פותחים modal (דיאלוג מעל) ומתי דוחפים מסך חדש. היו עקביים.</li>
+      </ul>
+
+      <h2>טעות #4: התעלמות מהנחיות הפלטפורמה</h2>
+      <p>iOS ו-Android הם שני עולמות שונים. לכל אחד יש שפת עיצוב, patterns, ומוסכמות משלו. מפתחים ומעצבים שלא גדלו על הפלטפורמה הספציפית לרוב לא מכירים את ההבדלים — ומשתמשים בהחלט מרגישים בהם גם אם לא מצליחים לנסח בדיוק למה.</p>
+      <h3>ההבדלים המרכזיים</h3>
+      <p><strong>iOS (Human Interface Guidelines):</strong> כפתורי ניווט בפינה שמאלית עליונה, Large Title שמתכווץ בגלילה, SF Symbols, action sheets מלמטה, הפרדה ברורה בין navigation bar לcontent.</p>
+      <p><strong>Android (Material Design 3):</strong> FAB (Floating Action Button) לפעולה ראשית, navigation drawer בצד, snackbar לפעולות undo, ripple effect בלחיצות, surface elevation לתיעדוף visual.</p>
+      <p>לא צריך לעצב שני עיצובים שונים לחלוטין — אבל כן צריך להתאים את ה-components הספציפיים. Bottom sheet ב-iOS ו-modal sheet ב-Android עובדים אחרת — למדו אותם.</p>
+      <div class="article-img"><i class="fa-solid fa-mobile"></i></div>
+
+      <h2>טעות #5: חוויית Onboarding גרועה</h2>
+      <p>הנתון המדאיג ביותר ב-mobile UX: לפי Localytics, 21% מהמשתמשים נוטשים אפליקציה אחרי שימוש אחד. הסיבה הכי נפוצה? Onboarding שלא הסביר את הערך, שאסף יותר מדי מידע מוקדם, או שהיה פשוט מבלבל.</p>
+      <h3>עקרונות Onboarding מנצח</h3>
+      <p><strong>Defer Registration:</strong> אל תבקשו הרשמה לפני שהמשתמש ראה ערך. תנו לו לחוות את הפיצ'ר הראשי ראשון. "Sign up to save your progress" עובד הרבה יותר טוב מ"Create account to continue".</p>
+      <p><strong>Progressive onboarding:</strong> במקום 7 מסכי הדרכה שמשתמשים מדלגים עליהם — הציגו טיפים קונטקסטואליים ברגע שהמשתמש מגיע לפיצ'ר רלוונטי בפעם הראשונה.</p>
+      <p><strong>Empty States:</strong> כשמשתמש חדש נכנס לאפליקציה ריקה — זו ההזדמנות לעזור. Empty state טוב לא אומר רק "אין פריטים" — הוא גם מסביר מה לעשות הלאה.</p>
+      <blockquote>"ה-onboarding הטוב ביותר הוא זה שמרגיש טבעי, כאילו האפליקציה פשוט מתנהגת כצפוי מהרגע הראשון."</blockquote>
+
+      <h2>בונוס: 3 טעויות נוספות שכדאי להכיר</h2>
+      <ul>
+        <li><strong>Splash screens ארוכות מדי:</strong> יותר מ-2 שניות של splash — זה יותר מדי. משתמשים רוצים להגיע לתוכן מהר.</li>
+        <li><strong>Touch targets קטנים:</strong> Apple מגדיר מינימום 44x44px לכל element אינטראקטיבי. Android: 48x48dp. בפועל אני ממליץ על 48x48 לכל הפחות.</li>
+        <li><strong>Loading states חסרים:</strong> כשמשהו טוען — תמיד תראו ל-user שמשהו קורה. Skeleton loaders עדיפים על spinner גנרי.</li>
+      </ul>
+
+      <h2>סיכום: checklist לפני launch</h2>
+      <p>לפני שאתם מעלים את האפליקציה הבאה, עברו על ה-checklist הזה:</p>
+      <ol>
+        <li>כל הפעולות העיקריות ממוקמות ב-thumb zone תחתון ✓</li>
+        <li>כל מסך מתמקד בפעולה ראשית אחת ✓</li>
+        <li>הניווט עקבי לאורך כל האפליקציה ✓</li>
+        <li>הפלטפורמה-ספציפיים patterns מיושמים נכון ✓</li>
+        <li>ה-onboarding מדגים ערך לפני שמבקש commitement ✓</li>
+        <li>Touch targets עומדים בגודל מינימלי ✓</li>
+        <li>כל מצב loading מטופל ✓</li>
+      </ol>
+      <div class="tag-row">
+        <span class="tag">Mobile UX</span><span class="tag">iOS</span><span class="tag">Android</span>
+        <span class="tag">Thumb Zone</span><span class="tag">Onboarding</span><span class="tag">Navigation</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer class="grid-bg">
+  <div class="wrap">
+    <div class="footer-main">
+      <div><a href="../portfolio.html" class="footer-brand">Dror<span>Cohen</span></a></div>
+      <div class="footer-col"><h4>ניווט</h4><ul>
+        <li><a href="../about.html">אני דרור</a></li>
+        <li><a href="../portfolio.html#projects">פרויקטים</a></li>
+        <li><a href="../blog.html">בלוג</a></li>
+        <li><a href="../contact.html">צור קשר</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>שירותים</h4><ul>
+        <li><a href="../uxui.html">UX/UI Design</a></li>
+        <li><a href="../portfolio.html#services">אפיון מוצר</a></li>
+        <li><a href="../portfolio.html#services">Design System</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>סושיאל</h4><ul>
+        <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
+        <li><a href="https://wa.me/972547179000" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>Made with ❤️ by Dror Cohen</p>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/972547179000" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){
+  var m=document.getElementById('mobileMenu');m.classList.toggle('open');
+  this.innerHTML=m.classList.contains('open')?'<i class="fa fa-xmark"></i>':'<i class="fa fa-bars"></i>';
+});
+</script>
+</body></html>

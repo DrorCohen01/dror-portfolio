@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RTL Design — אתגרים ופתרונות לעיצוב בעברית וערבית — דרור כהן | UX/UI Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#121212;--card:#1A1A1A;--white:#FFFFFF;--gray:#888888;--orange:#F5A623;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14)}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+@keyframes fu{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.reveal{animation:fu .65s ease both}
+nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo span{color:var(--gray)}
+.nav-links{display:flex;gap:28px;list-style:none;font-size:.88rem}
+.nav-links a{color:var(--gray);transition:color .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--white);color:#121212;padding:10px 24px;border-radius:100px;font-weight:600;font-size:.88rem;display:inline-block;transition:opacity .25s}
+.nav-cta:hover{opacity:.85}
+.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer}
+.mobile-menu{display:none;position:fixed;top:72px;right:0;left:0;background:#1a1a1a;padding:24px 40px;border-bottom:1px solid var(--border);z-index:99;flex-direction:column;gap:20px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--gray);font-size:1rem;transition:color .2s}
+.mobile-menu a:hover{color:var(--white)}
+.grid-bg{position:relative;background-color:#111}
+.grid-bg::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.07) 1px,transparent 1px);background-size:72px 72px;pointer-events:none;z-index:0}
+.grid-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,transparent 30%,#111 100%);pointer-events:none;z-index:1}
+.grid-bg>*{position:relative;z-index:2}
+.article-hero{padding:80px 0 64px;text-align:center}
+.article-back{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--gray);margin-bottom:32px;transition:color .2s}
+.article-back:hover{color:var(--white)}
+.article-cat{display:inline-block;font-size:.78rem;font-weight:600;color:var(--orange);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
+.article-hero h1{font-size:2.8rem;font-weight:900;line-height:1.2;margin-bottom:24px;max-width:760px;margin-left:auto;margin-right:auto}
+.article-meta{display:flex;justify-content:center;align-items:center;gap:24px;font-size:.85rem;color:var(--gray)}
+.article-meta span{display:flex;align-items:center;gap:6px}
+.article-content{padding:0 0 100px}
+.article-hero-img{aspect-ratio:21/9;background:#1a1a1a;border-radius:20px;margin:48px 0;border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.article-hero-img i{font-size:4rem;color:rgba(255,255,255,0.1)}
+.article-body{max-width:760px;margin:0 auto}
+.article-body h2{font-size:1.8rem;font-weight:700;margin:56px 0 20px;line-height:1.3}
+.article-body h3{font-size:1.2rem;font-weight:600;margin:36px 0 14px;color:rgba(255,255,255,0.9)}
+.article-body p{font-size:1rem;color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:20px}
+.article-body ul,.article-body ol{padding-right:24px;margin-bottom:20px}
+.article-body li{color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:10px;font-size:1rem}
+.article-body strong{color:#fff;font-weight:600}
+.article-img{background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid var(--border)}
+.article-img i{font-size:3rem;color:rgba(255,255,255,0.12)}
+blockquote{border-right:4px solid var(--orange);padding:20px 28px;margin:40px 0;background:#1a1a1a;border-radius:0 12px 12px 0;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.85)}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:40px 0}
+.tag{background:#222;border:1px solid var(--border2);padding:6px 14px;border-radius:100px;font-size:.8rem;color:var(--gray)}
+footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111}
+.footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:48px;padding-bottom:64px}
+.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Noto Sans Display',sans-serif}
+.footer-brand span{color:rgba(255,255,255,0.4)}
+.footer-col h4{font-size:.72rem;font-weight:600;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.footer-col ul li a{color:rgba(255,255,255,0.75);font-size:.95rem;transition:color .2s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid var(--border);padding:24px 0;display:flex;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,0.35)}
+.ext{font-size:.75rem;opacity:.6}
+.whatsapp-float{position:fixed;bottom:28px;left:28px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:999;transition:transform .25s}
+.whatsapp-float:hover{transform:scale(1.08)}
+@media(max-width:900px){.nav-links,.nav-cta{display:none}.nav-mobile{display:block}.article-hero h1{font-size:2rem}.footer-main{grid-template-columns:1fr 1fr;gap:32px}.wrap{padding:0 24px}}
+@media(max-width:560px){.footer-main{grid-template-columns:1fr}.article-hero h1{font-size:1.7rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../portfolio.html" class="nav-logo">Dror<span>Cohen</span></a>
+    <ul class="nav-links">
+      <li><a href="../about.html">אני דרור</a></li>
+      <li><a href="../uxui.html">UX/UI</a></li>
+      <li><a href="../portfolio.html#services">מה אני עושה</a></li>
+      <li><a href="../portfolio.html#projects">פרויקטים</a></li>
+      <li><a href="../portfolio.html#testimonials">המלצות</a></li>
+      <li><a href="../blog.html" class="active">בלוג</a></li>
+      <li><a href="../contact.html">צור קשר</a></li>
+    </ul>
+    <a href="../contact.html" class="nav-cta">בואו נדבר</a>
+    <button class="nav-mobile" id="navToggle"><i class="fa fa-bars"></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../about.html">אני דרור</a>
+    <a href="../uxui.html">UX/UI</a>
+    <a href="../portfolio.html#services">מה אני עושה</a>
+    <a href="../portfolio.html#projects">פרויקטים</a>
+    <a href="../blog.html">בלוג</a>
+    <a href="../contact.html">צור קשר</a>
+  </div>
+</nav>
+<section class="article-hero grid-bg">
+  <div class="wrap">
+    <a href="../blog.html" class="article-back reveal"><i class="fa fa-arrow-right"></i> חזרה לבלוג</a>
+    <div class="article-cat reveal">Mobile UX</div>
+    <h1 class="reveal">RTL Design — אתגרים ופתרונות לעיצוב בעברית וערבית</h1>
+    <div class="article-meta reveal">
+      <span><i class="fa fa-calendar"></i> 20 ינואר 2026</span>
+      <span><i class="fa fa-clock"></i> 6 דקות קריאה</span>
+      <span><i class="fa fa-user"></i> דרור כהן</span>
+    </div>
+  </div>
+</section>
+<section class="article-content">
+  <div class="wrap">
+    <div class="article-hero-img reveal"><i class="fa-solid fa-language"></i></div>
+    <div class="article-body reveal">
+
+      <p>אחד הדברים שמפתיעים מעצבים שמגיעים מ-LTR הוא כמה RTL הוא לא רק "לאחוף הכל". זה טעות שאני רואה שוב ושוב: מישהו לוקח ממשק אנגלי, מחליף את הטקסט לעברית, מוסיף dir="rtl" — ומצפה שהכל יסתדר. זה לא עובד ככה. RTL הוא paradigm שונה, לא רק direction שונה.</p>
+      <p>עבדתי על עשרות פרויקטים בעברית, ועל כמה גם בערבית. ואני יכול לאמר בביטחון: RTL נכון דורש חשיבה שונה מהשורש, לא רק mirror. במאמר הזה אני הולך לפרק את כל מה שצריך לדעת.</p>
+
+      <h2>מה באמת שונה ב-RTL?</h2>
+      <p>הרבה אנשים חושבים ש-RTL זה רק כיוון הטקסט. זה חלק קטן מהתמונה. RTL משפיע על:</p>
+      <ul>
+        <li><strong>כיוון הפריסה:</strong> הנמצא בשמאל ב-LTR עובר לימין ב-RTL</li>
+        <li><strong>Reading gravity:</strong> עין המשתמש מתחילה מימין — אלמנטים ראשוניים שייכים לימין</li>
+        <li><strong>ניווט ו-navigation patterns</strong></li>
+        <li><strong>אייקונים ו-illustrations</strong></li>
+        <li><strong>פורמטים של תאריך, מספר טלפון, כיוון בחרת</strong></li>
+        <li><strong>טיפוגרפיה ו-mixed content</strong></li>
+      </ul>
+      <div class="article-img"><i class="fa-solid fa-right-to-left"></i></div>
+
+      <h2>מה לשנות — ומה לא לשנות</h2>
+      <p>זה אחד הדברים שהכי בלבלו אותי בהתחלה. לא כל דבר ב-RTL צריך להתהפך. הנה הכלל הגדול:</p>
+      <p><strong>הפכו: אלמנטים שקשורים לכיוון קריאה ואינטראקציה</strong></p>
+      <ul>
+        <li>Navigation drawer — מצד שמאל ב-LTR, מצד ימין ב-RTL</li>
+        <li>Back button — חץ שמאלה ב-LTR, חץ ימינה ב-RTL</li>
+        <li>Sliders ו-progress bars — מתחילים מימין ב-RTL</li>
+        <li>Text alignment — ימין ב-RTL</li>
+        <li>Form labels — מצד ימין בRTL</li>
+        <li>Breadcrumbs — מימין לשמאל ב-RTL</li>
+      </ul>
+      <p><strong>אל תהפכו: אלמנטים אוניברסליים</strong></p>
+      <ul>
+        <li>לוגואים — לרוב נשארים זהים (אלא אם הלוגו עצמו כתוב בשפה)</li>
+        <li>מספרים — תמיד LTR, גם בתוך RTL context</li>
+        <li>כפתורי play/pause — אוניברסליים, לא מתהפכים</li>
+        <li>שעון ומצפן — אוניברסליים</li>
+        <li>גרפים ו-charts — בדרך כלל לא מתהפכים (תלוי בcontextר)</li>
+      </ul>
+
+      <h2>אתגר הטיפוגרפיה: Mixed Content</h2>
+      <p>אחד האתגרים הקשים ביותר ב-RTL הוא טיפוגרפיה עם תוכן מעורב — עברית ואנגלית (או ערבית ואנגלית) באותו משפט. הדפדפן מחיל Unicode Bidirectional Algorithm (BiDi) כדי לקבוע את כיוון כל חלק בטקסט, אבל לפעמים הוא מחליט לא נכון.</p>
+      <p>דוגמה לבעיה נפוצה: "התחברו עם Facebook" — המילה Facebook תוצג בצד שמאל. זה לא מה שרצינו — רצינו שהמשפט יזרום ימין לשמאל עם Facebook מוטבע.</p>
+      <p>הפתרון ב-CSS: שימוש ב-unicode-bidi ו-direction בזהירות, ובמיוחד ב-Figma: וודאו שה-text direction מוגדר נכון לכל text layer.</p>
+      <blockquote>"הטעות הנפוצה ביותר שאני רואה: מעצב שמציג עברית עם פונט ש-not designed for Hebrew. Varela Round, Open Sans — אלה פונטים שתומכים בעברית אבל לא אופטימליים לה. השתמשו ב-Noto Sans Hebrew, Assistant, Rubik — שתוכננו מהיסוד לעברית."</blockquote>
+      <div class="article-img"><i class="fa-solid fa-font"></i></div>
+
+      <h2>אייקונים: מה להפוך ומה להשאיר</h2>
+      <p>זה תחום שמפתיע הרבה מעצבים. לא כל האייקונים צריכים mirroring ב-RTL. הכלל:</p>
+      <h3>אייקונים שכן צריכים mirroring:</h3>
+      <ul>
+        <li>חצים שמציינים כיוון ניווט (חזרה, קדימה)</li>
+        <li>אייקון של "הבא" ב-carousel</li>
+        <li>אייקון של "עטיפה" שמציין פתיחה לכיוון</li>
+        <li>Playback controls (redo/undo, forward/back)</li>
+        <li>אייקון של "list with items on the right"</li>
+      </ul>
+      <h3>אייקונים שלא צריכים mirroring:</h3>
+      <ul>
+        <li>שעון (universal)</li>
+        <li>לב / like (universal)</li>
+        <li>מגנט חיפוש (universal)</li>
+        <li>Play / Pause / Stop (universal)</li>
+        <li>מנאמנה, מצלמה, כלים אחרים שאין להם "כיוון" מובנה</li>
+      </ul>
+      <p>כלל אצבע: אם האייקון מייצג פעולה שיש לה כיוון (ניווט, זרימת מידע) — הפכו אותו. אם הוא מייצג אובייקט פיזי — לא.</p>
+
+      <h2>טיפים ל-Figma RTL Workflow</h2>
+      <p>אחרי שנים של עבודה ב-Figma על פרויקטים RTL, הנה הworkflow שלי:</p>
+      <ol>
+        <li><strong>הגדירו RTL כ-default:</strong> ב-Figma, שנו את כיוון הטקסט ב-frame ל-RTL מהתחלה. אל תחכו לסוף.</li>
+        <li><strong>קומפוננטות עם RTL variants:</strong> אם אתם בונים design system ל-two languages — צרו variants לכל קומפוננטה: LTR ו-RTL. זה עבודה מראש שחוסכת המון בהמשך.</li>
+        <li><strong>תשתמשו ב-Translate feature:</strong> Figma AI's translate — לבדיקת איך טקסט עברי/ערבי נראה בממשק.</li>
+        <li><strong>בדקו overflow:</strong> עברית לרוב ארוכה יותר מאנגלית. בדקו שמכולות לא overflow ב-edge cases.</li>
+        <li><strong>Auto Layout עם RTL:</strong> ב-Figma, Auto Layout מכבד direction. ודאו שה-wrap direction נכון.</li>
+      </ol>
+      <div class="article-img"><i class="fa-brands fa-figma"></i></div>
+
+      <h2>CSS ו-RTL: הגישה המודרנית</h2>
+      <p>למי שגם כותב קוד (או עובד קרוב עם מפתחים), חשוב להכיר את CSS Logical Properties — הגישה המודרנית ל-RTL ב-CSS:</p>
+      <p>במקום margin-left/margin-right, השתמשו ב-margin-inline-start/margin-inline-end. במקום padding-left, השתמשו ב-padding-inline-start. במקום border-right, השתמשו ב-border-inline-end. כך אותו CSS עובד נכון גם ב-LTR וגם ב-RTL ללא duplications.</p>
+
+      <h2>Accessibility ב-RTL</h2>
+      <p>RTL מביא אתגרים accessibility ייחודיים:</p>
+      <ul>
+        <li><strong>Screen readers:</strong> ודאו שה-tab order הגיוני מבחינת RTL — לא LTR "flipped"</li>
+        <li><strong>lang attribute:</strong> חשוב מאוד לציין lang="he" או lang="ar" — screen readers שונים את קריאת הטקסט</li>
+        <li><strong>Focus indicators:</strong> חצי focus ring ב-RTL צריכים להיות mirrored</li>
+        <li><strong>Color contrast ב-mixed text:</strong> בדקו ניגודיות גם ב-BiDi contexts</li>
+      </ul>
+
+      <h2>RTL Testing Checklist</h2>
+      <ol>
+        <li>כל הטקסטים מיושרים לימין בהקשר עברי/ערבי ✓</li>
+        <li>אלמנטי ניווט הוזזו לצד הנכון ✓</li>
+        <li>אייקונים עם כיוון הופכו, אייקונים אוניברסליים נשארו ✓</li>
+        <li>מספרים ותאריכים מוצגים בLTR אפילו בתוך RTL ✓</li>
+        <li>בדיקת overflow לטקסטים ארוכים ✓</li>
+        <li>Tab order הגיוני מ-RTL ✓</li>
+        <li>Animations ו-transitions מכבדים RTL ✓</li>
+        <li>בדיקה על מכשיר אמיתי, לא רק בסימולציה ✓</li>
+      </ol>
+      <div class="tag-row">
+        <span class="tag">RTL</span><span class="tag">Hebrew</span><span class="tag">Arabic</span>
+        <span class="tag">Localization</span><span class="tag">Typography</span><span class="tag">Accessibility</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer class="grid-bg">
+  <div class="wrap">
+    <div class="footer-main">
+      <div><a href="../portfolio.html" class="footer-brand">Dror<span>Cohen</span></a></div>
+      <div class="footer-col"><h4>ניווט</h4><ul>
+        <li><a href="../about.html">אני דרור</a></li>
+        <li><a href="../portfolio.html#projects">פרויקטים</a></li>
+        <li><a href="../blog.html">בלוג</a></li>
+        <li><a href="../contact.html">צור קשר</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>שירותים</h4><ul>
+        <li><a href="../uxui.html">UX/UI Design</a></li>
+        <li><a href="../portfolio.html#services">אפיון מוצר</a></li>
+        <li><a href="../portfolio.html#services">Design System</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>סושיאל</h4><ul>
+        <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
+        <li><a href="https://wa.me/972547179000" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>Made with ❤️ by Dror Cohen</p>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/972547179000" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){
+  var m=document.getElementById('mobileMenu');m.classList.toggle('open');
+  this.innerHTML=m.classList.contains('open')?'<i class="fa fa-xmark"></i>':'<i class="fa fa-bars"></i>';
+});
+</script>
+</body></html>

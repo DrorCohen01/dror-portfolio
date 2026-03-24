@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Design System — למה כל סטארטאפ צריך אחד מגיל אפס | דרור כהן</title>
+<meta name="description" content="למה כל סטארטאפ צריך Design System מהיום הראשון — מה זה אומר, מה עולה לכם בלי אחד, ואיך בונים אחד נכון.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#121212;--card:#1A1A1A;--card2:#222222;--card3:#2A2A2A;
+  --white:#FFFFFF;--gray:#888888;--orange:#F5A623;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+
+@keyframes fu{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.reveal{animation:fu .65s ease both}
+.r1{animation-delay:.09s}.r2{animation-delay:.18s}.r3{animation-delay:.27s}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo span{color:var(--gray)}
+.nav-links{display:flex;gap:28px;list-style:none;font-size:.88rem;font-weight:400}
+.nav-links a{color:var(--gray);transition:color .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--white);color:#121212;padding:10px 24px;border-radius:100px;font-family:inherit;font-weight:600;font-size:.88rem;display:inline-block;transition:opacity .25s}
+.nav-cta:hover{opacity:.85}
+.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer}
+.mobile-menu{display:none;position:fixed;top:72px;right:0;left:0;background:#1a1a1a;padding:24px 40px;border-bottom:1px solid var(--border);z-index:99;flex-direction:column;gap:20px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--gray);font-size:1rem;transition:color .2s}
+.mobile-menu a:hover{color:var(--white)}
+
+/* Grid BG */
+.grid-bg{position:relative;background-color:#111}
+.grid-bg::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.07) 1px,transparent 1px);background-size:72px 72px;pointer-events:none;z-index:0}
+.grid-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,transparent 30%,#111 100%);pointer-events:none;z-index:1}
+.grid-bg>*{position:relative;z-index:2}
+
+/* Article Hero */
+.article-hero{padding:80px 0 64px;text-align:center}
+.article-hero-meta{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px;font-size:.82rem;color:var(--gray)}
+.article-hero-meta .cat{color:var(--orange);font-weight:600;text-transform:uppercase;letter-spacing:1.5px}
+.article-hero h1{font-size:2.8rem;font-weight:900;line-height:1.2;margin-bottom:20px;max-width:800px;margin-left:auto;margin-right:auto}
+.article-hero .lead{font-size:1.1rem;color:rgba(255,255,255,0.65);max-width:620px;margin:0 auto 40px}
+
+/* Article Body */
+.article-body{max-width:760px;margin:0 auto}
+.article-body h2{font-size:1.8rem;font-weight:700;margin:56px 0 20px;line-height:1.3}
+.article-body h3{font-size:1.2rem;font-weight:600;margin:36px 0 14px}
+.article-body p{font-size:1rem;color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:20px}
+.article-body ul,.article-body ol{padding-right:24px;margin-bottom:20px}
+.article-body li{color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:8px;font-size:1rem}
+.article-body strong{color:#fff;font-weight:600}
+
+/* Article layout */
+.article-section{padding:80px 0 100px}
+.back-link{display:inline-flex;align-items:center;gap:8px;color:var(--gray);font-size:.88rem;margin-bottom:48px;transition:color .25s}
+.back-link:hover{color:var(--white)}
+.back-link i{font-size:.8rem}
+
+/* Newsletter */
+.newsletter{padding:80px 0;text-align:center}
+.newsletter-box{background:var(--card);border:1px solid var(--border2);border-radius:24px;padding:60px 48px;max-width:640px;margin:0 auto}
+.newsletter-box h2{font-size:1.8rem;font-weight:700;margin-bottom:12px}
+.newsletter-box p{color:var(--gray);font-size:.95rem;margin-bottom:32px}
+.newsletter-form{display:flex;gap:12px}
+.newsletter-form input{flex:1;background:var(--card2);border:1px solid var(--border2);border-radius:100px;padding:13px 20px;color:var(--white);font-family:inherit;font-size:.9rem;outline:none;transition:border-color .25s}
+.newsletter-form input:focus{border-color:rgba(255,255,255,.4)}
+.newsletter-form input::placeholder{color:rgba(255,255,255,.2)}
+.newsletter-form button{background:var(--white);color:#121212;border:none;padding:13px 28px;border-radius:100px;font-family:inherit;font-weight:600;font-size:.88rem;cursor:pointer;white-space:nowrap;transition:opacity .25s}
+.newsletter-form button:hover{opacity:.88}
+@media(max-width:560px){.newsletter-form{flex-direction:column}}
+
+/* Footer */
+footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-color:#111}
+.footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:48px;padding-bottom:64px}
+.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Noto Sans Display',sans-serif}
+.footer-brand span{color:rgba(255,255,255,0.4)}
+.footer-col h4{font-size:.72rem;font-weight:600;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.footer-col ul li a{color:rgba(255,255,255,0.75);font-size:.95rem;transition:color .2s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:24px 0;display:flex;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,0.35)}
+.ext{font-size:.75rem;opacity:.6}
+
+/* WhatsApp */
+.whatsapp-float{position:fixed;bottom:28px;left:28px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:999;transition:transform .25s}
+.whatsapp-float:hover{transform:scale(1.08)}
+
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none}
+  .nav-mobile{display:block}
+  .footer-main{grid-template-columns:1fr 1fr;gap:32px}
+  .article-hero h1{font-size:2rem}
+}
+@media(max-width:560px){
+  .footer-main{grid-template-columns:1fr}
+  .wrap{padding:0 20px}
+  .article-hero h1{font-size:1.7rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="../portfolio.html" class="nav-logo">Dror<span>Cohen</span></a>
+    <ul class="nav-links">
+      <li><a href="../about.html">אני דרור</a></li>
+      <li><a href="../uxui.html">UX/UI</a></li>
+      <li><a href="../portfolio.html#services">מה אני עושה</a></li>
+      <li><a href="../portfolio.html#projects">פרויקטים</a></li>
+      <li><a href="../portfolio.html#testimonials">המלצות</a></li>
+      <li><a href="../blog.html" class="active">בלוג</a></li>
+      <li><a href="../contact.html">צור קשר</a></li>
+    </ul>
+    <a href="../contact.html" class="nav-cta">בואו נדבר</a>
+    <button class="nav-mobile" id="navToggle" aria-label="תפריט"><i class="fa fa-bars"></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../about.html">אני דרור</a>
+    <a href="../uxui.html">UX/UI</a>
+    <a href="../portfolio.html#services">מה אני עושה</a>
+    <a href="../portfolio.html#projects">פרויקטים</a>
+    <a href="../portfolio.html#testimonials">המלצות</a>
+    <a href="../blog.html" class="active">בלוג</a>
+    <a href="../contact.html">צור קשר</a>
+    <a href="../contact.html" style="background:var(--white);color:#121212;padding:12px 24px;border-radius:100px;font-weight:600;text-align:center">בואו נדבר</a>
+  </div>
+</nav>
+
+<!-- Article Hero -->
+<section class="article-hero grid-bg">
+  <div class="wrap">
+    <div class="article-hero-meta reveal">
+      <span class="cat">Design System</span>
+      <span>•</span>
+      <span>20 פברואר 2026</span>
+      <span>•</span>
+      <span><i class="fa-solid fa-clock"></i> 7 דקות קריאה</span>
+    </div>
+    <h1 class="reveal r1">Design System — למה כל סטארטאפ צריך אחד מגיל אפס</h1>
+    <p class="lead reveal r2">כשבונים Design System מוקדם חוסכים שבועות של עבודה בהמשך. איך מתחילים נכון, מה הטעויות שכדאי להימנע מהן, ואיך מוכרים את הרעיון להנהלה.</p>
+  </div>
+</section>
+
+<!-- Article Content -->
+<section class="article-section">
+  <div class="wrap">
+    <a href="../blog.html" class="back-link"><i class="fa-solid fa-arrow-right"></i> חזרה לבלוג</a>
+
+    <!-- Hero Image -->
+    <div class="article-img" style="background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:0 0 64px;border:1px solid rgba(255,255,255,0.08)">
+      <i class="fa-solid fa-layer-group" style="font-size:3rem;color:rgba(255,255,255,0.15)"></i>
+    </div>
+
+    <div class="article-body">
+
+      <p>בשנת 2017, צוות העיצוב של Airbnb שישב על 30 מעצבים וכמאה מפתחים גילה משהו מדאיג: הם ספרו מעל 400 גרסאות שונות של כפתורים בקוד הפרודקשן שלהם. ארבע מאות. לא ארבע — ארבע מאות. כל מפתח שבנה משהו חדש פשוט יצר כפתור חדש. כל עמוד נראה קצת אחרת. כל רכיב נגע בצבע מעט שונה. המוצר שלהם, שהגיע לאחד ממותגי הטכנולוגיה הכי מוכרים בעולם, נראה כאילו הורכב מאלף חתיכות שונות.</p>
+
+      <p>זה לא אירע בשל חוסר מקצועיות. זה אירע בגלל שלא היה להם Design System. וזה בדיוק מה שקורה בכל סטארטאפ שגדל מהר בלי שיטה.</p>
+
+      <p>אם אתם בונים מוצר דיגיטלי — בין אם אפליקציה, פלטפורמה SaaS, אתר E-commerce, או כל מוצר טכנולוגי אחר — ואין לכם Design System, אתם עובדים קשה יותר ממה שצריך. כל יום שעובר בלי אחד הוא יום שמצטבר חוב. ובהמשך המאמר אסביר בדיוק מדוע.</p>
+
+      <h2>מה זה בכלל Design System?</h2>
+
+      <p>לפני שנצלול לפרטים, חשוב להבין מה Design System הוא — ומה הוא לא. הרבה אנשים חושבים ש-Design System זה "ספריית קומפוננטים ב-Figma". זה לא. Design System הוא הרבה יותר מזה.</p>
+
+      <p><strong>Design System הוא השפה המשותפת של המוצר שלכם.</strong> זו מסגרת עבודה שמגדירה לא רק איך דברים נראים, אלא גם איך הם מתנהגים, איך קוראים להם, ומתי להשתמש בהם.</p>
+
+      <h3>Design Tokens — הבסיס של הכול</h3>
+
+      <p>Design Tokens הם ערכים בסיסיים שמגדירים את ה-DNA החזותי של המוצר שלכם. הם כוללים:</p>
+
+      <ul>
+        <li><strong>צבעים:</strong> לא סתם "כחול" — אלא כחול ראשי (#0066FF), כחול פעיל (#0052CC), כחול רקע (#E8F0FE). כל גוון צבע עם שם ומטרה ברורה.</li>
+        <li><strong>טיפוגרפיה:</strong> גדלי פונט, משקלים, גובהי שורה, רווחים בין אותיות — הכל מוגדר ומתועד.</li>
+        <li><strong>רווחים:</strong> מרחקים ומרווחים לפי סקאלה קבועה (4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px).</li>
+        <li><strong>צללים ועיגולי פינות:</strong> עקביות ויזואלית בכל הממשק.</li>
+        <li><strong>תנועה ואנימציה:</strong> זמני מעבר, עקומות אנימציה, סוגי תנועה.</li>
+      </ul>
+
+      <h3>Components — אבני הבניין</h3>
+
+      <p>Components הם רכיבי ממשק מוכנים לשימוש. כפתורים, שדות טקסט, תפריטים, כרטיסיות, מודלים, טבלאות, טאבים, תגיות, התרעות — כל אבן בניין ויזואלית שהמוצר שלכם יצטרך. כל קומפוננט מגיע עם:</p>
+
+      <ul>
+        <li>מצבים שונים (hover, active, disabled, loading, error)</li>
+        <li>גרסאות שונות (primary, secondary, ghost, destructive)</li>
+        <li>גדלים שונים (small, medium, large)</li>
+        <li>תיעוד שמסביר מתי ואיך להשתמש בכל אחד</li>
+      </ul>
+
+      <h3>Patterns — דפוסי UX חוזרים</h3>
+
+      <p>Patterns הם פתרונות מוכחים לאתגרי UX נפוצים. איך מציגים טפסים ארוכים? איך מטפלים בשגיאות? מה קורה כשאין תוכן (empty states)? איך מעצבים onboarding? Patterns שונים מ-Components כי הם עוסקים ב-flow ובחוויה, לא רק ב-UI.</p>
+
+      <h3>Documentation — מה שעושה את ההבדל</h3>
+
+      <p>זה החלק שרוב הסטארטאפים מדלגים עליו — ואחר כך בוכים. תיעוד טוב הוא מה שהופך Design System מ"כמה קבצי Figma" למשהו שהצוות כולו יכול להשתמש בו. התיעוד צריך לכלול: למה הקומפוננט קיים, מתי להשתמש בו, מתי לא להשתמש בו, דוגמאות קוד, ו-accessibility guidelines.</p>
+
+      <div class="article-img" style="background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid rgba(255,255,255,0.08)">
+        <i class="fa-solid fa-image" style="font-size:3rem;color:rgba(255,255,255,0.15)"></i>
+      </div>
+
+      <h2>המחיר האמיתי של חיים בלי Design System</h2>
+
+      <p>בוא נדבר כסף. כי בסוף, זה הטיעון שמשכנע הנהלה.</p>
+
+      <blockquote style="border-right:4px solid #F5A623;padding:20px 28px;margin:40px 0;background:#1a1a1a;border-radius:0 12px 12px 0;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.85)">
+        "כל שעה שמעצב מבלה בעיצוב מחדש של קומפוננט שכבר קיים היא שעה שבוזבזה. Design System הופך שעות לדקות."
+      </blockquote>
+
+      <h3>1. חוסר עקביות — שורש כל רע</h3>
+
+      <p>כשאין Design System, כל מעצב בצוות עובד לפי הבנתו שלו. אחד מעצב כפתורים בגובה 40px, השני ב-44px, השלישי ב-36px. אחד משתמש ב-border-radius של 8px, השני ב-12px, השלישי ב-4px. בכל sprint החדש, הממשק הופך פחות עקבי. המשתמשים מרגישים את זה — גם אם הם לא מצליחים לנסח בדיוק מה מפריע להם. הם פשוט מרגישים שמשהו לא "נכון".</p>
+
+      <h3>2. פיתוח איטי יותר — הרבה יותר איטי</h3>
+
+      <p>ללא Design System, כל מפתח בונה קומפוננטים מחדש. הם כותבים CSS חדש, JavaScript חדש, לוגיקה חדשה — לכפתורים, לטפסים, לטבלאות. כל פיצ'ר חדש לוקח 30-50% יותר זמן מפני שהיסודות לא קיימים. הנתון הזה לא תיאורטי — הוא מגובה במחקרים של Nielsen Norman Group ו-Google.</p>
+
+      <h3>3. חוב טכני שמתרבה</h3>
+
+      <p>כל קומפוננט שנכתב ידנית הוא עוד קוד שצריך לתחזק. בחצי שנה יש לכם עשרות גרסאות של "כפתור" בקוד. כשמחליטים לשנות את הצבע הראשי, צריך לעדכן אותו בעשרות מקומות. כשיש באג בכפתור, צריך לתקן אותו בעשרות גרסאות שונות. זה לא רק בזבוז זמן — זה סיכון תפעולי.</p>
+
+      <h3>4. Onboarding איטי לעובדים חדשים</h3>
+
+      <p>כשמצטרף מעצב או מפתח חדש לצוות, כמה זמן לוקח לו להבין "איך אנחנו עושים דברים פה"? בלי Design System — שבועות. עם Design System טוב — ימים. ככל שהצוות גדל, ה-ROI הזה הולך וגדל.</p>
+
+      <h3>5. עיצוב מחדש עולה פי עשרה</h3>
+
+      <p>כשמחליטים לעדכן את ה-brand (צבעים, פונט, מרכיבים ויזואליים), בלי Design System זה פרויקט ענק שלוקח חודשים. עם Design System מסודר — עדכון ה-tokens מסנן אוטומטית לכל הממשק. זה עשוי לקחת שעות במקום חודשים.</p>
+
+      <div class="article-img" style="background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid rgba(255,255,255,0.08)">
+        <i class="fa-solid fa-image" style="font-size:3rem;color:rgba(255,255,255,0.15)"></i>
+      </div>
+
+      <h2>איך בונים Design System מאפס — המדריך המעשי</h2>
+
+      <p>אני אומר לכם כבר עכשיו: אין דרך "נכונה" אחת. אבל יש עקרונות שעובדים. בניתי Design Systems לסטארטאפים עם 5 עובדים ולחברות עם 500 עובדים — העקרונות הם אותם עקרונות.</p>
+
+      <h3>שלב 1 — Audit — ראו מה יש לכם</h3>
+
+      <p>לפני שבונים משהו חדש, צריך להבין מה קיים. ה-Audit הוא תהליך שבו מתעדים את כל מה שקיים כרגע בממשק. צרו Figma file חדש וצלמו screenshots של כל עמוד, כל קומפוננט, כל מצב. עכשיו תראו כמה גרסאות שונות יש לכם של כל רכיב. המספר הזה יהיה מפתיע — ולא לטובה.</p>
+
+      <h3>שלב 2 — Atomic Design כמסגרת חשיבה</h3>
+
+      <p>Brad Frost פיתח בשנת 2013 את שיטת Atomic Design, וזו עדיין אחת השיטות הטובות ביותר לחשוב על Design Systems. השיטה מחלקת את ממשק המשתמש לחמישה רמות:</p>
+
+      <ul>
+        <li><strong>Atoms (אטומים):</strong> האלמנטים הקטנים ביותר — כפתור בודד, שדה טקסט, תגית, אייקון.</li>
+        <li><strong>Molecules (מולקולות):</strong> שילוב של מספר אטומים — שדה חיפוש עם כפתור, כרטיס עם כותרת וכפתור.</li>
+        <li><strong>Organisms (אורגניזמים):</strong> קבוצות מורכבות של מולקולות — header, footer, כרטיס מוצר שלם.</li>
+        <li><strong>Templates (תבניות):</strong> פריסת עמוד כללית ללא תוכן אמיתי.</li>
+        <li><strong>Pages (עמודים):</strong> התבנית עם תוכן אמיתי.</li>
+      </ul>
+
+      <h3>שלב 3 — קביעת Design Tokens</h3>
+
+      <p>התחילו עם הבסיס. הגדירו את ה-tokens הבאים לפני שגעים בקומפוננטים:</p>
+
+      <ul>
+        <li><strong>Color Palette:</strong> צבעי brand, צבעי state (success, error, warning, info), צבעי ניטרל (backgrounds, borders, text).</li>
+        <li><strong>Typography Scale:</strong> בחרו פונט אחד או שניים, הגדירו 5-7 גדלי פונט עם שמות (display, heading-1, heading-2, body-large, body, caption, label).</li>
+        <li><strong>Spacing Scale:</strong> השתמשו בסיסי 8 (8, 16, 24, 32, 48, 64, 96, 128).</li>
+        <li><strong>Border Radius:</strong> 2-3 ערכים לכל היותר (small, medium, large, pill).</li>
+        <li><strong>Shadows:</strong> 3-4 רמות עומק (none, low, medium, high).</li>
+      </ul>
+
+      <blockquote style="border-right:4px solid #F5A623;padding:20px 28px;margin:40px 0;background:#1a1a1a;border-radius:0 12px 12px 0;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.85)">
+        "Design Tokens הם כמו DNA. הם מוגדרים פעם אחת, ומשפיעים על הכל. עדכנו אותם — הכל מתעדכן."
+      </blockquote>
+
+      <h3>שלב 4 — ארגון ב-Figma</h3>
+
+      <p>ארגון הקבצים ב-Figma הוא קריטי. אני ממליץ על מבנה הבא:</p>
+
+      <ul>
+        <li><strong>📁 Foundation:</strong> Tokens, Typography, Colors, Spacing, Icons</li>
+        <li><strong>📁 Components:</strong> מחולק לקטגוריות (Buttons, Forms, Navigation, Feedback, Data Display)</li>
+        <li><strong>📁 Patterns:</strong> Onboarding, Empty States, Error States, Forms</li>
+        <li><strong>📁 Templates:</strong> עמודי אפליקציה כלליים</li>
+        <li><strong>📁 Documentation:</strong> Guidelines, Do's and Don'ts</li>
+      </ul>
+
+      <p>השתמשו ב-Figma Variables לניהול ה-tokens — זה מאפשר dark mode, theming, ועדכונים גלובליים בקלות. Figma Component Properties מאפשרות ליצור קומפוננטים גמישים עם props, בדיוק כמו בקוד.</p>
+
+      <h3>שלב 5 — Naming Conventions</h3>
+
+      <p>השמות חשובים לא פחות מהויזואליות. קומפוננטים צריכים שמות ברורים, עקביים, וניתנים לחיפוש. הנה שיטה שעובדת:</p>
+
+      <ul>
+        <li><strong>Semantic names לצבעים:</strong> לא "Blue-500" אלא "color-primary-default". לא "Gray-100" אלא "color-background-subtle".</li>
+        <li><strong>BEM-style לקומפוננטים:</strong> Button/Primary/Large, Card/Default/Elevated</li>
+        <li><strong>עקביות בין Figma לקוד:</strong> אם ב-Figma קוראים לו "Button-Primary-Large", בקוד צריך להיות "ButtonPrimaryLarge" או "button-primary-lg".</li>
+      </ul>
+
+      <div class="article-img" style="background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid rgba(255,255,255,0.08)">
+        <i class="fa-solid fa-image" style="font-size:3rem;color:rgba(255,255,255,0.15)"></i>
+      </div>
+
+      <h2>הכלים — Storybook, Zeroheight, ועוד</h2>
+
+      <p>אחרי שיש לכם את ה-Design System ב-Figma, השאלה הבאה היא: איך מתחברים עם הפיתוח? איך הקומפוננטים עוברים מ-Figma לקוד ונשארים מסונכרנים?</p>
+
+      <h3>Storybook — המקום שבו עיצוב נפגש עם קוד</h3>
+
+      <p>Storybook הוא כלי open-source שמאפשר לפתח ולתעד קומפוננטי UI בבידוד. הוא יוצר גלריה אינטראקטיבית של כל הקומפוננטים עם כל המצבים שלהם. כל מפתח יכול לראות את הקומפוננט בפעולה, לשנות את ה-props שלו, ולהבין איך הוא עובד. Storybook הוא ה-"source of truth" לצד הפיתוח.</p>
+
+      <h3>Zeroheight — תיעוד ה-Design System</h3>
+
+      <p>Zeroheight מתחבר ל-Figma ויוצר אתר תיעוד אוטומטי. כשמעדכנים קומפוננט ב-Figma, התיעוד מתעדכן אוטומטית. זה מצוין עבור צוותים שצריכים שמעצבים, מפתחים, ו-PM-ים יוכלו להסתכל על אותו מקום ולהבין את ה-Design System.</p>
+
+      <h3>Figma Dev Mode</h3>
+
+      <p>ב-2023 Figma השיקה Dev Mode — מצב מיוחד שמאפשר למפתחים לקרוא specifications ישירות מ-Figma בלי להסתמך על מעצב. Dev Mode מציג ממדים, צבעים, spacing, ואפילו קוד CSS אוטומטי. כשה-Design System מוגדר נכון עם Variables ו-Components, Dev Mode הופך ל-handoff tool רב עוצמה.</p>
+
+      <h3>Tokens Studio for Figma</h3>
+
+      <p>Tokens Studio (לשעבר Figma Tokens) הוא Plugin שמאפשר ניהול Design Tokens מתקדם ב-Figma, כולל ייצוא ל-JSON ואינטגרציה עם Style Dictionary לצד הפיתוח. אם אתם רוצים ש-tokens יהיו מסונכרנים בין Figma לקוד — זה הכלי.</p>
+
+      <h2>איך מוכרים Design System להנהלה</h2>
+
+      <p>זה, לדעתי, החלק הכי קשה. לא טכנית — אלא אנושית. הנהלה רואה Design System כ"השקעה שלוקחת זמן עכשיו" ולא כ"חיסכון עצום בעתיד". הנה הטיעונים שעובדים:</p>
+
+      <h3>דברו בשפה של כסף ומהירות</h3>
+
+      <p>אל תגידו "אנחנו צריכים Design System כי זה best practice". תגידו: "כרגע כל פיצ'ר לוקח לנו X שעות עיצוב. עם Design System, פיצ'רים חדשים יקחו 40% פחות זמן. בשלושה חודשים נחזיר את ההשקעה, ומכאן — רק רווח."</p>
+
+      <h3>הראו את ה-inconsistency הקיימת</h3>
+
+      <p>צרו Figma board שמציג side-by-side את כל הגרסאות השונות של אותו קומפוננט שקיים כרגע במוצר. ארבעים גרסאות של כפתור. עשרים גרסאות של header. כשרואים את זה ויזואלית — ה-argument מוכיח את עצמו.</p>
+
+      <h3>התחילו קטן, הראו value מהיר</h3>
+
+      <p>אל תבואו עם תכנית שנתית. בואו עם Sprint של שבועיים: "בשבועיים נבנה Foundation — Colors, Typography, ו-5 קומפוננטים בסיסיים. כבר אחרי השבועיים הצוות יכול להשתמש בהם." הראו quick wins — וה-buy-in יגיע.</p>
+
+      <div class="article-img" style="background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid rgba(255,255,255,0.08)">
+        <i class="fa-solid fa-image" style="font-size:3rem;color:rgba(255,255,255,0.15)"></i>
+      </div>
+
+      <h2>Design Systems של חברות גדולות — מה אפשר ללמוד</h2>
+
+      <p>כדאי להסתכל על מה שחברות גדולות בנו — לא לחקות אותן (הן בנו מה שמתאים להן), אלא ללמוד מהעקרונות.</p>
+
+      <h3>Atlassian Design System</h3>
+
+      <p>Atlassian (יוצרי Jira ו-Confluence) בנו Design System שנקרא Atlassian Design System (ADS). מה שמייחד אותו: תיעוד מעמיק עם accessibility guidelines לכל קומפוננט, ניהול tokens מסודר עם semantic naming, ו-Component API מוקפד שמאפשר גמישות. האתר שלהם (atlassian.design) הוא דוגמה מעולה לאיך Design System documentation צריך להיראות.</p>
+
+      <h3>Google Material Design</h3>
+
+      <p>Material Design של גוגל הוא כנראה Design System הציבורי הנפוץ ביותר בעולם. מה שהופך אותו למיוחד: הוא לא רק defines components, אלא defines behavior. הוא מסביר את העקרונות מאחורי כל החלטה, כך שמפתחים ומעצבים יכולים ליישם אותם גם במצבים שה-system לא כיסה. Material 3 (גרסה הנוכחית) הוסיפה Dynamic Color — יכולת ל-theme אוטומטי לפי wallpaper המשתמש.</p>
+
+      <h3>Airbnb DLS</h3>
+
+      <p>אחרי משבר הכפתורים שציינתי בפתיחה, Airbnb בנו Design Language System (DLS) שהפך ל-benchmark בתעשייה. החידוש שלהם: הם כתבו כלים שמייצרים אוטומטית קוד (iOS, Android, Web) ישירות מה-Design System. כלי ה-React Sketchapp שלהם, שיצאו בקוד פתוח, שינו את כל התעשייה.</p>
+
+      <blockquote style="border-right:4px solid #F5A623;padding:20px 28px;margin:40px 0;background:#1a1a1a;border-radius:0 12px 12px 0;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.85)">
+        "Design System טוב הוא לא מוצר — הוא מוצר של מוצר. הוא צריך product manager, roadmap, ו-versioning כמו כל מוצר אחר."
+      </blockquote>
+
+      <h2>איך מתחזקים ומפתחים Design System לאורך זמן</h2>
+
+      <p>הבנייה היא חלק ממשי אחד. התחזוקה היא האתגר האמיתי. Design Systems מתים לא בגלל שנבנו רע — הם מתים בגלל שאף אחד לא לקח בעלות.</p>
+
+      <h3>הגדירו בעלות</h3>
+
+      <p>בסטארטאפ קטן, זה יכול להיות מעצב ומפתח שמחלקים את האחריות. בחברה גדולה יותר — Platform Team מוקדש. אבל חייב להיות מישהו שאחראי. בלי זה, ה-system מסתיים בדיוק איפה שהתחיל.</p>
+
+      <h3>Versioning וה-Changelog</h3>
+
+      <p>כמו כל ספרייה תוכנה, Design System צריך versioning. כשמשנים קומפוננט — צריך לדעת מה השתנה, מדוע, ומה ה-impact על הצוות. Semantic Versioning (Major.Minor.Patch) עובד טוב: שינוי breaking = Major, פיצ'ר חדש = Minor, bug fix = Patch.</p>
+
+      <h3>Design System Review Cadence</h3>
+
+      <p>קבעו meeting קבוע — פעם בשבועיים או פעם בחודש — שבו הצוות מסתכל על Design System יחד. מה עובד? מה לא מספיק? אילו צרכים חדשים עלו? Design System הוא אורגניזם חי שצריך לגדול עם המוצר.</p>
+
+      <h3>קבלת תרומות מהצוות</h3>
+
+      <p>Design System לא צריך להיות owned רק על ידי צוות Platform. כשמפתחים ומעצבים אחרים בונים פיצ'ר חדש ויוצרים קומפוננט שלא קיים ב-system, יש תהליך ברור לאיך הקומפוננט הזה עולה ל-system. זה מגביר ownership ומהיר את הצמיחה של ה-system.</p>
+
+      <h2>טעויות נפוצות — מה לא לעשות</h2>
+
+      <p>אחרי שעזרתי לבנות Design Systems בעשרות ארגונים, הנה הטעויות שאני רואה שוב ושוב:</p>
+
+      <h3>טעות 1 — לבנות Design System מושלם לפני שמשתמשים בו</h3>
+
+      <p>Perfect is the enemy of good. ראיתי צוותים שבילו שלושה חודשים בלבנות Design System מושלם לפני שמפתח אחד השתמש בו. תתחילו עם 10 קומפוננטים בסיסיים ותוציאו אותם לשימוש. הלמידה מהשימוש האמיתי שווה יותר מכל תכנון תיאורטי.</p>
+
+      <h3>טעות 2 — Design System ב-Figma בלבד</h3>
+
+      <p>Design System שקיים רק ב-Figma הוא לא Design System — הוא Component Library. כדי שהוא יהיה effective, הוא חייב להיות implemented גם בקוד. אחרת, יש gap בין מה שמעצבים רואים למה שמפתחים בונים.</p>
+
+      <h3>טעות 3 — Naming שלא קשור לסמנטיקה</h3>
+
+      <p>צבע שנקרא "Blue-500" עובד כשיש רק כחול אחד. אבל מה קורה כשמחליפים את הכחול לסגול? כל השמות שגויים. תמיד תשתמשו ב-semantic names: "color-primary", "color-success", "color-background-subtle".</p>
+
+      <h3>טעות 4 — Design System שמסתיר גמישות</h3>
+
+      <p>Design System שמגביל יותר מדי הופך לבעיה. מעצבים ומפתחים צריכים להרגיש שה-system עוזר להם — לא כולא אותם. הגדירו בבירור: מה "in-system" (חייבים להשתמש), מה "near-system" (אפשר להתאים), ומה "out-of-system" (כל דבר הולך). זה שומר על גמישות ועל עקביות.</p>
+
+      <h3>טעות 5 — לא מתחזקים</h3>
+
+      <p>Design System שלא מתחזק מאבד relevance תוך חצי שנה. יתחילו להופיע קומפוננטים "חוץ מהסיסטם" כי ה-system לא עונה על הצרכים. אנשים יפסיקו להשתמש בו. ואז הוא מת. תחזוקה לא חייבת להיות יקרה — שעה שבועית של מעצב ומפתח יכולה לשמור system חי ורלוונטי.</p>
+
+      <div class="article-img" style="background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid rgba(255,255,255,0.08)">
+        <i class="fa-solid fa-image" style="font-size:3rem;color:rgba(255,255,255,0.15)"></i>
+      </div>
+
+      <h2>סיכום — Design System הוא השקעה, לא הוצאה</h2>
+
+      <p>אני יודע שאמרתי הרבה. אז הנה ה-TL;DR:</p>
+
+      <ul>
+        <li><strong>Design System הוא השפה המשותפת</strong> של העיצוב והפיתוח שלכם — tokens, components, patterns, documentation.</li>
+        <li><strong>בלי Design System</strong> אתם מבזבזים 30-50% מזמן הפיתוח על בנייה חוזרת של אותם דברים, ויוצרים מוצר לא עקבי שמשתמשים לא אוהבים.</li>
+        <li><strong>כדי לבנות אחד נכון</strong> — התחילו עם audit, הגדירו tokens, השתמשו ב-Atomic Design, ארגנו נכון ב-Figma, וחברו לקוד עם Storybook.</li>
+        <li><strong>כדי לשרוד לאורך זמן</strong> — הגדירו ownership, versioning, וקדם-קבוע review cadence.</li>
+        <li><strong>המחיר האמיתי</strong> הוא לא בנייה של Design System — המחיר האמיתי הוא לא לבנות אחד.</li>
+      </ul>
+
+      <p>אם יש לכם שאלות על Design System, או אם אתם רוצים לבנות אחד לאורגניזציה שלכם — <a href="../contact.html" style="color:#F5A623;text-decoration:underline">בואו נדבר</a>. בניתי Design Systems לעשרות חברות, ואשמח לעזור גם לכם.</p>
+
+      <p>Design System טוב הוא לא luxury — הוא necessity. ואת הנקודה הזו, בשנת 2026, אין כמעט צוות טכנולוגי שיכול להרשות לעצמו להתווכח עליה.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <div class="wrap">
+    <div class="newsletter-box reveal">
+      <h2>רוצים לקבל תוכן כזה ישירות למייל?</h2>
+      <p>אחת לשבועיים — טיפ, תובנה או case study קצר. ללא ספאם, רק תוכן שווה.</p>
+      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="האימייל שלכם" required>
+        <button type="submit">הרשמה</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="grid-bg">
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <a href="../portfolio.html" class="footer-brand">Dror<span>Cohen</span></a>
+      </div>
+      <div class="footer-col">
+        <h4>ניווט</h4>
+        <ul>
+          <li><a href="../about.html">אני דרור</a></li>
+          <li><a href="../portfolio.html#services">מה אני עושה</a></li>
+          <li><a href="../portfolio.html#projects">פרויקטים</a></li>
+          <li><a href="../portfolio.html#testimonials">המלצות</a></li>
+          <li><a href="../blog.html">בלוג</a></li>
+          <li><a href="../contact.html">צור קשר</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>שירותים</h4>
+        <ul>
+          <li><a href="../uxui.html">UX/UI Design</a></li>
+          <li><a href="../portfolio.html#services">אפיון מוצר</a></li>
+          <li><a href="../portfolio.html#services">Design System</a></li>
+          <li><a href="../portfolio.html#services">מחקר משתמשים</a></li>
+          <li><a href="../portfolio.html#services">Branding</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>סושיאל</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
+          <li><a href="https://wa.me/972547179000" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>Made with ❤️ by Dror Cohen</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/972547179000" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){
+  var m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+  this.innerHTML=m.classList.contains('open')
+    ?'<i class="fa fa-xmark"></i>'
+    :'<i class="fa fa-bars"></i>';
+});
+function subscribeNewsletter(e){
+  e.preventDefault();
+  var btn=e.target.querySelector('button');
+  btn.textContent='תודה! ✓';
+  btn.style.background='#4CAF50';
+  btn.style.color='#fff';
+  e.target.querySelector('input').value='';
+  setTimeout(function(){
+    btn.textContent='הרשמה';
+    btn.style.background='';
+    btn.style.color='';
+  },3000);
+}
+</script>
+</body>
+</html>

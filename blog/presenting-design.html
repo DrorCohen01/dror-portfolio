@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>איך מציגים עיצוב ללקוח — שיטה שעובדת תמיד — דרור כהן | UX/UI Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#121212;--card:#1A1A1A;--white:#FFFFFF;--gray:#888888;--orange:#F5A623;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14)}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+@keyframes fu{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.reveal{animation:fu .65s ease both}
+nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo span{color:var(--gray)}
+.nav-links{display:flex;gap:28px;list-style:none;font-size:.88rem}
+.nav-links a{color:var(--gray);transition:color .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--white);color:#121212;padding:10px 24px;border-radius:100px;font-weight:600;font-size:.88rem;display:inline-block;transition:opacity .25s}
+.nav-cta:hover{opacity:.85}
+.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer}
+.mobile-menu{display:none;position:fixed;top:72px;right:0;left:0;background:#1a1a1a;padding:24px 40px;border-bottom:1px solid var(--border);z-index:99;flex-direction:column;gap:20px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--gray);font-size:1rem;transition:color .2s}
+.mobile-menu a:hover{color:var(--white)}
+.grid-bg{position:relative;background-color:#111}
+.grid-bg::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.07) 1px,transparent 1px);background-size:72px 72px;pointer-events:none;z-index:0}
+.grid-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,transparent 30%,#111 100%);pointer-events:none;z-index:1}
+.grid-bg>*{position:relative;z-index:2}
+.article-hero{padding:80px 0 64px;text-align:center}
+.article-back{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--gray);margin-bottom:32px;transition:color .2s}
+.article-back:hover{color:var(--white)}
+.article-cat{display:inline-block;font-size:.78rem;font-weight:600;color:var(--orange);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
+.article-hero h1{font-size:2.8rem;font-weight:900;line-height:1.2;margin-bottom:24px;max-width:760px;margin-left:auto;margin-right:auto}
+.article-meta{display:flex;justify-content:center;align-items:center;gap:24px;font-size:.85rem;color:var(--gray)}
+.article-meta span{display:flex;align-items:center;gap:6px}
+.article-content{padding:0 0 100px}
+.article-hero-img{aspect-ratio:21/9;background:#1a1a1a;border-radius:20px;margin:48px 0;border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.article-hero-img i{font-size:4rem;color:rgba(255,255,255,0.1)}
+.article-body{max-width:760px;margin:0 auto}
+.article-body h2{font-size:1.8rem;font-weight:700;margin:56px 0 20px;line-height:1.3}
+.article-body h3{font-size:1.2rem;font-weight:600;margin:36px 0 14px;color:rgba(255,255,255,0.9)}
+.article-body p{font-size:1rem;color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:20px}
+.article-body ul,.article-body ol{padding-right:24px;margin-bottom:20px}
+.article-body li{color:rgba(255,255,255,0.82);line-height:1.85;margin-bottom:10px;font-size:1rem}
+.article-body strong{color:#fff;font-weight:600}
+.article-img{background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid var(--border)}
+.article-img i{font-size:3rem;color:rgba(255,255,255,0.12)}
+blockquote{border-right:4px solid var(--orange);padding:20px 28px;margin:40px 0;background:#1a1a1a;border-radius:0 12px 12px 0;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.85)}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:40px 0}
+.tag{background:#222;border:1px solid var(--border2);padding:6px 14px;border-radius:100px;font-size:.8rem;color:var(--gray)}
+footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111}
+.footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:48px;padding-bottom:64px}
+.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Noto Sans Display',sans-serif}
+.footer-brand span{color:rgba(255,255,255,0.4)}
+.footer-col h4{font-size:.72rem;font-weight:600;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.footer-col ul li a{color:rgba(255,255,255,0.75);font-size:.95rem;transition:color .2s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid var(--border);padding:24px 0;display:flex;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,0.35)}
+.ext{font-size:.75rem;opacity:.6}
+.whatsapp-float{position:fixed;bottom:28px;left:28px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;box-shadow:0 4px 20px rgba(0,0,0,0.3);z-index:999;transition:transform .25s}
+.whatsapp-float:hover{transform:scale(1.08)}
+@media(max-width:900px){.nav-links,.nav-cta{display:none}.nav-mobile{display:block}.article-hero h1{font-size:2rem}.footer-main{grid-template-columns:1fr 1fr;gap:32px}.wrap{padding:0 24px}}
+@media(max-width:560px){.footer-main{grid-template-columns:1fr}.article-hero h1{font-size:1.7rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../portfolio.html" class="nav-logo">Dror<span>Cohen</span></a>
+    <ul class="nav-links">
+      <li><a href="../about.html">אני דרור</a></li>
+      <li><a href="../uxui.html">UX/UI</a></li>
+      <li><a href="../portfolio.html#services">מה אני עושה</a></li>
+      <li><a href="../portfolio.html#projects">פרויקטים</a></li>
+      <li><a href="../portfolio.html#testimonials">המלצות</a></li>
+      <li><a href="../blog.html" class="active">בלוג</a></li>
+      <li><a href="../contact.html">צור קשר</a></li>
+    </ul>
+    <a href="../contact.html" class="nav-cta">בואו נדבר</a>
+    <button class="nav-mobile" id="navToggle"><i class="fa fa-bars"></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../about.html">אני דרור</a>
+    <a href="../uxui.html">UX/UI</a>
+    <a href="../portfolio.html#services">מה אני עושה</a>
+    <a href="../portfolio.html#projects">פרויקטים</a>
+    <a href="../blog.html">בלוג</a>
+    <a href="../contact.html">צור קשר</a>
+  </div>
+</nav>
+<section class="article-hero grid-bg">
+  <div class="wrap">
+    <a href="../blog.html" class="article-back reveal"><i class="fa fa-arrow-right"></i> חזרה לבלוג</a>
+    <div class="article-cat reveal">Process</div>
+    <h1 class="reveal">איך מציגים עיצוב ללקוח — שיטה שעובדת תמיד</h1>
+    <div class="article-meta reveal">
+      <span><i class="fa fa-calendar"></i> 10 ינואר 2026</span>
+      <span><i class="fa fa-clock"></i> 5 דקות קריאה</span>
+      <span><i class="fa fa-user"></i> דרור כהן</span>
+    </div>
+  </div>
+</section>
+<section class="article-content">
+  <div class="wrap">
+    <div class="article-hero-img reveal"><i class="fa-solid fa-presentation-screen"></i></div>
+    <div class="article-body reveal">
+
+      <p>אחרי אלפי שעות של פגישות עם לקוחות, למדתי אמת אחת שהיא counter-intuitive לכל מעצב שמתחיל: עיצוב מעולה שמוצג גרוע — נדחה. עיצוב סביר שמוצג מעולה — מתקבל. וזה לא כי לקוחות שטחיים. זה כי הצגה היא חלק בלתי נפרד מהמוצר.</p>
+      <p>המאמר הזה הוא תמצית של מה שלמדתי — תהליך שעובד איתי בכל פרויקט, עם כל סוג לקוח.</p>
+
+      <h2>למה רוב הפרזנטציות Design נכשלות</h2>
+      <p>שגיאות נפוצות שאני רואה שוב ושוב:</p>
+      <ul>
+        <li><strong>קפיצה ישר לvisuals:</strong> מראים מסכים לפני שהלקוח מבין את הבעיה שנפתרה</li>
+        <li><strong>הצגת הכל:</strong> 47 מסכים בפגישה של 45 דקות — מוח אנושי לא יכול לעכל</li>
+        <li><strong>הגנה על העיצוב:</strong> כשלקוח מעיר הערה, מעצב הופך defensive במקום סקרני</li>
+        <li><strong>חסר rationale:</strong> "בחרנו כחול" — בלי לספר למה כחול ולא ירוק</li>
+        <li><strong>לא מדברים שפת הלקוח:</strong> מעצב מדבר על "visual hierarchy" כשהלקוח רוצה לדעת "האם זה יוביל ליותר sales"</li>
+      </ul>
+      <blockquote>"הפרזנטציה הכי גרועה שראיתי הייתה מעצב מצוין שהציג עיצוב מדהים — ואיבד את הלקוח אחרי 10 דקות כי לא בנה context."</blockquote>
+      <div class="article-img"><i class="fa-solid fa-person-chalkboard"></i></div>
+
+      <h2>המבנה שעובד: 5 שלבים</h2>
+      <h3>שלב 1: הזכירו למה אנחנו כאן (2-3 דקות)</h3>
+      <p>לפני שמציגים פיקסל אחד — חזרו על הבעיה שהתבקשתם לפתור. "בפגישה האחרונה הגדרנו שהמשתמשים נוטשים בשלב התשלום ב-68%. המטרה שלנו היתה להפחית את ה-abandonment הזה." עכשיו הלקוח יודע מה לצפות ואיך להעריך את מה שיראה.</p>
+      <h3>שלב 2: המסגרת הפתרונית (3-5 דקות)</h3>
+      <p>לפני שמציגים את ה-how — הסבירו את ה-what ואת ה-why. "בחרנו לעצב checkout בשלב אחד (single-page) כי מחקרים מראים ש-multi-step מגדיל friction ב-20%. בנוסף, ראינו בnמחקר המשתמשים שלנו שמשתמשים לא הבינו כמה שלבים נותרו."</p>
+      <h3>שלב 3: ההצגה עצמה — פחות זה יותר</h3>
+      <p>הציגו 3-5 מסכים / flows מרכזיים. לא הכל — רק ה-highlights. שמרו את ה-edge cases לendure שאלות. כשמציגים כל מסך: תארו את context (מה המשתמש עשה לפני שהגיע לכאן), הסבירו את ההחלטות העיצוביות הגדולות, ציינו מה שונה מ-baseline.</p>
+      <div class="article-img"><i class="fa-solid fa-display"></i></div>
+      <h3>שלב 4: Demo ב-Prototype</h3>
+      <p>הדגימו את הflow בprototype אינטראקטיבי. זה שונה לחלוטין ממסכים סטטיים — הלקוח "מרגיש" את החוויה. Figma prototype, InVision, או Framer — כולם עובדים. אפשרו ללקוח לנסות בעצמו.</p>
+      <h3>שלב 5: שאלות ופידבק מובנה</h3>
+      <p>אל תגידו "שאלות?" בסוף. תנחו את הפידבק: "מה עובד לכם בזה? מה מעלה שאלות? יש דבר ספציפי שרוצים לראות אחרת?" שאלות ספציפיות מובילות לפידבק שמשמש, לא לdisscussion כללית.</p>
+
+      <h2>איך לתאר החלטות עיצוביות</h2>
+      <p>השיטה שעובדת הכי טוב: STAR</p>
+      <ul>
+        <li><strong>S - Situation:</strong> "משתמשים לא הבינו שיש עוד 3 שלבים בתהליך"</li>
+        <li><strong>T - Task:</strong> "היינו צריכים להראות progress בצורה ברורה"</li>
+        <li><strong>A - Action:</strong> "הוספנו progress indicator בחלק העליון עם מספר שלבים ברור"</li>
+        <li><strong>R - Result:</strong> "בבדיקות usability ראינו שמשתמשים כבר לא עוצרים ושואלים 'כמה עוד'"</li>
+      </ul>
+      <p>כשמסבירים החלטה בformat הזה, הלקוח מקבל את כל הcontext שהוא צריך כדי להחליט אם הוא מסכים.</p>
+
+      <h2>טיפול בהתנגדויות</h2>
+      <p>ההתנגדות הנפוצה ביותר שתשמעו: "לי לא אכפת מה המחקרים אומרים — אני רוצה X". התגובה הנכונה:</p>
+      <p>אל תגידו "אבל המחקר מראה..." — זה defensive. במקום: "מעניין. מה גורם לך לחשוב ש-X יעבוד טוב יותר? אני רוצה להבין מה אתה רואה שאני אולי מפספס."</p>
+      <p>לרוב מסתבר שיש insight לגיטימי שלא הבנתם מספיק טוב. או שהלקוח מסביר ו"שומע" את עצמו — ומגיע בעצמו למסקנה אחרת.</p>
+      <blockquote>"הפידבק הכי טוב שקיבלתי בקריירה היה לא 'זה מושלם' — אלא 'פעם ראשונה שמישהו הסביר לי למה כל החלטה'. הלקוח הזה הפך ל-client של 8 שנים."</blockquote>
+
+      <h2>רימוטלי vs. פיזי</h2>
+      <p>כ-70% מהפגישות שלי הן remote. הנה מה שלמדתי:</p>
+      <ul>
+        <li>שתפו screen ולא קישור — כך אתם שולטים בקצב ה-reveal</li>
+        <li>השתמשו ב-Figma presenter mode לפרזנטציות נקיות</li>
+        <li>בקשו מלקוחות לכבות notifications — הסחות דעת הורסות flow</li>
+        <li>שלחו pre-read קצר לפני הפגישה — מבנה + מה שתציגו. זה מונע "מה זה?"</li>
+        <li>הקליטו עם Loom לסיכום שלאחר הפגישה — לקוחות שוכחים 70% תוך 24 שעות</li>
+      </ul>
+
+      <h2>Follow-Up שסוגר עסקה</h2>
+      <p>ה-follow-up הוא לרוב ה-missed opportunity הגדול ביותר. תוך 24 שעות מהפגישה, שלחו:</p>
+      <ol>
+        <li>סיכום קצר — מה הצגנו ומה הוחלט</li>
+        <li>next steps ברורים — מי עושה מה עד מתי</li>
+        <li>קישור לprototype לreview עצמאי</li>
+        <li>שאלות פתוחות שעלו ודרכי פעולה מוצעות</li>
+      </ol>
+      <div class="article-img"><i class="fa-solid fa-envelope-open-text"></i></div>
+
+      <h2>הכנה: מה עושים שעה לפני</h2>
+      <p>Checklist לשעה לפני כל פגישת design review:</p>
+      <ul>
+        <li>בדקו שהprototype עובד ב-mobile (לקוח עלול לפתוח בטלפון)</li>
+        <li>הכינו 3 שאלות שמנחות פידבק שימושי</li>
+        <li>תחזרו על ה-context — מה הוחלט בפגישה הקודמת</li>
+        <li>הכינו תשובות ל-2 התנגדויות הנפוצות</li>
+        <li>וודאו שיש לכם גרסת backup (PDF/screenshots) למקרה שהinternet נפסק</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">Presentation</span><span class="tag">Client Relations</span><span class="tag">Process</span>
+        <span class="tag">Communication</span><span class="tag">Feedback</span><span class="tag">Prototype</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer class="grid-bg">
+  <div class="wrap">
+    <div class="footer-main">
+      <div><a href="../portfolio.html" class="footer-brand">Dror<span>Cohen</span></a></div>
+      <div class="footer-col"><h4>ניווט</h4><ul>
+        <li><a href="../about.html">אני דרור</a></li>
+        <li><a href="../portfolio.html#projects">פרויקטים</a></li>
+        <li><a href="../blog.html">בלוג</a></li>
+        <li><a href="../contact.html">צור קשר</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>שירותים</h4><ul>
+        <li><a href="../uxui.html">UX/UI Design</a></li>
+        <li><a href="../portfolio.html#services">אפיון מוצר</a></li>
+        <li><a href="../portfolio.html#services">Design System</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>סושיאל</h4><ul>
+        <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
+        <li><a href="https://wa.me/972547179000" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>Made with ❤️ by Dror Cohen</p>
+    </div>
+  </div>
+</footer>
+<a href="https://wa.me/972547179000" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){
+  var m=document.getElementById('mobileMenu');m.classList.toggle('open');
+  this.innerHTML=m.classList.contains('open')?'<i class="fa fa-xmark"></i>':'<i class="fa fa-bars"></i>';
+});
+</script>
+</body></html>
