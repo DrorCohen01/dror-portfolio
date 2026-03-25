@@ -18,15 +18,15 @@ img{max-width:100%;display:block}
 @keyframes fu{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 .reveal{animation:fu .65s ease both}
 nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px}
-.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-inner{display:flex;align-items:center;justify-content:center;height:72px;max-width:1200px;margin:0 auto;padding:0 40px;position:relative}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif;position:absolute;left:40px}
 .nav-logo span{color:var(--gray)}
 .nav-links{display:flex;gap:28px;list-style:none;font-size:.88rem}
 .nav-links a{color:var(--gray);transition:color .25s}
 .nav-links a:hover,.nav-links a.active{color:var(--white)}
 .nav-cta{background:var(--white);color:#121212;padding:10px 24px;border-radius:100px;font-weight:600;font-size:.88rem;display:inline-block;transition:opacity .25s}
 .nav-cta:hover{opacity:.85}
-.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer}
+.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;position:absolute;right:40px}
 .mobile-menu{display:none;position:fixed;top:72px;right:0;left:0;background:#1a1a1a;padding:24px 40px;border-bottom:1px solid var(--border);z-index:99;flex-direction:column;gap:20px}
 .mobile-menu.open{display:flex}
 .mobile-menu a{color:var(--gray);font-size:1rem;transition:color .2s}
