@@ -1,11 +1,1 @@
-{
-  "version": "0.0.1",
-  "configurations": [
-    {
-      "name": "portfolio",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "--no-clipboard", "-l", "3000", "/Users/drorcohen/Desktop/Claude/Portfolio"],
-      "port": 3000
-    }
-  ]
-}
+{"version":"0.0.1","configurations":[{"name":"portfolio","runtimeExecutable":"python3","runtimeArgs":["-m","http.server","8080"],"port":8080}]}
