@@ -31,15 +31,15 @@ img{max-width:100%;display:block}
 
 /* ── Nav ── */
 nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav-inner{display:flex;align-items:center;justify-content:center;height:72px;max-width:1200px;margin:0 auto;padding:0 40px;position:relative}
-.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif;position:absolute;left:40px}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
 .nav-logo span{color:var(--gray)}
 .nav-links{display:flex;gap:28px;list-style:none;font-size:.88rem;font-weight:400}
 .nav-links a{color:var(--gray);transition:color .25s}
 .nav-links a:hover{color:var(--white)}
-.nav-cta{background:var(--white);color:#121212;border:none;padding:10px 24px;border-radius:100px;font-family:inherit;font-weight:600;font-size:.88rem;cursor:pointer;transition:opacity .25s}
+.nav-cta{background:var(--white);color:#121212;border:none;padding:10px 24px;border-radius:100px;font-family:inherit;font-weight:600;font-size:.88rem;cursor:pointer;transition:opacity .25s;display:inline-block}
 .nav-cta:hover{opacity:.85}
-.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;position:absolute;right:40px}
+.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer}
 
 /* ── Grid Background ── */
 .grid-bg{
@@ -339,8 +339,10 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 }
 @media(max-width:640px){
   .wrap{padding:0 20px}
-  .nav-links{
+  .nav-links,.nav-cta{
     display:none;
+  }
+  .nav-links{
     flex-direction:column;
     position:fixed;
     top:64px;
@@ -393,17 +395,18 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 <!-- Nav -->
 <nav>
   <div class="nav-inner">
-    <a href="#" class="nav-logo" onclick="return navTo('#')">Dror<span>Cohen</span></a>
+    <a href="index.html" class="nav-logo">Dror<span>Cohen</span></a>
     <ul class="nav-links">
-      <li><a href="about.html" class="nav-link">אני דרור</a></li>
-      <li><a href="uxui.html" class="nav-link">UX/UI</a></li>
-      <li><a href="#services" class="nav-link" onclick="return navTo('#services')">מה אני עושה</a></li>
-      <li><a href="#projects" class="nav-link" onclick="return navTo('#projects')">פרויקטים</a></li>
-      <li><a href="#testimonials" class="nav-link" onclick="return navTo('#testimonials')">המלצות</a></li>
+      <li><a href="about.html">אני דרור</a></li>
+      <li><a href="uxui.html">UX/UI</a></li>
+      <li><a href="#services" onclick="return navTo('#services')">מה אני עושה</a></li>
+      <li><a href="#projects" onclick="return navTo('#projects')">פרויקטים</a></li>
+      <li><a href="#testimonials" onclick="return navTo('#testimonials')">המלצות</a></li>
       <li><a href="blog.html">בלוג</a></li>
-      <li><a href="#contact" class="nav-link" onclick="return navTo('#contact')">צור קשר</a></li>
+      <li><a href="#contact" onclick="return navTo('#contact')">צור קשר</a></li>
     </ul>
-    <button class="nav-mobile" id="navToggle"><i class="fa-solid fa-bars"></i></button>
+    <a href="contact.html" class="nav-cta">בואו נדבר</a>
+    <button class="nav-mobile" id="navToggle" aria-label="תפריט"><i class="fa fa-bars"></i></button>
   </div>
 </nav>
 
