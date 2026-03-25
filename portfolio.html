@@ -168,21 +168,37 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .tool-pill{display:flex;align-items:center;gap:8px;background:var(--card2);border:1px solid var(--border2);padding:8px 16px;border-radius:100px;font-size:.82rem;font-weight:400;color:var(--gray)}
 .tool-pill .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 
-/* ── Testimonials ── */
-.testimonials{padding:100px 0}
-.test-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px}
-.test-ball{width:72px;height:72px;background:var(--white);color:#121212;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700}
-.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.test-card{background:var(--card);border-radius:16px;padding:32px;border:1px solid var(--border)}
-.test-card.featured{grid-column:span 2}
-.test-stars{margin-bottom:16px}
-.test-stars i{color:var(--orange);font-size:.9rem}
-.test-card blockquote{font-size:.92rem;color:var(--gray);line-height:1.7;margin-bottom:24px;font-style:normal}
-.test-card.featured blockquote{font-size:1rem;color:var(--white);font-weight:400}
-.test-author{display:flex;align-items:center;gap:12px}
-.test-avatar{width:40px;height:40px;background:var(--card3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.85rem}
-.test-author-info .name{font-size:.88rem;font-weight:500}
-.test-author-info .role{font-size:.78rem;color:var(--gray)}
+/* ── Testimonials Carousel ── */
+.testimonials{padding:0;position:relative;overflow:hidden}
+.test-carousel{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 120px}
+.test-slide{display:none;flex-direction:column;align-items:center;max-width:860px;margin:0 auto;animation:fadeSlide .4s ease}
+.test-slide.active{display:flex}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.test-avatar-lg{width:72px;height:72px;border-radius:50%;background:var(--card3);border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:28px;flex-shrink:0}
+.test-quote{font-size:1.75rem;font-weight:700;line-height:1.45;color:var(--white);margin-bottom:32px;font-style:normal}
+.test-name{font-size:1rem;font-weight:600;color:var(--white);margin-bottom:4px}
+.test-role-label{font-size:.85rem;color:var(--gray)}
+.test-stars-lg{display:flex;gap:5px;justify-content:center;margin-bottom:24px}
+.test-stars-lg i{color:var(--orange);font-size:.95rem}
+.test-arrow{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.35);font-size:2rem;cursor:pointer;padding:16px;transition:color .2s;z-index:10;line-height:1}
+.test-arrow:hover{color:var(--white)}
+.test-arrow.prev{right:32px}
+.test-arrow.next{left:32px}
+.test-dots{display:flex;justify-content:center;gap:10px;padding:0 0 56px}
+.test-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:all .25s;padding:0}
+.test-dot.active{background:var(--white);width:24px;border-radius:100px}
+.test-rating-badge{position:absolute;top:40px;right:48px;background:var(--white);color:#121212;border-radius:100px;padding:8px 18px;font-size:.88rem;font-weight:700;display:flex;align-items:center;gap:6px}
+.test-rating-badge i{color:var(--orange);font-size:.8rem}
+@media(max-width:900px){
+  .test-carousel{padding:80px 72px}
+  .test-quote{font-size:1.35rem}
+  .test-rating-badge{top:20px;right:20px}
+}
+@media(max-width:600px){
+  .test-carousel{padding:72px 56px}
+  .test-quote{font-size:1.1rem}
+  .test-arrow{font-size:1.4rem;padding:10px}
+}
 
 /* ── Micro-interactions ── */
 .micro{padding:100px 0}
@@ -316,8 +332,6 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
   .svc-grid{grid-template-columns:repeat(2,1fr)}
   .proj-card{min-height:360px}
   .proc-grid{grid-template-columns:repeat(2,1fr)}
-  .test-grid{grid-template-columns:1fr}
-  .test-card.featured{grid-column:span 1}
   .micro-grid{grid-template-columns:1fr}
   .blog-grid{grid-template-columns:repeat(2,1fr)}
   .contact-grid{grid-template-columns:1fr}
@@ -578,171 +592,79 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 </section>
 
 <!-- Testimonials -->
-<section class="testimonials" id="testimonials">
-  <div class="wrap">
-    <div class="test-header">
-      <div>
-        <span class="sec-label reveal">מה אומרים עליי</span>
-        <h2 class="sec-title reveal r1">המלצות</h2>
-      </div>
-      <div class="test-ball reveal r2">4.9</div>
+<section class="testimonials grid-bg" id="testimonials">
+  <div class="test-rating-badge"><i class="fa-solid fa-star"></i> 4.9</div>
+  <div class="test-carousel" id="testCarousel">
+    <button class="test-arrow prev" onclick="moveSlide(-1)" aria-label="הקודם"><i class="fa-solid fa-chevron-right"></i></button>
+    <button class="test-arrow next" onclick="moveSlide(1)" aria-label="הבא"><i class="fa-solid fa-chevron-left"></i></button>
+
+    <div class="test-slide active">
+      <div class="test-avatar-lg">F</div>
+      <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <blockquote class="test-quote">מהרגע הראשון שראיתי את העבודות של דרור באתר שלו ידעתי שארצה לעבוד איתו. הכל נראה מדויק ונכון, וזה אכן היה ככה במהלך העבודה איתו. בן אדם מקצועי, אמין, שיודע לתת הכוונה נכונה, ורואים את זה בתוצאות. מומלץ ביותר!</blockquote>
+      <div class="test-name">FaShare</div>
     </div>
-    <div class="test-grid">
-      <div class="test-card featured reveal">
-        <div class="test-stars">
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-        </div>
-        <blockquote>מהרגע הראשון שראיתי את העבודות של דרור באתר שלו ידעתי שארצה לעבוד איתו. הכל נראה מדויק ונכון, וזה אכן היה ככה במהלך העבודה איתו. בן אדם מקצועי, אמין, שיודע לתת הכוונה נכונה, ורואים את זה בתוצאות. מומלץ ביותר!</blockquote>
-        <div class="test-author">
-          <div class="test-avatar">F</div>
-          <div class="test-author-info">
-            <div class="name">FaShare</div>
-            <div class="role">xplace.com</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card reveal r2">
-        <div class="test-stars">
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-        </div>
-        <blockquote>דרור עיצב עבורי 3 אפליקציות הנמכרות כיום בחנות ה App Store. דרור ביצע את העבודה לשביעות רצוני המלאה וסיפק פתרון עיצובי נקי ומרשים שמשתמשי האפליקציה נהנים ממנו עד היום.</blockquote>
-        <div class="test-author">
-          <div class="test-avatar">ק</div>
-          <div class="test-author-info">
-            <div class="name">קימיקו בע״מ</div>
-            <div class="role">xplace.com</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card reveal r3">
-        <div class="test-stars">
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-        </div>
-        <blockquote>דרור התבקש לעצב אתר מורכב, ותיק, פעיל מאוד, תוך שימת דגש על עיצוב עדכני מרשים ביותר לצד פשטות ושימושיות. הוא עשה זאת במקצועיות רבה, מתן שרות מהיר, ושביעות הרצון היא גם מהתוצאה וגם מהעבודה הנעימה אתו.</blockquote>
-        <div class="test-author">
-          <div class="test-avatar">W</div>
-          <div class="test-author-info">
-            <div class="name">Wolberg.Pro</div>
-            <div class="role">xplace.com</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card reveal r4">
-        <div class="test-stars">
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-        </div>
-        <blockquote>סופר מקצועי ומאוד זורם בעבודה איתנו. סופר מומלץ לעבודה.</blockquote>
-        <div class="test-author">
-          <div class="test-avatar">נ</div>
-          <div class="test-author-info">
-            <div class="name">ניר גבאי</div>
-            <div class="role">xplace.com</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card reveal r4">
-        <div class="test-stars">
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-        </div>
-        <blockquote>דרור התגלה כמעצב מוכשר ביותר שסיפק פתרון לכל צרכנו. היה לו תשומת לב לכל עמוד ובקרה בנהליה איתו פרוייקט זה קל מאוד בזכות שיתוף הפעולה. מומלץ בחום!!!</blockquote>
-        <div class="test-author">
-          <div class="test-avatar">Z</div>
-          <div class="test-author-info">
-            <div class="name">Zolizard</div>
-            <div class="role">Shopify Expert, xplace.com</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card reveal r4">
-        <div class="test-stars">
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-        </div>
-        <blockquote>מקצוען אדיב וקשוב. שואל את השאלות הנכונות ומקשיב לצרכים. מעביר בדרך יעילה לגוף את הצורך העסקי, ישמח לעבוד איתו שוב.</blockquote>
-        <div class="test-author">
-          <div class="test-avatar">M</div>
-          <div class="test-author-info">
-            <div class="name">Magellan Wise</div>
-            <div class="role">xplace.com</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card reveal r4">
-        <div class="test-stars">
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-        </div>
-        <blockquote>Dror is a true professional, design enthusiastic and knows how to address customer needs. I highly recommend working with Dror on UI, UX and design projects.</blockquote>
-        <div class="test-author">
-          <div class="test-avatar">A</div>
-          <div class="test-author-info">
-            <div class="name">AppReal</div>
-            <div class="role">xplace.com</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card reveal r4">
-        <div class="test-stars">
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-        </div>
-        <blockquote>The work that Mr. Dror done for us was amazing. He managed to get it just as we wanted and more. We are getting new clients every day that are coming to enjoy the place because of the food but very much the atmosphere that the new design is giving.</blockquote>
-        <div class="test-author">
-          <div class="test-avatar">ג</div>
-          <div class="test-author-info">
-            <div class="name">גובלין סטודיו</div>
-            <div class="role">xplace.com</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card reveal r4">
-        <div class="test-stars">
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-          <i class="fa-solid fa-star" style="color:#F5A623"></i>
-        </div>
-        <blockquote>העבודה עם דרור כהן הייתה מעבר לצפיות ומפתיע מאוד וזאת לאחר אכזבות שהיו לי מחברות אחרות בעבר, ראשית היחס האנושי המעולה, ההקשבה, הרצון לתת מענה ממוקד ומותאם לצרכי המשרד שלי. דרור היה זמין לכל שאלה וגחמה שלי ומצא פתרון יצירתי.</blockquote>
-        <div class="test-author">
-          <div class="test-avatar">א.ד</div>
-          <div class="test-author-info">
-            <div class="name">אילנה דוד אדריכלים</div>
-            <div class="role">xplace.com</div>
-          </div>
-        </div>
-      </div>
+
+    <div class="test-slide">
+      <div class="test-avatar-lg">ק</div>
+      <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <blockquote class="test-quote">דרור עיצב עבורי 3 אפליקציות הנמכרות כיום בחנות ה App Store. דרור ביצע את העבודה לשביעות רצוני המלאה וסיפק פתרון עיצובי נקי ומרשים שמשתמשי האפליקציה נהנים ממנו עד היום.</blockquote>
+      <div class="test-name">קימיקו בע״מ</div>
     </div>
-  </div>
+
+    <div class="test-slide">
+      <div class="test-avatar-lg">W</div>
+      <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <blockquote class="test-quote">דרור התבקש לעצב אתר מורכב, ותיק, פעיל מאוד, תוך שימת דגש על עיצוב עדכני מרשים ביותר לצד פשטות ושימושיות. הוא עשה זאת במקצועיות רבה, מתן שרות מהיר, ושביעות הרצון היא גם מהתוצאה וגם מהעבודה הנעימה אתו.</blockquote>
+      <div class="test-name">Wolberg.Pro</div>
+    </div>
+
+    <div class="test-slide">
+      <div class="test-avatar-lg">נ</div>
+      <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <blockquote class="test-quote">סופר מקצועי ומאוד זורם בעבודה איתנו. סופר מומלץ לעבודה.</blockquote>
+      <div class="test-name">ניר גבאי</div>
+    </div>
+
+    <div class="test-slide">
+      <div class="test-avatar-lg">Z</div>
+      <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <blockquote class="test-quote">דרור התגלה כמעצב מוכשר ביותר שסיפק פתרון לכל צרכנו. היה לו תשומת לב לכל עמוד ובקרה בנהליה איתו פרוייקט זה קל מאוד בזכות שיתוף הפעולה. מומלץ בחום!!!</blockquote>
+      <div class="test-name">Zolizard</div>
+      <div class="test-role-label">Shopify Expert</div>
+    </div>
+
+    <div class="test-slide">
+      <div class="test-avatar-lg">M</div>
+      <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <blockquote class="test-quote">מקצוען אדיב וקשוב. שואל את השאלות הנכונות ומקשיב לצרכים. מעביר בדרך יעילה לגוף את הצורך העסקי, ישמח לעבוד איתו שוב.</blockquote>
+      <div class="test-name">Magellan Wise</div>
+    </div>
+
+    <div class="test-slide">
+      <div class="test-avatar-lg">A</div>
+      <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <blockquote class="test-quote">Dror is a true professional, design enthusiastic and knows how to address customer needs. I highly recommend working with Dror on UI, UX and design projects.</blockquote>
+      <div class="test-name">AppReal</div>
+    </div>
+
+    <div class="test-slide">
+      <div class="test-avatar-lg">ג</div>
+      <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <blockquote class="test-quote">The work that Mr. Dror done for us was amazing. He managed to get it just as we wanted and more. We are getting new clients every day that are coming to enjoy the place because of the food but very much the atmosphere that the new design is giving.</blockquote>
+      <div class="test-name">גובלין סטודיו</div>
+    </div>
+
+    <div class="test-slide">
+      <div class="test-avatar-lg">א.ד</div>
+      <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <blockquote class="test-quote">העבודה עם דרור כהן הייתה מעבר לצפיות ומפתיע מאוד וזאת לאחר אכזבות שהיו לי מחברות אחרות בעבר, ראשית היחס האנושי המעולה, ההקשבה, הרצון לתת מענה ממוקד ומותאם לצרכי המשרד שלי. דרור היה זמין לכל שאלה וגחמה שלי ומצא פתרון יצירתי.</blockquote>
+      <div class="test-name">אילנה דוד אדריכלים</div>
+    </div>
+
+  </div><!-- /test-carousel -->
+  <div class="test-dots" id="testDots"></div>
+
 </section>
 
 <!-- Micro-interactions -->
@@ -1441,11 +1363,44 @@ function initMobileNav(){
 }
 
 
+/* ── Testimonials Carousel ── */
+var testCurrent = 0;
+var testSlides = [];
+var testDotEls = [];
+
+function initTestimonials(){
+  testSlides = Array.from(document.querySelectorAll('.test-slide'));
+  var dotsEl = document.getElementById('testDots');
+  if(!dotsEl || !testSlides.length) return;
+  testSlides.forEach(function(_,i){
+    var d = document.createElement('button');
+    d.className = 'test-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label','המלצה '+(i+1));
+    d.addEventListener('click',function(){ goSlide(i); });
+    dotsEl.appendChild(d);
+    testDotEls.push(d);
+  });
+}
+
+function goSlide(n){
+  testSlides[testCurrent].classList.remove('active');
+  testDotEls[testCurrent].classList.remove('active');
+  testCurrent = (n + testSlides.length) % testSlides.length;
+  testSlides[testCurrent].classList.add('active');
+  testDotEls[testCurrent].classList.add('active');
+}
+
+function moveSlide(dir){ goSlide(testCurrent + dir); }
+
+/* auto-advance every 6s */
+setInterval(function(){ moveSlide(1); }, 6000);
+
 /* ── Init ── */
 buildClients();
 buildFilters();
 buildProjects();
 initMobileNav();
+initTestimonials();
 window.addEventListener('scroll', updateNav);
 
 function sendForm(){
