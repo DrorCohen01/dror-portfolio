@@ -169,24 +169,24 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .tool-pill .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 
 /* ── Testimonials Carousel ── */
-.testimonials{padding:0;position:relative;overflow:hidden}
+.testimonials{padding:0;position:relative;overflow:hidden;background:#F5F5F5}
 .test-carousel{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 120px}
 .test-slide{display:none;flex-direction:column;align-items:center;max-width:860px;margin:0 auto}
 .test-slide.active{display:flex}
-.test-avatar-lg{width:72px;height:72px;border-radius:50%;background:var(--card3);border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:28px;flex-shrink:0}
-.test-quote{font-size:1.75rem;font-weight:700;line-height:1.45;color:var(--white);margin-bottom:32px;font-style:normal}
-.test-name{font-size:1rem;font-weight:600;color:var(--white);margin-bottom:4px}
-.test-role-label{font-size:.85rem;color:var(--gray)}
+.test-avatar-lg{width:72px;height:72px;border-radius:50%;background:#E8E8E8;border:2px solid #D0D0D0;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:#333333;margin-bottom:28px;flex-shrink:0}
+.test-quote{font-size:1.75rem;font-weight:700;line-height:1.45;color:#1A1A1A;margin-bottom:32px;font-style:normal}
+.test-name{font-size:1rem;font-weight:600;color:#1A1A1A;margin-bottom:4px}
+.test-role-label{font-size:.85rem;color:#666666}
 .test-stars-lg{display:flex;gap:5px;justify-content:center;margin-bottom:24px}
 .test-stars-lg i{color:var(--orange);font-size:.95rem}
-.test-arrow{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.35);font-size:2rem;cursor:pointer;padding:16px;transition:color .2s;z-index:10;line-height:1}
-.test-arrow:hover{color:var(--white)}
+.test-arrow{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(0,0,0,.25);font-size:2rem;cursor:pointer;padding:16px;transition:color .2s;z-index:10;line-height:1}
+.test-arrow:hover{color:#1A1A1A}
 .test-arrow.prev{right:32px}
 .test-arrow.next{left:32px}
 .test-dots{display:flex;justify-content:center;gap:10px;padding:0 0 56px}
-.test-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:all .25s;padding:0}
-.test-dot.active{background:var(--white);width:24px;border-radius:100px}
-.test-rating-badge{position:absolute;top:40px;right:48px;background:var(--white);color:#121212;border-radius:100px;padding:8px 18px;font-size:.88rem;font-weight:700;display:flex;align-items:center;gap:6px}
+.test-dot{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.15);border:none;cursor:pointer;transition:all .25s;padding:0}
+.test-dot.active{background:#1A1A1A;width:24px;border-radius:100px}
+.test-rating-badge{position:absolute;top:40px;right:48px;background:#1A1A1A;color:#F5F5F5;border-radius:100px;padding:8px 18px;font-size:.88rem;font-weight:700;display:flex;align-items:center;gap:6px}
 .test-rating-badge i{color:var(--orange);font-size:.8rem}
 @media(max-width:900px){
   .test-carousel{padding:80px 72px}
