@@ -383,6 +383,24 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 
 /* -- Override: show about-detail by default on this standalone page -- */
 #about-detail{display:block!important;animation:pdIn .5s ease both}
+
+/* Process & Tools sections */
+.process{padding:100px 0}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden}
+.proc-card{background:var(--card);padding:40px 28px;position:relative;text-align:center}
+.proc-num{font-size:5rem;font-weight:900;opacity:.08;position:absolute;top:10px;right:24px;line-height:1}
+.proc-card i{font-size:1.8rem;margin-bottom:18px;color:var(--white)}
+.proc-card h3{font-size:1.05rem;font-weight:600;margin-bottom:10px}
+.proc-card p{font-size:.85rem;color:var(--gray);line-height:1.6}
+.tools{padding:100px 0}
+.tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.tool-card{background:var(--card);border-radius:16px;padding:36px 32px;border:1px solid var(--border)}
+.tool-card h3{font-size:1.05rem;font-weight:600;margin-bottom:18px}
+.tool-pills{display:flex;flex-wrap:wrap;gap:10px}
+.tool-pill{display:flex;align-items:center;gap:8px;background:var(--card2);border:1px solid var(--border2);padding:8px 16px;border-radius:100px;font-size:.82rem;font-weight:400;color:var(--gray)}
+.tool-pill .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+@media(max-width:900px){.proc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.proc-grid,.tools-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -422,6 +440,89 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 
   </div>
 </div>
+
+<!-- Process -->
+<section class="process" id="process">
+  <div class="wrap">
+    <span class="sec-label reveal">איך אני עובד</span>
+    <h2 class="sec-title reveal r1">שיטת עבודה</h2>
+    <p class="sec-sub reveal r2">תהליך מובנה שמוביל לתוצאות מדידות</p>
+    <div class="proc-grid reveal r3">
+      <div class="proc-card">
+        <div class="proc-num">01</div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <h3>מחקר</h3>
+        <p>ראיונות משתמשים, ניתוח מתחרים, סקרים ו-Data Analysis להבנת הצרכים והאתגרים האמיתיים</p>
+      </div>
+      <div class="proc-card">
+        <div class="proc-num">02</div>
+        <i class="fa-solid fa-map"></i>
+        <h3>אסטרטגיה</h3>
+        <p>הגדרת Personas, User Journeys, ארכיטקטורת מידע ותעדוף פיצ'רים על בסיס ממצאי המחקר</p>
+      </div>
+      <div class="proc-card">
+        <div class="proc-num">03</div>
+        <i class="fa-solid fa-pen-nib"></i>
+        <h3>עיצוב</h3>
+        <p>Wireframes, UI מפורט, Design System ופרוטוטייפ אינטראקטיבי עם איטרציות מהירות</p>
+      </div>
+      <div class="proc-card">
+        <div class="proc-num">04</div>
+        <i class="fa-solid fa-rocket"></i>
+        <h3>בדיקות</h3>
+        <p>Usability Testing, A/B Tests ואנליטיקס לאימות ההחלטות ושיפור מתמיד של החוויה</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tools -->
+<section class="tools" id="tools">
+  <div class="wrap">
+    <span class="sec-label reveal">ארגז הכלים</span>
+    <h2 class="sec-title reveal r1">כלים וטכנולוגיות</h2>
+    <p class="sec-sub reveal r2">הכלים שאני משתמש בהם ביום-יום</p>
+    <div class="tools-grid reveal r3">
+      <div class="tool-card">
+        <h3>עיצוב ואפיון</h3>
+        <div class="tool-pills">
+          <span class="tool-pill"><span class="dot" style="background:#A259FF"></span>Figma</span>
+          <span class="tool-pill"><span class="dot" style="background:#FF6B6B"></span>Adobe XD</span>
+          <span class="tool-pill"><span class="dot" style="background:#F7B500"></span>Sketch</span>
+          <span class="tool-pill"><span class="dot" style="background:#1ABCFE"></span>Photoshop</span>
+          <span class="tool-pill"><span class="dot" style="background:#FF7262"></span>Illustrator</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h3>מחקר ובדיקות</h3>
+        <div class="tool-pills">
+          <span class="tool-pill"><span class="dot" style="background:#00C4B4"></span>Hotjar</span>
+          <span class="tool-pill"><span class="dot" style="background:#4285F4"></span>Google Analytics</span>
+          <span class="tool-pill"><span class="dot" style="background:#FF4081"></span>Maze</span>
+          <span class="tool-pill"><span class="dot" style="background:#6C63FF"></span>UserTesting</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h3>AI ואוטומציה</h3>
+        <div class="tool-pills">
+          <span class="tool-pill"><span class="dot" style="background:#10A37F"></span>ChatGPT</span>
+          <span class="tool-pill"><span class="dot" style="background:#D97706"></span>Claude</span>
+          <span class="tool-pill"><span class="dot" style="background:#7C3AED"></span>Midjourney</span>
+          <span class="tool-pill"><span class="dot" style="background:#2563EB"></span>Zapier</span>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h3>פיתוח ופרסום</h3>
+        <div class="tool-pills">
+          <span class="tool-pill"><span class="dot" style="background:#E44D26"></span>HTML/CSS</span>
+          <span class="tool-pill"><span class="dot" style="background:#38BDF8"></span>Tailwind</span>
+          <span class="tool-pill"><span class="dot" style="background:#0ACF83"></span>Webflow</span>
+          <span class="tool-pill"><span class="dot" style="background:#FF6900"></span>WordPress</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Footer -->
 <footer class="grid-bg">
