@@ -631,7 +631,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
           <span>Design Systems</span>
           <span>AI Workflow</span>
           <span>Micro-interactions</span>
-          <span>Usability Testing</span>
+          <span>בדיקות שמישות</span>
         </div>
       </div>
     </div>
@@ -819,8 +819,8 @@ var PROJECTS = [
     subtitle:'עיצוב פלטפורמת מסע מטופל מקיפה. CaloSense היא פלטפורמת ניטור מטופלים מרחוק (RPM) לטווח ארוך, המנהלת את מסע המטופל מקצה לקצה. הפלטפורמה אוספת נתונים ממכשירים מחוברים שונים מרחוק, ומספקת חוויית בריאות חלקה ורציפה.',
     date:'2024', role:'Lead UX/UI Designer', client:'CaloSense', duration:'12 חודשים',
     heroFA:'heart-pulse',
-    thumb:'calosense-mockup.png',
-    heroImg:'calosense-mockup.png',
+    thumb:'calosense-מוקאפ.png',
+    heroImg:'calosense-מוקאפ.png',
     img1:'https://static.wixstatic.com/media/aca116_061e7acd5ec04ea3a7845c4a2981ccd7~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_061e7acd5ec04ea3a7845c4a2981ccd7~mv2.png',
     img2:'https://static.wixstatic.com/media/aca116_0e494e7b5a154af38ca9c35b95a9f980~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_0e494e7b5a154af38ca9c35b95a9f980~mv2.png',
     img3:'https://static.wixstatic.com/media/aca116_6c6877d2982841c78d77de16f7498081~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_6c6877d2982841c78d77de16f7498081~mv2.png',
@@ -1292,10 +1292,10 @@ function sendForm(){
   var phone = f.phone.value;
   var email = f.email.value;
   var message = f.message.value;
-  var subject = encodeURIComponent('פנייה חדשה מאתר Pixel54');
+  var subject = encodeURIקומפוננטה('פנייה חדשה מאתר Pixel54');
   var company = f.company.value;
   var projectType = f.projectType.value;
-  var body = encodeURIComponent('שם: ' + name + '\nטלפון: ' + phone + '\nאימייל: ' + email + '\nחברה: ' + company + '\nסוג פרויקט: ' + projectType + '\n\n' + message);
+  var body = encodeURIקומפוננטה('שם: ' + name + '\nטלפון: ' + phone + '\nאימייל: ' + email + '\nחברה: ' + company + '\nסוג פרויקט: ' + projectType + '\n\n' + message);
   window.location.href = 'mailto:dror@pixel54.com?subject=' + subject + '&body=' + body;
   return false;
 }

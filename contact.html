@@ -492,8 +492,8 @@ function submitForm(e){
     var email=document.getElementById('femail').value;
     var msg=document.getElementById('fmsg').value;
     var service=document.getElementById('fservice').value||'לא צוין';
-    var subject=encodeURIComponent('פנייה מהאתר — '+name);
-    var body=encodeURIComponent('שם: '+name+'\nאימייל: '+email+'\nשירות: '+service+'\n\n'+msg);
+    var subject=encodeURIקומפוננטה('פנייה מהאתר — '+name);
+    var body=encodeURIקומפוננטה('שם: '+name+'\nאימייל: '+email+'\nשירות: '+service+'\n\n'+msg);
     window.location.href='mailto:dror@pixel54.com?subject='+subject+'&body='+body;
     form.style.display='none';
     succ.style.display='block';
