@@ -60,12 +60,14 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .proj-thumb{background:#111;position:relative;overflow:hidden;aspect-ratio:16/9}
 .proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .proj-card:hover .proj-thumb img{transform:scale(1.04)}
-.proj-body{position:absolute;bottom:0;right:0;left:0;padding:48px 36px 32px;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 55%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end}
+.proj-body{position:absolute;bottom:0;right:0;left:0;top:0;padding:48px 36px 32px;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 55%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end}
 .proj-body h3{font-size:1.7rem;font-weight:700;margin-bottom:8px;color:#fff;line-height:1.2}
 .proj-body p{color:rgba(255,255,255,.75);font-size:.88rem;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;margin-bottom:14px}
 .proj-tags{display:flex;flex-wrap:wrap;gap:6px}
 .proj-tags span{font-size:.72rem;font-weight:500;padding:4px 12px;border-radius:100px;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.07)}
 .proj-cat-badge{position:absolute;top:18px;right:18px;font-size:.72rem;font-weight:600;padding:5px 14px;border-radius:100px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.18)}
+.proj-view-btn{display:none;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.75);border-radius:100px;padding:12px 32px;font-size:.9rem;font-weight:600;color:#fff;background:rgba(0,0,0,.15);text-decoration:none;margin-top:12px;font-family:inherit;cursor:pointer;backdrop-filter:blur(4px)}
+.proj-all-inner{display:none;font-size:.8rem;color:rgba(255,255,255,.55);text-decoration:underline;margin-top:18px;cursor:pointer;text-align:center}
 
 /* ── Footer ── */
 footer{background:#0E0E0E;border-top:1px solid var(--border);padding:60px 0 32px}
@@ -91,6 +93,12 @@ footer{background:#0E0E0E;border-top:1px solid var(--border);padding:60px 0 32px
   .page-hero{padding:52px 0 40px}
   .footer-main{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+  .proj-thumb{aspect-ratio:9/16}
+  .proj-body{padding:20px 20px 36px;align-items:center;text-align:center}
+  .proj-body h3{font-size:2.2rem;margin-bottom:16px}
+  .proj-body p,.proj-tags,.proj-cat-badge{display:none}
+  .proj-view-btn{display:inline-flex!important}
+  .proj-all-inner{display:block!important}
 }
 </style>
 </head>
@@ -262,6 +270,8 @@ function buildProjects(){
     html += '<h3>'+p.title+'</h3>';
     html += '<p>'+p.subtitle+'</p>';
     html += '<div class="proj-tags">'+tagsHtml+'</div>';
+    html += '<a href="projects.html" class="proj-view-btn" onclick="event.stopPropagation()">VIEW DETAILS <i class="fa-solid fa-arrow-left" style="font-size:.8rem"></i></a>';
+    html += '<span class="proj-all-inner">לכל הפרויקטים</span>';
     html += '</div></div>';
   }
   grid.innerHTML = html || '<p style="color:var(--gray);padding:40px 0">אין פרויקטים בקטגוריה זו</p>';
