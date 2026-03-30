@@ -142,6 +142,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .proj-card[style*="display:none"]{display:none!important;position:relative}
 .proj-thumb{background:#111;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;aspect-ratio:16/9;padding:0}
 .proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.proj-all-link{position:absolute;top:16px;right:16px;z-index:10;font-size:.76rem;font-weight:600;color:rgba(255,255,255,.9);background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:100px;display:inline-flex;align-items:center;gap:5px;transition:background .2s,color .2s;text-decoration:none}
+.proj-all-link:hover{background:rgba(255,255,255,.15);color:#fff}
 .proj-card:hover .proj-thumb img{transform:scale(1.03)}
 .proj-thumb i{font-size:3rem;color:#aaa;opacity:.4}
 .proj-thumb .proj-label{position:absolute;top:16px;right:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);padding:5px 14px;border-radius:100px;font-size:.72rem;font-weight:500;color:#fff}
@@ -455,9 +457,14 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 <!-- Projects -->
 <section class="projects" id="projects">
   <div class="wrap">
-    <span class="sec-label reveal">עבודות נבחרות</span>
-    <h2 class="sec-title reveal r1">פרויקטים</h2>
-    <p class="sec-sub reveal r2">מבחר פרויקטים שמייצגים את הגישה והיכולות שלי</p>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0">
+      <div>
+        <span class="sec-label reveal">עבודות נבחרות</span>
+        <h2 class="sec-title reveal r1">פרויקטים</h2>
+        <p class="sec-sub reveal r2">מבחר פרויקטים שמייצגים את הגישה והיכולות שלי</p>
+      </div>
+      <a href="projects.html" class="reveal r1" style="display:inline-flex;align-items:center;gap:6px;font-size:.88rem;font-weight:600;color:var(--gray);border:1px solid var(--border2);padding:10px 20px;border-radius:100px;white-space:nowrap;transition:color .25s,border-color .25s;margin-top:8px;text-decoration:none" onmouseover="this.style.color='var(--white)';this.style.borderColor='rgba(255,255,255,.4)'" onmouseout="this.style.color='var(--gray)';this.style.borderColor='var(--border2)'">לכל הפרויקטים <i class="fa-solid fa-arrow-left" style="font-size:.75rem"></i></a>
+    </div>
     <div class="filter-bar reveal r3" id="filterBar"></div>
     <div class="proj-grid" id="projGrid"></div>
   </div>
@@ -1021,7 +1028,7 @@ function buildProjects(){
     }
     html += '<div class="proj-card reveal" data-c="'+p.cats+'" onclick="window.location.href=\'projects/'+p.id+'.html\'">';
     var thumbContent = p.thumb ? '<img src="'+p.thumb+'" alt="'+p.title+'">' : icon(p.heroFA);
-    html += '<div class="proj-thumb">'+thumbContent+'</div>';
+    html += '<div class="proj-thumb">'+thumbContent+'<a href="projects.html" class="proj-all-link" onclick="event.stopPropagation()">לכל הפרויקטים <i class="fa-solid fa-arrow-left" style="font-size:.7rem"></i></a></div>';
     html += '<div class="proj-body">';
     html += '<h3>'+p.title+'</h3>';
     html += '<p>'+p.subtitle+'</p>';
