@@ -563,5 +563,30 @@ document.getElementById('navToggle').addEventListener('click',function(){
   document.querySelector('.nav-links').classList.toggle('nav-open');
 });
 </script>
+
+<!-- Lightbox -->
+<div id="lb" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);backdrop-filter:blur(8px);align-items:center;justify-content:center" onclick="closeLB()">
+  <button onclick="closeLB()" style="position:absolute;top:20px;left:20px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='rgba(255,255,255,.22)'" onmouseout="this.style.background='rgba(255,255,255,.12)'">&#x2715;</button>
+  <img id="lb-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.6)" onclick="event.stopPropagation()">
+</div>
+<script>
+function openLB(src,alt){
+  var lb=document.getElementById('lb');
+  document.getElementById('lb-img').src=src;
+  document.getElementById('lb-img').alt=alt||'';
+  lb.style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function closeLB(){
+  document.getElementById('lb').style.display='none';
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();});
+document.querySelectorAll('.pd-hero-img img,.pd-img-full img,.pd-img-item img,.pd-img-ds img').forEach(function(img){
+  img.style.cursor='zoom-in';
+  img.addEventListener('click',function(e){e.stopPropagation();openLB(this.src,this.alt);});
+});
+</script>
+
 </body>
 </html>
