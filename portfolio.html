@@ -130,21 +130,24 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .filter-btn{background:transparent;color:var(--gray);border:1px solid var(--border2);padding:8px 20px;border-radius:100px;font-family:inherit;font-size:.82rem;font-weight:400;cursor:pointer;transition:all .25s}
 .filter-btn.on{background:var(--white);color:#121212;border-color:var(--white)}
 .proj-grid{display:flex;flex-direction:column;gap:0}
-.proj-card{display:block;position:sticky;top:80px;margin-bottom:24px;border-radius:20px;overflow:hidden;cursor:pointer;transform-origin:top center;will-change:transform;box-shadow:0 8px 32px rgba(0,0,0,.12)}
-.proj-card:nth-child(1){z-index:1;top:80px}
-.proj-card:nth-child(2){z-index:2;top:88px}
-.proj-card:nth-child(3){z-index:3;top:96px}
-.proj-card:nth-child(4){z-index:4;top:104px}
-.proj-card:nth-child(5){z-index:5;top:112px}
-.proj-card:nth-child(6){z-index:6;top:120px}
-.proj-card:nth-child(7){z-index:7;top:128px}
-.proj-card:nth-child(8){z-index:8;top:136px}
-.proj-card[style*="display:none"]{display:none!important;position:relative}
+.proj-wrap{position:sticky;top:80px;margin-bottom:24px;transform-origin:top center;will-change:transform}
+.proj-wrap:nth-child(1){z-index:1;top:80px}
+.proj-wrap:nth-child(2){z-index:2;top:88px}
+.proj-wrap:nth-child(3){z-index:3;top:96px}
+.proj-wrap:nth-child(4){z-index:4;top:104px}
+.proj-wrap:nth-child(5){z-index:5;top:112px}
+.proj-wrap:nth-child(6){z-index:6;top:120px}
+.proj-wrap:nth-child(7){z-index:7;top:128px}
+.proj-wrap:nth-child(8){z-index:8;top:136px}
+.proj-wrap[style*="display:none"]{display:none!important;position:relative!important}
+.proj-card{display:block;border-radius:20px;overflow:hidden;cursor:pointer;box-shadow:0 8px 32px rgba(0,0,0,.12)}
 .proj-thumb{background:#111;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;aspect-ratio:16/9;padding:0}
 .proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .proj-all-link{position:absolute;top:16px;right:16px;z-index:10;font-size:.76rem;font-weight:600;color:rgba(255,255,255,.9);background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:100px;display:inline-flex;align-items:center;gap:5px;transition:background .2s,color .2s;text-decoration:none}
 .proj-all-link:hover{background:rgba(255,255,255,.15);color:#fff}
 .proj-card:hover .proj-thumb img{transform:scale(1.03)}
+.proj-view-btn{display:none;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.75);border-radius:100px;padding:12px 32px;font-size:.9rem;font-weight:600;color:#fff;background:rgba(0,0,0,.15);text-decoration:none;margin-top:12px;font-family:inherit;cursor:pointer;backdrop-filter:blur(4px)}
+.proj-all-inner{display:none;font-size:.8rem;color:rgba(255,255,255,.55);text-decoration:underline;margin-top:18px;cursor:pointer}
 .proj-thumb i{font-size:3rem;color:#aaa;opacity:.4}
 .proj-thumb .proj-label{position:absolute;top:16px;right:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);padding:5px 14px;border-radius:100px;font-size:.72rem;font-weight:500;color:#fff}
 .proj-body{position:absolute;bottom:0;right:0;left:0;padding:48px 44px 36px;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.5) 60%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end}
@@ -376,8 +379,13 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
   .hero h1{font-size:2.2rem}
   .about-img{display:none}
   .svc-grid,.proc-grid{grid-template-columns:1fr}
-  .proj-body{padding:24px 20px}
-  .proj-body h3{font-size:1.2rem}
+  .proj-thumb{aspect-ratio:9/16}
+  .proj-body{padding:20px 20px 36px;align-items:center;text-align:center}
+  .proj-body h3{font-size:2.2rem;margin-bottom:16px}
+  .proj-body p,.proj-tags,.proj-metric{display:none}
+  .proj-view-btn{display:inline-flex!important}
+  .proj-all-inner{display:block!important}
+  .proj-all-link{display:none!important}
   .blog-grid{grid-template-columns:1fr}
   .tools-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
@@ -1026,9 +1034,10 @@ function buildProjects(){
     for(var t=0;t<p.tags.length;t++){
       tagsHtml += '<span>'+p.tags[t]+'</span>';
     }
-    html += '<div class="proj-card reveal" data-c="'+p.cats+'" onclick="window.location.href=\'projects/'+p.id+'.html\'">';
+    html += '<div class="proj-wrap reveal" data-c="'+p.cats+'">';
+    html += '<div class="proj-card" onclick="window.location.href=\'projects/'+p.id+'.html\'">';
     var thumbContent = p.thumb ? '<img src="'+p.thumb+'" alt="'+p.title+'">' : icon(p.heroFA);
-    html += '<div class="proj-thumb">'+thumbContent+'<a href="projects.html" class="proj-all-link" onclick="event.stopPropagation()">לכל הפרויקטים <i class="fa-solid fa-arrow-left" style="font-size:.7rem"></i></a></div>';
+    html += '<div class="proj-thumb">'+thumbContent+'</div>';
     html += '<div class="proj-body">';
     html += '<h3>'+p.title+'</h3>';
     html += '<p>'+p.subtitle+'</p>';
@@ -1036,7 +1045,11 @@ function buildProjects(){
       html += '<div class="proj-metric"><span class="proj-metric-num">'+p.metrics[0].num+'</span><span class="proj-metric-desc">'+p.metrics[0].desc+'</span></div>';
     }
     html += '<div class="proj-tags">'+tagsHtml+'</div>';
+    html += '<a href="projects.html" class="proj-view-btn" onclick="event.stopPropagation()">VIEW DETAILS <i class="fa-solid fa-arrow-left" style="font-size:.8rem"></i></a>';
+    html += '<a href="projects.html" class="proj-all-inner" onclick="event.stopPropagation()">לכל הפרויקטים</a>';
     html += '</div></div>';
+    html += '<a href="projects.html" class="proj-all-link" onclick="event.stopPropagation()">לכל הפרויקטים <i class="fa-solid fa-arrow-left" style="font-size:.7rem"></i></a>';
+    html += '</div>';
   }
   grid.innerHTML = html;
 }
@@ -1046,7 +1059,7 @@ function filt(btn, cat){
   var btns = document.querySelectorAll('.filter-btn');
   for(var i=0;i<btns.length;i++) btns[i].classList.remove('on');
   btn.classList.add('on');
-  var cards = document.querySelectorAll('.proj-card');
+  var cards = document.querySelectorAll('.proj-wrap');
   for(var i=0;i<cards.length;i++){
     if(cat === 'הכל' || cards[i].getAttribute('data-c') === cat){
       cards[i].style.display = '';
@@ -1298,7 +1311,7 @@ window.addEventListener('scroll', updateNav);
 window.addEventListener('scroll', stackCards, {passive:true});
 
 function stackCards(){
-  var cards = document.querySelectorAll('.proj-card:not([style*="display:none"])');
+  var cards = document.querySelectorAll('.proj-wrap:not([style*="display:none"])');
   cards.forEach(function(card, i){
     var rect = card.getBoundingClientRect();
     var stickyTop = 80 + i * 8;
