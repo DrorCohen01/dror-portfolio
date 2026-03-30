@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>פרויקטים — דרור כהן | UX Strategist & UI Designer</title>
+<meta name="description" content="כל הפרויקטים של דרור כהן — עיצוב UX/UI לחברות הייטק, סטארטאפים ומותגים מובילים.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#121212;--card:#1A1A1A;--card2:#222222;--card3:#2A2A2A;
+  --white:#FFFFFF;--gray:#888888;--orange:#F5A623;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+.reveal{animation:fadeUp .65s ease both}
+.r1{animation-delay:.09s}.r2{animation-delay:.18s}.r3{animation-delay:.27s}
+
+/* ── Nav ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px;position:relative}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo span{color:var(--gray)}
+.nav-links{display:flex;gap:28px;list-style:none;font-size:.88rem;font-weight:400;position:absolute;left:50%;transform:translateX(-50%)}
+.nav-links a{color:var(--gray);transition:color .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{background:var(--white);color:#121212;border:none;padding:10px 24px;border-radius:100px;font-family:inherit;font-weight:600;font-size:.88rem;cursor:pointer;transition:opacity .25s;display:inline-block}
+.nav-cta:hover{opacity:.85}
+.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer}
+
+/* ── WhatsApp ── */
+.wa-btn{position:fixed;bottom:28px;left:28px;z-index:999;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;box-shadow:0 4px 16px rgba(37,211,102,.4);transition:transform .25s}
+.wa-btn:hover{transform:scale(1.1)}
+
+/* ── Hero ── */
+.page-hero{padding:80px 0 60px;border-bottom:1px solid var(--border)}
+.page-hero .sec-label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.page-hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.1;margin-bottom:16px}
+.page-hero p{font-size:1.1rem;color:var(--gray);max-width:560px}
+
+/* ── Filter Bar ── */
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;padding:32px 0 0}
+.filter-btn{background:var(--card);border:1px solid var(--border);color:var(--gray);padding:8px 20px;border-radius:100px;font-family:inherit;font-size:.83rem;cursor:pointer;transition:all .2s}
+.filter-btn:hover{border-color:var(--border2);color:var(--white)}
+.filter-btn.on{background:var(--white);border-color:var(--white);color:#121212;font-weight:600}
+
+/* ── Projects Grid ── */
+.projects-section{padding:40px 0 100px}
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:0}
+.proj-card{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;box-shadow:0 8px 32px rgba(0,0,0,.12);transition:transform .3s ease,box-shadow .3s ease}
+.proj-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.25)}
+.proj-thumb{background:#111;position:relative;overflow:hidden;aspect-ratio:16/9}
+.proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.proj-card:hover .proj-thumb img{transform:scale(1.04)}
+.proj-body{position:absolute;bottom:0;right:0;left:0;padding:48px 36px 32px;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 55%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end}
+.proj-body h3{font-size:1.7rem;font-weight:700;margin-bottom:8px;color:#fff;line-height:1.2}
+.proj-body p{color:rgba(255,255,255,.75);font-size:.88rem;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;margin-bottom:14px}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px}
+.proj-tags span{font-size:.72rem;font-weight:500;padding:4px 12px;border-radius:100px;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.07)}
+.proj-cat-badge{position:absolute;top:18px;right:18px;font-size:.72rem;font-weight:600;padding:5px 14px;border-radius:100px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.18)}
+
+/* ── Footer ── */
+footer{background:#0E0E0E;border-top:1px solid var(--border);padding:60px 0 32px}
+.footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand{font-size:1.4rem;font-weight:700;font-family:'Noto Sans Display',sans-serif;margin-bottom:10px}
+.footer-brand span{color:var(--gray)}
+.footer-col h4{font-size:.82rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul a{font-size:.88rem;color:var(--gray);transition:color .2s}
+.footer-col ul a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border);font-size:.8rem;color:var(--gray)}
+.ext{font-size:.7rem;opacity:.6}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .proj-grid{grid-template-columns:1fr}
+  .footer-main{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .nav-mobile{display:block}
+}
+@media(max-width:600px){
+  .wrap{padding:0 20px}
+  .page-hero{padding:52px 0 40px}
+  .footer-main{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/972547179000" target="_blank" class="wa-btn" title="שלחו הודעה בוואטסאפ"><i class="fa-brands fa-whatsapp"></i></a>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Dror<span>Cohen</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">אני דרור</a></li>
+      <li><a href="uxui.html">UX/UI</a></li>
+      <li><a href="index.html#services">מה אני עושה</a></li>
+      <li><a href="projects.html" class="active">פרויקטים</a></li>
+      <li><a href="index.html#testimonials">המלצות</a></li>
+      <li><a href="blog.html">בלוג</a></li>
+      <li><a href="contact.html">צור קשר</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">בואו נדבר</a>
+    <button class="nav-mobile" id="navToggle" aria-label="תפריט"><i class="fa fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="page-hero">
+  <div class="wrap">
+    <span class="sec-label reveal">עבודות נבחרות</span>
+    <h1 class="reveal r1">פרויקטים</h1>
+    <p class="reveal r2">מבחר פרויקטים שמייצגים את הגישה והיכולות שלי — מ-SaaS לבריאות, ממובייל לאנטרפרייז</p>
+  </div>
+</div>
+
+<!-- Projects -->
+<section class="projects-section">
+  <div class="wrap">
+    <div class="filter-bar reveal" id="filterBar"></div>
+    <div class="proj-grid reveal r2" id="projGrid"></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <div class="footer-brand">Dror<span>Cohen</span></div>
+      </div>
+      <div class="footer-col">
+        <h4>ניווט</h4>
+        <ul>
+          <li><a href="about.html">אני דרור</a></li>
+          <li><a href="index.html#services">מה אני עושה</a></li>
+          <li><a href="projects.html">פרויקטים</a></li>
+          <li><a href="index.html#testimonials">המלצות</a></li>
+          <li><a href="blog.html">בלוג</a></li>
+          <li><a href="contact.html">צור קשר</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>שירותים</h4>
+        <ul>
+          <li><a href="uxui.html">UX/UI Design</a></li>
+          <li><a href="index.html#services">אפיון מוצר</a></li>
+          <li><a href="index.html#services">Design System</a></li>
+          <li><a href="index.html#services">מחקר משתמשים</a></li>
+          <li><a href="index.html#services">Branding</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>סושיאל</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
+          <li><a href="https://wa.me/972547179000" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>Made with ❤️ by Dror Cohen</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+var PROJECTS = [
+  {
+    id:'optimus', cats:'תוכנה כשירות', cat:'תוכנה כשירות', title:'Optimus',
+    subtitle:'אופטימוס – פשוט לנהל חכם! תוכנה לניהול מספרות, מכוני יופי, ספא, שיזוף וקוסמטיקאיות. מערכת שמאפשרת לבתי עסק לנהל תורים, לקוחות, תזכורות אוטומטיות, חשבוניות דיגיטליות ותוכניות נאמנות — הכל במקום אחד.',
+    thumb:'optimus1.png', heroFA:'calendar-check',
+    tags:['תוכנה כשירות','Mobile','UX Research','Branding']
+  },
+  {
+    id:'calosense', cats:'HealthTech', cat:'HealthTech', title:'CaloSense',
+    subtitle:'עיצוב פלטפורמת מסע מטופל מקיפה. CaloSense היא פלטפורמת ניטור מטופלים מרחוק (RPM) לטווח ארוך, המנהלת את מסע המטופל מקצה לקצה.',
+    thumb:'calosense-mockup.png', heroFA:'heart-pulse',
+    tags:['HealthTech','RPM','UX Research','Design System']
+  },
+  {
+    id:'propit', cats:'תוכנה כשירות', cat:'תוכנה כשירות', title:'PropIT',
+    subtitle:'פלטפורמת נדל"ן מסחרי מתקדמת עם חיפוש מפה וסיורים וירטואליים. מהפכה למחפשי משרדים ונכסים מסחריים.',
+    thumb:'פרופיט.png', heroFA:'building',
+    tags:['תוכנה כשירות','Real Estate','UX/UI','Branding']
+  },
+  {
+    id:'twist', cats:'Branding', cat:'Branding', title:'Twist Bioscience',
+    subtitle:'עיצוב חוויית משתמש ואתר לחברת ביוטכנולוגיה מובילה. Twist Bioscience מספקת כלי DNA סינתטי המסייעים ללקוחות לחדש ברפואה, חקלאות ותעשייה.',
+    thumb:'twist.avif', heroFA:'dna',
+    tags:['Branding','Web Design','UX/UI','BioTech']
+  },
+  {
+    id:'sensica', cats:'Mobile', cat:'Mobile', title:'Sensica',
+    subtitle:'אפיון ועיצוב אפליקציית יופי ביתית מבוססת טכנולוגיה רפואית. Sensica מביאה את הטכנולוגיות החזקות של מרפאות האסתטיקה לפתרונות יופי לשימוש ביתי.',
+    thumb:'sensica.avif', heroFA:'spa',
+    tags:['Mobile','Beauty Tech','iOS','Android']
+  },
+  {
+    id:'jpu', cats:'תוכנה כשירות', cat:'תוכנה כשירות', title:'JpU',
+    subtitle:'פלטפורמת ניהול רשתות IoT ו-M2M מבוססת ווב. JpU מפתחת רשת ליבה סלולרית ייעודית לספקי IoT ו-M2M.',
+    thumb:'jpu.png', heroFA:'network-wired',
+    tags:['תוכנה כשירות','IoT','Branding','Web Platform']
+  },
+  {
+    id:'ctera', cats:'תוכנה כשירות', cat:'תוכנה כשירות', title:'CTERA',
+    subtitle:'עיצוב פלטפורמת שירותי קבצים ארגונית מבוססת ענן. שירותי קבצים מקיפים — ללא פשרות.',
+    thumb:'ctera.png', heroFA:'cloud',
+    tags:['תוכנה כשירות','Enterprise','Cloud','UX Design']
+  },
+  {
+    id:'powercash21', cats:'תוכנה כשירות', cat:'תוכנה כשירות', title:'PowerCash21',
+    subtitle:'עיצוב פלטפורמת תשלומים מאובטחת לסוחרים. קליטה מהירה, אינטגרציה קלה, שיטות תשלום גלובליות ודיווח חכם.',
+    thumb:'power.png', heroFA:'credit-card',
+    tags:['תוכנה כשירות','FinTech','Payments','Web Platform']
+  }
+];
+
+var CATEGORIES = ['הכל','תוכנה כשירות','Mobile','Branding','HealthTech'];
+var activeCategory = 'הכל';
+
+function buildFilters(){
+  var bar = document.getElementById('filterBar');
+  var html = '';
+  for(var i=0;i<CATEGORIES.length;i++){
+    var cls = CATEGORIES[i] === activeCategory ? 'filter-btn on' : 'filter-btn';
+    html += '<button class="'+cls+'" onclick="filt(this,\''+CATEGORIES[i]+'\')">'+CATEGORIES[i]+'</button>';
+  }
+  bar.innerHTML = html;
+}
+
+function buildProjects(){
+  var grid = document.getElementById('projGrid');
+  var html = '';
+  for(var i=0;i<PROJECTS.length;i++){
+    var p = PROJECTS[i];
+    var visible = activeCategory === 'הכל' || p.cats === activeCategory;
+    if(!visible) continue;
+    var tagsHtml = '';
+    for(var t=0;t<p.tags.length;t++){
+      tagsHtml += '<span>'+p.tags[t]+'</span>';
+    }
+    var thumbContent = p.thumb
+      ? '<img src="'+p.thumb+'" alt="'+p.title+'" loading="lazy">'
+      : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--gray)"><i class="fa-solid fa-'+p.heroFA+'"></i></div>';
+    html += '<div class="proj-card" onclick="window.location.href=\'projects/'+p.id+'.html\'">';
+    html += '<div class="proj-thumb">'+thumbContent+'</div>';
+    html += '<span class="proj-cat-badge">'+p.cat+'</span>';
+    html += '<div class="proj-body">';
+    html += '<h3>'+p.title+'</h3>';
+    html += '<p>'+p.subtitle+'</p>';
+    html += '<div class="proj-tags">'+tagsHtml+'</div>';
+    html += '</div></div>';
+  }
+  grid.innerHTML = html || '<p style="color:var(--gray);padding:40px 0">אין פרויקטים בקטגוריה זו</p>';
+}
+
+function filt(btn, cat){
+  var btns = document.querySelectorAll('.filter-btn');
+  for(var i=0;i<btns.length;i++) btns[i].classList.remove('on');
+  btn.classList.add('on');
+  activeCategory = cat;
+  buildProjects();
+}
+
+buildFilters();
+buildProjects();
+
+// Mobile nav toggle
+document.getElementById('navToggle').addEventListener('click', function(){
+  var links = document.querySelector('.nav-links');
+  if(links.style.display === 'flex'){
+    links.style.display = '';
+  } else {
+    links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:72px;right:0;left:0;background:rgba(18,18,18,.97);padding:24px 40px;gap:20px;z-index:99';
+  }
+});
+</script>
+</body>
+</html>
