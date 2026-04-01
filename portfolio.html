@@ -179,6 +179,26 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .tool-pill{display:flex;align-items:center;gap:8px;background:var(--card2);border:1px solid var(--border2);padding:8px 16px;border-radius:100px;font-size:.82rem;font-weight:400;color:var(--gray)}
 .tool-pill .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 
+/* ── No Code Teaser ── */
+.nocode-teaser{padding:100px 0}
+.nocode-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.nocode-text .sec-label{display:block;margin-bottom:10px}
+.nocode-text .sec-title{margin-bottom:16px}
+.nocode-text p{color:var(--gray);font-size:.98rem;line-height:1.8;max-width:480px;margin-bottom:32px}
+.nocode-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
+.nocode-pills span{font-size:.8rem;font-weight:500;color:var(--gray);border:1px solid var(--border2);padding:6px 16px;border-radius:100px}
+.nocode-visual{background:var(--card);border-radius:24px;border:1px solid var(--border);padding:40px;display:flex;flex-direction:column;gap:16px}
+.nocode-visual-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.nocode-visual-top span{font-size:.72rem;font-weight:600;color:var(--gray);letter-spacing:1px;text-transform:uppercase}
+.nocode-bar{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--card2);border-radius:12px;border:1px solid var(--border)}
+.nocode-bar-icon{width:36px;height:36px;border-radius:10px;background:var(--card3);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.nocode-bar-text{flex:1}
+.nocode-bar-text strong{display:block;font-size:.88rem;font-weight:600;margin-bottom:2px}
+.nocode-bar-text span{font-size:.78rem;color:var(--gray)}
+.nocode-bar-badge{font-size:.7rem;font-weight:600;color:#6bffa8;border:1px solid rgba(107,255,168,.25);padding:3px 10px;border-radius:100px;white-space:nowrap}
+@media(max-width:900px){.nocode-inner{grid-template-columns:1fr;gap:48px}}
+@media(max-width:640px){.nocode-teaser{padding:60px 0}.nocode-visual{padding:24px}}
+
 /* ── Testimonials Carousel ── */
 .testimonials{padding:0;position:relative;overflow:hidden;background:#ffffff}
 .test-carousel{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 120px}
@@ -412,6 +432,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
     <ul class="nav-links">
       <li><a href="about.html">אני דרור</a></li>
       <li><a href="uxui.html">UX/UI</a></li>
+      <li><a href="nocode.html">No Code</a></li>
       <li><a href="#services" onclick="return navTo('#services')">מה אני עושה</a></li>
       <li><a href="#projects" onclick="return navTo('#projects')">פרויקטים</a></li>
       <li><a href="#testimonials" onclick="return navTo('#testimonials')">המלצות</a></li>
@@ -475,6 +496,65 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
     </div>
     <div class="filter-bar reveal r3" id="filterBar"></div>
     <div class="proj-grid" id="projGrid"></div>
+  </div>
+</section>
+
+<!-- No Code Teaser -->
+<section class="nocode-teaser">
+  <div class="wrap">
+    <div class="nocode-inner">
+      <div class="nocode-text">
+        <span class="sec-label reveal">שירות חדש</span>
+        <h2 class="sec-title reveal r1">No Code Dev</h2>
+        <p class="reveal r2">בונה אתרים ומוצרים דיגיטליים עם כלי No Code מודרניים — Webflow, Framer ו-Figma Sites. השקה מהירה, עיצוב מדויק, ביצועים מקצועיים. בלי צוות פיתוח גדול, בלי חיכוך, בלי המתנה.</p>
+        <div class="nocode-pills reveal r3">
+          <span>Webflow</span>
+          <span>Framer</span>
+          <span>Figma Sites</span>
+          <span>CMS</span>
+          <span>SEO מובנה</span>
+          <span>Responsive</span>
+        </div>
+        <a href="nocode.html" class="btn-primary reveal r4">לעמוד No Code <i class="fa-solid fa-arrow-left" style="font-size:.8rem;margin-right:6px"></i></a>
+      </div>
+      <div class="nocode-visual reveal r2">
+        <div class="nocode-visual-top">
+          <span>No Code Stack</span>
+        </div>
+        <div class="nocode-bar">
+          <div class="nocode-bar-icon"><i class="fa-solid fa-w" style="color:#4353FF"></i></div>
+          <div class="nocode-bar-text">
+            <strong>Webflow</strong>
+            <span>אתרים, Landing Pages, CMS</span>
+          </div>
+          <span class="nocode-bar-badge">מומלץ</span>
+        </div>
+        <div class="nocode-bar">
+          <div class="nocode-bar-icon"><i class="fa-solid fa-layer-group" style="color:#0099FF"></i></div>
+          <div class="nocode-bar-text">
+            <strong>Framer</strong>
+            <span>אנימציות, אינטראקציות</span>
+          </div>
+          <span class="nocode-bar-badge">פופולרי</span>
+        </div>
+        <div class="nocode-bar">
+          <div class="nocode-bar-icon"><i class="fa-brands fa-figma" style="color:#F24E1E"></i></div>
+          <div class="nocode-bar-text">
+            <strong>Figma Sites</strong>
+            <span>מהעיצוב לאתר חי ישירות</span>
+          </div>
+          <span class="nocode-bar-badge">חדש</span>
+        </div>
+        <div class="nocode-bar">
+          <div class="nocode-bar-icon"><i class="fa-solid fa-bolt" style="color:var(--orange)"></i></div>
+          <div class="nocode-bar-text">
+            <strong>זמן השקה</strong>
+            <span>שבועות — לא חודשים</span>
+          </div>
+          <span class="nocode-bar-badge">3× מהיר</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
