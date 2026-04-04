@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>No Code Dev — דרור כהן | בניית אתרים ומוצרים ב-No Code</title>
-<meta name="description" content="בניית אתרים ומוצרים דיגיטליים עם כלי No Code מודרניים — Webflow, Framer, Figma Sites. השקה מהירה, בלי פשרות בביצועים.">
+<title>No Code Dev — דרור כהן | פיתוח AI-Powered מהיר</title>
+<meta name="description" content="בניית אתרים ומוצרים דיגיטליים עם כלי AI מודרניים — Lovable, Figma Make, Claude Code ו-VS Code. השקה מהירה, בלי צוות פיתוח גדול.">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
@@ -69,18 +69,20 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .hero-stat .num{font-size:2rem;font-weight:700}
 .hero-stat .lbl{font-size:.82rem;color:var(--gray);font-weight:400}
 
-/* Platforms */
-.platforms{padding:100px 0}
-.platform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:60px;border:1px solid var(--border);border-radius:20px;overflow:hidden}
-.platform-card{background:var(--card);padding:48px;position:relative;transition:background .25s;display:flex;flex-direction:column}
-.platform-card:hover{background:var(--card2)}
-.platform-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--border)}
-.platform-card:nth-last-child(-n+2)::after{display:none}
-.platform-num{font-size:.78rem;font-weight:600;color:var(--gray);letter-spacing:2px;margin-bottom:20px}
-.platform-card h3{font-size:1.4rem;font-weight:700;margin-bottom:14px}
-.platform-card p{color:var(--gray);font-size:.92rem;line-height:1.75;flex:1}
-.platform-card i{font-size:1.6rem;color:var(--white);margin-bottom:20px;display:block}
-.platform-badge{display:inline-block;margin-top:20px;font-size:.75rem;font-weight:600;color:var(--gray);border:1px solid var(--border2);padding:4px 14px;border-radius:100px}
+/* Tools */
+.tools-section{padding:100px 0}
+.tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:60px;border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.tool-card{background:var(--card);padding:48px;position:relative;transition:background .25s;display:flex;flex-direction:column}
+.tool-card:hover{background:var(--card2)}
+.tool-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--border)}
+.tool-card:nth-last-child(-n+2)::after{display:none}
+.tool-num{font-size:.78rem;font-weight:600;color:var(--gray);letter-spacing:2px;margin-bottom:20px}
+.tool-card h3{font-size:1.4rem;font-weight:700;margin-bottom:14px}
+.tool-card p{color:var(--gray);font-size:.92rem;line-height:1.75;flex:1}
+.tool-icon-wrap{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-size:1.4rem;border:1px solid var(--border2)}
+.tool-badge{display:inline-block;margin-top:24px;font-size:.75rem;font-weight:600;color:var(--gray);border:1px solid var(--border2);padding:5px 14px;border-radius:100px}
+.tool-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tool-tags span{font-size:.72rem;color:var(--gray);border:1px solid var(--border);padding:3px 10px;border-radius:100px}
 
 /* Impact */
 .impact{padding:100px 0;background:var(--card)}
@@ -152,7 +154,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 /* Responsive */
 @media(max-width:900px){
   .page-hero h1{font-size:2.4rem}
-  .platform-grid{grid-template-columns:1fr}
+  .tools-grid{grid-template-columns:1fr}
   .impact-grid{grid-template-columns:1fr 1fr}
   .process-grid{grid-template-columns:1fr 1fr}
   .why-grid{grid-template-columns:1fr;gap:40px}
@@ -171,9 +173,8 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
   .hero-stats{flex-wrap:wrap;gap:24px}
   .hero-btns{flex-direction:column;align-items:center}
   .footer-main{grid-template-columns:1fr}
-  .platform-card{padding:28px 24px}
-  .compare-row .old,.compare-row .new{display:none}
-  .compare-row .arrow{display:none}
+  .tool-card{padding:28px 24px}
+  .compare-row .old,.compare-row .new,.compare-row .arrow{display:none}
 }
 </style>
 </head>
@@ -210,59 +211,79 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 <!-- Hero -->
 <section class="page-hero grid-bg">
   <div class="wrap">
-    <span class="page-hero-tag">No Code Development</span>
-    <h1>אתרים ומוצרים דיגיטליים — <em>מהר יותר, חכם יותר</em></h1>
-    <p>בונה אתרים ומוצרים עם כלי No Code מודרניים. השקה מהירה, עיצוב מדויק, ביצועים מקצועיים — בלי צוות פיתוח גדול.</p>
+    <span class="page-hero-tag">AI-Powered Development</span>
+    <h1>פיתוח מוצרים דיגיטליים — <em>מהיר יותר, חכם יותר</em></h1>
+    <p>בונה אתרים ואפליקציות עם כלי AI מהדור הבא. מה שבעבר דרש צוות שלם וחודשים של עבודה — היום קורה בימים ספורים, בלי פשרות בעיצוב ובביצועים.</p>
     <div class="hero-btns">
       <a href="contact.html" class="btn-primary">בואו נדבר על הפרויקט</a>
       <a href="portfolio.html#projects" class="btn-outline">ראו עבודות</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="num">3×</div><div class="lbl">מהיר יותר מפיתוח רגיל</div></div>
-      <div class="hero-stat"><div class="num">60%</div><div class="lbl">חיסכון בעלויות</div></div>
-      <div class="hero-stat"><div class="num">20+</div><div class="lbl">אתרים שנבנו</div></div>
+      <div class="hero-stat"><div class="num">5×</div><div class="lbl">מהיר יותר מפיתוח רגיל</div></div>
+      <div class="hero-stat"><div class="num">70%</div><div class="lbl">חיסכון בעלויות פיתוח</div></div>
+      <div class="hero-stat"><div class="num">4</div><div class="lbl">כלי AI בשימוש יומיומי</div></div>
     </div>
   </div>
 </section>
 
-<!-- Platforms -->
-<section class="platforms">
+<!-- Tools -->
+<section class="tools-section">
   <div class="wrap">
-    <span class="sec-label reveal">מה אני בונה</span>
-    <h2 class="sec-title reveal r1">פלטפורמות ושירותים</h2>
-    <p class="sec-sub reveal r2">כלים מוביל בתעשייה לבניית אתרים ומוצרים ברמה מקצועית</p>
-    <div class="platform-grid">
+    <span class="sec-label reveal">הכלים שאני עובד איתם</span>
+    <h2 class="sec-title reveal r1">AI Dev Stack</h2>
+    <p class="sec-sub reveal r2">ארבעה כלים שמשנים את הדרך שבה בונים מוצרים דיגיטליים</p>
+    <div class="tools-grid">
 
-      <div class="platform-card reveal">
-        <div class="platform-num">01</div>
-        <i class="fa-solid fa-w"></i>
-        <h3>Webflow Development</h3>
-        <p>בניית אתרים ו-landing pages מדויקים ב-Webflow — הכלי החזק ביותר ל-No Code. שליטה מלאה על עיצוב, אנימציות, CMS ו-SEO. מתאים לאתרי marketing, landing pages ואתרי תדמית ברמה גבוהה.</p>
-        <span class="platform-badge">Responsive · CMS · Animations</span>
+      <div class="tool-card reveal">
+        <div class="tool-num">01</div>
+        <div class="tool-icon-wrap" style="background:rgba(255,77,109,0.12);border-color:rgba(255,77,109,0.25)">
+          <i class="fa-solid fa-heart" style="color:#FF4D6D"></i>
+        </div>
+        <h3>Lovable</h3>
+        <p>כלי AI שבונה אפליקציות web מלאות מתיאור טקסטואלי בלבד. מגדירים מה רוצים — Lovable מייצר קוד React, Supabase, עיצוב מלא ו-backend. האידיאל לבניית MVP, אפליקציות SaaS ופורטלים בתוך ימים ספורים.</p>
+        <div class="tool-tags">
+          <span>React</span><span>Supabase</span><span>Full-Stack</span><span>MVP</span>
+        </div>
+        <span class="tool-badge">אפליקציות web מלאות</span>
       </div>
 
-      <div class="platform-card reveal r1">
-        <div class="platform-num">02</div>
-        <i class="fa-solid fa-layer-group"></i>
-        <h3>Framer Development</h3>
-        <p>עיצוב ובניית אתרים ב-Framer — הכלי האהוב של מעצבים שרוצים אתר שנראה כמו עיצוב Figma. אנימציות נוזלתיות, אינטראקציות מרשימות ו-performance מעולה מהקופסה.</p>
-        <span class="platform-badge">Animations · Interactions · Fast</span>
+      <div class="tool-card reveal r1">
+        <div class="tool-num">02</div>
+        <div class="tool-icon-wrap" style="background:rgba(242,78,30,0.12);border-color:rgba(242,78,30,0.25)">
+          <i class="fa-brands fa-figma" style="color:#F24E1E"></i>
+        </div>
+        <h3>Figma Make</h3>
+        <p>הפיצ'ר החדש של Figma שממיר עיצוב ישירות לקוד פרודקשן. אני מעצב ב-Figma — ו-Figma Make הופך את זה לקוד React אמיתי, מדויק לפיקסל. אפס פער בין העיצוב למוצר הסופי.</p>
+        <div class="tool-tags">
+          <span>Design-to-Code</span><span>React</span><span>Pixel-perfect</span>
+        </div>
+        <span class="tool-badge">מעיצוב לקוד ישירות</span>
       </div>
 
-      <div class="platform-card reveal r2">
-        <div class="platform-num">03</div>
-        <i class="fa-brands fa-figma"></i>
-        <h3>Figma Sites</h3>
-        <p>מהעיצוב לאתר חי ישירות מ-Figma — בלי export, בלי handoff, בלי פיתוח. הגישה החדשה שמאפשרת ליצור אתרים פשוטים ומדויקים בזמן שיא, תוך שמירה על חוויה ויזואלית מושלמת.</p>
-        <span class="platform-badge">Direct from Figma · Pixel-perfect</span>
+      <div class="tool-card reveal r2">
+        <div class="tool-num">03</div>
+        <div class="tool-icon-wrap" style="background:rgba(204,120,92,0.12);border-color:rgba(204,120,92,0.25)">
+          <i class="fa-solid fa-robot" style="color:#CC785C"></i>
+        </div>
+        <h3>Claude Code</h3>
+        <p>ה-AI הכי חזק לפיתוח — כותב קוד, מתקן באגים, מוסיף פיצ'רים ומשפר ביצועים בשיחה טבעית. עובד ישירות על הפרויקט בטרמינל, מבין את כל הקוד הקיים, ומייצר פתרונות שמתאימים בדיוק לארכיטקטורה הקיימת.</p>
+        <div class="tool-tags">
+          <span>AI Coding</span><span>Debugging</span><span>Refactoring</span>
+        </div>
+        <span class="tool-badge">עריכת קוד עם AI</span>
       </div>
 
-      <div class="platform-card reveal r3">
-        <div class="platform-num">04</div>
-        <i class="fa-solid fa-wrench"></i>
-        <h3>Platform Maintenance & Support</h3>
-        <p>תחזוקה שוטפת, עדכוני תוכן, שיפורים ותיקונים לאתרים קיימים. אני לומד את הפלטפורמה שלך ומנהל אותה כאילו היא שלי — מהיר, אמין, ובלי להכביד על הצוות שלך.</p>
-        <span class="platform-badge">Updates · Fixes · Ongoing support</span>
+      <div class="tool-card reveal r3">
+        <div class="tool-num">04</div>
+        <div class="tool-icon-wrap" style="background:rgba(0,122,204,0.12);border-color:rgba(0,122,204,0.25)">
+          <i class="fa-solid fa-code" style="color:#007ACC"></i>
+        </div>
+        <h3>VS Code</h3>
+        <p>סביבת הפיתוח שמחברת הכל יחד. VS Code עם תוספי AI מתקדמים — GitHub Copilot, Claude, Cursor-style editing — הופך את עריכת הקוד לחוויה שטופה ומהירה. כאן מסתיים כל הייצור ומתחיל ה-deployment.</p>
+        <div class="tool-tags">
+          <span>IDE</span><span>Copilot</span><span>Extensions</span><span>Git</span>
+        </div>
+        <span class="tool-badge">סביבת פיתוח מלאה</span>
       </div>
 
     </div>
@@ -272,33 +293,33 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 <!-- Impact -->
 <section class="impact">
   <div class="wrap">
-    <span class="sec-label reveal">למה No Code?</span>
+    <span class="sec-label reveal">למה AI Dev?</span>
     <h2 class="sec-title reveal r1">היתרונות האמיתיים</h2>
-    <p class="sec-sub reveal r2">No Code לא אומר פחות מקצועי — אומר יותר חכם</p>
+    <p class="sec-sub reveal r2">AI לא מחליף מפתח — הוא מכפיל את היכולת של מי שיודע להשתמש בו</p>
     <div class="impact-grid">
 
       <div class="impact-card reveal">
         <i class="fa-solid fa-bolt"></i>
-        <h3>השקה מהירה</h3>
-        <p>אתר שבפיתוח רגיל לוקח 3 חודשים — אנחנו עושים בשבועיים. ללא המתנה לפיתוח, ללא bottlenecks.</p>
+        <h3>מהירות אמיתית</h3>
+        <p>MVP שבפיתוח רגיל לוקח חודשיים — אנחנו עושים בשבוע. בלי bottlenecks, בלי "זה מסובך", בלי המתנה.</p>
       </div>
 
       <div class="impact-card reveal r1">
-        <i class="fa-solid fa-piggy-bank"></i>
-        <h3>עלויות נמוכות</h3>
-        <p>חיסכון משמעותי בעלויות פיתוח. לא צריך developer, QA ו-DevOps — אחד האנשים עושה הכל.</p>
+        <i class="fa-solid fa-paintbrush"></i>
+        <h3>עיצוב + קוד ביחד</h3>
+        <p>כמעצב שגם מפתח — אין פער בין מה שתכננתי לבין מה שנבנה. הפיקסל הראשון שווה לפיקסל האחרון.</p>
       </div>
 
       <div class="impact-card reveal r2">
-        <i class="fa-solid fa-pen-to-square"></i>
-        <h3>עריכה עצמאית</h3>
-        <p>אחרי ה-launch תוכל לעדכן תוכן, להוסיף עמודים ולשנות טקסטים לבד — בלי לחזור אליי לכל שינוי קטן.</p>
+        <i class="fa-solid fa-piggy-bank"></i>
+        <h3>חיסכון משמעותי</h3>
+        <p>אין צורך בצוות מלא של Frontend, Backend ו-DevOps. עלות נמוכה יותר — מוצר טוב יותר, מהר יותר.</p>
       </div>
 
       <div class="impact-card reveal r3">
         <i class="fa-solid fa-expand"></i>
-        <h3>סקלאביליות</h3>
-        <p>מתחילים קטן ומגדילים לפי הצורך. ניתן להוסיף עמודים, שפות ותכונות בלי לפרק את מה שבנינו.</p>
+        <h3>קוד אמיתי, לא תבניות</h3>
+        <p>הפלט הוא קוד React נקי שאפשר להמשיך לפתח, להרחיב ולהעביר לכל developer — אין lock-in לפלטפורמה.</p>
       </div>
 
     </div>
@@ -309,36 +330,36 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 <section class="process">
   <div class="wrap">
     <span class="sec-label reveal">איך זה עובד</span>
-    <h2 class="sec-title reveal r1">תהליך עבודה בן 4 שלבים</h2>
-    <p class="sec-sub reveal r2">מהגדרת המטרות ועד לשחרור — תהליך מובנה שמספק תוצאות</p>
+    <h2 class="sec-title reveal r1">תהליך AI-Powered בן 4 שלבים</h2>
+    <p class="sec-sub reveal r2">מהגדרת המטרות ועד לאפליקציה חיה — תהליך מובנה שמספק תוצאות</p>
     <div class="process-grid">
 
       <div class="proc-step reveal">
         <div class="proc-num">01</div>
         <i class="fa-solid fa-bullseye"></i>
-        <h3>תכנון</h3>
-        <p>מגדירים יחד את מטרות הפרויקט, הקהל, הפיצ'רים הנדרשים ולוח הזמנים. בוחרים את הפלטפורמה המתאימה ומתאימים אסטרטגיה להצלחה.</p>
+        <h3>הגדרה ותכנון</h3>
+        <p>מגדירים יחד את מטרות המוצר, הפיצ'רים הנדרשים, קהל היעד ולוח הזמנים. בוחרים את שילוב הכלים הנכון לפרויקט הספציפי.</p>
       </div>
 
       <div class="proc-step reveal r1">
         <div class="proc-num">02</div>
         <i class="fa-brands fa-figma"></i>
-        <h3>עיצוב</h3>
-        <p>מעצבים ב-Figma מסכים, layouts ואינטראקציות. מקבלים אישור על העיצוב לפני שמתחילים לבנות — חוסך זמן ומניע הפתעות.</p>
+        <h3>עיצוב ב-Figma</h3>
+        <p>מעצבים ב-Figma את כל המסכים, הזרימות והאינטראקציות. Figma Make ממיר אותם לקוד — מה שמבטיח פידליות מלאה בין עיצוב לקוד.</p>
       </div>
 
       <div class="proc-step reveal r2">
         <div class="proc-num">03</div>
-        <i class="fa-solid fa-hammer"></i>
-        <h3>בנייה</h3>
-        <p>בונים את האתר או המוצר בפלטפורמה הנבחרת. Responsive design, אנימציות, SEO ו-CMS — הכל מוגדר ועובד מושלם.</p>
+        <i class="fa-solid fa-robot"></i>
+        <h3>בנייה עם AI</h3>
+        <p>Lovable בונה את ה-skeleton, Claude Code מוסיף פיצ'רים מורכבים ומתקן, VS Code מחבר הכל. תהליך iterative מהיר עם תוצאות ראשונות תוך שעות.</p>
       </div>
 
       <div class="proc-step reveal r3">
         <div class="proc-num">04</div>
         <i class="fa-solid fa-rocket"></i>
-        <h3>השקה</h3>
-        <p>בדיקות קצה-לקצה על כל מכשיר ודפדפן, חיבור דומיין, הגדרות analytics ו-go live. ומלווה אותך גם אחרי ה-launch.</p>
+        <h3>השקה ו-Deploy</h3>
+        <p>בדיקות קצה-לקצה, אופטימיזציה לביצועים ו-SEO, deploy לפרודקשן. הקוד הוא שלך לחלוטין — GitHub repo מסודר מוכן להמשך פיתוח.</p>
       </div>
 
     </div>
@@ -349,75 +370,75 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 <section class="why">
   <div class="wrap">
     <span class="sec-label reveal">למה לעבוד איתי</span>
-    <h2 class="sec-title reveal r1">No Code + UX/UI = שילוב מנצח</h2>
+    <h2 class="sec-title reveal r1">מעצב + מפתח AI = שילוב נדיר</h2>
     <div class="why-grid">
       <div class="why-list">
 
         <div class="why-item reveal">
           <div class="why-icon"><i class="fa-solid fa-palette"></i></div>
           <div>
-            <h4>מעצב שגם בונה</h4>
-            <p>אני לא סתם בונה לפי תבניות — אני מעצב UX/UI בכיר עם 20+ שנות ניסיון. כל אלמנט חושב מהיבט של חוויית משתמש, לא רק "איך זה נראה".</p>
+            <h4>עיצוב שבונה ובנייה שמעצבת</h4>
+            <p>20+ שנות ניסיון ב-UX/UI + שליטה בכלי AI Dev — שילוב שנדיר למצוא. כל פיצ'ר שנבנה מגיע עם חשיבה עיצובית מקצועית, לא רק קוד שעובד.</p>
           </div>
         </div>
 
         <div class="why-item reveal r1">
-          <div class="why-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="why-icon"><i class="fa-solid fa-file-code"></i></div>
           <div>
-            <h4>מהירות אמיתית</h4>
-            <p>כי אני מגיע לשולחן כשה-design כבר מוכן (אני עשיתי אותו), הבנייה מהירה יותר. שבועות, לא חודשים. ואין חינוך צד של פיתוח.</p>
+            <h4>קוד נקי שאפשר להמשיך לפתח</h4>
+            <p>הפלט הוא לא "blackbox" — זה קוד React מסודר, מתועד ומוכן ל-handoff. כל developer שיכנס לפרויקט אחרי יוכל להמשיך בלי בעיה.</p>
           </div>
         </div>
 
         <div class="why-item reveal r2">
-          <div class="why-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="why-icon"><i class="fa-solid fa-bolt"></i></div>
           <div>
-            <h4>הדרכה ועצמאות</h4>
-            <p>בסוף הפרויקט תקבל הדרכה מסודרת על ניהול האתר שלך. לא תהיה תלוי בי לעדכון כל תמונה — אני רוצה שתהיה עצמאי.</p>
+            <h4>שגיאות פחות, מהירות יותר</h4>
+            <p>שימוש נכון ב-AI Coding מצמצם bugs, מאיץ את ה-development loop ומאפשר לשנות כיוון בלי לשלם מחיר כבד — הכרחי בשלבים המוקדמים של מוצר.</p>
           </div>
         </div>
 
         <div class="why-item reveal r3">
-          <div class="why-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div class="why-icon"><i class="fa-solid fa-users"></i></div>
           <div>
-            <h4>SEO ו-Performance מובנים</h4>
-            <p>Webflow ו-Framer מוציאים קוד נקי ומהיר. אבל חשוב שמי שבונה יבין SEO, meta tags, schema ו-Core Web Vitals — ואני מבין.</p>
+            <h4>תקשורת ישירה, בלי תרגומים</h4>
+            <p>אתה מדבר ישירות עם מי שמעצב ובונה. אין PM, אין "אעביר לצוות" — הפידבק שלך מגיע ישירות למקום שבו הקוד נכתב.</p>
           </div>
         </div>
 
       </div>
 
       <div class="why-visual reveal">
-        <div class="why-visual-title">השוואה: No Code מול פיתוח רגיל</div>
+        <div class="why-visual-title">AI Dev מול פיתוח מסורתי</div>
         <div class="compare-row">
-          <span class="label">זמן להשקה</span>
-          <span class="old">3–4 חודשים</span>
+          <span class="label">זמן ל-MVP</span>
+          <span class="old">2–3 חודשים</span>
           <span class="arrow">→</span>
-          <span class="new">2–3 שבועות</span>
+          <span class="new">1–2 שבועות</span>
+        </div>
+        <div class="compare-row">
+          <span class="label">גודל צוות</span>
+          <span class="old">4–6 אנשים</span>
+          <span class="arrow">→</span>
+          <span class="new">1 אדם</span>
         </div>
         <div class="compare-row">
           <span class="label">עלות ממוצעת</span>
-          <span class="old">₪80,000+</span>
+          <span class="old">₪100,000+</span>
           <span class="arrow">→</span>
-          <span class="new">₪15,000–₪30,000</span>
-        </div>
-        <div class="compare-row">
-          <span class="label">עדכוני תוכן</span>
-          <span class="old">צריך developer</span>
-          <span class="arrow">→</span>
-          <span class="new">עצמאי לגמרי</span>
+          <span class="new">₪15,000–₪40,000</span>
         </div>
         <div class="compare-row">
           <span class="label">שינויי עיצוב</span>
-          <span class="old">שבועות + עלות</span>
+          <span class="old">ימים + תיאום</span>
           <span class="arrow">→</span>
           <span class="new">שעות ספורות</span>
         </div>
         <div class="compare-row">
-          <span class="label">Performance</span>
-          <span class="old">תלוי בפיתוח</span>
+          <span class="label">בעלות על הקוד</span>
+          <span class="old">תלוי בצוות</span>
           <span class="arrow">→</span>
-          <span class="new">A+ מהקופסה</span>
+          <span class="new">GitHub שלך</span>
         </div>
       </div>
     </div>
@@ -433,42 +454,42 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>האם אתר No Code פחות מקצועי מאתר מפותח קוד?</span>
+          <span>האם הקוד שנוצר עם AI הוא קוד "אמיתי" ואיכותי?</span>
           <i class="fa-solid fa-plus"></i>
         </button>
-        <div class="faq-a"><p>ממש לא. Webflow ו-Framer מייצרים קוד נקי ומהיר שעומד בכל תקן. האתרים של Apple, NASA, Dropbox ועוד מאות חברות גדולות בנויים ב-Webflow. ההבדל הוא בתהליך הבנייה — לא בתוצאה הסופית.</p></div>
+        <div class="faq-a"><p>כן — Lovable, Figma Make ו-Claude Code מייצרים קוד React אמיתי, נקי ומובנה. הקוד נשמר ב-GitHub, ניתן לבדיקה מלאה ואפשר לתת אותו לכל developer להמשיך לפתח. זה לא "blackbox" ולא תבניות — זה קוד רגיל שכתוב במהירות גבוהה מאוד.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>האם אוכל לנהל את האתר לבד אחרי שנבנה?</span>
+          <span>מה קורה אם אני רוצה להוסיף פיצ'רים בעתיד?</span>
           <i class="fa-solid fa-plus"></i>
         </button>
-        <div class="faq-a"><p>כן, זו אחת הסיבות העיקריות לבחור No Code. ב-Webflow ו-Framer יש CMS ויזואלי שמאפשר לך לעדכן טקסטים, תמונות, פוסטים ועמודים בלי נגיעה בקוד. אני מספק הדרכה מסודרת בסיום הפרויקט.</p></div>
+        <div class="faq-a"><p>הקוד הוא שלך לחלוטין — GitHub repo מסודר, מתועד ומוכן לפיתוח המשך. כל developer שיכנס יוכל להמשיך ולהרחיב. ואם תרצה להמשיך לעבוד איתי — Claude Code ו-VS Code מאפשרים הוספת פיצ'רים במהירות שאי אפשר להשיג בפיתוח רגיל.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>כמה זמן לוקח לבנות אתר?</span>
+          <span>כמה זמן לוקח לבנות אפליקציה?</span>
           <i class="fa-solid fa-plus"></i>
         </button>
-        <div class="faq-a"><p>Landing page פשוטה — 5–7 ימי עבודה. אתר תדמית מלא עם כמה עמודים — 2–3 שבועות. אתר עם CMS מורכב — 4–6 שבועות. הזמן תלוי בהיקף, מורכבות העיצוב ומהירות אישור התוכן מצידכם.</p></div>
+        <div class="faq-a"><p>Landing page עם לוגיקה בסיסית — 3–5 ימי עבודה. MVP של אפליקציה — 1–3 שבועות. SaaS מלא עם auth, DB, payments — 4–8 שבועות. הזמן תלוי בהיקף הפיצ'רים ובמהירות האישור מצידכם, אבל כמעט תמיד מהיר מהצפוי.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>מה קורה אם אני רוצה לעבור לפיתוח קוד בעתיד?</span>
+          <span>האם הפרויקט מוכן לפרודקשן ולתנועה אמיתית?</span>
           <i class="fa-solid fa-plus"></i>
         </button>
-        <div class="faq-a"><p>Webflow מאפשר לייצא את קוד ה-HTML/CSS שנוצר. בנוסף, כל המסכים מעוצבים ב-Figma — מה שמקל על כל developer לבנות מחדש אם יום אחד תרצו. ה-IP תמיד שלכם.</p></div>
+        <div class="faq-a"><p>כן — מתבצעות בדיקות מלאות לביצועים, security, SEO ו-Core Web Vitals לפני כל השקה. Lovable מבוסס על Supabase ו-Vercel — תשתיות production-grade שמחברות גדולות סומכות עליהן. הדבר האחרון שאתה רוצה הוא לפרסם פרויקט שמקרוס בעומס.</p></div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span>האם No Code מתאים לאפליקציות מורכבות?</span>
+          <span>מה ההבדל בין זה לבין Webflow או Wix?</span>
           <i class="fa-solid fa-plus"></i>
         </button>
-        <div class="faq-a"><p>Webflow ו-Framer מצוינים לאתרים marketing, landing pages, portfolios ואתרי תוכן. לאפליקציות עם לוגיקה עסקית מורכבת, authentication וDB — יש כלים אחרים כמו Bubble או FlutterFlow. נשמח לייעץ מה מתאים לצרכים שלכם.</p></div>
+        <div class="faq-a"><p>כלים כמו Webflow ו-Wix מצוינים לאתרי marketing ו-CMS. אבל Lovable + Claude Code מאפשרים לבנות אפליקציות עם לוגיקה עסקית מורכבת, authentication, database, API integrations ולוגיקה server-side — דברים שאי אפשר לעשות ב-no-code רגיל. זה פיתוח אמיתי, מהיר מאוד.</p></div>
       </div>
 
     </div>
@@ -478,8 +499,8 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 <!-- CTA -->
 <section class="cta-section grid-bg">
   <div class="wrap">
-    <h2 class="reveal">יש לך רעיון לאתר או מוצר?</h2>
-    <p class="reveal r1">בואו נהפוך אותו לאתר חי בתוך שבועיים — הקפה עליי :-)</p>
+    <h2 class="reveal">יש לך רעיון לאפליקציה או מוצר?</h2>
+    <p class="reveal r1">בואו נהפוך אותו למוצר חי בתוך שבועיים — הקפה עליי :-)</p>
     <div class="hero-btns reveal r2">
       <a href="contact.html" class="btn-primary">בואו נדבר</a>
       <a href="portfolio.html#projects" class="btn-outline">ראו עבודות</a>
@@ -535,7 +556,6 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 </a>
 
 <script>
-// Mobile menu
 document.getElementById('navToggle').addEventListener('click',function(){
   var m = document.getElementById('mobileMenu');
   m.classList.toggle('open');
@@ -544,7 +564,6 @@ document.getElementById('navToggle').addEventListener('click',function(){
     : '<i class="fa fa-bars"></i>';
 });
 
-// FAQ
 function toggleFaq(btn){
   var item = btn.closest('.faq-item');
   var isOpen = item.classList.contains('open');
@@ -552,7 +571,6 @@ function toggleFaq(btn){
   if(!isOpen) item.classList.add('open');
 }
 
-// Reveal on scroll
 var obs = new IntersectionObserver(function(entries){
   entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
 },{threshold:0.1});
