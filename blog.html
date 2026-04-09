@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>בלוג — דרור כהן | UX/UI Designer</title>
-<meta name="description" content="תובנות, טיפים ומחשבות על עיצוב, UX ומוצר מאת דרור כהן — מעצב UX/UI פרילנסר עם 20+ שנות ניסיון.">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<title>Blog — Dror Cohen | UX/UI Designer</title>
+<meta name="description" content="Insights, tips and thoughts about design, UX and product by Dror Cohen — freelance UX/UI designer with 20+ years experience.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Sora:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -15,7 +15,7 @@
   --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
@@ -27,7 +27,7 @@ img{max-width:100%;display:block}
 /* Nav */
 nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px;position:relative}
-.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Sora',sans-serif}
 .nav-logo span{color:var(--gray)}
 .nav-links{display:flex;gap:28px;list-style:none;font-size:1rem;font-weight:400;position:absolute;left:50%;transform:translateX(-50%)}
 .nav-links a{color:var(--gray);transition:color .25s}
@@ -101,7 +101,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 /* Footer */
 footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-color:#111}
 .footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:48px;padding-bottom:64px}
-.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Noto Sans Display',sans-serif}
+.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Sora',sans-serif}
 .footer-brand span{color:rgba(255,255,255,0.4)}
 .footer-col h4{font-size:1rem;font-weight:600;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
@@ -174,33 +174,33 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
   <div class="nav-inner">
     <a href="portfolio.html" class="nav-logo">Dror<span>Cohen</span></a>
     <ul class="nav-links">
-      <li><a href="about.html">אני דרור</a></li>
-      <li><a href="uxui.html">עיצוב ממשקים</a></li>
-      <li><a href="portfolio.html#services">מה אני עושה</a></li>
-      <li><a href="portfolio.html#projects">פרויקטים</a></li>
-      <li><a href="portfolio.html#testimonials">המלצות</a></li>
-      <li><a href="blog.html" class="active">בלוג</a></li>
-      <li><a href="contact.html">צור קשר</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="uxui.html">UI/UX Design</a></li>
+      <li><a href="portfolio.html#services">Services</a></li>
+      <li><a href="portfolio.html#projects">Projects</a></li>
+      <li><a href="portfolio.html#testimonials">Testimonials</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>    <button class="nav-mobile" id="navToggle" aria-label="תפריט"><i class="fa fa-bars"></i></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="about.html">אני דרור</a>
+    <a href="about.html">About</a>
     <a href="uxui.html">UX/UI</a>
-    <a href="portfolio.html#services">מה אני עושה</a>
-    <a href="portfolio.html#projects">פרויקטים</a>
-    <a href="portfolio.html#testimonials">המלצות</a>
-    <a href="blog.html" class="active">בלוג</a>
-    <a href="contact.html">צור קשר</a>
-    <a href="contact.html" style="background:var(--white);color:#121212;padding:12px 24px;border-radius:100px;font-weight:600;text-align:center">בואו נדבר</a>
+    <a href="portfolio.html#services">Services</a>
+    <a href="portfolio.html#projects">Projects</a>
+    <a href="portfolio.html#testimonials">Testimonials</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" style="background:var(--white);color:#121212;padding:12px 24px;border-radius:100px;font-weight:600;text-align:center">Let's Talk</a>
   </div>
 </nav>
 
 <!-- Hero -->
 <section class="blog-hero grid-bg">
   <div class="wrap">
-    <span class="blog-hero-tag reveal">מחשבות על עיצוב</span>
-    <h1 class="reveal r1">בלוג</h1>
-    <p class="reveal r2">תובנות, טיפים ומחשבות על UX, UI ומוצר — מהשטח, מ-20 שנות ניסיון</p>
+    <span class="blog-hero-tag reveal">Design Thoughts</span>
+    <h1 class="reveal r1">Blog</h1>
+    <p class="reveal r2">Insights, tips and thoughts about UX, UI and product — from the field, from 20 years of experience</p>
   </div>
 </section>
 
@@ -208,60 +208,60 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 <section class="blog-section">
   <div class="wrap">
     <div class="blog-filter reveal">
-      <button class="filter-btn on" onclick="filterBlog(this,'הכל')">הכל</button>
-      <button class="filter-btn" onclick="filterBlog(this,'תכנון משתמש')">תכנון משתמש</button>
-      <button class="filter-btn" onclick="filterBlog(this,'בינה מלאכותית ועיצוב')">בינה מלאכותית ועיצוב</button>
-      <button class="filter-btn" onclick="filterBlog(this,'עיצוב לנייד')">עיצוב לנייד</button>
-      <button class="filter-btn" onclick="filterBlog(this,'מערכת עיצוב')">מערכת עיצוב</button>
-      <button class="filter-btn" onclick="filterBlog(this,'תהליך')">תהליך</button>
+      <button class="filter-btn on" onclick="filterBlog(this,'All')">All</button>
+      <button class="filter-btn" onclick="filterBlog(this,'User Planning')">User Planning</button>
+      <button class="filter-btn" onclick="filterBlog(this,'AI & Design')">AI & Design</button>
+      <button class="filter-btn" onclick="filterBlog(this,'Mobile Design')">Mobile Design</button>
+      <button class="filter-btn" onclick="filterBlog(this,'Design System')">Design System</button>
+      <button class="filter-btn" onclick="filterBlog(this,'Process')">Process</button>
     </div>
 
     <div class="blog-grid" id="blogGrid">
 
-      <a class="blog-card featured" data-cat="תכנון משתמש" href="blog/ux-research.html">
+      <a class="blog-card featured" data-cat="User Planning" href="blog/ux-research.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-magnifying-glass"></i></div>
           <i class="fa-solid fa-magnifying-glass-chart"></i>
         </div>
         <div class="blog-body">
-          <div class="blog-cat">תכנון משתמש</div>
-          <h3>למה מחקר משתמשים הוא ההשקעה הכי חשובה שתעשו לפני שמתחילים לעצב</h3>
-          <p>חברות רבות קופצות ישר לעיצוב בלי לבדוק אם הן פותרות את הבעיה הנכונה. מחקר נכון חוסך חודשים של פיתוח ומוביל למוצר שמשתמשים באמת צריכים — ולא מה שחשבנו שהם צריכים.</p>
+          <div class="blog-cat">User Planning</div>
+          <h3>Why user research is the most important investment you'll make before designing</h3>
+          <p>Many companies jump straight to design without checking if they're solving the right problem. Proper research saves months of development and leads to a product users actually need — not what we thought they needed.</p>
           <div class="blog-meta">
-            <span>15 מרץ 2026</span>
-            <span class="blog-read"><i class="fa-solid fa-clock"></i> 6 דקות קריאה</span>
+            <span>March 15, 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 6 min read</span>
           </div>
         </div>
       </a>
 
-      <a class="blog-card" data-cat="בינה מלאכותית ועיצוב" href="blog/ai-design.html">
+      <a class="blog-card" data-cat="AI & Design" href="blog/ai-design.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
           <i class="fa-solid fa-wand-magic-sparkles"></i>
         </div>
         <div class="blog-body">
-          <div class="blog-cat">בינה מלאכותית ועיצוב</div>
-          <h3>איך AI משנה את תהליך העיצוב שלי</h3>
-          <p>כלים, טכניקות ותהליכים שמאיצים את העבודה מבלי להתפשר על איכות. מה עובד, מה לא, ואיפה שמים את הגבול.</p>
+          <div class="blog-cat">AI & Design</div>
+          <h3>How AI is changing my design process</h3>
+          <p>Tools, techniques and workflows that speed up work without compromising quality. What works, what doesn't, and where to draw the line.</p>
           <div class="blog-meta">
-            <span>8 מרץ 2026</span>
-            <span class="blog-read"><i class="fa-solid fa-clock"></i> 5 דקות קריאה</span>
+            <span>March 8, 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 5 min read</span>
           </div>
         </div>
       </a>
 
-      <a class="blog-card" data-cat="עיצוב לנייד" href="blog/mobile-ux-mistakes.html">
+      <a class="blog-card" data-cat="Mobile Design" href="blog/mobile-ux-mistakes.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-mobile-screen-button"></i></div>
           <i class="fa-solid fa-mobile-screen-button"></i>
         </div>
         <div class="blog-body">
-          <div class="blog-cat">עיצוב לנייד</div>
-          <h3>5 טעויות נפוצות בעיצוב אפליקציות מובייל</h3>
-          <p>הטעויות הכי שכיחות שאני רואה שוב ושוב ואיך להימנע מהן בפרויקט הבא שלכם.</p>
+          <div class="blog-cat">Mobile Design</div>
+          <h3>5 common mistakes in mobile app design</h3>
+          <p>The most common mistakes I see over and over again and how to avoid them in your next project.</p>
           <div class="blog-meta">
-            <span>1 מרץ 2026</span>
-            <span class="blog-read"><i class="fa-solid fa-clock"></i> 4 דקות קריאה</span>
+            <span>March 1, 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 4 min read</span>
           </div>
         </div>
       </a>
@@ -272,28 +272,28 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
           <i class="fa-solid fa-layer-group"></i>
         </div>
         <div class="blog-body">
-          <div class="blog-cat">מערכת עיצוב</div>
-          <h3>Design System — למה כל סטארטאפ צריך אחד מגיל אפס</h3>
-          <p>כשבונים Design System מוקדם חוסכים שבועות של עבודה בהמשך. איך מתחילים נכון ומה הטעויות שכדאי להימנע מהן.</p>
+          <div class="blog-cat">Design System</div>
+          <h3>Design System — why every startup needs one from day one</h3>
+          <p>Building a design system early saves weeks of work later. How to start right and what mistakes to avoid.</p>
           <div class="blog-meta">
-            <span>20 פברואר 2026</span>
-            <span class="blog-read"><i class="fa-solid fa-clock"></i> 7 דקות קריאה</span>
+            <span>February 20, 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 7 min read</span>
           </div>
         </div>
       </a>
 
-      <a class="blog-card" data-cat="תכנון משתמש" href="blog/ux-vs-great-ux.html">
+      <a class="blog-card" data-cat="User Planning" href="blog/ux-vs-great-ux.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-chess-knight"></i></div>
           <i class="fa-solid fa-chess-knight"></i>
         </div>
         <div class="blog-body">
-          <div class="blog-cat">תכנון משתמש</div>
-          <h3>מה ההבדל בין UX טוב ל-UX מצוין — ולמה זה שווה כסף</h3>
-          <p>UX טוב פותר בעיות. UX מצוין גורם למשתמשים לאהוב את המוצר שלכם. ההבדל הוא ברמת הפירוט, ובהחלטות שמסתירים מהמשתמש.</p>
+          <div class="blog-cat">User Planning</div>
+          <h3>The difference between good UX and great UX — and why it's worth the money</h3>
+          <p>Good UX solves problems. Great UX makes users love your product. The difference is in the details and decisions you hide from the user.</p>
           <div class="blog-meta">
-            <span>12 פברואר 2026</span>
-            <span class="blog-read"><i class="fa-solid fa-clock"></i> 5 דקות קריאה</span>
+            <span>February 12, 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 5 min read</span>
           </div>
         </div>
       </a>
@@ -304,44 +304,44 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
           <i class="fa-solid fa-arrows-rotate"></i>
         </div>
         <div class="blog-body">
-          <div class="blog-cat">תהליך</div>
-          <h3>איך מנהלים פרויקט עיצוב עם צוות פיתוח — מה עובד ומה לא</h3>
-          <p>אחרי מאות פרויקטים, למדתי מה גורם לשיתוף הפעולה בין עיצוב לפיתוח להצליח — ומה הורג אותו. המדריך המלא.</p>
+          <div class="blog-cat">Process</div>
+          <h3>How to manage a design project with a dev team — what works and what doesn't</h3>
+          <p>After hundreds of projects, I've learned what makes collaboration between design and dev succeed — and what kills it. The complete guide.</p>
           <div class="blog-meta">
-            <span>5 פברואר 2026</span>
-            <span class="blog-read"><i class="fa-solid fa-clock"></i> 8 דקות קריאה</span>
+            <span>February 5, 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 8 min read</span>
           </div>
         </div>
       </a>
 
-      <a class="blog-card" data-cat="בינה מלאכותית ועיצוב" href="blog/figma-ai.html">
+      <a class="blog-card" data-cat="AI & Design" href="blog/figma-ai.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-robot"></i></div>
           <i class="fa-solid fa-robot"></i>
         </div>
         <div class="blog-body">
-          <div class="blog-cat">בינה מלאכותית ועיצוב</div>
-          <h3>Figma AI — כלי עזר או איום על עיצוב?</h3>
-          <p>פיצ'רי ה-AI החדשים של Figma מבטיחים לשנות את המשחק. בדקתי אותם לעומק — הנה מה שמצאתי.</p>
+          <div class="blog-cat">AI & Design</div>
+          <h3>Figma AI — helper tool or threat to design?</h3>
+          <p>Figma's new AI features promise to change the game. I tested them in depth — here's what I found.</p>
           <div class="blog-meta">
-            <span>28 ינואר 2026</span>
-            <span class="blog-read"><i class="fa-solid fa-clock"></i> 4 דקות קריאה</span>
+            <span>January 28, 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 4 min read</span>
           </div>
         </div>
       </a>
 
-      <a class="blog-card" data-cat="עיצוב לנייד" href="blog/rtl-design.html">
+      <a class="blog-card" data-cat="Mobile Design" href="blog/rtl-design.html">
         <div class="blog-thumb">
           <div class="thumb-bg"><i class="fa-solid fa-hand-pointer"></i></div>
           <i class="fa-solid fa-hand-pointer"></i>
         </div>
         <div class="blog-body">
-          <div class="blog-cat">עיצוב לנייד</div>
-          <h3>RTL Design — אתגרים ופתרונות לעיצוב בעברית וערבית</h3>
-          <p>עיצוב לשפות RTL הוא לא רק הפיכת הממשק. יש דקויות שרוב המעצבים מפספסים — ואני מראה אותן כאן.</p>
+          <div class="blog-cat">Mobile Design</div>
+          <h3>RTL Design — challenges and solutions for Hebrew and Arabic design</h3>
+          <p>Designing for RTL languages isn't just flipping the interface. There are subtleties most designers miss — and I show them here.</p>
           <div class="blog-meta">
-            <span>20 ינואר 2026</span>
-            <span class="blog-read"><i class="fa-solid fa-clock"></i> 6 דקות קריאה</span>
+            <span>January 20, 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 6 min read</span>
           </div>
         </div>
       </a>
@@ -352,12 +352,12 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
           <i class="fa-solid fa-comments"></i>
         </div>
         <div class="blog-body">
-          <div class="blog-cat">תהליך</div>
-          <h3>איך מציגים עיצוב ללקוח — שיטה שעובדת תמיד</h3>
-          <p>פרזנטציה טובה היא חלק מהעבודה. אם הלקוח לא מבין את ההחלטות שלך — הוא ידחה אותן. כך מציגים עיצוב נכון.</p>
+          <div class="blog-cat">Process</div>
+          <h3>How to present design to a client — a method that always works</h3>
+          <p>A good presentation is part of the work. If the client doesn't understand your decisions — they'll reject them. Here's how to present design right.</p>
           <div class="blog-meta">
-            <span>10 ינואר 2026</span>
-            <span class="blog-read"><i class="fa-solid fa-clock"></i> 5 דקות קריאה</span>
+            <span>January 10, 2026</span>
+            <span class="blog-read"><i class="fa-solid fa-clock"></i> 5 min read</span>
           </div>
         </div>
       </a>
@@ -370,11 +370,11 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 <section class="newsletter">
   <div class="wrap">
     <div class="newsletter-box reveal">
-      <h2>רוצים לקבל תוכן כזה ישירות למייל?</h2>
-      <p>אחת לשבועיים — טיפ, תובנה או case study קצר. ללא ספאם, רק תוכן שווה.</p>
+      <h2>Want this content delivered straight to your inbox?</h2>
+      <p>Once a week — a tip, insight or short case study. No spam, just quality content.</p>
       <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-        <input type="email" placeholder="האימייל שלכם" required>
-        <button type="submit">הרשמה</button>
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
       </form>
     </div>
   </div>
@@ -388,28 +388,28 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
         <a href="portfolio.html" class="footer-brand">Dror<span>Cohen</span></a>
       </div>
       <div class="footer-col">
-        <h4>ניווט</h4>
+        <h4>Navigation</h4>
         <ul>
-          <li><a href="about.html">אני דרור</a></li>
-          <li><a href="portfolio.html#services">מה אני עושה</a></li>
-          <li><a href="portfolio.html#projects">פרויקטים</a></li>
-          <li><a href="portfolio.html#testimonials">המלצות</a></li>
-          <li><a href="blog.html">בלוג</a></li>
-          <li><a href="contact.html">צור קשר</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html#services">Services</a></li>
+          <li><a href="portfolio.html#projects">Projects</a></li>
+          <li><a href="portfolio.html#testimonials">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>שירותים</h4>
+        <h4>Services</h4>
         <ul>
-          <li><a href="uxui.html">עיצוב ממשקים</a></li>
-          <li><a href="portfolio.html#services">אפיון מוצר</a></li>
+          <li><a href="uxui.html">UI/UX Design</a></li>
+          <li><a href="portfolio.html#services">Product Strategy</a></li>
           <li><a href="portfolio.html#services">Design System</a></li>
-          <li><a href="portfolio.html#services">מחקר משתמשים</a></li>
-          <li><a href="portfolio.html#services">בניית זהות</a></li>
+          <li><a href="portfolio.html#services">User Research</a></li>
+          <li><a href="portfolio.html#services">Branding</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>סושיאל</h4>
+        <h4>Social</h4>
         <ul>
           <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
           <li><a href="https://wa.me/972547179000" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
@@ -417,7 +417,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
       </div>
     </div>
     <div class="footer-bottom">
-      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>All rights reserved &copy; Dror Cohen 2025</p>
       <p>Made with ❤️ by Dror Cohen</p>
     </div>
   </div>
@@ -442,7 +442,7 @@ function filterBlog(btn, cat){
   document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('on')});
   btn.classList.add('on');
   document.querySelectorAll('.blog-card').forEach(function(card){
-    if(cat==='הכל'||card.dataset.cat===cat){
+    if(cat==='All'||card.dataset.cat===cat){
       card.style.display='';
     } else {
       card.style.display='none';
@@ -454,12 +454,12 @@ function filterBlog(btn, cat){
 function subscribeNewsletter(e){
   e.preventDefault();
   var btn=e.target.querySelector('button');
-  btn.textContent='תודה! ✓';
+  btn.textContent='Thank you! ✓';
   btn.style.background='#4CAF50';
   btn.style.color='#fff';
   e.target.querySelector('input').value='';
   setTimeout(function(){
-    btn.textContent='הרשמה';
+    btn.textContent='Subscribe';
     btn.style.background='';
     btn.style.color='';
   },3000);

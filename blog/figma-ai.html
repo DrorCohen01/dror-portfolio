@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Figma AI — כלי עזר או איום על עיצוב? — דרור כהן | UX/UI Designer</title>
+<title>Figma AI — כלי עזר או איום על עיצוב? — Dror Cohen | UX/UI Designer</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#121212;--card:#1A1A1A;--white:#FFFFFF;--gray:#ABABAB;--orange:#F5A623;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14)}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
@@ -18,7 +18,7 @@ img{max-width:100%;display:block}
 .reveal{animation:fu .65s ease both}
 nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px;position:relative}
-.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Sora',sans-serif}
 .nav-logo span{color:var(--gray)}
 .nav-links{display:flex;gap:28px;list-style:none;font-size:1rem}
 .nav-links a{color:var(--gray);transition:color .25s}
@@ -58,7 +58,7 @@ blockquote{border-right:4px solid var(--orange);padding:20px 28px;margin:40px 0;
 .tag{background:#222;border:1px solid var(--border2);padding:6px 14px;border-radius:100px;font-size:1.05rem;color:var(--gray)}
 footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111}
 .footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:48px;padding-bottom:64px}
-.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Noto Sans Display',sans-serif}
+.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Sora',sans-serif}
 .footer-brand span{color:rgba(255,255,255,0.4)}
 .footer-col h4{font-size:1rem;font-weight:600;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
@@ -122,33 +122,33 @@ footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111
   <div class="nav-inner">
     <a href="../portfolio.html" class="nav-logo">Dror<span>Cohen</span></a>
     <ul class="nav-links">
-      <li><a href="../about.html">אני דרור</a></li>
-      <li><a href="../uxui.html">עיצוב ממשקים</a></li>
-      <li><a href="../portfolio.html#services">מה אני עושה</a></li>
-      <li><a href="../portfolio.html#projects">פרויקטים</a></li>
-      <li><a href="../portfolio.html#testimonials">המלצות</a></li>
-      <li><a href="../blog.html" class="active">בלוג</a></li>
-      <li><a href="../contact.html">צור קשר</a></li>
+      <li><a href="../about.html">About Dror</a></li>
+      <li><a href="../uxui.html">Design Services</a></li>
+      <li><a href="../portfolio.html#services">What I Do</a></li>
+      <li><a href="../portfolio.html#projects">Projects</a></li>
+      <li><a href="../portfolio.html#testimonials">Testimonials</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+      <li><a href="../contact.html">Contact</a></li>
     </ul>    <button class="nav-mobile" id="navToggle"><i class="fa fa-bars"></i></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="../about.html">אני דרור</a>
+    <a href="../about.html">About Dror</a>
     <a href="../uxui.html">UX/UI</a>
-    <a href="../portfolio.html#services">מה אני עושה</a>
-    <a href="../portfolio.html#projects">פרויקטים</a>
-    <a href="../blog.html">בלוג</a>
-    <a href="../contact.html">צור קשר</a>
+    <a href="../portfolio.html#services">What I Do</a>
+    <a href="../portfolio.html#projects">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../contact.html">Contact</a>
   </div>
 </nav>
 <section class="article-hero grid-bg">
   <div class="wrap">
-    <a href="../blog.html" class="article-back reveal"><i class="fa fa-arrow-right"></i> חזרה לבלוג</a>
+    <a href="../blog.html" class="article-back reveal"><i class="fa fa-arrow-right"></i> Back to Blog</a>
     <div class="article-cat reveal">בינה מלאכותית ועיצוב</div>
     <h1 class="reveal">Figma AI — כלי עזר או איום על עיצוב?</h1>
     <div class="article-meta reveal">
       <span><i class="fa fa-calendar"></i> 28 ינואר 2026</span>
-      <span><i class="fa fa-clock"></i> 4 דקות קריאה</span>
-      <span><i class="fa fa-user"></i> דרור כהן</span>
+      <span><i class="fa fa-clock"></i> 4 דLineת Reading</span>
+      <span><i class="fa fa-user"></i> Dror Cohen</span>
     </div>
   </div>
 </section>
@@ -157,63 +157,63 @@ footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111
     <div class="article-hero-img reveal"><i class="fa-brands fa-figma"></i></div>
     <div class="article-body reveal">
 
-      <p>כשFigma הכריזה על Figma AI ב-Config 2024, הקהילה התחלקה: חלק התלהבו, חלק חששו, ורובם המתינו לראות מה ייצא בפועל. עברו חודשים. יש לי עכשיו מספיק ניסיון כדי לתת תשובה מבוססת-נתונים — לא שיווק ולא היסטריה.</p>
-      <p>Spoiler: זה לא יחליף מעצבים. אבל הוא ישנה את מה שמעצבים עושים — ולמי שלא ישתמש בו, יהיה קשה להתחרות עם אלה שכן.</p>
+      <p>כשFigma הכריזה על Figma AI ב-Config 2024, הקהילה התחלקה: חלק התלהבו, חלק חששו, ורובם המתינו לרLetter מה ייצא בפועל. עברו חודשים. יש לי עכשיו מספיק ניסיון כדי לתת תשובה מבוססת-נתונים — לא שיווק ולא היסFreshה.</p>
+      <p>Spoiler: It's not יחליף מעצבים. אבל הוא ישנה את מה שמעצבים עושים — ולמי שלא ישתמש בו, יהיה Hard להתחרות עם אלה שכן.</p>
 
       <h2>כל תכונות הבינה המלאכותית של Figma — הסקירה המלאה</h2>
-      <h3>1. שינוי שמות שכבות אוטומטי ⭐⭐⭐⭐⭐</h3>
-      <p>זוהי התכונה הכי מוערכת בחסר בתכונות הבינה המלאכותית של Figma. כל מי שעבד על קובץ גדול יודע את הכאב: "Frame 4837", "Rectangle copy 2", "Group (2)". Figma AI מנתח את המבנה הוויזואלי ומצמיד שמות סמנטיים אוטומטית. לחיצה אחת, ופאנל השכבות הופך לקריא.</p>
-      <p>תוצאה מעשית: מסירה לפיתוח מהירה ב-30% כי המפתחים מוצאים מה שהם מחפשים. סקירת עיצוב פשוטה יותר כי מעצבים אחרים מבינים את המבנה. הדירוג שלי: 5/5 — משתמש בזה בכל פרויקט.</p>
+      <h3>1. Change שמות שכבות אוטומטי ⭐⭐⭐⭐⭐</h3>
+      <p>זוהי התכונה הכי מוערכת בחסר בתכונות הבינה המלאכותית של Figma. כל מי שעבד על File Large יודע את הכאב: "Frame 4837", "Rectangle copy 2", "Group (2)". Figma AI מנתח את הStructure הוויזואלי ומצמיד שמות סמנטיים אוטומטית. לחיצה אחת, ופאנל השכבות הופך לCoolיא.</p>
+      <p>Result מעשית: מסירה לDevelopment Fastה ב-30% כי המפתחים מוצאים מה שהם מחפשים. סקירת עיצוב Simpleה יותר כי מעצבים אחרים מבינים את הStructure. הדירוג שלי: 5/5 — משתמש בזה בכל פרויקט.</p>
       <div class="article-img"><i class="fa-solid fa-tag"></i></div>
 
       <h3>2. הצעות לפריסה אוטומטית ⭐⭐⭐⭐</h3>
-      <p>Auto Layout הוא אחד הפיצ'רים החזקים ביותר ב-Figma, אבל יש לו עקומת למידה. Figma AI מזהה אלמנטים ומציע להוסיף פריסה אוטומטית עם הפרמטרים הנכונים — גם למי שלא בקי בו לחלוטין.</p>
-      <p>המגבלה: לא תמיד הצעות מדויקות למקרי קצה מורכבים. אבל כנקודת התחלה — מצוין. הדירוג שלי: 4/5.</p>
+      <p>Auto Layout הוא אחד הפיצ'רים החזקים ביותר ב-Figma, אבל יש לו עLineמת למידה. Figma AI מזהה אלמנטים ומציע להוסיף פריסה אוטומטית עם הפרמFreshם הנכונים — גם למי שלא בקי בו לחלוטין.</p>
+      <p>המגבלה: לא תמיד הצעות מדויLineת למCoolי Edge Complexים. אבל כנLineדת Getting Started — מצוין. הדירוג שלי: 4/5.</p>
 
       <h3>3. תרגום ⭐⭐⭐⭐</h3>
-      <p>תרגום מיידי של כל הטקסטים בפריים לכל שפה. לבדיקת ימין לשמאל (עברית, ערבית), לבדיקות לוקליזציה, ולהצגה ללקוחות בינלאומיים — תכונה שחוסכת שעות. האיכות לא תמיד מושלמת (תרגום AI...) אבל לבדיקות ויזואליות — מספיק טוב. הדירוג שלי: 4/5.</p>
+      <p>תרגום מיידי של כל הTextים בפריים לכל שMouth. לבדיקת ימין לשמאל (עברית, ערבית), לבדיLineת לוEasyיזציה, ולPresentation לCustomerות בינלאומיים — תכונה שחוסכת שעות. האיכות לא תמיד מושלמת (תרגום AI...) אבל לבדיLineת ויזואליות — מספיק טוב. הדירוג שלי: 4/5.</p>
 
       <h3>4. יצירת מצגת ⭐⭐⭐</h3>
-      <p>Figma AI יכולה לייצר מצגת כמעט מוכנה מתוך הפריימים שלכם. שימושית לסקירות מהירות עם בעלי עניין. הבעיה: העיצוב שנוצר גנרי למדי ובדרך כלל דורש עדכון. לא תחליף למצגת אמיתית, אבל טוב לאב-טיפוס מהיר. הדירוג שלי: 3/5.</p>
+      <p>Figma AI יכולה לייצר מצגת כמעט מוכנה מתוך הפריימים שלכם. שימושית לסקירות Fastות עם בעלי עניין. הבעיה: העיצוב שנוצר גנרי למדי ובדרך Rule דורש Update. לא תחליף למצגת אמיתית, אבל טוב לאב-Tipוס Fast. הדירוג שלי: 3/5.</p>
 
       <h3>5. טיוטה ראשונה / יצירת עיצובים ⭐⭐ (עדיין בבטא)</h3>
-      <p>התכונה שכולם דיברו עליה — כתיבת הנחיה ו-Figma מייצרת עיצוב. המציאות? עדיין רחוק מלהיות מוכן לפרודקשן. העיצובים שנוצרים הם נקודות התחלה בסיסיות מאוד, ובדרך כלל דורשים שיפוץ מלא. הפוטנציאל ברור, אבל המוצר הנוכחי לא שם עדיין. הדירוג שלי: 2/5 בשלב זה.</p>
+      <p>The feature everyone talked about — write a prompt and Figma generates design. Reality? Still far from production-ready. העיצובים שנוצרים הם נLineדות Getting Started Basicות מאוד, ובדרך Rule דורשים שיפוץ מלא. הפוטנציאל Clear, אבל המוצר הנוכחי לא שם עדיין. הדירוג שלי: 2/5 בשלב זה.</p>
       <blockquote>"Figma AI בבטא מזכיר את iPhone הראשון — ניכר הפוטנציאל, אבל עוד הרבה עבודה לפני שזה יהפוך ל-essential tool."</blockquote>
 
-      <h2>ההשפעה על תהליך העבודה היומי</h2>
-      <p>בואו נהיה ספציפיים. הנה מה שהשתנה בתהליך העבודה שלי מאז שהתחלתי להשתמש בתכונות הבינה המלאכותית של Figma:</p>
+      <h2>הImpact על תהליך העבודה היומי</h2>
+      <p>בואו נהיה Specificים. הנה מה שהשתנה בתהליך העבודה שלי מאז שהתחלתי להשתמש בתכונות הבינה המלאכותית של Figma:</p>
       <ul>
-        <li><strong>הכנת מסירה לפיתוח:</strong> ירדה מ-2-3 שעות ל-40-60 דקות. שינוי שמות שכבות + ניקוי פריסה אוטומטית = קובץ נקי בהרבה פחות זמן.</li>
-        <li><strong>בדיקות לוקליזציה:</strong> מה שלקח חצי יום (לעדכן כל טקסט ידנית לבדיקת גלישה) לוקח 10 דקות.</li>
-        <li><strong>ארגון שכבות:</strong> אני מארגן שכבות הרבה פחות ידנית — יותר זמן לעיצוב עצמו.</li>
+        <li><strong>הכנת מסירה לDevelopment:</strong> ירדה מ-2-3 שעות ל-40-60 דLineת. Change שמות שכבות + ניLineי פריסה אוטומטית = File נקי בהרבה פחות זמן.</li>
+        <li><strong>בדיLineת לוEasyיזציה:</strong> מה שלקח חצי יום (לעדכן כל Text ידנית לבדיקת גלישה) לוקח 10 דLineת.</li>
+        <li><strong>Organization שכבות:</strong> אני מארגן שכבות הרבה פחות ידנית — יותר זמן לעיצוב עצמו.</li>
       </ul>
       <div class="article-img"><i class="fa-solid fa-bolt"></i></div>
 
-      <h2>השוואה: Figma AI vs. תחרות</h2>
-      <p>Figma לא לבד בשוק כלי עיצוב ה-AI. הנה ההשוואה:</p>
+      <h2>Comparison: Figma AI vs. תחרות</h2>
+      <p>Figma לא לבד בשוק כלי עיצוב ה-AI. הנה הComparison:</p>
       <ul>
         <li><strong>Adobe Firefly + Illustrator AI:</strong> חזק יותר ביצירת תוכן ויזואלי (תמונות, וקטורים), חלש יותר ב-UI-specific features.</li>
         <li><strong>Canva AI:</strong> מעולה למי שלא עיצב מקצועי. מגביל מדי למעצב רציני.</li>
         <li><strong>Uizard:</strong> מיוחד ל-wireframing מסקיצות. מגרש אחר לגמרי.</li>
-        <li><strong>Builder.io + Figma:</strong> שילוב מעניין שמייצר קוד ישירות מ-Figma designs. כדאי לעקוב.</li>
+        <li><strong>Builder.io + Figma:</strong> Integration מעניין שמייצר Lineד ישירות מ-Figma designs. כדאי לעLineב.</li>
       </ul>
 
       <h2>האם Figma AI יחליף מעצבים?</h2>
       <p>התשובה הקצרה: לא. התשובה הארוכה: לא — אבל הוא יחליף חלק מהזמן שמעצבים מבלים על עבודה מכנית, ויאפשר להם להתמקד יותר בעבודה אסטרטגית וחשיבתית.</p>
       <p>מה AI לא יכול לעשות:</p>
       <ul>
-        <li>להבין את ההקשר העסקי הייחודי</li>
+        <li>להבין את ההConnection הBusinessי הייחודי</li>
         <li>לשאול את השאלות הנכונות</li>
-        <li>לנהל בעלי עניין ולתרגם צרכים עסקיים לפתרונות</li>
-        <li>ליצור עיצוב שמרגיש אותנטי למותג</li>
-        <li>לבנות אמון עם לקוחות</li>
+        <li>לנהל בעלי עניין ולתרגם צרכים Businessיים לSolutions</li>
+        <li>ליצור עיצוב שמרגיש Letterנטי למותג</li>
+        <li>לבנות אמון עם Customerות</li>
       </ul>
-      <p>מה שישתנה: מעצבים שמשתמשים ב-AI יהיו פרודוקטיביים יותר ממעצבים שלא. ה-bar לכניסה לתעשייה ישתנה. אבל הביקוש למעצבים שיכולים לחשוב ברמה גבוהה — רק יגדל.</p>
+      <p>מה שישתנה: מעצבים שמשתמשים ב-AI יהיו פרודוקטיביים יותר ממעצבים שלא. ה-bar לכניסה לתעשייה ישתנה. אבל הביLineש למעצבים שיכולים לחשוב ברמה גבוהה — רק יגדל.</p>
 
-      <h2>המלצות מעשיות</h2>
+      <h2>Testimonials מעשיות</h2>
       <ol>
-        <li>הפעילו Figma AI ונסו את שינוי שמות שכבות על קובץ קיים — תופתעו.</li>
-        <li>השתמשו בתרגום לבדיקת גלישת טקסט בעברית לפני הגשה.</li>
+        <li>הפעילו Figma AI ונסו את Change שמות שכבות על File קיים — תופתעו.</li>
+        <li>השתמשו בתרגום לבדיקת גלישת Text בעברית לפני הגשה.</li>
         <li>עקבו אחרי הסשנים של Figma Config — הם מראים מפת דרכים מפורטת.</li>
         <li>אל תמתינו עד שהתכונות "יהיו מוכנות" — למדו עכשיו כדי שתהיו מוכנים כשיגיעו.</li>
       </ol>
@@ -229,24 +229,24 @@ footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111
   <div class="wrap">
     <div class="footer-main">
       <div><a href="../portfolio.html" class="footer-brand">Dror<span>Cohen</span></a></div>
-      <div class="footer-col"><h4>ניווט</h4><ul>
-        <li><a href="../about.html">אני דרור</a></li>
-        <li><a href="../portfolio.html#projects">פרויקטים</a></li>
-        <li><a href="../blog.html">בלוג</a></li>
-        <li><a href="../contact.html">צור קשר</a></li>
+      <div class="footer-col"><h4>Navigation</h4><ul>
+        <li><a href="../about.html">About Dror</a></li>
+        <li><a href="../portfolio.html#projects">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../contact.html">Contact</a></li>
       </ul></div>
-      <div class="footer-col"><h4>שירותים</h4><ul>
-        <li><a href="../uxui.html">עיצוב ממשקים</a></li>
-        <li><a href="../portfolio.html#services">אפיון מוצר</a></li>
-        <li><a href="../portfolio.html#services">מערכת עיצוב</a></li>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="../uxui.html">Design Services</a></li>
+        <li><a href="../portfolio.html#services">Product Definition</a></li>
+        <li><a href="../portfolio.html#services">Design System</a></li>
       </ul></div>
-      <div class="footer-col"><h4>סושיאל</h4><ul>
+      <div class="footer-col"><h4>Social</h4><ul>
         <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
         <li><a href="https://wa.me/972547179000" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">
-      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>All rights reserved &copy; Dror Cohen 2025</p>
       <p>Made with ❤️ by Dror Cohen</p>
     </div>
   </div>

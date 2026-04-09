@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RTL Design — אתגרים ופתרונות לעיצוב בעברית וערבית — דרור כהן | UX/UI Designer</title>
+<title>RTL Design — Challenges and Solutions for Hebrew and Arabic Design — Dror Cohen | UX/UI Designer</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#121212;--card:#1A1A1A;--white:#FFFFFF;--gray:#ABABAB;--orange:#F5A623;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14)}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
@@ -18,7 +18,7 @@ img{max-width:100%;display:block}
 .reveal{animation:fu .65s ease both}
 nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px;position:relative}
-.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Sora',sans-serif}
 .nav-logo span{color:var(--gray)}
 .nav-links{display:flex;gap:28px;list-style:none;font-size:1rem}
 .nav-links a{color:var(--gray);transition:color .25s}
@@ -58,7 +58,7 @@ blockquote{border-right:4px solid var(--orange);padding:20px 28px;margin:40px 0;
 .tag{background:#222;border:1px solid var(--border2);padding:6px 14px;border-radius:100px;font-size:1.05rem;color:var(--gray)}
 footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111}
 .footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:48px;padding-bottom:64px}
-.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Noto Sans Display',sans-serif}
+.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Sora',sans-serif}
 .footer-brand span{color:rgba(255,255,255,0.4)}
 .footer-col h4{font-size:1rem;font-weight:600;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
@@ -122,33 +122,33 @@ footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111
   <div class="nav-inner">
     <a href="../portfolio.html" class="nav-logo">Dror<span>Cohen</span></a>
     <ul class="nav-links">
-      <li><a href="../about.html">אני דרור</a></li>
-      <li><a href="../uxui.html">עיצוב ממשקים</a></li>
-      <li><a href="../portfolio.html#services">מה אני עושה</a></li>
-      <li><a href="../portfolio.html#projects">פרויקטים</a></li>
-      <li><a href="../portfolio.html#testimonials">המלצות</a></li>
-      <li><a href="../blog.html" class="active">בלוג</a></li>
-      <li><a href="../contact.html">צור קשר</a></li>
+      <li><a href="../about.html">About Dror</a></li>
+      <li><a href="../uxui.html">Design Services</a></li>
+      <li><a href="../portfolio.html#services">What I Do</a></li>
+      <li><a href="../portfolio.html#projects">Projects</a></li>
+      <li><a href="../portfolio.html#testimonials">Testimonials</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+      <li><a href="../contact.html">Contact</a></li>
     </ul>    <button class="nav-mobile" id="navToggle"><i class="fa fa-bars"></i></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="../about.html">אני דרור</a>
+    <a href="../about.html">About Dror</a>
     <a href="../uxui.html">UX/UI</a>
-    <a href="../portfolio.html#services">מה אני עושה</a>
-    <a href="../portfolio.html#projects">פרויקטים</a>
-    <a href="../blog.html">בלוג</a>
-    <a href="../contact.html">צור קשר</a>
+    <a href="../portfolio.html#services">What I Do</a>
+    <a href="../portfolio.html#projects">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../contact.html">Contact</a>
   </div>
 </nav>
 <section class="article-hero grid-bg">
   <div class="wrap">
-    <a href="../blog.html" class="article-back reveal"><i class="fa fa-arrow-right"></i> חזרה לבלוג</a>
-    <div class="article-cat reveal">עיצוב לנייד</div>
-    <h1 class="reveal">RTL Design — אתגרים ופתרונות לעיצוב בעברית וערבית</h1>
+    <a href="../blog.html" class="article-back reveal"><i class="fa fa-arrow-right"></i> Back to Blog</a>
+    <div class="article-cat reveal">Mobile Design</div>
+    <h1 class="reveal">RTL Design — Challenges and Solutions for Hebrew and Arabic Design</h1>
     <div class="article-meta reveal">
-      <span><i class="fa fa-calendar"></i> 20 ינואר 2026</span>
-      <span><i class="fa fa-clock"></i> 6 דקות קריאה</span>
-      <span><i class="fa fa-user"></i> דרור כהן</span>
+      <span><i class="fa fa-calendar"></i> 20 January 2026</span>
+      <span><i class="fa fa-clock"></i> 6 minutes read</span>
+      <span><i class="fa fa-user"></i> Dror Cohen</span>
     </div>
   </div>
 </section>
@@ -157,106 +157,106 @@ footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111
     <div class="article-hero-img reveal"><i class="fa-solid fa-language"></i></div>
     <div class="article-body reveal">
 
-      <p>אחד הדברים שמפתיעים מעצבים שמגיעים משמאל לימין הוא כמה ימין לשמאל הוא לא רק "להפוך הכל". זו טעות שאני רואה שוב ושוב: מישהו לוקח ממשק אנגלי, מחליף את הטקסט לעברית, מוסיף dir="rtl" — ומצפה שהכל יסתדר. זה לא עובד ככה. ימין לשמאל הוא פרדיגמה שונה, לא רק כיוון שונה.</p>
-      <p>עבדתי על עשרות פרויקטים בעברית, ועל כמה גם בערבית. ואני יכול לאמר בביטחון: עיצוב ימין לשמאל נכון דורש חשיבה שונה מהשורש, לא רק שיקוף. במאמר הזה אני הולך לפרק את כל מה שצריך לדעת.</p>
+      <p>אחד הדברים שמפתיעים מעצבים שמגיעים משמאל לימין הוא כמה ימין לשמאל הוא לא רק "להפוך הכל". זו טעות שאני רואה שוב ושוב: מישהו לוקח ממשק אנגלי, מחליף את הText לעברית, מוסיף dir="ltr" — ומצMouth שהכל יסתדר. It's not עובד ככה. ימין לשמאל הוא פרדיגמה שונה, לא רק כיוון שונה.</p>
+      <p>עבדתי על עשרות Projects בעברית, ועל כמה גם בערבית. ואני יכול לאמר בביטחון: עיצוב ימין לשמאל Correct דורש חשיבה שונה מהשורש, לא רק שיLineף. בArticle הזה אני הולך לChapter את כל מה שNeed to know.</p>
 
-      <h2>מה באמת שונה בעיצוב ימין לשמאל?</h2>
-      <p>הרבה אנשים חושבים שעיצוב ימין לשמאל זה רק כיוון הטקסט. זה חלק קטן מהתמונה. הוא משפיע על:</p>
+      <h2>What's Really Different About Right-to-Left Design?</h2>
+      <p>Many people think right-to-left design is just text direction. That's a small part of the picture. It affects:</p>
       <ul>
-        <li><strong>כיוון הפריסה:</strong> מה שנמצא בשמאל בעיצוב שמאל לימין עובר לימין בעיצוב ימין לשמאל</li>
-        <li><strong>כבידת קריאה:</strong> עין המשתמש מתחילה מימין — אלמנטים ראשוניים שייכים לימין</li>
-        <li><strong>ניווט ותבניות ניווט</strong></li>
-        <li><strong>אייקונים ואיורים</strong></li>
-        <li><strong>פורמטים של תאריך, מספר טלפון, כיוון גלילה</strong></li>
-        <li><strong>טיפוגרפיה ותוכן מעורב</strong></li>
+        <li><strong>Layout Direction:</strong> What's on the left in left-to-right design moves to the right in right-to-left design</li>
+        <li><strong>Visual Hierarchy:</strong> The user's eye starts from the right — primary elements belong on the right</li>
+        <li><strong>Navigation and Navigation Patterns</strong></li>
+        <li><strong>Icons and Illustrations</strong></li>
+        <li><strong>פורמטים של תאריך, מBook Phone, כיוון גלילה</strong></li>
+        <li><strong>Typography ותוכן מעורב</strong></li>
       </ul>
       <div class="article-img"><i class="fa-solid fa-right-to-left"></i></div>
 
       <h2>מה לשנות — ומה לא לשנות</h2>
-      <p>זה אחד הדברים שהכי בלבלו אותי בהתחלה. לא כל דבר בעיצוב ימין לשמאל צריך להתהפך. הנה הכלל הגדול:</p>
-      <p><strong>הפכו: אלמנטים שקשורים לכיוון קריאה ואינטראקציה</strong></p>
+      <p>זה אחד הדברים שהכי בלבלו Letterי בGetting Started. לא כל דבר בעיצוב ימין לשמאל צריך להתהפך. הנה הRule הLarge:</p>
+      <p><strong>הפכו: אלמנטים שקשורים לכיוון Reading ואינטראקציה</strong></p>
       <ul>
         <li>תפריט צדדי — מצד שמאל בשמאל לימין, מצד ימין בימין לשמאל</li>
-        <li>כפתור חזרה — חץ שמאלה בשמאל לימין, חץ ימינה בימין לשמאל</li>
+        <li>כפQueue חזרה — חץ שמאלה בשמאל לימין, חץ ימינה בימין לשמאל</li>
         <li>סליידרים ופסי התקדמות — מתחילים מימין בעיצוב ימין לשמאל</li>
-        <li>יישור טקסט — ימין בעיצוב ימין לשמאל</li>
+        <li>יישור Text — ימין בעיצוב ימין לשמאל</li>
         <li>תוויות טפסים — מצד ימין בעיצוב ימין לשמאל</li>
-        <li>ניווט ארוז — מימין לשמאל בעיצוב ימין לשמאל</li>
+        <li>Navigation ארוז — מימין לשמאל בעיצוב ימין לשמאל</li>
       </ul>
       <p><strong>אל תהפכו: אלמנטים אוניברסליים</strong></p>
       <ul>
-        <li>לוגואים — לרוב נשארים זהים (אלא אם הלוגו עצמו כתוב בשפה)</li>
-        <li>מספרים — תמיד שמאל לימין, גם בתוך הקשר ימין לשמאל</li>
-        <li>כפתורי play/pause — אוניברסליים, לא מתהפכים</li>
+        <li>Logoאים — לרוב נשארים זהים (אלא אם הLogo עצמו כתוב בשMouth)</li>
+        <li>מBookים — תמיד שמאל לימין, גם בתוך הConnection ימין לשמאל</li>
+        <li>כפQueueי play/pause — אוניברסליים, לא מתהפכים</li>
         <li>שעון ומצפן — אוניברסליים</li>
-        <li>גרפים ותרשימים — בדרך כלל לא מתהפכים (תלוי בהקשר)</li>
+        <li>גרפים ותרשימים — בדרך Rule לא מתהפכים (תלוי בהConnection)</li>
       </ul>
 
-      <h2>אתגר הטיפוגרפיה: תוכן מעורב</h2>
-      <p>אחד האתגרים הקשים ביותר בעיצוב ימין לשמאל הוא טיפוגרפיה עם תוכן מעורב — עברית ואנגלית (או ערבית ואנגלית) באותו משפט. הדפדפן מחיל Unicode Bidirectional Algorithm (BiDi) כדי לקבוע את כיוון כל חלק בטקסט, אבל לפעמים הוא מחליט לא נכון.</p>
-      <p>דוגמה לבעיה נפוצה: "התחברו עם Facebook" — המילה Facebook תוצג בצד שמאל. זה לא מה שרצינו — רצינו שהמשפט יזרום ימין לשמאל עם Facebook מוטבע.</p>
-      <p>הפתרון ב-CSS: שימוש ב-unicode-bidi ו-direction בזהירות, ובמיוחד ב-Figma: וודאו שה-text direction מוגדר נכון לכל text layer.</p>
+      <h2>אתגר הTypography: תוכן מעורב</h2>
+      <p>אחד הChallenges הקשים ביותר בעיצוב ימין לשמאל הוא Typography עם תוכן מעורב — עברית ואנגלית (או ערבית ואנגלית) בLetterו Sentence. הדפדפן מחיל Unicode Bidirectional Algorithm (BiDi) כדי לקבוע את כיוון כל חלק בText, אבל לפעמים הוא מחליט לא Correct.</p>
+      <p>Example לבעיה נפוצה: "התחברו עם Facebook" — הWord Facebook תוצג בצד שמאל. It's not מה שרצינו — רצינו שהSentence יזרום ימין לשמאל עם Facebook מוטבע.</p>
+      <p>הפתרון ב-CSS: שימוש ב-unicode-bidi ו-direction בזהירות, ובמיוחד ב-Figma: וודאו שה-text direction Defined Correct לכל text layer.</p>
       <blockquote>"הטעות הנפוצה ביותר שאני רואה: מעצב שמציג עברית עם פונט ש-not designed for Hebrew. Varela Round, Open Sans — אלה פונטים שתומכים בעברית אבל לא אופטימליים לה. השתמשו ב-Noto Sans Hebrew, Assistant, Rubik — שתוכננו מהיסוד לעברית."</blockquote>
       <div class="article-img"><i class="fa-solid fa-font"></i></div>
 
-      <h2>אייקונים: מה להפוך ומה להשאיר</h2>
-      <p>זה תחום שמפתיע הרבה מעצבים. לא כל האייקונים צריכים שיקוף בעיצוב ימין לשמאל. הכלל:</p>
-      <h3>אייקונים שכן צריכים שיקוף:</h3>
+      <h2>אייLineנים: מה להפוך ומה להשאיר</h2>
+      <p>זה תחום שמפתיע הרבה מעצבים. לא כל האייLineנים צריכים שיLineף בעיצוב ימין לשמאל. הRule:</p>
+      <h3>אייLineנים שכן צריכים שיLineף:</h3>
       <ul>
-        <li>חצים שמציינים כיוון ניווט (חזרה, קדימה)</li>
-        <li>אייקון של "הבא" ב-carousel</li>
-        <li>אייקון של "עטיפה" שמציין פתיחה לכיוון</li>
+        <li>חצים שמציינים כיוון Navigation (חזרה, קדימה)</li>
+        <li>אייLineן של "הבא" ב-carousel</li>
+        <li>אייLineן של "עTipה" שמציין פתיחה לכיוון</li>
         <li>Playback controls (redo/undo, forward/back)</li>
-        <li>אייקון של "list with items on the right"</li>
+        <li>אייLineן של "list with items on the right"</li>
       </ul>
-      <h3>אייקונים שלא צריכים שיקוף:</h3>
+      <h3>אייLineנים שלא צריכים שיLineף:</h3>
       <ul>
         <li>שעון (universal)</li>
         <li>לב / like (universal)</li>
         <li>מגנט חיפוש (universal)</li>
         <li>Play / Pause / Stop (universal)</li>
-        <li>מנאמנה, מצלמה, כלים אחרים שאין להם "כיוון" מובנה</li>
+        <li>מנאמנה, Camera, Tools אחרים שאין להם "כיוון" מובנה</li>
       </ul>
-      <p>כלל אצבע: אם האייקון מייצג פעולה שיש לה כיוון (ניווט, זרימת מידע) — הפכו אותו. אם הוא מייצג אובייקט פיזי — לא.</p>
+      <p>Rule אColor: אם האייLineן מייצג פעולה שיש לה כיוון (Navigation, זרימת מKnowledge) — הפכו Letterו. אם הוא מייצג אובייקט פיזי — לא.</p>
 
-      <h2>טיפים לתהליך עבודה עם Figma וימין לשמאל</h2>
-      <p>אחרי שנים של עבודה ב-Figma על פרויקטים בעברית ובערבית, הנה תהליך העבודה שלי:</p>
+      <h2>Tips לתהליך עבודה עם Figma וימין לשמאל</h2>
+      <p>אחרי שנים של עבודה ב-Figma על Projects בעברית ובערבית, הנה תהליך העבודה שלי:</p>
       <ol>
-        <li><strong>הגדירו ימין לשמאל כברירת מחדל:</strong> ב-Figma, שנו את כיוון הטקסט בפריים לימין לשמאל מההתחלה. אל תחכו לסוף.</li>
-        <li><strong>רכיבים עם וריאנטים לשני כיוונים:</strong> אם אתם בונים מערכת עיצוב לשתי שפות — צרו וריאנטים לכל רכיב: שמאל לימין וימין לשמאל. זה עבודה מראש שחוסכת המון בהמשך.</li>
-        <li><strong>השתמשו בתכונת התרגום:</strong> תרגום ה-AI של Figma — לבדיקת איך טקסט עברי/ערבי נראה בממשק.</li>
-        <li><strong>בדקו גלישת טקסט:</strong> עברית לרוב ארוכה יותר מאנגלית. בדקו שמכולות לא גולשות במקרי קצה.</li>
-        <li><strong>פריסה אוטומטית עם ימין לשמאל:</strong> ב-Figma, Auto Layout מכבד כיוון. ודאו שכיוון העטיפה נכון.</li>
+        <li><strong>הגדירו ימין לשמאל כברירת מחדל:</strong> ב-Figma, שנו את כיוון הText בפריים לימין לשמאל מהGetting Started. אל תחכו לסוף.</li>
+        <li><strong>רכיבים עם וריאנטים לשני Directionalם:</strong> אם אתם בונים Design System לשתי שפות — צרו וריאנטים לכל רכיב: שמאל לימין וימין לשמאל. זה עבודה מראש שחוסכת המון בהמשך.</li>
+        <li><strong>השתמשו בתכונת התרגום:</strong> תרגום ה-AI של Figma — לבדיקת איך Text עברי/ערבי נראה בממשק.</li>
+        <li><strong>בדLine גלישת Text:</strong> עברית לרוב ארוכה יותר מאנגלית. בדLine שמכולות לא גולשות במCoolי Edge.</li>
+        <li><strong>פריסה אוטומטית עם ימין לשמאל:</strong> ב-Figma, Auto Layout מכבד כיוון. ודאו שכיוון העTipה Correct.</li>
       </ol>
       <div class="article-img"><i class="fa-brands fa-figma"></i></div>
 
       <h2>CSS וימין לשמאל: הגישה המודרנית</h2>
-      <p>למי שגם כותב קוד (או עובד קרוב עם מפתחים), חשוב להכיר את CSS Logical Properties — הגישה המודרנית לעיצוב ימין לשמאל ב-CSS:</p>
-      <p>במקום margin-left/margin-right, השתמשו ב-margin-inline-start/margin-inline-end. במקום padding-left, השתמשו ב-padding-inline-start. במקום border-right, השתמשו ב-border-inline-end. כך אותו CSS עובד נכון גם בשמאל לימין וגם בימין לשמאל ללא כפילויות.</p>
+      <p>למי שגם כותב Lineד (או עובד Coolוב עם מפתחים), חשוב להכיר את CSS Logical Properties — הגישה המודרנית לעיצוב ימין לשמאל ב-CSS:</p>
+      <p>במLineם margin-left/margin-right, השתמשו ב-margin-inline-start/margin-inline-end. במLineם padding-left, השתמשו ב-padding-inline-start. במLineם border-right, השתמשו ב-border-inline-end. כך Letterו CSS עובד Correct גם בשמאל לימין וגם בימין לשמאל ללא כפילויות.</p>
 
-      <h2>נגישות בעיצוב ימין לשמאל</h2>
-      <p>עיצוב ימין לשמאל מביא אתגרי נגישות ייחודיים:</p>
+      <h2>Accessibility בעיצוב ימין לשמאל</h2>
+      <p>עיצוב ימין לשמאל מביא אתגרי Accessibility ייחודיים:</p>
       <ul>
-        <li><strong>קוראי מסך:</strong> ודאו שסדר ה-tab הגיוני מבחינת ימין לשמאל — לא שמאל לימין "הפוך"</li>
-        <li><strong>מאפיין lang:</strong> חשוב מאוד לציין lang="he" או lang="ar" — קוראי מסך משנים את קריאת הטקסט</li>
-        <li><strong>מדדי פוקוס:</strong> אינדיקטורי פוקוס בעיצוב ימין לשמאל צריכים להיות מושתקפים</li>
-        <li><strong>ניגודיות צבעים בטקסט מעורב:</strong> בדקו ניגודיות גם בהקשרי BiDi</li>
+        <li><strong>Lineראי Screen:</strong> ודאו שOrder ה-tab הגיוני מבחינת ימין לשמאל — לא שמאל לימין "הפוך"</li>
+        <li><strong>מאפיין lang:</strong> Very important לציין lang="en" או lang="ar" — Lineראי Screen Secondaryם את Coolיאת הText</li>
+        <li><strong>מדדי פוLineס:</strong> אינדיקטורי פוLineס בעיצוב ימין לשמאל צריכים להיות מושתקפים</li>
+        <li><strong>ניגודיות Colors בText מעורב:</strong> בדLine ניגודיות גם בהConnectionי BiDi</li>
       </ul>
 
-      <h2>רשימת בדיקה לעיצוב ימין לשמאל</h2>
+      <h2>רשימת Testing לעיצוב ימין לשמאל</h2>
       <ol>
-        <li>כל הטקסטים מיושרים לימין בהקשר עברי/ערבי ✓</li>
-        <li>אלמנטי ניווט הוזזו לצד הנכון ✓</li>
-        <li>אייקונים עם כיוון הופכו, אייקונים אוניברסליים נשארו ✓</li>
-        <li>מספרים ותאריכים מוצגים שמאל לימין אפילו בתוך עיצוב ימין לשמאל ✓</li>
-        <li>בדיקת גלישת טקסט לטקסטים ארוכים ✓</li>
-        <li>סדר tab הגיוני מימין לשמאל ✓</li>
+        <li>כל הTextים מיושרים לימין בהConnection עברי/ערבי ✓</li>
+        <li>אלמנטי Navigation הוזזו לצד הCorrect ✓</li>
+        <li>אייLineנים עם כיוון הופכו, אייLineנים אוניברסליים נשארו ✓</li>
+        <li>מBookים ותאריכים מוצגים שמאל לימין אפילו בתוך עיצוב ימין לשמאל ✓</li>
+        <li>בדיקת גלישת Text לTextים ארוכים ✓</li>
+        <li>Order tab הגיוני מימין לשמאל ✓</li>
         <li>אנימציות ומעברים מכבדים ימין לשמאל ✓</li>
-        <li>בדיקה על מכשיר אמיתי, לא רק בסימולציה ✓</li>
+        <li>Testing על מכשיר אמיתי, לא רק בסימולציה ✓</li>
       </ol>
       <div class="tag-row">
         <span class="tag">ימין לשמאל</span><span class="tag">עברית</span><span class="tag">ערבית</span>
-        <span class="tag">לוקליזציה</span><span class="tag">טיפוגרפיה</span><span class="tag">נגישות</span>
+        <span class="tag">לוEasyיזציה</span><span class="tag">Typography</span><span class="tag">Accessibility</span>
       </div>
 
     </div>
@@ -266,24 +266,24 @@ footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111
   <div class="wrap">
     <div class="footer-main">
       <div><a href="../portfolio.html" class="footer-brand">Dror<span>Cohen</span></a></div>
-      <div class="footer-col"><h4>ניווט</h4><ul>
-        <li><a href="../about.html">אני דרור</a></li>
-        <li><a href="../portfolio.html#projects">פרויקטים</a></li>
-        <li><a href="../blog.html">בלוג</a></li>
-        <li><a href="../contact.html">צור קשר</a></li>
+      <div class="footer-col"><h4>Navigation</h4><ul>
+        <li><a href="../about.html">About Dror</a></li>
+        <li><a href="../portfolio.html#projects">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../contact.html">Contact</a></li>
       </ul></div>
-      <div class="footer-col"><h4>שירותים</h4><ul>
-        <li><a href="../uxui.html">עיצוב ממשקים</a></li>
-        <li><a href="../portfolio.html#services">אפיון מוצר</a></li>
-        <li><a href="../portfolio.html#services">מערכת עיצוב</a></li>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="../uxui.html">Design Services</a></li>
+        <li><a href="../portfolio.html#services">Product Definition</a></li>
+        <li><a href="../portfolio.html#services">Design System</a></li>
       </ul></div>
-      <div class="footer-col"><h4>סושיאל</h4><ul>
+      <div class="footer-col"><h4>Social</h4><ul>
         <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
         <li><a href="https://wa.me/972547179000" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">
-      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>All rights reserved &copy; Dror Cohen 2025</p>
       <p>Made with ❤️ by Dror Cohen</p>
     </div>
   </div>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>איך מציגים עיצוב ללקוח — שיטה שעובדת תמיד — דרור כהן | UX/UI Designer</title>
+<title>איך מציגים עיצוב לCustomer — שיטה שעובדת תמיד — Dror Cohen | UX/UI Designer</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#121212;--card:#1A1A1A;--white:#FFFFFF;--gray:#ABABAB;--orange:#F5A623;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14)}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
@@ -18,7 +18,7 @@ img{max-width:100%;display:block}
 .reveal{animation:fu .65s ease both}
 nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px;position:relative}
-.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Sora',sans-serif}
 .nav-logo span{color:var(--gray)}
 .nav-links{display:flex;gap:28px;list-style:none;font-size:1rem}
 .nav-links a{color:var(--gray);transition:color .25s}
@@ -58,7 +58,7 @@ blockquote{border-right:4px solid var(--orange);padding:20px 28px;margin:40px 0;
 .tag{background:#222;border:1px solid var(--border2);padding:6px 14px;border-radius:100px;font-size:1.05rem;color:var(--gray)}
 footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111}
 .footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:48px;padding-bottom:64px}
-.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Noto Sans Display',sans-serif}
+.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Sora',sans-serif}
 .footer-brand span{color:rgba(255,255,255,0.4)}
 .footer-col h4{font-size:1rem;font-weight:600;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
@@ -122,33 +122,33 @@ footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111
   <div class="nav-inner">
     <a href="../portfolio.html" class="nav-logo">Dror<span>Cohen</span></a>
     <ul class="nav-links">
-      <li><a href="../about.html">אני דרור</a></li>
-      <li><a href="../uxui.html">עיצוב ממשקים</a></li>
-      <li><a href="../portfolio.html#services">מה אני עושה</a></li>
-      <li><a href="../portfolio.html#projects">פרויקטים</a></li>
-      <li><a href="../portfolio.html#testimonials">המלצות</a></li>
-      <li><a href="../blog.html" class="active">בלוג</a></li>
-      <li><a href="../contact.html">צור קשר</a></li>
+      <li><a href="../about.html">About Dror</a></li>
+      <li><a href="../uxui.html">Design Services</a></li>
+      <li><a href="../portfolio.html#services">What I Do</a></li>
+      <li><a href="../portfolio.html#projects">Projects</a></li>
+      <li><a href="../portfolio.html#testimonials">Testimonials</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+      <li><a href="../contact.html">Contact</a></li>
     </ul>    <button class="nav-mobile" id="navToggle"><i class="fa fa-bars"></i></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="../about.html">אני דרור</a>
+    <a href="../about.html">About Dror</a>
     <a href="../uxui.html">UX/UI</a>
-    <a href="../portfolio.html#services">מה אני עושה</a>
-    <a href="../portfolio.html#projects">פרויקטים</a>
-    <a href="../blog.html">בלוג</a>
-    <a href="../contact.html">צור קשר</a>
+    <a href="../portfolio.html#services">What I Do</a>
+    <a href="../portfolio.html#projects">Projects</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../contact.html">Contact</a>
   </div>
 </nav>
 <section class="article-hero grid-bg">
   <div class="wrap">
-    <a href="../blog.html" class="article-back reveal"><i class="fa fa-arrow-right"></i> חזרה לבלוג</a>
+    <a href="../blog.html" class="article-back reveal"><i class="fa fa-arrow-right"></i> Back to Blog</a>
     <div class="article-cat reveal">Process</div>
-    <h1 class="reveal">איך מציגים עיצוב ללקוח — שיטה שעובדת תמיד</h1>
+    <h1 class="reveal">איך מציגים עיצוב לCustomer — שיטה שעובדת תמיד</h1>
     <div class="article-meta reveal">
       <span><i class="fa fa-calendar"></i> 10 ינואר 2026</span>
-      <span><i class="fa fa-clock"></i> 5 דקות קריאה</span>
-      <span><i class="fa fa-user"></i> דרור כהן</span>
+      <span><i class="fa fa-clock"></i> 5 minutes read</span>
+      <span><i class="fa fa-user"></i> Dror Cohen</span>
     </div>
   </div>
 </section>
@@ -157,82 +157,82 @@ footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111
     <div class="article-hero-img reveal"><i class="fa-solid fa-presentation-screen"></i></div>
     <div class="article-body reveal">
 
-      <p>אחרי אלפי שעות של פגישות עם לקוחות, למדתי אמת אחת שהיא counter-intuitive לכל מעצב שמתחיל: עיצוב מעולה שמוצג גרוע — נדחה. עיצוב סביר שמוצג מעולה — מתקבל. וזה לא כי לקוחות שטחיים. זה כי הצגה היא חלק בלתי נפרד מהמוצר.</p>
-      <p>המאמר הזה הוא תמצית של מה שלמדתי — תהליך שעובד איתי בכל פרויקט, עם כל סוג לקוח.</p>
+      <p>אחרי אלפי שעות של פגישות עם Customerות, למדתי Truth אחת שהיא counter-intuitive לכל מעצב שמתחיל: עיצוב מעולה שמוצג גרוע — נדחה. עיצוב סביר שמוצג מעולה — מתקבל. וIt's not כי Customerות Areaיים. זה כי Presentation היא חלק בלתי נפרד מהמוצר.</p>
+      <p>הArticle הThis is תמצית של מה שלמדתי — תהליך שעובד איתי בכל פרויקט, עם כל Type Customer.</p>
 
       <h2>למה רוב הפרזנטציות Design נכשלות</h2>
-      <p>שגיאות נפוצות שאני רואה שוב ושוב:</p>
+      <p>שגיLetter נפוצות שאני רואה שוב ושוב:</p>
       <ul>
-        <li><strong>קפיצה ישר לויזואלים:</strong> מראים מסכים לפני שהלקוח מבין את הבעיה שנפתרה</li>
-        <li><strong>הצגת הכל:</strong> 47 מסכים בפגישה של 45 דקות — מוח אנושי לא יכול לעכל</li>
-        <li><strong>הגנה על העיצוב:</strong> כשלקוח מעיר הערה, מעצב הופך מגנתי במקום סקרני</li>
-        <li><strong>חסר נימוק:</strong> "בחרנו כחול" — בלי לספר למה כחול ולא ירוק</li>
-        <li><strong>לא מדברים שפת הלקוח:</strong> מעצב מדבר על "היררכיה ויזואלית" כשהלקוח רוצה לדעת "האם זה יוביל ליותר מכירות"</li>
+        <li><strong>קפיצה ישר לויזואלים:</strong> מראים מסכים לפני שהCustomer מבין את הבעיה שנפתרה</li>
+        <li><strong>הצגת הכל:</strong> 47 מסכים בפגישה של 45 דLineת — מוח אנושי לא יכול לעכל</li>
+        <li><strong>הגנה על העיצוב:</strong> כשCustomer מעיר Note, מעצב הופך מגנתי במLineם סCoolני</li>
+        <li><strong>חסר נימוק:</strong> "בחרנו כחול" — בלי לBook למה כחול ולא ירוק</li>
+        <li><strong>לא מדברים שפת הCustomer:</strong> מעצב מדבר על "היררכיה ויזואלית" כשהCustomer רוצה לדעת "האם זה יוביל ליותר מכירות"</li>
       </ul>
-      <blockquote>"הפרזנטציה הכי גרועה שראיתי הייתה מעצב מצוין שהציג עיצוב מדהים — ואיבד את הלקוח אחרי 10 דקות כי לא בנה context."</blockquote>
+      <blockquote>"הפרזנטציה הכי גרועה שראיתי הייתה מעצב מצוין שהציג עיצוב מדהים — ואיבד את הCustomer אחרי 10 דLineת כי לא בנה context."</blockquote>
       <div class="article-img"><i class="fa-solid fa-person-chalkboard"></i></div>
 
-      <h2>המבנה שעובד: 5 שלבים</h2>
-      <h3>שלב 1: הזכירו למה אנחנו כאן (2-3 דקות)</h3>
-      <p>לפני שמציגים פיקסל אחד — חזרו על הבעיה שהתבקשתם לפתור. "בפגישה האחרונה הגדרנו שהמשתמשים נוטשים בשלב התשלום ב-68%. המטרה שלנו הייתה להפחית את הנטישה הזו." עכשיו הלקוח יודע מה לצפות ואיך להעריך את מה שיראה.</p>
-      <h3>שלב 2: המסגרת הפתרונית (3-5 דקות)</h3>
-      <p>לפני שמציגים את ה-"איך" — הסבירו את ה-"מה" ואת ה-"למה". "בחרנו לעצב תהליך רכישה בשלב אחד כי מחקרים מראים שתהליך רב-שלבי מגדיל חיכוך ב-20%. בנוסף, ראינו במחקר המשתמשים שלנו שמשתמשים לא הבינו כמה שלבים נותרו."</p>
-      <h3>שלב 3: ההצגה עצמה — פחות זה יותר</h3>
-      <p>הציגו 3-5 מסכים / תהליכים מרכזיים. לא הכל — רק העיקריים. שמרו את מקרי הקצה לשאלות. כשמציגים כל מסך: תארו את ההקשר (מה המשתמש עשה לפני שהגיע לכאן), הסבירו את ההחלטות העיצוביות הגדולות, ציינו מה שונה מנקודת הייחוס.</p>
+      <h2>הStructure שעובד: 5 Steps</h2>
+      <h3>שלב 1: הזכירו למה אנחנו כאן (2-3 דLineת)</h3>
+      <p>לפני שמציגים פיקסל אחד — חזרו על הבעיה שהתבקשתם לפQueue. "בפגישה האחרונה הגדרנו שהמשתמשים נוטשים בשלב התשלום ב-68%. המטרה שלנו הייתה להפחית את הנטישה הזו." עכשיו הCustomer יודע מה לצפות ואיך להעריך את מה שיראה.</p>
+      <h3>שלב 2: המסגרת הפתרונית (3-5 דLineת)</h3>
+      <p>לפני שמציגים את ה-"איך" — הסבירו את ה-"מה" ואת ה-"למה". "בחרנו לעצב תהליך רכישה בשלב אחד כי מחCoolים מראים שתהליך רב-שלבי מגדיל חיכוך ב-20%. בנוסף, ראינו במחCool המשתמשים שלנו שמשתמשים לא הבינו כמה Steps נותרו."</p>
+      <h3>שלב 3: הPresentation עצמה — פחות זה יותר</h3>
+      <p>Show 3-5 key screens/flows. Not everything — just the main ones. Save edge cases for questions. כשמציגים כל Screen: תארו את ההConnection (מה המשתמש עשה לפני שהגיע לכאן), הסבירו את ההחלטות העיצוביות הLargeות, ציינו מה שונה מנLineדת הייחוס.</p>
       <div class="article-img"><i class="fa-solid fa-display"></i></div>
-      <h3>שלב 4: הדגמה באב-טיפוס</h3>
-      <p>הדגימו את התהליך באב-טיפוס אינטראקטיבי. זה שונה לחלוטין ממסכים סטטיים — הלקוח "מרגיש" את החוויה. אב-טיפוס של Figma, InVision, או Framer — כולם עובדים. אפשרו ללקוח לנסות בעצמו.</p>
+      <h3>שלב 4: הדגמה באב-Tipוס</h3>
+      <p>הדגימו את התהליך באב-Tipוס אינטראקטיבי. זה שונה לחלוטין ממסכים סטטיים — הCustomer "מרגיש" את החוויה. אב-Tipוס של Figma, InVision, או Framer — כולם עובדים. אפשרו לCustomer לנסות בעצמו.</p>
       <h3>שלב 5: שאלות ומשוב מובנה</h3>
-      <p>אל תגידו "שאלות?" בסוף. הנחו את המשוב: "מה עובד לכם בזה? מה מעלה שאלות? יש דבר ספציפי שרוצים לראות אחרת?" שאלות ספציפיות מובילות למשוב שימושי, לא לדיון כללי.</p>
+      <p>אל תגידו "שאלות?" In the end. הנחו את המשוב: "מה עובד לכם בזה? מה מעלה שאלות? יש דבר Specific שרוצים לרLetter אחרת?" שאלות Specificות מובילות למשוב שימושי, לא לדיון Universal.</p>
 
       <h2>איך לתאר החלטות עיצוביות</h2>
       <p>השיטה שעובדת הכי טוב: STAR</p>
       <ul>
-        <li><strong>S - מצב:</strong> "משתמשים לא הבינו שיש עוד 3 שלבים בתהליך"</li>
-        <li><strong>T - משימה:</strong> "היינו צריכים להראות התקדמות בצורה ברורה"</li>
-        <li><strong>A - פעולה:</strong> "הוספנו מחוון התקדמות בחלק העליון עם מספר שלבים ברור"</li>
-        <li><strong>R - תוצאה:</strong> "בבדיקות שמישות ראינו שמשתמשים כבר לא עוצרים ושואלים 'כמה עוד'"</li>
+        <li><strong>S - מצב:</strong> "משתמשים לא הבינו שיש עוד 3 Steps בתהליך"</li>
+        <li><strong>T - משימה:</strong> "היינו צריכים להרLetter התקדמות בצורה Clearה"</li>
+        <li><strong>A - פעולה:</strong> "הוספנו מחוון התקדמות בחלק העליון עם מBook Steps Clear"</li>
+        <li><strong>R - Result:</strong> "בבדיLineת שמישות ראינו שמשתמשים כבר לא עוצרים ושואלים 'כמה עוד'"</li>
       </ul>
-      <p>כשמסבירים החלטה בפורמט הזה, הלקוח מקבל את כל ההקשר שהוא צריך כדי להחליט אם הוא מסכים.</p>
+      <p>כשמסבירים Decision בפורמט הזה, הCustomer מקבל את כל ההConnection שהוא צריך כדי להחליט אם הוא מסכים.</p>
 
-      <h2>טיפול בהתנגדויות</h2>
-      <p>ההתנגדות הנפוצה ביותר שתשמעו: "לי לא אכפת מה המחקרים אומרים — אני רוצה X". התגובה הנכונה:</p>
-      <p>אל תגידו "אבל המחקר מראה..." — זה defensive. במקום: "מעניין. מה גורם לך לחשוב ש-X יעבוד טוב יותר? אני רוצה להבין מה אתה רואה שאני אולי מפספס."</p>
-      <p>לרוב מסתבר שיש insight לגיטימי שלא הבנתם מספיק טוב. או שהלקוח מסביר ו"שומע" את עצמו — ומגיע בעצמו למסקנה אחרת.</p>
-      <blockquote>"המשוב הכי טוב שקיבלתי בקריירה היה לא 'זה מושלם' — אלא 'פעם ראשונה שמישהו הסביר לי למה כל החלטה'. הלקוח הזה הפך ללקוח של 8 שנים."</blockquote>
+      <h2>Tipול בהתנגדויות</h2>
+      <p>ההתנגדות הנפוצה ביותר שתשמעו: "לי לא אכפת מה המחCoolים אומרים — אני רוצה X". התגובה הנכונה:</p>
+      <p>אל תגידו "אבל המחCool מראה..." — זה defensive. במLineם: "מעניין. מה גורם לך לחשוב ש-X יעבוד טוב יותר? אני רוצה להבין מה אתה רואה שאני אולי מפספס."</p>
+      <p>לרוב מסתבר שיש insight לגיטימי שלא הבנתם מספיק טוב. או שהCustomer מסביר ו"שומע" את עצמו — ומגיע בעצמו למסקנה אחרת.</p>
+      <blockquote>"המשוב הכי טוב שקיבלתי בCoolיירה היה לא 'זה מושלם' — אלא 'פעם ראשונה שמישהו הסביר לי למה כל Decision'. הCustomer הזה הפך לCustomer של 8 שנים."</blockquote>
 
       <h2>מרחוק לעומת פיזי</h2>
       <p>כ-70% מהפגישות שלי הן מרחוק. הנה מה שלמדתי:</p>
       <ul>
-        <li>שתפו מסך ולא קישור — כך אתם שולטים בקצב החשיפה</li>
+        <li>שתפו Screen ולא קישור — כך אתם שולטים בRhythm החשיMouth</li>
         <li>השתמשו במצב presenter של Figma להצגות נקיות</li>
-        <li>בקשו מלקוחות לכבות התראות — הסחות דעת הורסות את הזרימה</li>
-        <li>שלחו חומר קריאה קצר לפני הפגישה — מבנה + מה שתציגו. זה מונע "מה זה?"</li>
-        <li>הקליטו עם Loom לסיכום שלאחר הפגישה — לקוחות שוכחים 70% תוך 24 שעות</li>
+        <li>בקשו מCustomerות לכבות התרLetter — הסחות דעת הורסות את הזרימה</li>
+        <li>שלחו חומר Reading קצר לפני הפגישה — Structure + מה שתציגו. זה מונע "What is?"</li>
+        <li>הEasyיטו עם Loom לסיכום שלאחר הפגישה — Customerות שוכחים 70% תוך 24 שעות</li>
       </ul>
 
-      <h2>מעקב שסוגר עסקה</h2>
-      <p>המעקב הוא לרוב ההזדמנות המוחמצת הגדולה ביותר. תוך 24 שעות מהפגישה, שלחו:</p>
+      <h2>מעקב שTypeר Businessה</h2>
+      <p>המעקב הוא לרוב ההזדמנות המוחמצת הLargeה ביותר. תוך 24 שעות מהפגישה, שלחו:</p>
       <ol>
         <li>סיכום קצר — מה הצגנו ומה הוחלט</li>
-        <li>צעדים הבאים ברורים — מי עושה מה עד מתי</li>
-        <li>קישור לאב-טיפוס לסקירה עצמאית</li>
+        <li>Stages הבאים Clearים — מי עושה מה עד מתי</li>
+        <li>קישור לאב-Tipוס לסקירה עצמאית</li>
         <li>שאלות פתוחות שעלו ודרכי פעולה מוצעות</li>
       </ol>
       <div class="article-img"><i class="fa-solid fa-envelope-open-text"></i></div>
 
       <h2>הכנה: מה עושים שעה לפני</h2>
-      <p>רשימת בדיקה לשעה לפני כל פגישת סקירת עיצוב:</p>
+      <p>רשימת Testing לשעה לפני כל פגישת סקירת עיצוב:</p>
       <ul>
-        <li>בדקו שאב-טיפוס עובד במובייל (לקוח עלול לפתוח בטלפון)</li>
+        <li>בדLine שאב-Tipוס עובד במובייל (Customer עלול לפתוח בPhone)</li>
         <li>הכינו 3 שאלות שמנחות משוב שימושי</li>
-        <li>חזרו על ההקשר — מה הוחלט בפגישה הקודמת</li>
+        <li>חזרו על ההConnection — מה הוחלט בפגישה הLineדמת</li>
         <li>הכינו תשובות ל-2 ההתנגדויות הנפוצות</li>
-        <li>ודאו שיש לכם גרסת גיבוי (PDF/צילומי מסך) למקרה שהאינטרנט נפסק</li>
+        <li>ודאו שיש לכם גרסת גיבוי (PDF/צילומי Screen) לCase שהאינטרנט נפסק</li>
       </ul>
       <div class="tag-row">
-        <span class="tag">הצגת עיצוב</span><span class="tag">קשרי לקוחות</span><span class="tag">תהליך</span>
-        <span class="tag">תקשורת</span><span class="tag">משוב</span><span class="tag">אב-טיפוס</span>
+        <span class="tag">הצגת עיצוב</span><span class="tag">Connectionי Customerות</span><span class="tag">תהליך</span>
+        <span class="tag">תקשורת</span><span class="tag">משוב</span><span class="tag">אב-Tipוס</span>
       </div>
 
     </div>
@@ -242,24 +242,24 @@ footer{padding:80px 0 0;border-top:1px solid var(--border);background-color:#111
   <div class="wrap">
     <div class="footer-main">
       <div><a href="../portfolio.html" class="footer-brand">Dror<span>Cohen</span></a></div>
-      <div class="footer-col"><h4>ניווט</h4><ul>
-        <li><a href="../about.html">אני דרור</a></li>
-        <li><a href="../portfolio.html#projects">פרויקטים</a></li>
-        <li><a href="../blog.html">בלוג</a></li>
-        <li><a href="../contact.html">צור קשר</a></li>
+      <div class="footer-col"><h4>Navigation</h4><ul>
+        <li><a href="../about.html">About Dror</a></li>
+        <li><a href="../portfolio.html#projects">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../contact.html">Contact</a></li>
       </ul></div>
-      <div class="footer-col"><h4>שירותים</h4><ul>
-        <li><a href="../uxui.html">עיצוב ממשקים</a></li>
-        <li><a href="../portfolio.html#services">אפיון מוצר</a></li>
-        <li><a href="../portfolio.html#services">מערכת עיצוב</a></li>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="../uxui.html">Design Services</a></li>
+        <li><a href="../portfolio.html#services">Product Definition</a></li>
+        <li><a href="../portfolio.html#services">Design System</a></li>
       </ul></div>
-      <div class="footer-col"><h4>סושיאל</h4><ul>
+      <div class="footer-col"><h4>Social</h4><ul>
         <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
         <li><a href="https://wa.me/972547179000" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">
-      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>All rights reserved &copy; Dror Cohen 2025</p>
       <p>Made with ❤️ by Dror Cohen</p>
     </div>
   </div>

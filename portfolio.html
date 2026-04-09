@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pixel54 — דרור כהן | UX Strategist & UI Designer</title>
-<meta name="description" content="דרור כהן, מאפיין UX ומעצב UI עם 20+ שנות ניסיון. סטודיו Pixel54 — אפיון, עיצוב, אסטרטגיה.">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<title>Pixel54 — Dror Cohen | UX Strategist & UI Designer</title>
+<meta name="description" content="Dror Cohen, UX Designer and UI Specialist with 20+ years of experience. Pixel54 Studio — strategy, design, and specification.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Sora:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -15,7 +15,7 @@
   --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
@@ -32,7 +32,7 @@ img{max-width:100%;display:block}
 /* ── Nav ── */
 nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px;position:relative}
-.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Sora',sans-serif}
 .nav-logo span{color:var(--gray)}
 .nav-links{display:flex;gap:28px;list-style:none;font-size:1rem;font-weight:400;position:absolute;left:50%;transform:translateX(-50%)}
 .nav-links a{color:var(--gray);transition:color .25s}
@@ -106,7 +106,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .about-img{position:relative}
 .about-img-box{aspect-ratio:4/5;background:var(--card);border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .about-img-box i{font-size:5rem;color:var(--gray);opacity:.3}
-.about-badge{position:absolute;bottom:20px;right:20px;background:var(--card2);border:1px solid var(--border2);border-radius:12px;padding:12px 18px;font-size:1rem;font-weight:500}
+.about-badge{position:absolute;bottom:20px;left:20px;background:var(--card2);border:1px solid var(--border2);border-radius:12px;padding:12px 18px;font-size:1rem;font-weight:500}
 .about-text p{color:var(--gray);font-size:1.1rem;margin-bottom:18px;max-width:100%}
 .about-text p:first-of-type{color:var(--white);font-size:1.05rem;font-weight:400}
 .about-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
@@ -116,7 +116,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .services{padding:100px 0}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden}
 .svc-card{background:var(--card);padding:40px 32px;position:relative;overflow:hidden;transition:background .3s}
-.svc-card::before{content:'';position:absolute;top:0;right:0;width:0;height:2px;background:var(--white);transition:width .4s ease}
+.svc-card::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:var(--white);transition:width .4s ease}
 .svc-card:hover::before{width:100%}
 .svc-card:hover{background:var(--card2)}
 .svc-num{font-size:1rem;color:var(--gray);font-weight:400;margin-bottom:16px}
@@ -143,14 +143,14 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .proj-card{display:block;border-radius:20px;overflow:hidden;cursor:pointer;box-shadow:0 8px 32px rgba(0,0,0,.12)}
 .proj-thumb{background:#111;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;aspect-ratio:16/9;padding:0}
 .proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.proj-all-link{position:absolute;top:16px;right:16px;z-index:10;font-size:.76rem;font-weight:600;color:rgba(255,255,255,.9);background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:100px;display:inline-flex;align-items:center;gap:5px;transition:background .2s,color .2s;text-decoration:none}
+.proj-all-link{position:absolute;top:16px;left:16px;z-index:10;font-size:.76rem;font-weight:600;color:rgba(255,255,255,.9);background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:100px;display:inline-flex;align-items:center;gap:5px;transition:background .2s,color .2s;text-decoration:none}
 .proj-all-link:hover{background:rgba(255,255,255,.15);color:#fff}
 .proj-card:hover .proj-thumb img{transform:scale(1.03)}
 .proj-view-btn{display:none;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.75);border-radius:100px;padding:12px 32px;font-size:1.02rem;font-weight:600;color:#fff;background:rgba(0,0,0,.15);text-decoration:none;margin-top:12px;font-family:inherit;cursor:pointer;backdrop-filter:blur(4px)}
 .proj-all-inner{display:none;font-size:1.05rem;color:rgba(255,255,255,.55);text-decoration:underline;margin-top:18px;cursor:pointer}
 .proj-thumb i{font-size:3rem;color:#aaa;opacity:.4}
-.proj-thumb .proj-label{position:absolute;top:16px;right:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);padding:5px 14px;border-radius:100px;font-size:1rem;font-weight:500;color:#fff}
-.proj-body{position:absolute;bottom:0;right:0;left:0;padding:48px 44px 36px;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.5) 60%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end}
+.proj-thumb .proj-label{position:absolute;top:16px;left:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);padding:5px 14px;border-radius:100px;font-size:1rem;font-weight:500;color:#fff}
+.proj-body{position:absolute;bottom:0;left:0;right:0;padding:48px 44px 36px;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.5) 60%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end}
 .proj-body h3{font-size:2rem;font-weight:700;margin-bottom:10px;line-height:1.2;color:#fff}
 .proj-body p{font-size:1.05rem;color:rgba(255,255,255,.8);margin-bottom:20px;line-height:1.65;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:0}
@@ -165,7 +165,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .process{padding:100px 0}
 .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden}
 .proc-card{background:var(--card);padding:40px 28px;position:relative;text-align:center}
-.proc-num{font-size:5rem;font-weight:900;opacity:.08;position:absolute;top:10px;right:24px;line-height:1}
+.proc-num{font-size:5rem;font-weight:900;opacity:.08;position:absolute;top:10px;left:24px;line-height:1}
 .proc-card i{font-size:1.8rem;margin-bottom:18px;color:var(--white)}
 .proc-card h3{font-size:1.05rem;font-weight:600;margin-bottom:10px}
 .proc-card p{font-size:1rem;color:var(--gray);line-height:1.6}
@@ -212,17 +212,17 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .test-stars-lg i{color:var(--orange);font-size:1.07rem}
 .test-arrow{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(0,0,0,.25);font-size:2rem;cursor:pointer;padding:16px;transition:color .2s;z-index:10;line-height:1}
 .test-arrow:hover{color:#1A1A1A}
-.test-arrow.prev{right:32px}
-.test-arrow.next{left:32px}
+.test-arrow.prev{left:32px}
+.test-arrow.next{right:32px}
 .test-dots{display:flex;justify-content:center;gap:10px;padding:0 0 56px}
 .test-dot{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.15);border:none;cursor:pointer;transition:all .25s;padding:0}
 .test-dot.active{background:#1A1A1A;width:24px;border-radius:100px}
-.test-rating-badge{position:absolute;top:40px;right:48px;background:#1A1A1A;color:#F5F5F5;border-radius:100px;padding:8px 18px;font-size:1rem;font-weight:700;display:flex;align-items:center;gap:6px}
+.test-rating-badge{position:absolute;top:40px;left:48px;background:#1A1A1A;color:#F5F5F5;border-radius:100px;padding:8px 18px;font-size:1rem;font-weight:700;display:flex;align-items:center;gap:6px}
 .test-rating-badge i{color:var(--orange);font-size:1.05rem}
 @media(max-width:900px){
   .test-carousel{padding:80px 72px}
   .test-quote{font-size:1.35rem}
-  .test-rating-badge{top:20px;right:20px}
+  .test-rating-badge{top:20px;left:20px}
 }
 @media(max-width:600px){
   .test-carousel{padding:72px 56px}
@@ -257,14 +257,14 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 .contact-form button{align-self:flex-start}
 
 /* ── WhatsApp Button ── */
-.wa-btn{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .3s,box-shadow .3s;cursor:pointer}
+.wa-btn{position:fixed;bottom:28px;left:28px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .3s,box-shadow .3s;cursor:pointer}
 .wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.55)}
 .wa-btn i{font-size:1.8rem;color:#fff}
 
 /* ── Footer ── */
 footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-color:#111;}
 .footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:48px;padding-bottom:64px}
-.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Noto Sans Display',sans-serif}
+.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Sora',sans-serif}
 .footer-brand span{color:rgba(255,255,255,0.4)}
 .footer-col h4{font-size:1rem;font-weight:600;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
@@ -465,25 +465,24 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 </head>
 <body>
 
-<!-- Custom Cursor -->
-
 <!-- WhatsApp -->
-<a href="https://wa.me/972547179000" target="_blank" class="wa-btn" title="שלחו הודעה בוואטסאפ"><i class="fa-brands fa-whatsapp"></i></a>
+<a href="https://wa.me/972547179000" target="_blank" class="wa-btn" title="Send a WhatsApp message"><i class="fa-brands fa-whatsapp"></i></a>
 
 <!-- Nav -->
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Dror<span>Cohen</span></a>
     <ul class="nav-links">
-      <li><a href="about.html">אני דרור</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="uxui.html">UX/UI</a></li>
       <li><a href="nocode.html">No Code</a></li>
-      <li><a href="#services" onclick="return navTo('#services')">מה אני עושה</a></li>
-      <li><a href="#projects" onclick="return navTo('#projects')">פרויקטים</a></li>
-      <li><a href="#testimonials" onclick="return navTo('#testimonials')">המלצות</a></li>
-      <li><a href="blog.html">בלוג</a></li>
-      <li><a href="contact.html">צור קשר</a></li>
-    </ul>    <button class="nav-mobile" id="navToggle" aria-label="תפריט"><i class="fa fa-bars"></i></button>
+      <li><a href="#services" onclick="return navTo('#services')">Services</a></li>
+      <li><a href="#projects" onclick="return navTo('#projects')">Projects</a></li>
+      <li><a href="#testimonials" onclick="return navTo('#testimonials')">Testimonials</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-mobile" id="navToggle" aria-label="Menu"><i class="fa fa-bars"></i></button>
   </div>
 </nav>
 
@@ -495,8 +494,8 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <h1>UX שמרגיש נכון. UI שנראה מדויק. אני דרור, ואני בונה את שניהם</h1>
-        <p class="hero-sub">אפיון UX ועיצוב UI לחברות הייטק, סטארטאפים ומותגים מובילים</p>
+        <h1>UX that feels right. UI that looks precise. I'm Dror, and I build both.</h1>
+        <p class="hero-sub">UX specification and UI design for tech companies, startups and leading brands</p>
         <a href="#testimonials" onclick="return navTo('#testimonials')" class="hero-rating" style="cursor:pointer">
           <span class="stars">
             <i class="fa-solid fa-star"></i>
@@ -508,13 +507,13 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
           <span class="score">4.9</span>
         </a>
         <div class="hero-btns">
-          <a href="contact.html" class="btn-primary">בואו נדבר</a>
-          <a href="#projects" class="btn-outline">לפרויקטים</a>
+          <a href="contact.html" class="btn-primary">Let's Talk</a>
+          <a href="#projects" class="btn-outline">View Projects</a>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><div class="num">20+</div><div class="lbl">שנות ניסיון</div></div>
-          <div class="hero-stat"><div class="num">200+</div><div class="lbl">פרויקטים</div></div>
-          <div class="hero-stat"><div class="num">160+</div><div class="lbl">לקוחות</div></div>
+          <div class="hero-stat"><div class="num">20+</div><div class="lbl">Years of Experience</div></div>
+          <div class="hero-stat"><div class="num">200+</div><div class="lbl">Projects</div></div>
+          <div class="hero-stat"><div class="num">160+</div><div class="lbl">Clients</div></div>
         </div>
       </div>
     </div>
@@ -533,11 +532,11 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
   <div class="wrap">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0">
       <div>
-        <span class="sec-label reveal">עבודות נבחרות</span>
-        <h2 class="sec-title reveal r1">פרויקטים</h2>
-        <p class="sec-sub reveal r2">מבחר פרויקטים שמייצגים את הגישה והיכולות שלי</p>
+        <span class="sec-label reveal">Selected Work</span>
+        <h2 class="sec-title reveal r1">Projects</h2>
+        <p class="sec-sub reveal r2">A selection of projects that represent my approach and capabilities</p>
       </div>
-      <a href="projects.html" class="reveal r1" style="display:inline-flex;align-items:center;gap:6px;font-size:.88rem;font-weight:600;color:var(--gray);border:1px solid var(--border2);padding:10px 20px;border-radius:100px;white-space:nowrap;transition:color .25s,border-color .25s;margin-top:8px;text-decoration:none" onmouseover="this.style.color='var(--white)';this.style.borderColor='rgba(255,255,255,.4)'" onmouseout="this.style.color='var(--gray)';this.style.borderColor='var(--border2)'">לכל הפרויקטים <i class="fa-solid fa-arrow-left" style="font-size:.75rem"></i></a>
+      <a href="projects.html" class="reveal r1" style="display:inline-flex;align-items:center;gap:6px;font-size:.88rem;font-weight:600;color:var(--gray);border:1px solid var(--border2);padding:10px 20px;border-radius:100px;white-space:nowrap;transition:color .25s,border-color .25s;margin-top:8px;text-decoration:none" onmouseover="this.style.color='var(--white)';this.style.borderColor='rgba(255,255,255,.4)'" onmouseout="this.style.color='var(--gray)';this.style.borderColor='var(--border2)'">View All Projects <i class="fa-solid fa-arrow-right" style="font-size:.75rem"></i></a>
     </div>
     <div class="filter-bar reveal r3" id="filterBar"></div>
     <div class="proj-grid" id="projGrid"></div>
@@ -549,18 +548,18 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
   <div class="wrap">
     <div class="nocode-inner">
       <div class="nocode-text">
-        <span class="sec-label reveal">שירות חדש</span>
+        <span class="sec-label reveal">New Service</span>
         <h2 class="sec-title reveal r1">No Code Dev</h2>
-        <p class="reveal r2">בונה אתרים ומוצרים דיגיטליים עם כלי AI מודרניים — Lovable, Figma Make, Claude Code ו-VS Code. מה שבעבר לקח חודשים של פיתוח, היום לוקח ימים. בלי צוות גדול, בלי עיכובים.</p>
+        <p class="reveal r2">Building websites and digital products using modern AI tools — Lovable, Figma Make, Claude Code, and VS Code. What used to take months of development now takes days. No large teams, no delays.</p>
         <div class="nocode-pills reveal r3">
           <span>Lovable</span>
           <span>Figma Make</span>
           <span>Claude Code</span>
           <span>VS Code</span>
           <span>AI-Powered</span>
-          <span>השקה מהירה</span>
+          <span>Fast Launch</span>
         </div>
-        <a href="nocode.html" class="btn-primary reveal r4">לעמוד No Code <i class="fa-solid fa-arrow-left" style="font-size:.8rem;margin-right:6px"></i></a>
+        <a href="nocode.html" class="btn-primary reveal r4">View No Code Page <i class="fa-solid fa-arrow-right" style="font-size:.8rem;margin-left:6px"></i></a>
       </div>
       <div class="nocode-visual reveal r2">
         <div class="nocode-visual-top">
@@ -570,23 +569,23 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
           <div class="nocode-bar-icon"><i class="fa-solid fa-heart" style="color:#FF4D6D"></i></div>
           <div class="nocode-bar-text">
             <strong>Lovable</strong>
-            <span>אפליקציות web מלאות מ-prompt</span>
+            <span>Full web apps from prompts</span>
           </div>
-          <span class="nocode-bar-badge">חזק</span>
+          <span class="nocode-bar-badge">Powerful</span>
         </div>
         <div class="nocode-bar">
           <div class="nocode-bar-icon"><i class="fa-brands fa-figma" style="color:#F24E1E"></i></div>
           <div class="nocode-bar-text">
             <strong>Figma Make</strong>
-            <span>מעיצוב לקוד — ישירות</span>
+            <span>From design to code — directly</span>
           </div>
-          <span class="nocode-bar-badge">חדש</span>
+          <span class="nocode-bar-badge">New</span>
         </div>
         <div class="nocode-bar">
           <div class="nocode-bar-icon"><i class="fa-solid fa-robot" style="color:#CC785C"></i></div>
           <div class="nocode-bar-text">
             <strong>Claude Code</strong>
-            <span>כתיבה ועריכת קוד עם AI</span>
+            <span>Write and edit code with AI</span>
           </div>
           <span class="nocode-bar-badge">AI</span>
         </div>
@@ -594,7 +593,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
           <div class="nocode-bar-icon"><i class="fa-solid fa-code" style="color:#007ACC"></i></div>
           <div class="nocode-bar-text">
             <strong>VS Code</strong>
-            <span>סביבת פיתוח מלאה</span>
+            <span>Full development environment</span>
           </div>
           <span class="nocode-bar-badge">IDE</span>
         </div>
@@ -605,45 +604,45 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 
 <section class="services" id="services">
   <div class="wrap">
-    <span class="sec-label reveal">מה אני עושה</span>
-    <h2 class="sec-title reveal r1">שירותים</h2>
-    <p class="sec-sub reveal r2">מגוון שירותי עיצוב ואפיון שמותאמים לצרכים שלכם</p>
+    <span class="sec-label reveal">What I Do</span>
+    <h2 class="sec-title reveal r1">Services</h2>
+    <p class="sec-sub reveal r2">A range of design and specification services tailored to your needs</p>
     <div class="svc-grid reveal r3">
       <div class="svc-card">
         <div class="svc-num">01</div>
         <i class="fa-solid fa-bullseye"></i>
-        <h3>אפיון UX</h3>
-        <p>מחקר משתמשים, ארכיטקטורת מידע, User Flows ו-Wireframes שמגדירים את חוויית המשתמש מקצה לקצה</p>
+        <h3>UX Specification</h3>
+        <p>User research, information architecture, user flows and wireframes that define end-to-end user experience</p>
       </div>
       <div class="svc-card">
         <div class="svc-num">02</div>
         <i class="fa-solid fa-layer-group"></i>
-        <h3>עיצוב UI</h3>
-        <p>עיצוב ממשקים מדויק עם Design Systems, קומפוננטות ו-Style Guides שמייצרים עקביות ויזואלית</p>
+        <h3>UI Design</h3>
+        <p>Precise interface design with design systems, components and style guides that create visual consistency</p>
       </div>
       <div class="svc-card">
         <div class="svc-num">03</div>
         <i class="fa-solid fa-palette"></i>
-        <h3>אסטרטגיית מיתוג</h3>
-        <p>בניית שפה ויזואלית, לוגו, פלטת צבעים וטיפוגרפיה שמייצרים זהות מותגית חזקה ועקבית</p>
+        <h3>Branding Strategy</h3>
+        <p>Building visual language, logos, color palettes and typography that create strong and consistent brand identity</p>
       </div>
       <div class="svc-card">
         <div class="svc-num">04</div>
         <i class="fa-solid fa-pen-ruler"></i>
-        <h3>פרוטוטייפינג</h3>
-        <p>אב-טיפוס אינטראקטיבי ב-Figma שמאפשר לבחון את החוויה לפני פיתוח ולקבל פידבק מוקדם</p>
+        <h3>Prototyping</h3>
+        <p>Interactive prototypes in Figma that allow testing experience before development and getting early feedback</p>
       </div>
       <div class="svc-card">
         <div class="svc-num">05</div>
         <i class="fa-solid fa-chess"></i>
-        <h3>ייעוץ מוצר</h3>
-        <p>ליווי אסטרטגי של צוותי מוצר, הגדרת KPIs, ניתוח מתחרים וזיהוי הזדמנויות לשיפור</p>
+        <h3>Product Consulting</h3>
+        <p>Strategic guidance for product teams, KPI definition, competitive analysis and identifying improvement opportunities</p>
       </div>
       <div class="svc-card">
         <div class="svc-num">06</div>
         <i class="fa-solid fa-microchip"></i>
         <h3>AI-Powered Design</h3>
-        <p>שילוב כלי AI בתהליכי העיצוב ליצירת תוכן, מחקר והאצת זרימת עבודה בצורה חכמה</p>
+        <p>Integrating AI tools into design processes to create content, research and accelerate workflows intelligently</p>
       </div>
     </div>
   </div>
@@ -654,8 +653,8 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 <section class="testimonials" id="testimonials">
   <div class="test-rating-badge"><i class="fa-solid fa-star"></i> 4.9</div>
   <div class="test-carousel" id="testCarousel">
-    <button class="test-arrow next" onclick="moveSlide(1)" aria-label="הבא"><i class="fa-solid fa-chevron-left"></i></button>
-    <button class="test-arrow prev" onclick="moveSlide(-1)" aria-label="הקודם"><i class="fa-solid fa-chevron-right"></i></button>
+    <button class="test-arrow next" onclick="moveSlide(1)" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    <button class="test-arrow prev" onclick="moveSlide(-1)" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
 
     <div class="test-slide active">
       <div class="test-avatar-lg">NS</div>
@@ -684,35 +683,35 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
     <div class="test-slide">
       <div class="test-avatar-lg">F</div>
       <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-      <blockquote class="test-quote">מהרגע הראשון שראיתי את העבודות של דרור באתר שלו ידעתי שארצה לעבוד איתו. הכל נראה מדויק ונכון, וזה אכן היה ככה במהלך העבודה איתו. בן אדם מקצועי, אמין, שיודע לתת הכוונה נכונה, ורואים את זה בתוצאות. מומלץ ביותר!</blockquote>
+      <blockquote class="test-quote">From the moment I saw Dror's work on his website I knew I wanted to work with him. Everything looks precise and right, and it was exactly like that during our collaboration. A true professional, reliable, who knows how to give the right direction, and you can see it in the results. Highly recommended!</blockquote>
       <div class="test-name">FaShare</div>
     </div>
 
     <div class="test-slide">
-      <div class="test-avatar-lg">ק</div>
+      <div class="test-avatar-lg">K</div>
       <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-      <blockquote class="test-quote">דרור עיצב עבורי 3 אפליקציות הנמכרות כיום בחנות ה App Store. דרור ביצע את העבודה לשביעות רצוני המלאה וסיפק פתרון עיצובי נקי ומרשים שמשתמשי האפליקציה נהנים ממנו עד היום.</blockquote>
-      <div class="test-name">קימיקו בע״מ</div>
+      <blockquote class="test-quote">Dror designed 3 apps for me that are now being sold in the App Store. Dror completed the work to my complete satisfaction and delivered a clean and impressive design solution that app users enjoy to this day.</blockquote>
+      <div class="test-name">Kimiko Ltd</div>
     </div>
 
     <div class="test-slide">
       <div class="test-avatar-lg">W</div>
       <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-      <blockquote class="test-quote">דרור התבקש לעצב אתר מורכב, ותיק, פעיל מאוד, תוך שימת דגש על עיצוב עדכני מרשים ביותר לצד פשטות ושימושיות. הוא עשה זאת במקצועיות רבה, מתן שרות מהיר, ושביעות הרצון היא גם מהתוצאה וגם מהעבודה הנעימה אתו.</blockquote>
+      <blockquote class="test-quote">Dror was asked to design a complex, established, very active website, while emphasizing impressive modern design alongside simplicity and usability. He did this with great professionalism, fast service, and the satisfaction comes from both the result and the pleasant collaboration with him.</blockquote>
       <div class="test-name">Wolberg.Pro</div>
     </div>
 
     <div class="test-slide">
-      <div class="test-avatar-lg">נ</div>
+      <div class="test-avatar-lg">N</div>
       <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-      <blockquote class="test-quote">סופר מקצועי ומאוד זורם בעבודה איתנו. סופר מומלץ לעבודה.</blockquote>
-      <div class="test-name">ניר גבאי</div>
+      <blockquote class="test-quote">Super professional and very smooth to work with. Highly recommended for work.</blockquote>
+      <div class="test-name">Nir Gavai</div>
     </div>
 
     <div class="test-slide">
       <div class="test-avatar-lg">Z</div>
       <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-      <blockquote class="test-quote">דרור התגלה כמעצב מוכשר ביותר שסיפק פתרון לכל צרכנו. היה לו תשומת לב לכל עמוד ובקרה בנהליה איתו פרוייקט זה קל מאוד בזכות שיתוף הפעולה. מומלץ בחום!!!</blockquote>
+      <blockquote class="test-quote">Dror proved to be a very talented designer who delivered a solution for all our needs. He paid attention to every page and managed the project with control, making this project very easy thanks to the collaboration. Highly recommended!!!</blockquote>
       <div class="test-name">Zolizard</div>
       <div class="test-role-label">Shopify Expert</div>
     </div>
@@ -720,7 +719,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
     <div class="test-slide">
       <div class="test-avatar-lg">M</div>
       <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-      <blockquote class="test-quote">מקצוען אדיב וקשוב. שואל את השאלות הנכונות ומקשיב לצרכים. מעביר בדרך יעילה לגוף את הצורך העסקי, ישמח לעבוד איתו שוב.</blockquote>
+      <blockquote class="test-quote">A professional and attentive person. Asks the right questions and listens to needs. Efficiently conveys business needs to the body, would be happy to work with him again.</blockquote>
       <div class="test-name">Magellan Wise</div>
     </div>
 
@@ -732,17 +731,17 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
     </div>
 
     <div class="test-slide">
-      <div class="test-avatar-lg">ג</div>
+      <div class="test-avatar-lg">G</div>
       <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-      <blockquote class="test-quote">The work that Mr. Dror done for us was amazing. He managed to get it just as we wanted and more. We are getting new clients every day that are coming to enjoy the place because of the food but very much the atmosphere that the new design is giving.</blockquote>
-      <div class="test-name">גובלין סטודיו</div>
+      <blockquote class="test-quote">The work that Mr. Dror did for us was amazing. He managed to get it just as we wanted and more. We are getting new clients every day that are coming to enjoy the place because of the food but very much the atmosphere that the new design is giving.</blockquote>
+      <div class="test-name">Goblin Studio</div>
     </div>
 
     <div class="test-slide">
-      <div class="test-avatar-lg">א.ד</div>
+      <div class="test-avatar-lg">AD</div>
       <div class="test-stars-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-      <blockquote class="test-quote">העבודה עם דרור כהן הייתה מעבר לצפיות ומפתיע מאוד וזאת לאחר אכזבות שהיו לי מחברות אחרות בעבר, ראשית היחס האנושי המעולה, ההקשבה, הרצון לתת מענה ממוקד ומותאם לצרכי המשרד שלי. דרור היה זמין לכל שאלה וגחמה שלי ומצא פתרון יצירתי.</blockquote>
-      <div class="test-name">אילנה דוד אדריכלים</div>
+      <blockquote class="test-quote">Working with Dror Cohen exceeded my expectations and was very surprising, especially after being disappointed with other companies before. First, there was the excellent human approach, listening, the desire to provide focused and customized answers to my office's needs. Dror was available for every question and found a creative solution.</blockquote>
+      <div class="test-name">Ilana David Architects</div>
     </div>
 
   </div><!-- /test-carousel -->
@@ -757,129 +756,129 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 <!-- About Detail -->
 <div id="about-detail">
   <div class="wrap">
-    <button class="pd-back-link" onclick="closeAbout()"><i class="fa-solid fa-arrow-right"></i> חזרה</button>
+    <button class="pd-back-link" onclick="closeAbout()"><i class="fa-solid fa-arrow-left"></i> Back</button>
     <!-- Hero -->
     <div class="about-page">
       <div class="about-page-img">
-        <img src="dror-profile.jpg" alt="דרור כהן" class="about-page-photo">
+        <img src="dror-profile.jpg" alt="Dror Cohen" class="about-page-photo">
       </div>
       <div class="about-page-text">
-        <h1>אני דרור כהן</h1>
-        <p>מעצב מוצר UX/UI בכיר עם למעלה מ-25 שנות ניסיון, מתמחה באפליקציות מובייל ווב ברמות מורכבות ארגוניות. בעל ניסיון בהובלת חוויית המשתמש ועיצוב ממשקים של פרויקטים תובעניים כמו אחסון קבצים בענן, פלטפורמות Data Insights, עיצוב בתים, RPM, IoT, אבטחת ענן, בנקאות, פארמה, צבאי, בריאות, תוכנה כשירות, CRM, פלטפורמות דפוס ועוד.</p>
+        <h1>I'm Dror Cohen</h1>
+        <p>Senior UX/UI Product Designer with over 25 years of experience, specialized in complex mobile and web applications at organizational levels. Experienced in leading user experience and interface design of challenging projects such as cloud file storage, data insights platforms, home design, RPM, IoT, cloud security, banking, pharma, military, healthcare, software as a service, CRM, printing platforms and more.</p>
         <div class="about-chips">
-          <span>חשיבת מוצר</span>
-          <span>מחקר משתמשים</span>
-          <span>אסטרטגיית מיתוג</span>
-          <span>פרוטוטייפינג</span>
+          <span>Product Thinking</span>
+          <span>User Research</span>
+          <span>Branding Strategy</span>
+          <span>Prototyping</span>
           <span>Design Systems</span>
-          <span>AI זרימת עבודה</span>
+          <span>AI Workflows</span>
           <span>Micro-interactions</span>
-          <span>בדיקות שמישות</span>
+          <span>Usability Testing</span>
         </div>
       </div>
     </div>
 
-    <!-- ניסיון תעסוקתי -->
+    <!-- Work Experience -->
     <div class="about-section">
-      <h2><i class="fa-solid fa-briefcase" style="margin-left:10px;color:var(--gray)"></i> ניסיון תעסוקתי</h2>
+      <h2><i class="fa-solid fa-briefcase" style="margin-right:10px;color:var(--gray)"></i> Work Experience</h2>
 
       <div class="exp-item">
         <div class="exp-header">
-          <h3>Pixel54 — מעצב UX/UI פרילנסר</h3>
-          <span class="exp-badge">2015 — היום</span>
+          <h3>Pixel54 — Freelance UX/UI Designer</h3>
+          <span class="exp-badge">2015 — Present</span>
         </div>
-        <p class="exp-meta"><i class="fa-solid fa-location-dot"></i> ירושלים, ישראל</p>
-        <p>כמעצב UX/UI פרילנסר, זכיתי לעבוד על מגוון רחב של פרויקטים בתעשיות שונות. כל פרויקט מביא איתו אתגרים ייחודיים ולמידה חדשה.</p>
+        <p class="exp-meta"><i class="fa-solid fa-location-dot"></i> Jerusalem, Israel</p>
+        <p>As a freelance UX/UI designer, I've had the privilege of working on a diverse range of projects across various industries. Each project brings unique challenges and new learning opportunities.</p>
       </div>
 
       <div class="exp-item">
         <div class="exp-header">
-          <h3>Landa Digital Printing — ליד UX/UI</h3>
-          <span class="exp-badge">פרויקט מרכזי</span>
+          <h3>Landa Digital Printing — UX/UI Lead</h3>
+          <span class="exp-badge">Key Project</span>
         </div>
-        <p>כליד UX/UI ב-Landa, חלוצה בטכנולוגיית הדפסה דיגיטלית בננו-טכנולוגיה, המיקוד שלי היה בהפיכת מערכות תפעוליות מורכבות לחוויות ברורות, יעילות וממוקדות משתמש. העבודה החלה בניתוח מעמיק של תהליכי עבודה אמיתיים ודפוסי אינטראקציה עם המכונות, שהיוו את הבסיס לאסטרטגיית עיצוב מודרנית ואפקטיבית.</p>
-        <p>הובלתי תהליך שיתופי עם מהנדסים, מפתחים וצוותי תפעול, תוך התאמה מתמדת של חוויית המוצר לרוח החדשנות של Landa. הפרויקטים כללו ממשקי בקרה, דשבורדים תפעוליים וכלי ניטור חכמים.</p>
+        <p>As UX/UI Lead at Landa, a pioneer in nano-technology digital printing, my focus was on transforming complex operational systems into clear, efficient and user-focused experiences. The work began with an in-depth analysis of real work processes and interaction patterns with the machines, which formed the basis for a modern and effective design strategy.</p>
+        <p>I led a collaborative process with engineers, developers and operations teams, continuously adapting the product experience to Landa's spirit of innovation. Projects included control interfaces, operational dashboards and smart monitoring tools.</p>
       </div>
 
       <div class="exp-item">
         <div class="exp-header">
-          <h3>Optimus — ליד UX/UI</h3>
-          <span class="exp-badge">פרויקט מרכזי</span>
+          <h3>Optimus — UX/UI Lead</h3>
+          <span class="exp-badge">Key Project</span>
         </div>
-        <p>כליד UX/UI באופטימוס, תוכנה לניהול עסקי, המשימה שלי הייתה לשפר את מעורבות המשתמשים באמצעות עיצוב אינטואיטיבי ואסתטי. התהליך החל בניתוח התנהגות משתמשים, שהניח את הבסיס לאסטרטגיית עיצוב מותאמת להעדפות הקהל.</p>
-        <p>בהובלת מאמץ צוותי שיתופי, שיפרנו באופן איטרטיבי את ממשקי המשתמש, תוך התאמתם לאתוס החדשני של אופטימוס.</p>
+        <p>As UX/UI Lead at Optimus, a business management software, my task was to improve user engagement through intuitive and aesthetic design. The process began with analyzing user behavior, which formed the basis for a design strategy tailored to audience preferences.</p>
+        <p>Leading a collaborative team effort, we progressively improved user interfaces, adapting them to Optimus's innovative ethos.</p>
       </div>
 
       <div class="exp-item">
         <div class="exp-header">
-          <h3>CaloSense — מעצב UX/UI</h3>
+          <h3>CaloSense — UX/UI Designer</h3>
           <span class="exp-badge">2020–2022</span>
         </div>
-        <p class="exp-meta"><i class="fa-solid fa-location-dot"></i> תל אביב, ישראל</p>
-        <p>האתגר היה ליצור פלטפורמת בריאות ידידותית למשתמש שמציגה נתוני בריאות מורכבים ומשפרת את התקשורת בין מטופל לרופא. התהליך החל בהבנת מטרות, הגדרת פרסונות ומיפוי מסעות מטופלים.</p>
-        <p>בשלב האידיאציה סיעפתי פתרונות, יצרתי וויירפריימים ופיתחתי אותם לפרוטוטייפים ברזולוציה גבוהה עם משוב ממעורבי עניין ומשתמשים. התוצאה: פלטפורמת RPM מאובטחת ומבוקשת לניהול מסע המטופל.</p>
+        <p class="exp-meta"><i class="fa-solid fa-location-dot"></i> Tel Aviv, Israel</p>
+        <p>The challenge was to create a user-friendly health platform that presents complex health data and improves communication between patient and doctor. The process began by understanding goals, defining personas and mapping patient journeys.</p>
+        <p>During ideation I branched solutions, created wireframes and developed them into high-resolution prototypes with feedback from stakeholders and users. The result: a secure and sought-after RPM platform for managing the patient journey.</p>
       </div>
 
       <div class="exp-item">
         <div class="exp-header">
-          <h3>JpU — מעצב UX/UI</h3>
+          <h3>JpU — UX/UI Designer</h3>
           <span class="exp-badge">2015–2019</span>
         </div>
-        <p class="exp-meta"><i class="fa-solid fa-location-dot"></i> תל אביב, ישראל</p>
-        <p>עבדתי בשיתוף פעולה הדוק עם מנהלי המוצר של JpU, באפיון ועיצוב הפלטפורמה, האתר וחומרי השיווק שלהם.</p>
-        <p><strong>האתגר:</strong> יצירת פלטפורמה מבוססת ווב המתאימה לפריסה על כל פלטפורמת M2M, C-IoT ו-NB-IoT, עם יכולת סקלביליות גבוהה לתמיכה במיליוני מכשירים.</p>
-        <p><strong>התוצאה:</strong> פלטפורמת ווב, לוגו, זהות מותגית, ממשק אפליקציה, אתר, חומרי שיווק ומצגות למשקיעים. מאז יישום הזהות המותגית החדשה, JpU הצליחה להרחיב משמעותית את קהל הלקוחות שלה ברחבי העולם.</p>
+        <p class="exp-meta"><i class="fa-solid fa-location-dot"></i> Tel Aviv, Israel</p>
+        <p>I worked in close collaboration with JpU's product managers, in the specification and design of their platform, website and marketing materials.</p>
+        <p><strong>The Challenge:</strong> Creating a web-based platform suitable for deployment on all M2M, C-IoT and NB-IoT platforms, with high scalability to support millions of devices.</p>
+        <p><strong>The Result:</strong> Web platform, logo, brand identity, app interface, website, marketing materials and investor presentations. Since implementing the new brand identity, JpU has succeeded in significantly expanding its customer base worldwide.</p>
       </div>
     </div>
 
-    <!-- השכלה -->
+    <!-- Education -->
     <div class="about-section">
-      <h2><i class="fa-solid fa-graduation-cap" style="margin-left:10px;color:var(--gray)"></i> השכלה</h2>
+      <h2><i class="fa-solid fa-graduation-cap" style="margin-right:10px;color:var(--gray)"></i> Education</h2>
       <div class="edu-grid">
         <div class="edu-item">
           <div class="year">1998</div>
-          <div class="title">וידאו ואפקטים מיוחדים</div>
+          <div class="title">Video and Special Effects</div>
         </div>
         <div class="edu-item">
           <div class="year">1994</div>
-          <div class="title">תעודת סיום בעיצוב גרפי</div>
+          <div class="title">Graphic Design Certificate</div>
         </div>
         <div class="edu-item">
           <div class="year">1990</div>
-          <div class="title">תעודת סיום באדריכלות</div>
+          <div class="title">Architecture Certificate</div>
         </div>
       </div>
     </div>
 
-    <!-- כלים ושפות -->
+    <!-- Tools and Languages -->
     <div class="about-section">
       <div class="info-grid">
         <div class="info-card">
-          <h3><i class="fa-solid fa-screwdriver-wrench" style="margin-left:8px;color:var(--gray)"></i> כלים</h3>
+          <h3><i class="fa-solid fa-screwdriver-wrench" style="margin-right:8px;color:var(--gray)"></i> Tools</h3>
           <ul>
             <li>Figma</li>
             <li>Photoshop</li>
             <li>Illustrator</li>
             <li>Premiere</li>
-            <li>כלי AI מכל הסוגים</li>
-            <li>תוכנות תלת-ממד</li>
+            <li>AI Tools of All Types</li>
+            <li>3D Software</li>
           </ul>
         </div>
         <div class="info-card">
-          <h3><i class="fa-solid fa-language" style="margin-left:8px;color:var(--gray)"></i> שפות</h3>
+          <h3><i class="fa-solid fa-language" style="margin-right:8px;color:var(--gray)"></i> Languages</h3>
           <ul>
-            <li>עברית — שפת אם</li>
-            <li>אנגלית — רמה גבוהה</li>
-            <li>נורווגית — בסיסי</li>
+            <li>English — Fluent</li>
+            <li>Hebrew — Native</li>
+            <li>Norwegian — Basic</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- צבא -->
+    <!-- Military Service -->
     <div class="about-section">
-      <h2><i class="fa-solid fa-shield-halved" style="margin-left:10px;color:var(--gray)"></i> שירות צבאי</h2>
-      <p>שירות מלא בצה״ל — 3 שנים | כוחות המילואים — 10 שנים.</p>
+      <h2><i class="fa-solid fa-shield-halved" style="margin-right:10px;color:var(--gray)"></i> Military Service</h2>
+      <p>Full service in the IDF — 3 years | Reserves — 10 years.</p>
     </div>
   </div>
 </div>
@@ -897,28 +896,28 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
         <div class="footer-brand">Dror<span>Cohen</span></div>
       </div>
       <div class="footer-col">
-        <h4>ניווט</h4>
+        <h4>Navigation</h4>
         <ul>
-          <li><a href="about.html">אני דרור</a></li>
-          <li><a href="#services" onclick="return navTo('#services')">מה אני עושה</a></li>
-          <li><a href="#projects" onclick="return navTo('#projects')">פרויקטים</a></li>
-          <li><a href="#testimonials" onclick="return navTo('#testimonials')">המלצות</a></li>
-          <li><a href="blog.html">בלוג</a></li>
-      <li><a href="contact.html">צור קשר</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#services" onclick="return navTo('#services')">Services</a></li>
+          <li><a href="#projects" onclick="return navTo('#projects')">Projects</a></li>
+          <li><a href="#testimonials" onclick="return navTo('#testimonials')">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>שירותים</h4>
+        <h4>Services</h4>
         <ul>
           <li><a href="uxui.html">UX/UI Design</a></li>
-          <li><a href="#services" onclick="return navTo('#services')">אפיון מוצר</a></li>
+          <li><a href="#services" onclick="return navTo('#services')">Product Specification</a></li>
           <li><a href="#services" onclick="return navTo('#services')">Design System</a></li>
-          <li><a href="#services" onclick="return navTo('#services')">מחקר משתמשים</a></li>
+          <li><a href="#services" onclick="return navTo('#services')">User Research</a></li>
           <li><a href="#services" onclick="return navTo('#services')">Branding</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>סושיאל</h4>
+        <h4>Social</h4>
         <ul>
           <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
           <li><a href="https://wa.me/972547179000" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
@@ -926,7 +925,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
       </div>
     </div>
     <div class="footer-bottom">
-      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>All rights reserved © Dror Cohen 2025</p>
       <p>Made with ❤️ by Dror Cohen</p>
     </div>
   </div>
@@ -936,9 +935,9 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 /* ── Data ── */
 var PROJECTS = [
   {
-    id:'optimus', cats:'תוכנה כשירות', cat:'תוכנה כשירות', title:'Optimus',
-    subtitle:'אופטימוס – פשוט לנהל חכם! תוכנה לניהול מספרות, מכוני יופי, ספא, שיזוף וקוסמטיקאיות. מערכת שמאפשרת לבתי עסק לנהל תורים, לקוחות, תזכורות אוטומטיות, חשבוניות דיגיטליות ותוכניות נאמנות — הכל במקום אחד.',
-    date:'2023', role:'Lead UX/UI Designer', client:'Optimus', duration:'3 שנים',
+    id:'optimus', cats:'Software', cat:'Software', title:'Optimus',
+    subtitle:'Optimus – Simple to manage, smart! Software for managing beauty salons, beauty institutes, spas, tanning and cosmetics shops. A system that enables businesses to manage appointments, clients, automatic reminders, digital invoices and loyalty programs — all in one place.',
+    date:'2023', role:'Lead UX/UI Designer', client:'Optimus', duration:'3 years',
     heroFA:'calendar-check',
     thumb:'optimus1.png',
     heroImg:'optimus1.png',
@@ -946,21 +945,21 @@ var PROJECTS = [
     img2:'optimusbarber.png',
     img3:'optimusbarber.png',
     imgDS:'optimus1.png',
-    intro:'אופטימוס היא חברת תוכנה ישראלית המפתחת פתרונות ניהול עסקי לתחום היופי והטיפוח — מספרות, מכוני יופי, ספא, קוסמטיקאיות ומרפאות אסתטיות. הפלטפורמה משלבת ניהול תורים חכם, מסד נתוני לקוחות, תשלומים דיגיטליים ותוכניות נאמנות — הכל תחת קורת גג אחת. כ-Lead UX/UI Designer, הובלתי את עיצוב המערכת מחדש במטרה להפוך אותה לאינטואיטיבית, מהירה ומתאימה לשימוש יומיומי עבור בעלי עסקים עצמאיים.',
-    challenge:'בתי עסק בתחום היופי סבלו ממערכות ניהול מסורבלות שדרשו הכשרה ממושכת ולא התאימו לקצב העבודה המהיר של הסלון. בעלי עסקים איבדו זמן יקר על ניהול ידני של תורים, מעקב אחר לקוחות ושליחת תזכורות — במקום להתמקד בלקוחות עצמם.',
-    challenge2:'המערכת הקיימת לא תמכה בתזכורות אוטומטיות, ניהול מנויים וחבילות, חשבוניות דיגיטליות, או תיעוד תמונות לפני ואחרי. בנוסף, חסרה חוויית מובייל תקינה לשימוש תוך כדי עבודה — כל אלה היו נקודות כאב מרכזיות שעלו ממחקר המשתמשים.',
-    approach:'פתחתי בסדרת ראיונות עם בעלי עסקים מתחומים שונים — מספרות, ספא, ומרפאות קוסמטיות. מיפיתי את זרימות העבודה היומיומיות, זיהיתי את נקודות השבירה בממשק הקיים, ובניתי פרסונות משתמש ומפות מסע. ממצאי המחקר הנחו את בנייתה מחדש של כל ארכיטקטורת המידע.',
-    approach2:'עיצבתי לוח בקרה יומי שמציג בבת אחת את כל התורים, ההכנסות והתזכורות הקריטיות. הפחתתי כל פעולה לשלושה צעדים לכל היותר, ופיתחתי מערכת שליחת תזכורות אוטומטיות ב-WhatsApp הכוללת קישור לאישור הגעה. כל הממשק עוצב מימין לשמאל עם תמיכה מלאה בעברית, ועם Design System אחיד לאפליקציית מובייל ולגרסת הווב.',
-    result:'המערכת החדשה אומצה במהירות על ידי מאות עסקים ברחבי הארץ. בעלי עסקים דיווחו על חיסכון של שעות עבודה בשבוע, ירידה משמעותית בביטולי תורים בזכות התזכורות האוטומטיות, וגידול בהכנסות בשל ניהול יעיל יותר של לקוחות ומנויים.',
-    conclusion:'הפרויקט הוכיח שעיצוב ממוקד משתמש — בעיקר עבור קהל שאינו "טכנולוגי" מטבעו — יכול לשנות תפיסה ולהפוך כלי תוכנה ממשהו שמסבך לכלי שמשחרר. "פשוט לנהל חכם" הפך מסלוגן למציאות יומיומית עבור לקוחות אופטימוס.',
-    metrics:[{num:'+35%', desc:'הפחתת ביטולי תורים'},{num:'98%', desc:'שביעות רצון לקוחות'},{num:'+25%', desc:'גידול בהכנסות עסקים'}],
+    intro:'Optimus is an Israeli software company developing business management solutions for the beauty and wellness industry — beauty salons, beauty institutes, spas, cosmetics shops and aesthetic clinics. The platform combines smart appointment management, client database, digital payments and loyalty programs — all under one roof. As Lead UX/UI Designer, I led the redesign of the system to make it intuitive, fast and suitable for daily use by independent business owners.',
+    challenge:'Beauty businesses suffered from cumbersome management systems that required extensive training and didn\'t fit the fast pace of salon work. Business owners lost valuable time on manual appointment management, client tracking and sending reminders — instead of focusing on clients themselves.',
+    challenge2:'The existing system did not support automatic reminders, membership management and packages, digital invoices, or before and after photo documentation. Additionally, there was no proper mobile experience for use during work — all of these were central pain points that emerged from user research.',
+    approach:'I started with a series of interviews with business owners from different fields — salons, spas, and cosmetics clinics. I mapped daily workflows, identified breaking points in the existing interface, and built user personas and journey maps. The research findings guided the rebuilding of the entire information architecture.',
+    approach2:'I designed a daily control dashboard that displays all appointments, revenue and critical reminders at a glance. I reduced every action to a maximum of three steps, and developed an automatic WhatsApp reminder sending system with an arrival confirmation link. The entire interface was designed right-to-left with full Hebrew support, and with a unified Design System for both the mobile app and web version.',
+    result:'The new system was quickly adopted by hundreds of businesses across the country. Business owners reported saving hours of work per week, a significant reduction in appointment cancellations thanks to automatic reminders, and increased revenue through more efficient client and membership management.',
+    conclusion:'The project proved that user-centered design — especially for an audience that isn\'t "tech-savvy" by nature — can change perception and turn software from something complicated into something liberating. "Simple to manage, smart" turned from a slogan into daily reality for Optimus customers.',
+    metrics:[{num:'+35%', desc:'Reduction in cancellations'},{num:'98%', desc:'Customer satisfaction'},{num:'+25%', desc:'Business revenue growth'}],
     fa1:'calendar-check', fa2:'users', fa3:'chart-line',
-    tags:['תוכנה כשירות','Mobile','UX Research','Branding']
+    tags:['Software','Mobile','UX Research','Branding']
   },
   {
     id:'calosense', cats:'HealthTech', cat:'HealthTech', title:'CaloSense',
-    subtitle:'עיצוב פלטפורמת מסע מטופל מקיפה. CaloSense היא פלטפורמת ניטור מטופלים מרחוק (RPM) לטווח ארוך, המנהלת את מסע המטופל מקצה לקצה. הפלטפורמה אוספת נתונים ממכשירים מחוברים שונים מרחוק, ומספקת חוויית בריאות חלקה ורציפה.',
-    date:'2024', role:'Lead UX/UI Designer', client:'CaloSense', duration:'12 חודשים',
+    subtitle:'Designing a comprehensive patient journey platform. CaloSense is a Remote Patient Monitoring (RPM) platform for long-term care, managing the patient journey end-to-end. The platform collects data from various connected devices remotely and provides a seamless and continuous healthcare experience.',
+    date:'2024', role:'Lead UX/UI Designer', client:'CaloSense', duration:'12 months',
     heroFA:'heart-pulse',
     thumb:'calosense-mockup.png',
     heroImg:'calosense-mockup.png',
@@ -968,60 +967,60 @@ var PROJECTS = [
     img2:'https://static.wixstatic.com/media/aca116_0e494e7b5a154af38ca9c35b95a9f980~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_0e494e7b5a154af38ca9c35b95a9f980~mv2.png',
     img3:'https://static.wixstatic.com/media/aca116_6c6877d2982841c78d77de16f7498081~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_6c6877d2982841c78d77de16f7498081~mv2.png',
     imgDS:'https://static.wixstatic.com/media/aca116_8f5292b79cd44eeeb4b7286caed41f26~mv2.jpg/v1/fill/w_949,h_2798,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Design%20System.jpg',
-    intro:'CaloSense היא פלטפורמת ניטור מטופלים מרחוק (RPM) המנהלת את מסע המטופל מקצה לקצה. הפרויקט כלל עיצוב חוויית משתמש מקיפה שמחברת בין מטופלים, צוותים רפואיים ומכשירים מחוברים.',
-    challenge:'האתגר המרכזי היה ליצור פלטפורמה שלוכדת ומציגה מידע בריאותי מורכב בצורה ידידותית ואינטואיטיבית למשתמש. בנוסף, היה חיוני להבטיח שהפלטפורמה מאפשרת תקשורת יעילה בין מטופלים לספקי שירותי בריאות ומקדמת מעורבות פעילה של המטופלים.',
-    challenge2:'במהלך תהליך העיצוב התמודדנו עם אתגרים נוספים, כמו הבטחת נגישות למגוון רחב של משתמשים ושמירה על פרטיות ואבטחת מידע בריאותי. התגברנו על כך באמצעות בדיקות משתמשים קפדניות והקפדה על שיטות עבודה מומלצות לעיצוב UX בתחום הבריאות.',
-    approach:'בתחילה עבדתי עם מנהלי המוצר כדי להבין את יעדי הפרויקט, צרכי המשתמשים והאתגרים הייחודיים של עיצוב בהקשר רפואי. הגדרנו פרסונות משתמשים ומיפינו את מסע המטופל כדי לזהות נקודות מגע מרכזיות והזדמנויות להתערבות עיצובית.',
-    approach2:'לאחר מכן עברנו לשלב האידיאציה, סיעור מוחות של פתרונות אפשריים ושרטוט Wireframes ראשוניים לפלטפורמה. שיפרנו אותם לפרוטוטייפים מפורטים תוך שילוב משוב ממעורבים ומשתמשים בכל שלב. אחד מרכיבי העיצוב המרכזיים היה יצירת Dashboard אינטואיטיבי שמאפשר למטופלים ולספקי שירותי בריאות לצפות ולפרש בקלות נתוני בריאות שנאספו מהמכשירים המחוברים.',
-    result:'התוצאה היתה פלטפורמת RPM ידידותית, נגישה ומאובטחת שמנהלת ביעילות את מסע המטופל מקצה לקצה. הפלטפורמה התקבלה בהצלחה על ידי משתמשים ובעלי עניין, והיא ממשיכה להתפתח על בסיס משוב משתמשים וצרכי בריאות משתנים.',
-    conclusion:'העבודה על CaloSense היתה חוויה מתגמלת שהדגישה את הכוח של אמפתיה ועיצוב ממוקד משתמש ביצירת פתרונות בריאות דיגיטליים אפקטיביים.',
-    metrics:[{num:'+45%', desc:'מעורבות מטופלים'},{num:'-30%', desc:'זמן חיפוש מידע'},{num:'4.8', desc:'שביעות רצון משתמשים'}],
+    intro:'CaloSense is a Remote Patient Monitoring (RPM) platform that manages the patient journey end-to-end. The project involved designing a comprehensive user experience that connects patients, healthcare teams and connected devices.',
+    challenge:'The central challenge was creating a platform that captures and presents complex health information in a user-friendly and intuitive way. Additionally, it was essential to ensure that the platform enables efficient communication between patients and healthcare service providers and promotes active patient engagement.',
+    challenge2:'During the design process we faced additional challenges, such as ensuring accessibility for a wide range of users and protecting privacy and security of health information. We overcame this through rigorous user testing and adherence to recommended practices for UX design in healthcare.',
+    approach:'Initially I worked with product managers to understand project goals, user needs and unique challenges of healthcare design. We defined user personas and mapped the patient journey to identify key touchpoints and opportunities for design intervention.',
+    approach2:'We then moved to the ideation phase, brainstorming possible solutions and sketching initial wireframes for the platform. We refined them into detailed prototypes while incorporating feedback from stakeholders and users at each step. One of the key design elements was creating an intuitive dashboard that allows patients and healthcare service providers to easily view and interpret health data collected from connected devices.',
+    result:'The result was a user-friendly, accessible and secure RPM platform that efficiently manages the patient journey end-to-end. The platform was successfully adopted by users and stakeholders, and continues to evolve based on user feedback and changing healthcare needs.',
+    conclusion:'Working on CaloSense was a rewarding experience that highlighted the power of empathy and user-centered design in creating effective digital health solutions.',
+    metrics:[{num:'+45%', desc:'Patient engagement'},{num:'-30%', desc:'Time to find information'},{num:'4.8', desc:'User satisfaction'}],
     fa1:'laptop-medical', fa2:'chart-line', fa3:'user-doctor',
     tags:['HealthTech','RPM','UX Research','Design System']
   },
   {
-    id:'propit', cats:'תוכנה כשירות', cat:'תוכנה כשירות', title:'PropIT',
-    subtitle:'פלטפורמת נדל"ן מסחרי מתקדמת עם חיפוש מפה וסיורים וירטואליים. מהפכה למחפשי משרדים ונכסים מסחריים — מגדירים צרכים ומאות בעלי נכסים ומתווכים מחפשים עבורך את הנכס המדויק. הנכסים מגיעים אליך עם סיורים וירטואליים ומידע מקיף על כל נכס, בניין וסביבה.',
-    date:'2024', role:'UX/UI Designer', client:'PropIT', duration:'18 חודשים',
+    id:'propit', cats:'Software', cat:'Software', title:'PropIT',
+    subtitle:'Advanced commercial real estate platform with map search and virtual tours. PropIT revolutionizes the search for offices and commercial properties — you define your needs and hundreds of property owners and brokers search for the perfect property for you. Properties come to you with virtual tours and comprehensive information on every property, building and surroundings.',
+    date:'2024', role:'UX/UI Designer', client:'PropIT', duration:'18 months',
     heroFA:'building',
-    thumb:'פרופיט.png',
-    heroImg:'פרופיט.png',
+    thumb:'profit.png',
+    heroImg:'profit.png',
     img1:'https://static.wixstatic.com/media/aca116_1c7079d6da9347d488078db6d3d57c3d~mv2.png/v1/fit/w_1455,h_1455,q_90,enc_avif,quality_auto/aca116_1c7079d6da9347d488078db6d3d57c3d~mv2.png',
     img2:'https://static.wixstatic.com/media/aca116_eb3d4f93462944eebba14ba0046443b6~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_eb3d4f93462944eebba14ba0046443b6~mv2.png',
     img3:'https://static.wixstatic.com/media/aca116_5fbb6fbcb7a14f58b4f248cc6396e9d8~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_5fbb6fbcb7a14f58b4f248cc6396e9d8~mv2.png',
     imgDS:'https://static.wixstatic.com/media/aca116_adecc334ca9e43d5a4f52ad0e87aabdf~mv2.png/v1/fit/w_1940,h_1940,q_90,enc_avif,quality_auto/aca116_adecc334ca9e43d5a4f52ad0e87aabdf~mv2.png',
-    intro:'PropIT פיתחה לוח נדל"ן מסחרי מתקדם עם מגוון תכונות ייחודיות: חיפוש במפה הכולל אפשרות לחיפוש במספר אזורים, סיורים וירטואליים בתוך הנכסים עצמם, ומסננים מתקדמים עם אפשרויות הצלבה מרובות.',
-    challenge:'האתגר היה ליצור פלטפורמת נדל"ן מסחרי מבוססת ווב המתאימה הן למחפשי משרדים ונכסים מסחריים והן למתווכים ולקוחות כאחד. היה צורך לאזן בין ממשק פשוט ואינטואיטיבי לבין עומק הפיצ\'רים המתקדמים שהפלטפורמה מציעה.',
-    challenge2:'עבדתי בשיתוף פעולה הדוק עם מנהלי המוצר של PropIT, באפיון ועיצוב הפלטפורמה מבוססת הווב, האתר וחומרי השיווק.',
-    approach:'תהליך העיצוב התחיל במחקר מעמיק של שוק הנדל"ן המסחרי, הבנת הצרכים הייחודיים של מתווכים ושוכרים, ומיפוי מסעות המשתמש השונים. על בסיס הממצאים, עיצבנו חוויית חיפוש מבוססת מפה עם אפשרויות סינון מתקדמות.',
-    approach2:'פיתחנו מערכת סיורים וירטואליים המאפשרת למשתמשים לחקור נכסים מרחוק, ועיצבנו ממשק ניהול למתווכים עם כלי ניתוח ומעקב. כל הרכיבים תוכננו כחלק מ-Design System אחיד שהבטיח עקביות בכל נקודות המגע.',
-    result:'התוצאה כללה פלטפורמת ווב מלאה, לוגו, זהות מותגית, ממשק אפליקציה, אתר וחומרי שיווק. הפלטפורמה מאפשרת חיפוש יעיל ומהיר של נכסים מסחריים עם חוויית משתמש חלקה ומקצועית.',
-    metrics:[{num:'+60%', desc:'יעילות חיפוש נכסים'},{num:'3x', desc:'סיורים וירטואליים'},{num:'+40%', desc:'המרת לידים'}],
+    intro:'PropIT developed an advanced commercial real estate platform with a range of unique features: map-based search including multi-area search options, virtual tours within the properties themselves, and advanced filters with multiple cross-search options.',
+    challenge:'The challenge was creating a web-based commercial real estate platform suitable for both office and commercial property seekers and for brokers and clients alike. There was a need to balance a simple and intuitive interface with the depth of advanced features the platform offers.',
+    challenge2:'I worked closely with PropIT\'s product managers, in the specification and design of the web-based platform, website and marketing materials.',
+    approach:'The design process began with in-depth research of the commercial real estate market, understanding the unique needs of brokers and renters, and mapping different user journeys. Based on the findings, we designed a map-based search experience with advanced filtering options.',
+    approach2:'We developed a virtual tour system that allows users to explore properties remotely, and designed a management interface for brokers with analytics and tracking tools. All components were designed as part of a unified Design System that ensured consistency across all touchpoints.',
+    result:'The result included a complete web platform, logo, brand identity, app interface, website and marketing materials. The platform enables efficient and fast search for commercial properties with a smooth and professional user experience.',
+    metrics:[{num:'+60%', desc:'Property search efficiency'},{num:'3x', desc:'Virtual tours'},{num:'+40%', desc:'Lead conversion'}],
     fa1:'map-location-dot', fa2:'building', fa3:'magnifying-glass',
-    tags:['תוכנה כשירות','Real Estate','UX/UI','Branding']
+    tags:['Software','Real Estate','UX/UI','Branding']
   },
   {
     id:'twist', cats:'Branding', cat:'Branding', title:'Twist Bioscience',
-    subtitle:'עיצוב חוויית משתמש ואתר לחברת ביוטכנולוגיה מובילה. Twist Bioscience מספקת כלי DNA סינתטי המסייעים ללקוחות לחדש ברפואה, חקלאות ותעשייה, במטרה לשפר את איכות החיים ולתמוך בכוכב לכת בר-קיימא יותר.',
-    date:'2025', role:'UX/UI Designer', client:'Twist Bioscience', duration:'חודשיים',
+    subtitle:'Designing user experience and website for a leading biotechnology company. Twist Bioscience provides synthetic DNA tools that help customers innovate in medicine, agriculture and industry, aiming to improve quality of life and support a more sustainable planet.',
+    date:'2025', role:'UX/UI Designer', client:'Twist Bioscience', duration:'2 months',
     heroFA:'dna',
     thumb:'twist.avif',
     heroImg:'twist.avif',
-    intro:'Twist Bioscience מספקת כלי DNA סינתטי שמסייעים ללקוחות לחדש בתחומי הרפואה, החקלאות והתעשייה, במטרה לשפר חיים ולתמוך בעולם בר-קיימא יותר. עיצבתי את חוויית המשתמש והממשק עבור אתר החברה, תוך התמקדות בניווט ברור, פריסות רספונסיביות וסגנון ויזואלי שתומך ביעדי המותג ובצרכי המשתמשים.',
-    challenge:'האתגר המרכזי היה להנגיש תוכן מדעי מורכב בתחום הביוטכנולוגיה לקהל מגוון — מחוקרים ומדענים ועד משקיעים ושותפים עסקיים. האתר היה צריך לשדר אמינות מדעית ובו זמנית להיות נגיש ואינטואיטיבי.',
-    challenge2:'אתגר נוסף היה ארגון כמות עצומה של מידע מוצרי ומדעי בצורה שמאפשרת למשתמשים למצוא במהירות את מה שהם מחפשים, ללא תחושת עומס. בנוסף, היה צורך ליצור שפה ויזואלית שמבדלת את Twist מהמתחרים בשוק תחרותי ביותר.',
-    approach:'התחלנו במחקר מעמיק של קהלי היעד השונים ומיפוי מסעות המשתמש שלהם. על בסיס הממצאים, בנינו ארכיטקטורת מידע חדשה שמאפשרת ניווט אינטואיטיבי בין קטגוריות מוצרים, מאמרים מדעיים ומידע תאגידי.',
-    approach2:'עיצבנו מערכת ויזואלית שמשלבת אלמנטים מדעיים עם שפה עיצובית מודרנית ונקייה. כל עמוד תוכנן עם היררכיית מידע ברורה, כפתורs בולטים ופריסות רספונסיביות שעובדות חלק על כל מכשיר. שמנו דגש מיוחד על מהירות טעינה ונגישות כדי להבטיח חוויה מיטבית לכל המשתמשים.',
-    result:'התוצאה היתה אתר מקצועי ומודרני שמשקף את החדשנות של Twist Bioscience. האתר מציג את המוצרים והשירותים בצורה ברורה ומזמינה, עם חוויית ניווט חלקה שמובילה משתמשים ביעילות ליעדים שלהם.',
-    conclusion:'הפרויקט עם Twist Bioscience הדגיש את החשיבות של הבנה עמוקה של התחום כדי לתרגם מורכבות מדעית לחוויה דיגיטלית נגישה ואפקטיבית.',
-    metrics:[{num:'+35%', desc:'זמן שהייה באתר'},{num:'+50%', desc:'מעורבות משתמשים'},{num:'-40%', desc:'שיעור נטישה'}],
+    intro:'Twist Bioscience provides synthetic DNA tools that help customers innovate in healthcare, agriculture and industry, aiming to improve lives and support a more sustainable world. I designed the user experience and interface for the company website, focusing on clear navigation, responsive layouts and visual styling that supports brand goals and user needs.',
+    challenge:'The central challenge was making complex biotechnology content accessible to a diverse audience — from researchers and scientists to investors and business partners. The website needed to communicate scientific credibility while remaining accessible and intuitive.',
+    challenge2:'Another challenge was organizing a huge amount of product and scientific information in a way that allows users to quickly find what they\'re looking for, without feeling overwhelmed. Additionally, there was a need to create visual language that differentiates Twist from competitors in a highly competitive market.',
+    approach:'We started with in-depth research of different target audiences and mapping their user journeys. Based on the findings, we built a new information architecture that enables intuitive navigation between product categories, scientific articles and corporate information.',
+    approach2:'We designed a visual system that combines scientific elements with modern design language. Every page was designed with clear information hierarchy, prominent buttons and responsive layouts that work smoothly on every device. We placed special emphasis on load speed and accessibility to ensure an optimal experience for all users.',
+    result:'The result was a professional and modern website that reflects Twist Bioscience\'s innovation. The website presents products and services in a clear and inviting way, with smooth navigation that efficiently guides users to their goals.',
+    conclusion:'Working with Twist Bioscience highlighted the importance of deep domain understanding in translating scientific complexity into accessible digital experience.',
+    metrics:[{num:'+35%', desc:'Time on site'},{num:'+50%', desc:'User engagement'},{num:'-40%', desc:'Bounce rate'}],
     fa1:'flask', fa2:'dna', fa3:'globe',
     tags:['Branding','Web Design','UX/UI','BioTech']
   },
   {
     id:'sensica', cats:'Mobile', cat:'Mobile', title:'Sensica',
-    subtitle:'אפיון ועיצוב אפליקציית יופי ביתית מבוססת טכנולוגיה רפואית. Sensica, שנוסדה על ידי מומחים מובילים באסתטיקה רפואית מקצועית, מביאה את הטכנולוגיות החזקות של מרפאות האסתטיקה לפתרונות יופי חדשניים לשימוש ביתי.',
-    date:'2023', role:'UX/UI Designer', client:'Sensica', duration:'6 חודשים',
+    subtitle:'Specification and design of a medical technology-based home beauty app. Sensica, founded by leading experts in professional medical aesthetics, brings the powerful technologies of aesthetic clinics to innovative home beauty solutions.',
+    date:'2023', role:'UX/UI Designer', client:'Sensica', duration:'6 months',
     heroFA:'spa',
     thumb:'sensica.avif',
     heroImg:'https://static.wixstatic.com/media/aca116_2bd12359e1b04cbbadcc0c949b735aff~mv2_d_2000_1367_s_2.jpg/v1/fit/w_1940,h_1367,q_90,enc_avif,quality_auto/aca116_2bd12359e1b04cbbadcc0c949b735aff~mv2_d_2000_1367_s_2.jpg',
@@ -1029,441 +1028,210 @@ var PROJECTS = [
     img2:'https://static.wixstatic.com/media/aca116_93cfbcbe23cc4b06929683a743725e53~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_93cfbcbe23cc4b06929683a743725e53~mv2.png',
     img3:'https://static.wixstatic.com/media/aca116_513654cac8fa42a59d1410e555b5f97a~mv2.jpg/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_513654cac8fa42a59d1410e555b5f97a~mv2.jpg',
     imgDS:'https://static.wixstatic.com/media/aca116_12f7b61e622341feb7fb50e8c2d5304a~mv2.jpg/v1/fit/w_1940,h_1940,q_90,enc_avif,quality_auto/aca116_12f7b61e622341feb7fb50e8c2d5304a~mv2.jpg',
-    intro:'Sensica, שנוסדה על ידי מומחים מובילים בתחום האסתטיקה הרפואית המקצועית, מביאה את הטכנולוגיות העוצמתיות שבשימוש במרפאות יופי לפתרונות יופי חדשניים שניתן להשתמש בהם בבית. עבדתי בשיתוף פעולה הדוק עם מנהלי המוצר של Sensica, באפיון ועיצוב אפליקציית המובייל שלהם עבור iOS ו-Android.',
-    challenge:'האתגר המרכזי היה ליצור אפליקציית מובייל שמשרתת הן את בעלי העסקים — שמעוניינים להגדיל מכירות והכנסות — והן את הצרכנים שמחפשים כל הזמן פתרונות טובים יותר להסרת שיער ולטיפוח אישי. היה צורך לאזן בין שני הצרכים הללו בממשק אחד.',
-    challenge2:'אתגר נוסף היה לתרגם טכנולוגיה רפואית מורכבת לחוויית משתמש פשוטה ומזמינה. המשתמשים הביתיים אינם מומחים רפואיים, ולכן היה חיוני ליצור ממשק שמנחה אותם בבטחה ובביטחון לאורך כל תהליך הטיפול, תוך שמירה על תחושת יוקרה ומקצועיות.',
-    approach:'בתחילה ביצענו מחקר מעמיק של קהלי היעד — צרכנים ביתיים ובעלי עסקים — כדי להבין את הצרכים, הציפיות ונקודות הכאב של כל קבוצה. מיפינו את מסעות המשתמש השונים וזיהינו את ההזדמנויות ליצירת חוויה שמשלבת בין שימושיות לאסתטיקה.',
-    approach2:'עיצבנו ממשק מושך ואינטואיטיבי שמנחה את המשתמשים צעד אחר צעד בתהליכי הטיפול, עם הוראות ויזואליות ברורות, מעקב אחר התקדמות ותזכורות חכמות. הקפדנו על שפה עיצובית שמשדרת יוקרה ומקצועיות, בהתאם למיצוב המותג של Sensica כחברה שמביאה טכנולוגיה רפואית מתקדמת הביתה.',
-    result:'התוצאה היתה אפליקציית מובייל (iOS ו-Android) ואפליקציית ווב שמספקות חוויית שימוש מושלמת למשתמשים ביתיים. האפליקציה מנחה את המשתמשים בבטחה לאורך תהליכי הטיפול, מאפשרת מעקב אחר תוצאות ומעודדת שימוש עקבי לתוצאות מיטביות.',
-    conclusion:'העבודה על Sensica הדגישה את החשיבות של תרגום מורכבות טכנולוגית לחוויה פשוטה ומזמינה. כשמדובר בטכנולוגיה רפואית לשימוש ביתי, האמון והביטחון של המשתמש הם המפתח להצלחה — וזה בדיוק מה שהעיצוב נועד להשיג.',
-    metrics:[{num:'+70%', desc:'מעורבות משתמשים'},{num:'+55%', desc:'שימוש חוזר יומי'},{num:'4.7', desc:'דירוג באפ סטור'}],
-    fa1:'mobile-screen', fa2:'wand-magic-sparkles', fa3:'spa',
-    tags:['Mobile','Beauty Tech','iOS','Android']
-  },
-  {
-    id:'jpu', cats:'תוכנה כשירות', cat:'תוכנה כשירות', title:'JpU',
-    subtitle:'פלטפורמת ניהול רשתות IoT ו-M2M מבוססת ווב. JpU מפתחת רשת ליבה סלולרית ייעודית לספקי IoT ו-M2M. פלטפורמת JpU HyperCore מפשטת את ניהול רשתות IoT מורכבות, מספקת אבטחה מובנית לכלל המכשירים המחוברים ומאחדת את פעולות העסק באפליקציית ווב אינטואיטיבית אחת.',
-    date:'2022', role:'UX/UI Designer', client:'JpU', duration:'5 חודשים',
-    heroFA:'network-wired',
-    thumb:'jpu.png',
-    heroImg:'https://static.wixstatic.com/media/aca116_a4a673510b9a46488c2823f9eae3b47b~mv2.png/v1/fill/w_1160,h_1299,q_90,enc_avif,quality_auto/aca116_a4a673510b9a46488c2823f9eae3b47b~mv2.png',
-    img1:'https://static.wixstatic.com/media/aca116_0030d21b63a04feeb831f765a8c8f4c6~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_0030d21b63a04feeb831f765a8c8f4c6~mv2.png',
-    img2:'https://static.wixstatic.com/media/aca116_64f103b486894fbcb4b4b028379198d0~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_64f103b486894fbcb4b4b028379198d0~mv2.png',
-    img3:'https://static.wixstatic.com/media/aca116_36de1503179c4221b2ca7bb79fe8a383~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_36de1503179c4221b2ca7bb79fe8a383~mv2.png',
-    imgDS:'https://static.wixstatic.com/media/aca116_cb06042d511742448defccdf81a54068~mv2.jpg/v1/fill/w_985,h_975,al_c,q_85,enc_avif,quality_auto/JpU_edited.jpg',
-    intro:'JpU מפתחת רשת ליבה סלולרית חזקה ומותאמת במיוחד לפריסה על ידי ספקי IoT ו-M2M. פלטפורמת HyperCore של JpU מפשטת את ניהול רשתות IoT מורכבות, מספקת אבטחה מובנית לכל המכשירים המחוברים ומאחדת את הפעילות העסקית באפליקציית ווב אינטואיטיבית אחת. עבדתי בשיתוף פעולה הדוק עם מנהלי המוצר של JpU, באפיון ועיצוב הפלטפורמה מבוססת הווב, האתר וחומרי השיווק.',
-    challenge:'האתגר המרכזי היה ליצור פלטפורמה מבוססת ווב המתאימה לפריסה על כל פלטפורמת M2M, C-IoT ו-NB-IoT, עם יכולת סקלביליות גבוהה לתמיכה במיליוני מכשירים ונפחי תעבורה עצומים. היה צורך להפוך מערכת טכנית מורכבת מאוד לממשק פשוט ונגיש למפעילי רשתות סלולריות ולספקי IoT ארגוניים.',
-    challenge2:'אתגר נוסף היה שהחברה מציעה הצעת ערך כפולה — גם למפעילי רשתות סלולריות וגם לספקי IoT ארגוניים — מה שדרש ממשק גמיש שמשרת שני סוגי משתמשים שונים עם צרכים ותהליכי עבודה ייחודיים, תוך שמירה על חוויה אחידה ומקצועית.',
-    approach:'בשלב הראשון התמקדנו ביצירת שפה ויזואלית קוהרנטית וזהות מותגית חדשה. עדכנו את הלוגוטייפ ואת סכמת הצבעים, ויצרנו סט אייקונים ייחודי שמייצג את השווקים השונים שהחברה פונה אליהם. לוח הצבעים הורחב כדי לשקף את מגוון השירותים המוצעים.',
-    approach2:'לאחר ביסוס הזהות המותגית, עברנו לעיצוב הפלטפורמה עצמה. מיפינו את תהליכי העבודה של שני סוגי המשתמשים העיקריים ועיצבנו דשבורדים ייעודיים עם ויזואליזציית נתונים ברורה, ניהול מכשירים אינטואיטיבי ומערכת התראות חכמה. כל הרכיבים תוכננו כחלק מ-Design System אחיד.',
-    result:'התוצאה כללה פלטפורמת ווב מלאה, לוגו, זהות מותגית, ממשק אפליקציה, אתר וחומרי שיווק ומצגות למשקיעים. מאז הטמעת הזהות המותגית החדשה, JpU הצליחה להרחיב משמעותית את בסיס הלקוחות שלה באזורים שונים בעולם.',
-    conclusion:'הפרויקט עם JpU הדגיש את החשיבות של מיתוג חזק כמנוף עסקי. השילוב בין זהות ויזואלית מקצועית לממשק משתמש אינטואיטיבי יצר חוויה שלמה שסייעה לחברה לבסס את מעמדה בשוק ה-IoT הגלובלי.',
-    metrics:[{num:'+120%', desc:'גידול בלקוחות'},{num:'M+', desc:'מכשירים מחוברים'},{num:'Global', desc:'פריסה עולמית'}],
-    fa1:'network-wired', fa2:'server', fa3:'shield-halved',
-    tags:['תוכנה כשירות','IoT','Branding','Web Platform']
-  },
-  {
-    id:'ctera', cats:'תוכנה כשירות', cat:'תוכנה כשירות', title:'CTERA',
-    subtitle:'עיצוב פלטפורמת שירותי קבצים ארגונית מבוססת ענן. שירותי קבצים מקיפים — ללא פשרות. CTERA היא החברה היחידה המשלבת שירותי קבצים לנקודות קצה, משרד וענן, עם אבטחת IT ללא פשרות, בחירת ענן וכלי אוטומציה.',
-    date:'2022', role:'UX/UI Designer', client:'CTERA', duration:'6 חודשים',
-    heroFA:'cloud',
-    thumb:'ctera.png',
-    heroImg:'https://static.wixstatic.com/media/aca116_5c94d4e944d64dcebe17d933b6b005b7~mv2.jpg/v1/fit/w_1940,h_1940,q_90,enc_avif,quality_auto/aca116_5c94d4e944d64dcebe17d933b6b005b7~mv2.jpg',
-    img1:'https://static.wixstatic.com/media/aca116_1b88064b8a5d4959bc8c254dc6bc5f87~mv2_d_1387_1244_s_2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_1b88064b8a5d4959bc8c254dc6bc5f87~mv2_d_1387_1244_s_2.png',
-    img2:'https://static.wixstatic.com/media/aca116_5c94d4e944d64dcebe17d933b6b005b7~mv2.jpg/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_5c94d4e944d64dcebe17d933b6b005b7~mv2.jpg',
-    img3:'https://static.wixstatic.com/media/aca116_1b88064b8a5d4959bc8c254dc6bc5f87~mv2_d_1387_1244_s_2.png/v1/fit/w_485,h_485,q_90,enc_avif,quality_auto/aca116_1b88064b8a5d4959bc8c254dc6bc5f87~mv2_d_1387_1244_s_2.png',
-    intro:'CTERA היא החברה היחידה שמשלבת שירותי קבצים לנקודות קצה, משרדים וענן עם אבטחת IT ללא פשרות, בחירת ענן וניהול אוטומטי. הפלטפורמה מציעה שירותי קבצים מקיפים ללא פשרות — פתרון ארגוני שלם לניהול, שיתוף ואבטחת קבצים בסביבות מורכבות.',
-    challenge:'האתגר המרכזי היה ליצור פלטפורמה מבוססת ווב שמשרתת הן בעלי עסקים המחפשים יעילות תפעולית והן צרכנים שדורשים חוויית שימוש פשוטה ואינטואיטיבית. היה צורך לאזן בין עוצמה טכנית לבין נגישות למשתמש הקצה.',
-    challenge2:'עבדתי בשיתוף פעולה הדוק עם מנהל המוצר על ניתוח משובי לקוחות ובעיות שימושיות קיימות. שיתפתי פעולה עם צוות ה-GUI מההתחלה באמצעות הצגת מוקאפים ווידוא שפתרון העיצוב החדש עומד בלוחות הזמנים של המפתחים עד ליישום הסופי.',
-    approach:'התהליך התחיל בניתוח מעמיק של משובי לקוחות קיימים וזיהוי בעיות שימושיות חוזרות. מיפינו את תהליכי העבודה העיקריים של המשתמשים וזיהינו נקודות חיכוך שפגעו בפרודוקטיביות. על בסיס הממצאים, עיצבנו ממשק חדש עם ניווט ברור יותר וארגון מידע משופר.',
-    approach2:'שיתפנו פעולה באופן צמוד עם צוות הפיתוח לאורך כל התהליך. הצגנו מוקאפים בשלבים מוקדמים, אספנו משוב ווידאנו שכל פתרון עיצובי ניתן ליישום בלוחות הזמנים הקיימים. גישה זו הבטיחה שהעיצוב הסופי לא רק נראה מצוין, אלא גם מעשי ליישום.',
-    result:'התוצאה היתה פלטפורמת ווב מחודשת עם חוויית משתמש משופרת משמעותית. הממשק החדש פישט תהליכים מורכבים, צמצם את עקומת הלמידה למשתמשים חדשים והגדיל את שביעות הרצון הכללית של הלקוחות.',
-    conclusion:'הפרויקט עם CTERA הדגיש את הערך של שיתוף פעולה הדוק בין עיצוב לפיתוח. כשמעצבים ומפתחים עובדים יחד מההתחלה, התוצאה היא מוצר שלא רק נראה טוב, אלא גם מיושם בצורה מושלמת ועומד בכל הדרישות הטכניות.',
-    metrics:[{num:'-40%', desc:'בעיות שימושיות'},{num:'+50%', desc:'שביעות רצון לקוחות'},{num:'-25%', desc:'זמן הכשרת משתמשים'}],
-    fa1:'cloud', fa2:'shield-halved', fa3:'folder-open',
-    tags:['תוכנה כשירות','Enterprise','Cloud','UX Design']
-  },
-  {
-    id:'powercash21', cats:'תוכנה כשירות', cat:'תוכנה כשירות', title:'PowerCash21',
-    subtitle:'עיצוב פלטפורמת תשלומים מאובטחת לסוחרים. PowerCash21 מסייעת לסוחרים לקבל תשלומים בפשטות, בבטחה ובעלות נמוכה. קליטה מהירה, אינטגרציה קלה, שיטות תשלום גלובליות ודיווח חכם — הכל במקום אחד.',
-    date:'2021', role:'UX/UI Designer', client:'PowerCash21', duration:'4 חודשים',
-    heroFA:'credit-card',
-    thumb:'power.png',
-    heroImg:'https://static.wixstatic.com/media/aca116_7837ceaedbbc4d03bf071f1d23a9e61a~mv2_d_2279_1500_s_2.jpg/v1/fill/w_1940,h_1338,al_c,q_90,enc_avif,quality_auto/powercash21_mac-mock_edited_edited.jpg',
-    img1:'https://static.wixstatic.com/media/aca116_d845c122e6914d0295d2970c33d12c7f~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_d845c122e6914d0295d2970c33d12c7f~mv2.png',
-    img2:'https://static.wixstatic.com/media/aca116_a0ed887da11148f89d8fa2b923d62440~mv2.png/v1/fit/w_970,h_970,q_90,enc_avif,quality_auto/aca116_a0ed887da11148f89d8fa2b923d62440~mv2.png',
-    img3:'https://static.wixstatic.com/media/aca116_d845c122e6914d0295d2970c33d12c7f~mv2.png/v1/fit/w_485,h_485,q_90,enc_avif,quality_auto/aca116_d845c122e6914d0295d2970c33d12c7f~mv2.png',
-    intro:'PowerCash21 מסייעת לסוחרים לקבל תשלומים בפשטות, באבטחה ובעלות-תועלת אופטימלית. הפלטפורמה מציעה הצטרפות מהירה, אינטגרציה קלה, שיטות תשלום גלובליות ודיווח חכם. עבדתי בשיתוף פעולה הדוק עם מנהלי המוצר של PowerCash21, באפיון ועיצוב פלטפורמת האתר שלהם.',
-    challenge:'האתגר המרכזי היה ליצור פלטפורמה מבוססת ווב שמשרתת הן בעלי עסקים שמחפשים לנהל תשלומים ביעילות, והן צרכנים שדורשים חוויית תשלום פשוטה ומאובטחת. בעולם ה-FinTech, אמון ואבטחה הם קריטיים — והעיצוב צריך לשדר זאת בכל נקודת מגע.',
-    challenge2:'אתגר נוסף היה לפשט תהליכים פיננסיים מורכבים לממשק אינטואיטיבי. סוחרים מגיעים מרקעים טכניים שונים, ולכן היה חיוני ליצור חוויית הצטרפות (onboarding) מהירה וברורה שמאפשרת לכל סוחר להתחיל לקבל תשלומים בזמן קצר ללא מורכבות מיותרת.',
-    approach:'התחלנו בניתוח מעמיק של צרכי הסוחרים ומיפוי תהליכי התשלום השונים. עיצבנו דשבורד ניהולי שמאפשר לסוחרים לצפות בעסקאות, לנהל שיטות תשלום ולהפיק דוחות — הכל בממשק נקי ואינטואיטיבי.',
-    approach2:'הקפדנו על עיצוב שמשדר אמינות ואבטחה באמצעות שפה ויזואלית מקצועית, היררכיית מידע ברורה ואינדיקציות ויזואליות לסטטוס עסקאות. כל מסך תוכנן עם מיקוד בפעולות העיקריות שהסוחר צריך לבצע, תוך צמצום עומס קוגניטיבי למינימום.',
-    result:'התוצאה כללה פלטפורמת ווב מלאה, ממשק אפליקציה, אתר שיווקי וחומרי שיווק. הפלטפורמה מאפשרת לסוחרים להתחיל לקבל תשלומים במהירות, עם חוויית משתמש חלקה שמפשטת את המורכבות של עולם התשלומים הגלובלי.',
-    conclusion:'העבודה על PowerCash21 חידדה את ההבנה שבתחום ה-FinTech, עיצוב טוב הוא לא רק אסתטיקה — הוא כלי לבניית אמון. כשמשתמשים מרגישים בטוחים ומבינים בדיוק מה קורה עם הכסף שלהם, ההמרות עולות והנאמנות מתחזקת.',
-    metrics:[{num:'+65%', desc:'מהירות הצטרפות'},{num:'+40%', desc:'המרת סוחרים'},{num:'-35%', desc:'פניות תמיכה'}],
-    fa1:'credit-card', fa2:'chart-line', fa3:'lock',
-    tags:['תוכנה כשירות','FinTech','Payments','Web Platform']
+    intro:'Sensica, founded by leading experts in professional medical aesthetics, brings the powerful technologies used in beauty clinics to innovative home beauty solutions. I worked closely with Sensica\'s product managers, in the specification and design of their mobile app for iOS and Android.',
+    challenge:'The central challenge was creating a mobile app that serves both business owners — who want to increase sales and revenue — and consumers looking for better hair removal and personal care solutions at all times. There was a need to balance these two needs in a single interface.',
+    challenge2:'Another challenge was translating complex medical technology into simple and inviting user experience. Home users are not medical professionals, so it was essential to create an interface that guides them safely and confidently through treatment processes, while maintaining a sense of luxury and professionalism.',
+    approach:'Initially we conducted in-depth research of different target audiences — home consumers and business owners — to understand the needs, expectations and pain points of each group. We mapped different user journeys and identified opportunities for creating experience that combines usability with aesthetics.',
+    approach2:'We designed an attractive and intuitive interface that guides users step-by-step through treatment processes, with clear visual instructions, progress tracking and smart reminders. We maintained visual language that conveys luxury and professionalism, in line with Sensica\'s positioning as a company bringing advanced medical technology home.',
+    result:'The result was a mobile app (iOS and Android) and web app that provides perfect user experience for home users. The app guides users safely through treatment processes, enables tracking results and encourages consistent use for optimal results.',
+    conclusion:'Working on Sensica highlighted the importance of translating technological complexity into simple and inviting experience. When it comes to medical technology for home use, user trust and confidence are key to success — and that\'s exactly what the design aimed to achieve.',
+    metrics:[{num:'+70%', desc:'User engagement'},{num:'+55%', desc:'Daily repeat use'},{num:'4.7', desc:'App Store rating'}],
+    fa1:'spa', fa2:'heart', fa3:'sparkles',
+    tags:['Mobile','HealthTech','UX/UI','Design System']
   }
 ];
 
-var CATEGORIES = ['הכל','תוכנה כשירות','Mobile','E-Commerce','Branding','HealthTech'];
-var currentProject = 0;
+var CATEGORIES = ['All', 'Software', 'HealthTech', 'Branding', 'Mobile'];
+var CURRENT_PROJECT_INDEX = 0;
 
-/* ── Clients ── */
-function buildClients(){
-  var logos = [
-    {src:'logos/ctera 1.png',alt:'CTERA'},
-    {src:'logos/gigya 1.png',alt:'Gigya'},
-    {src:'logos/kenshoo 1.png',alt:'Kenshoo'},
-    {src:'logos/5.-Guides_-Hero.png',alt:'Twist Bioscience'},
-    {src:'logos/Group 1.png',alt:'Ummanu'},
-    {src:'logos/Group-1.png',alt:'Femi'},
-    {src:'logos/Layer 2 1.png',alt:'Eshet'},
-    {src:'logos/Layer 3 1.png',alt:'סופר-פארם'},
-    {src:'logos/Layer 4 1.png',alt:'כללית'},
-    {src:'logos/Layer 6 1.png',alt:'מכבי'},
-    {src:'logos/Layer 7 1.png',alt:'Landa'},
-    {src:'logos/Layer 8 1.png',alt:'CaloSense'},
-    {src:'logos/Layer 10 1.png',alt:'לקוח'},
-    {src:'logos/Group.png',alt:'אידניה'},
-    {src:'logos/בן גוריון 1.png',alt:'נמל תעופה בן גוריון'}
-  ];
-  var wrap = document.getElementById('clientsWrap');
-  wrap.innerHTML = logos.map(function(l){
-    return '<img src="'+l.src+'" alt="'+l.alt+'" loading="lazy">';
-  }).join('');
+/* Initialize */
+document.addEventListener('DOMContentLoaded', function() {
+  initProjects();
+  initTestimonials();
+  initNav();
+});
+
+/* Projects */
+function initProjects(){
+  renderProjects();
+  renderFilterBar();
 }
 
-/* ── Filter Bar ── */
-function buildFilters(){
-  var bar = document.getElementById('filterBar');
-  var html = '';
-  for(var i=0;i<CATEGORIES.length;i++){
-    var cls = i===0 ? 'filter-btn on' : 'filter-btn';
-    html += '<button class="'+cls+'" onclick="filt(this,\''+CATEGORIES[i]+'\')">'+CATEGORIES[i]+'</button>';
-  }
-  bar.innerHTML = html;
-}
-
-/* ── Project Cards ── */
-function icon(name){
-  return '<i class="fa-solid fa-'+name+'"></i>';
-}
-
-function buildProjects(){
+function renderProjects(){
   var grid = document.getElementById('projGrid');
-  var html = '';
-  for(var i=0;i<PROJECTS.length;i++){
-    var p = PROJECTS[i];
-    var tagsHtml = '';
-    for(var t=0;t<p.tags.length;t++){
-      tagsHtml += '<span>'+p.tags[t]+'</span>';
-    }
-    html += '<div class="proj-wrap reveal" data-c="'+p.cats+'">';
-    html += '<div class="proj-card" onclick="window.location.href=\'projects/'+p.id+'.html\'">';
-    var thumbContent = p.thumb ? '<img src="'+p.thumb+'" alt="'+p.title+'">' : icon(p.heroFA);
-    html += '<div class="proj-thumb">'+thumbContent+'</div>';
-    html += '<div class="proj-body">';
-    html += '<h3>'+p.title+'</h3>';
-    html += '<p>'+p.subtitle+'</p>';
-    if(p.metrics && p.metrics.length > 0){
-      html += '<div class="proj-metric"><span class="proj-metric-num">'+p.metrics[0].num+'</span><span class="proj-metric-desc">'+p.metrics[0].desc+'</span></div>';
-    }
-    html += '<div class="proj-tags">'+tagsHtml+'</div>';
-    html += '<a href="projects/'+p.id+'.html" class="proj-view-btn" onclick="event.stopPropagation()">Case Study <i class="fa-solid fa-arrow-left" style="font-size:.8rem"></i></a>';
-    html += '<a href="projects.html" class="proj-all-inner" onclick="event.stopPropagation()">לכל הפרויקטים</a>';
-    html += '</div></div>';
-    html += '<a href="projects.html" class="proj-all-link" onclick="event.stopPropagation()">לכל הפרויקטים <i class="fa-solid fa-arrow-left" style="font-size:.7rem"></i></a>';
-    html += '</div>';
-  }
-  grid.innerHTML = html;
+  grid.innerHTML = '';
+  PROJECTS.forEach(function(proj, idx){
+    var catMatch = !window.FILTER_CAT || window.FILTER_CAT === 'All' || proj.cat === window.FILTER_CAT;
+    if(!catMatch) return;
+    var card = document.createElement('div');
+    card.className = 'proj-wrap';
+    card.innerHTML = `
+      <div class="proj-card" onclick="openProject(${idx})">
+        <div class="proj-thumb">
+          <img src="${proj.thumb}" alt="${proj.title}" onerror="this.style.display='none'">
+          <i class="fa-solid fa-${proj.heroFA}"></i>
+          <span class="proj-label">${proj.cat}</span>
+          <a href="projects.html" class="proj-all-link">View All <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="proj-body">
+          ${proj.metrics ? `<div class="proj-metric"><span class="proj-metric-num">${proj.metrics[0].num}</span><span class="proj-metric-desc">${proj.metrics[0].desc}</span></div>` : ''}
+          <h3>${proj.title}</h3>
+          <p>${proj.subtitle}</p>
+          ${proj.tags ? `<div class="proj-tags">${proj.tags.map(t => `<span>${t}</span>`).join('')}</div>` : ''}
+          <button class="proj-view-btn">View Project <i class="fa-solid fa-arrow-right"></i></button>
+          <div class="proj-all-inner">View Project</div>
+          <div class="proj-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
 }
 
-/* ── Filter ── */
-function filt(btn, cat){
-  var btns = document.querySelectorAll('.filter-btn');
-  for(var i=0;i<btns.length;i++) btns[i].classList.remove('on');
-  btn.classList.add('on');
-  var cards = document.querySelectorAll('.proj-wrap');
-  for(var i=0;i<cards.length;i++){
-    if(cat === 'הכל' || cards[i].getAttribute('data-c') === cat){
-      cards[i].style.display = '';
-    } else {
-      cards[i].style.display = 'none';
-    }
-  }
+function renderFilterBar(){
+  var bar = document.getElementById('filterBar');
+  bar.innerHTML = '';
+  CATEGORIES.forEach(function(cat){
+    var btn = document.createElement('button');
+    btn.className = 'filter-btn' + (window.FILTER_CAT === cat || (!window.FILTER_CAT && cat === 'All') ? ' on' : '');
+    btn.textContent = cat;
+    btn.onclick = function(){
+      window.FILTER_CAT = cat === 'All' ? null : cat;
+      document.querySelectorAll('.filter-btn').forEach(function(b){
+        b.classList.remove('on');
+      });
+      btn.classList.add('on');
+      renderProjects();
+    };
+    bar.appendChild(btn);
+  });
+  window.FILTER_CAT = null;
+  document.querySelector('.filter-btn').classList.add('on');
 }
 
-/* ── Open Project ── */
 function openProject(idx){
-  currentProject = idx;
-  var p = PROJECTS[idx];
-  var metricsHtml = '';
-  for(var m=0;m<p.metrics.length;m++){
-    metricsHtml += '<div class="pd-metric"><div class="big">'+p.metrics[m].num+'</div><div class="desc">'+p.metrics[m].desc+'</div></div>';
-  }
-
-  var moreHtml = '';
-  for(var i=0;i<PROJECTS.length;i++){
-    if(i === idx) continue;
-    if(moreHtml.split('proj-card').length > 3) break;
-    var mp = PROJECTS[i];
-    moreHtml += '<div class="proj-card" onclick="window.location.href=\'projects/'+mp.id+'.html\'">';
-    var moreThumb = mp.thumb ? '<img src="'+mp.thumb+'" alt="'+mp.title+'" style="width:100%;height:100%;object-fit:cover">' : icon(mp.heroFA);
-    moreHtml += '<div class="proj-thumb">'+moreThumb+'<span class="proj-label">'+mp.cat+'</span></div>';
-    moreHtml += '<div class="proj-body"><h3>'+mp.title+'</h3><p>'+mp.subtitle+'</p></div></div>';
-  }
-
-  var html = '';
-  html += '<div class="pd-back">';
-  html += '<button class="pd-back-link" onclick="closeProject()"><i class="fa-solid fa-arrow-right"></i> חזרה</button>';
-  html += '<div class="pd-nav-btns">';
-  html += '<button class="pd-nav-btn" onclick="navProject(-1)"><i class="fa-solid fa-chevron-right"></i></button>';
-  html += '<button class="pd-nav-btn" onclick="navProject(1)"><i class="fa-solid fa-chevron-left"></i></button>';
-  html += '</div></div>';
-
-  html += '<div class="pd-hero">';
-  html += '<div class="pd-cats"><span>'+p.cat+'</span></div>';
-  html += '<h1>'+p.title+'</h1>';
-  html += '<p class="pd-sub">'+p.subtitle+'</p>';
-  html += '<div class="pd-meta">';
-  html += '<div class="pd-meta-item"><div class="label">שנה</div><div class="value">'+p.date+'</div></div>';
-  html += '<div class="pd-meta-item"><div class="label">תפקיד</div><div class="value">'+p.role+'</div></div>';
-  html += '<div class="pd-meta-item"><div class="label">לקוח</div><div class="value">'+p.client+'</div></div>';
-  html += '<div class="pd-meta-item"><div class="label">משך</div><div class="value">'+p.duration+'</div></div>';
-  html += '</div></div>';
-
-  var heroImgContent = p.heroImg ? '<img src="'+p.heroImg+'" alt="'+p.title+'" style="max-width:100%;max-height:100%;object-fit:contain">' : icon(p.heroFA);
-  html += '<div class="pd-hero-img">'+heroImgContent+'</div>';
-
-  if(p.intro){
-    html += '<div class="pd-section">';
-    html += '<span class="sec-label">הקדמה</span>';
-    html += '<h3>על הפרויקט</h3>';
-    html += '<p>'+p.intro+'</p>';
-    html += '</div>';
-  }
-
-  html += '<div class="pd-section">';
-  html += '<span class="sec-label">האתגר</span>';
-  html += '<h3>מה היה האתגר?</h3>';
-  html += '<p>'+p.challenge+'</p>';
-  html += '<p>'+p.challenge2+'</p>';
-  var imgFull = p.img1 ? '<img src="'+p.img1+'" alt="'+p.title+'" style="width:100%;height:100%;object-fit:cover;border-radius:16px">' : '<div class="pd-img-full">'+icon(p.fa1)+'</div>';
-  html += p.img1 ? '<div class="pd-img-full" style="overflow:hidden">'+imgFull+'</div>' : '<div class="pd-img-full">'+icon(p.fa1)+'</div>';
-  var imgItem2 = p.img2 ? '<img src="'+p.img2+'" alt="'+p.title+'" style="width:100%;height:100%;object-fit:cover">' : icon(p.fa2);
-  var imgItem3 = p.img3 ? '<img src="'+p.img3+'" alt="'+p.title+'" style="width:100%;height:100%;object-fit:cover">' : icon(p.fa3);
-  html += '<div class="pd-img-grid g2"><div class="pd-img-item" style="overflow:hidden">'+imgItem2+'</div><div class="pd-img-item" style="overflow:hidden">'+imgItem3+'</div></div>';
-  html += '</div>';
-
-  html += '<div class="pd-section">';
-  html += '<span class="sec-label">הגישה</span>';
-  html += '<h3>איך ניגשנו לזה?</h3>';
-  html += '<p>'+p.approach+'</p>';
-  html += '<p>'+p.approach2+'</p>';
-  if(p.imgDS){
-    html += '<div class="pd-img-full" style="overflow:hidden;aspect-ratio:auto"><img src="'+p.imgDS+'" alt="Design System" style="width:100%;border-radius:16px"></div>';
-  } else {
-    html += '<div class="pd-img-grid g3"><div class="pd-img-item">'+icon(p.fa1)+'</div><div class="pd-img-item">'+icon(p.fa2)+'</div><div class="pd-img-item">'+icon(p.fa3)+'</div></div>';
-  }
-  html += '</div>';
-
-  html += '<div class="pd-section">';
-  html += '<span class="sec-label">התוצאה</span>';
-  html += '<h3>מה השגנו?</h3>';
-  html += '<p>'+p.result+'</p>';
-  html += '<div class="pd-metrics">'+metricsHtml+'</div>';
-  html += '</div>';
-
-  if(p.conclusion){
-    html += '<div class="pd-section">';
-    html += '<span class="sec-label">סיכום</span>';
-    html += '<h3>לסיכום</h3>';
-    html += '<p>'+p.conclusion+'</p>';
-    html += '</div>';
-  }
-
-  html += '<div class="pd-cta">';
-  html += '<h2>יש לכם פרויקט דומה?</h2>';
-  html += '<a href="contact.html" class="btn-primary">בואו נדבר</a>';
-  html += '</div>';
-
-  html += '<div class="pd-more">';
-  html += '<h3>פרויקטים נוספים</h3>';
-  html += '<div class="pd-more-grid">'+moreHtml+'</div>';
-  html += '</div>';
-
-  document.getElementById('pdContent').innerHTML = html;
+  CURRENT_PROJECT_INDEX = idx;
+  var proj = PROJECTS[idx];
+  var detail = document.getElementById('proj-detail');
+  var content = `
+    <div class="pd-back">
+      <button class="pd-back-link" onclick="closeProject()"><i class="fa-solid fa-arrow-left"></i> Back</button>
+      <div class="pd-nav-btns">
+        <button class="pd-nav-btn" onclick="changeProject(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="pd-nav-btn" onclick="changeProject(1)"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+    <div class="pd-hero">
+      <div class="pd-cats">${proj.tags ? proj.tags.map(t => `<span>${t}</span>`).join('') : ''}</div>
+      <h1>${proj.title}</h1>
+      <p class="pd-sub">${proj.subtitle}</p>
+      <div class="pd-meta">
+        <div class="pd-meta-item"><div class="label">Client</div><div class="value">${proj.client}</div></div>
+        <div class="pd-meta-item"><div class="label">Role</div><div class="value">${proj.role}</div></div>
+        <div class="pd-meta-item"><div class="label">Duration</div><div class="value">${proj.duration}</div></div>
+      </div>
+    </div>
+    <div class="pd-hero-img">
+      <img src="${proj.heroImg}" alt="${proj.title}" onerror="this.style.display='none'">
+      <i class="fa-solid fa-${proj.heroFA}"></i>
+    </div>
+    <div class="pd-section">
+      <span class="sec-label">Project Overview</span>
+      <h3>Introduction</h3>
+      <p>${proj.intro}</p>
+    </div>
+    <div class="pd-section">
+      <h3>Challenge</h3>
+      <p>${proj.challenge}</p>
+      <p>${proj.challenge2}</p>
+    </div>
+    <div class="pd-section">
+      <h3>Approach</h3>
+      <p>${proj.approach}</p>
+      <p>${proj.approach2}</p>
+    </div>
+    <div class="pd-section">
+      <h3>Results</h3>
+      <p>${proj.result}</p>
+    </div>
+    ${proj.metrics ? `<div class="pd-metrics">${proj.metrics.map(m => `<div class="pd-metric"><div class="big">${m.num}</div><div class="desc">${m.desc}</div></div>`).join('')}</div>` : ''}
+    <div class="pd-section">
+      <h3>Conclusion</h3>
+      <p>${proj.conclusion}</p>
+    </div>
+  `;
+  document.getElementById('pdContent').innerHTML = content;
+  detail.classList.add('open');
   document.getElementById('main-content').style.display = 'none';
   document.getElementById('about-detail').style.display = 'none';
-  document.getElementById('proj-detail').classList.add('open');
-  window.scrollTo({top:0, behavior:'instant'});
+  window.scrollTo(0, 0);
 }
 
 function closeProject(){
   document.getElementById('proj-detail').classList.remove('open');
-  document.getElementById('about-detail').style.display = '';
-  document.getElementById('main-content').style.display = '';
+  document.getElementById('main-content').style.display = 'block';
+  window.scrollTo(0, 0);
 }
 
+function changeProject(direction){
+  CURRENT_PROJECT_INDEX = (CURRENT_PROJECT_INDEX + direction + PROJECTS.length) % PROJECTS.length;
+  openProject(CURRENT_PROJECT_INDEX);
+}
+
+/* Testimonials */
+function initTestimonials(){
+  var carousel = document.getElementById('testCarousel');
+  var dots = document.getElementById('testDots');
+  var slides = carousel.querySelectorAll('.test-slide');
+  slides.forEach(function(s, idx){
+    var dot = document.createElement('button');
+    dot.className = 'test-dot' + (idx === 0 ? ' active' : '');
+    dot.onclick = function(){ showTestSlide(idx); };
+    dots.appendChild(dot);
+  });
+}
+
+var TEST_CURRENT = 0;
+function moveSlide(dir){
+  var slides = document.querySelectorAll('.test-slide');
+  TEST_CURRENT = (TEST_CURRENT + dir + slides.length) % slides.length;
+  showTestSlide(TEST_CURRENT);
+}
+
+function showTestSlide(idx){
+  TEST_CURRENT = idx;
+  document.querySelectorAll('.test-slide').forEach(function(s){ s.classList.remove('active'); });
+  document.querySelectorAll('.test-dot').forEach(function(d){ d.classList.remove('active'); });
+  document.querySelectorAll('.test-slide')[idx].classList.add('active');
+  document.querySelectorAll('.test-dot')[idx].classList.add('active');
+}
+
+/* Nav */
+function initNav(){
+  document.getElementById('navToggle').onclick = function(){
+    document.querySelector('.nav-links').classList.toggle('nav-open');
+  };
+}
+
+function navTo(selector){
+  document.querySelector('.nav-links').classList.remove('nav-open');
+  var el = document.querySelector(selector);
+  if(el) el.scrollIntoView({ behavior: 'smooth' });
+  return false;
+}
+
+/* About */
 function openAbout(){
-  document.getElementById('main-content').style.display = 'none';
-  document.getElementById('proj-detail').classList.remove('open');
-  document.getElementById('proj-detail').style.display = 'none';
   document.getElementById('about-detail').classList.add('open');
-  window.scrollTo({top:0, behavior:'instant'});
+  document.getElementById('main-content').style.display = 'none';
+  document.getElementById('proj-detail').style.display = 'none';
+  window.scrollTo(0, 0);
 }
 
 function closeAbout(){
   document.getElementById('about-detail').classList.remove('open');
-  document.getElementById('proj-detail').style.display = '';
-  document.getElementById('main-content').style.display = '';
-}
-
-function navTo(hash){
-  var isProjectOpen = document.getElementById('proj-detail').classList.contains('open');
-  var isAboutOpen = document.getElementById('about-detail').classList.contains('open');
-  if(isProjectOpen){ closeProject(); }
-  if(isAboutOpen){ closeAbout(); }
-  if(hash === '#'){
-    window.scrollTo({top:0, behavior:'smooth'});
-  } else {
-    var el = document.querySelector(hash);
-    if(el) el.scrollIntoView({behavior:'smooth'});
-  }
-  return false;
-}
-
-function navProject(dir){
-  var next = currentProject + dir;
-  if(next < 0) next = PROJECTS.length - 1;
-  if(next >= PROJECTS.length) next = 0;
-  openProject(next);
-}
-
-/* ── Nav active state ── */
-function updateNav(){
-  var sections = document.querySelectorAll('section[id]');
-  var links = document.querySelectorAll('.nav-link');
-  var scrollY = window.scrollY + 100;
-  for(var i=0;i<sections.length;i++){
-    var sec = sections[i];
-    var top = sec.offsetTop;
-    var height = sec.offsetHeight;
-    var id = sec.getAttribute('id');
-    if(scrollY >= top && scrollY < top + height){
-      for(var j=0;j<links.length;j++){
-        links[j].classList.remove('active');
-        if(links[j].getAttribute('href') === '#' + id){
-          links[j].classList.add('active');
-        }
-      }
-    }
-  }
-}
-
-/* ── Mobile Nav Toggle ── */
-function initMobileNav(){
-  var btn = document.getElementById('navToggle');
-  var links = document.querySelector('.nav-links');
-  if(!btn || !links) return;
-
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = links.classList.toggle('nav-open');
-    btn.innerHTML = isOpen
-      ? '<i class="fa-solid fa-xmark"></i>'
-      : '<i class="fa-solid fa-bars"></i>';
-  });
-
-  // סגור תפריט בלחיצה על קישור
-  links.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      links.classList.remove('nav-open');
-      btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    });
-  });
-
-  // סגור תפריט בלחיצה מחוץ לנאב
-  document.addEventListener('click', function(e){
-    if(!e.target.closest('nav')){
-      links.classList.remove('nav-open');
-      btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    }
-  });
-}
-
-
-/* ── Testimonials Carousel ── */
-var testCurrent = 0;
-var testSlides = [];
-var testDotEls = [];
-
-function initTestimonials(){
-  testSlides = Array.from(document.querySelectorAll('.test-slide'));
-  var dotsEl = document.getElementById('testDots');
-  if(!dotsEl || !testSlides.length) return;
-  testSlides.forEach(function(_,i){
-    var d = document.createElement('button');
-    d.className = 'test-dot' + (i===0?' active':'');
-    d.setAttribute('aria-label','המלצה '+(i+1));
-    d.addEventListener('click',function(){ goSlide(i); });
-    dotsEl.appendChild(d);
-    testDotEls.push(d);
-  });
-}
-
-function goSlide(n){
-  testSlides[testCurrent].classList.remove('active');
-  testDotEls[testCurrent].classList.remove('active');
-  testCurrent = (n + testSlides.length) % testSlides.length;
-  testSlides[testCurrent].classList.add('active');
-  testDotEls[testCurrent].classList.add('active');
-}
-
-function moveSlide(dir){ goSlide(testCurrent + dir); }
-
-/* auto-advance every 10s */
-setInterval(function(){ moveSlide(1); }, 10000);
-
-/* ── Init ── */
-buildClients();
-buildFilters();
-buildProjects();
-initMobileNav();
-initTestimonials();
-window.addEventListener('scroll', updateNav);
-window.addEventListener('scroll', stackCards, {passive:true});
-
-function stackCards(){
-  var cards = document.querySelectorAll('.proj-wrap:not([style*="display:none"])');
-  cards.forEach(function(card, i){
-    var rect = card.getBoundingClientRect();
-    var stickyTop = 80 + i * 8;
-    var distFromSticky = rect.top - stickyTop;
-    if(distFromSticky <= 0 && i < cards.length - 1){
-      var nextRect = cards[i+1].getBoundingClientRect();
-      var progress = Math.max(0, Math.min(1, 1 - (nextRect.top - stickyTop) / card.offsetHeight));
-      var scale = 1 - progress * 0.04;
-      card.style.transform = 'scale('+scale+')';
-    } else {
-      card.style.transform = 'scale(1)';
-    }
-  });
-}
-
-function sendForm(){
-  var f = document.getElementById('contactForm');
-  var name = f.name.value;
-  var phone = f.phone.value;
-  var email = f.email.value;
-  var message = f.message.value;
-  var subject = encodeURIקומפוננטה('פנייה חדשה מאתר Pixel54');
-  var company = f.company.value;
-  var projectType = f.projectType.value;
-  var body = encodeURIקומפוננטה('שם: ' + name + '\nטלפון: ' + phone + '\nאימייל: ' + email + '\nחברה: ' + company + '\nסוג פרויקט: ' + projectType + '\n\n' + message);
-  window.location.href = 'mailto:dror@pixel54.com?subject=' + subject + '&body=' + body;
-  return false;
+  document.getElementById('main-content').style.display = 'block';
+  window.scrollTo(0, 0);
 }
 </script>
 

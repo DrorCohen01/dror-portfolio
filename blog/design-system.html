@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>מערכת עיצוב — למה כל סטארטאפ צריך אחד מגיל אפס | דרור כהן</title>
-<meta name="description" content="למה כל סטארטאפ צריך מערכת עיצוב מהיום הראשון — מה זה אומר, מה עולה לכם בלי אחד, ואיך בונים אחד נכון.">
+<title>Design System — Why Every Startup Needs One from Day Zero | Dror Cohen</title>
+<meta name="description" content="למה כל סטארטאפ צריך Design System מהיום הראשון — מה This means, מה עולה לכם בלי אחד, ואיך בונים אחד Correct.">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700;900&family=Noto+Sans+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
@@ -15,7 +15,7 @@
   --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans Hebrew',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);font-weight:300;line-height:1.7;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
@@ -27,7 +27,7 @@ img{max-width:100%;display:block}
 /* Nav */
 nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1200px;margin:0 auto;padding:0 40px;position:relative}
-.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Noto Sans Display',sans-serif}
+.nav-logo{font-weight:700;font-size:1.3rem;letter-spacing:-.5px;font-family:'Sora',sans-serif}
 .nav-logo span{color:var(--gray)}
 .nav-links{display:flex;gap:28px;list-style:none;font-size:1rem;font-weight:400;position:absolute;left:50%;transform:translateX(-50%)}
 .nav-links a{color:var(--gray);transition:color .25s}
@@ -84,7 +84,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(18,18,18,0.85);backdrop-fi
 /* Footer */
 footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-color:#111}
 .footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr 0.8fr;gap:48px;padding-bottom:64px}
-.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Noto Sans Display',sans-serif}
+.footer-brand{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;font-family:'Sora',sans-serif}
 .footer-brand span{color:rgba(255,255,255,0.4)}
 .footer-col h4{font-size:1rem;font-weight:600;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
@@ -162,24 +162,24 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
   <div class="nav-inner">
     <a href="../portfolio.html" class="nav-logo">Dror<span>Cohen</span></a>
     <ul class="nav-links">
-      <li><a href="../about.html">אני דרור</a></li>
-      <li><a href="../uxui.html">עיצוב ממשקים</a></li>
-      <li><a href="../portfolio.html#services">מה אני עושה</a></li>
-      <li><a href="../portfolio.html#projects">פרויקטים</a></li>
-      <li><a href="../portfolio.html#testimonials">המלצות</a></li>
-      <li><a href="../blog.html" class="active">בלוג</a></li>
-      <li><a href="../contact.html">צור קשר</a></li>
+      <li><a href="../about.html">About Dror</a></li>
+      <li><a href="../uxui.html">Design Services</a></li>
+      <li><a href="../portfolio.html#services">What I Do</a></li>
+      <li><a href="../portfolio.html#projects">Projects</a></li>
+      <li><a href="../portfolio.html#testimonials">Testimonials</a></li>
+      <li><a href="../blog.html" class="active">Blog</a></li>
+      <li><a href="../contact.html">Contact</a></li>
     </ul>    <button class="nav-mobile" id="navToggle" aria-label="תפריט"><i class="fa fa-bars"></i></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="../about.html">אני דרור</a>
+    <a href="../about.html">About Dror</a>
     <a href="../uxui.html">UX/UI</a>
-    <a href="../portfolio.html#services">מה אני עושה</a>
-    <a href="../portfolio.html#projects">פרויקטים</a>
-    <a href="../portfolio.html#testimonials">המלצות</a>
-    <a href="../blog.html" class="active">בלוג</a>
-    <a href="../contact.html">צור קשר</a>
-    <a href="../contact.html" style="background:var(--white);color:#121212;padding:12px 24px;border-radius:100px;font-weight:600;text-align:center">בואו נדבר</a>
+    <a href="../portfolio.html#services">What I Do</a>
+    <a href="../portfolio.html#projects">Projects</a>
+    <a href="../portfolio.html#testimonials">Testimonials</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../contact.html" style="background:var(--white);color:#121212;padding:12px 24px;border-radius:100px;font-weight:600;text-align:center">Let's Talk</a>
   </div>
 </nav>
 
@@ -187,21 +187,21 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 <section class="article-hero grid-bg">
   <div class="wrap">
     <div class="article-hero-meta reveal">
-      <span class="cat">מערכת עיצוב</span>
+      <span class="cat">Design System</span>
       <span>•</span>
-      <span>20 פברואר 2026</span>
+      <span>20 February 2026</span>
       <span>•</span>
-      <span><i class="fa-solid fa-clock"></i> 7 דקות קריאה</span>
+      <span><i class="fa-solid fa-clock"></i> 7 minutes read</span>
     </div>
-    <h1 class="reveal r1">מערכת עיצוב — למה כל סטארטאפ צריך אחד מגיל אפס</h1>
-    <p class="lead reveal r2">כשבונים מערכת עיצוב מוקדם חוסכים שבועות של עבודה בהמשך. איך מתחילים נכון, מה הטעויות שכדאי להימנע מהן, ואיך מוכרים את הרעיון להנהלה.</p>
+    <h1 class="reveal r1">Design System — Why Every Startup Needs One from Day Zero</h1>
+    <p class="lead reveal r2">כשבונים Design System מוקדם חוסכים שבועות של עבודה בהמשך. איך מתחילים Correct, מה הטעויות שכדאי להימנע מהן, ואיך מוכרים את הרעיון להנהלה.</p>
   </div>
 </section>
 
 <!-- Article Content -->
 <section class="article-section">
   <div class="wrap">
-    <a href="../blog.html" class="back-link"><i class="fa-solid fa-arrow-right"></i> חזרה לבלוג</a>
+    <a href="../blog.html" class="back-link"><i class="fa-solid fa-arrow-right"></i> Back to Blog</a>
 
     <!-- Hero Image -->
     <div class="article-img" style="background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:0 0 64px;border:1px solid rgba(255,255,255,0.08)">
@@ -210,102 +210,102 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
 
     <div class="article-body">
 
-      <p>בשנת 2017, צוות העיצוב של Airbnb שישב על 30 מעצבים וכמאה מפתחים גילה משהו מדאיג: הם ספרו מעל 400 גרסאות שונות של כפתורים בקוד הפרודקשן שלהם. ארבע מאות. לא ארבע — ארבע מאות. כל מפתח שבנה משהו חדש פשוט יצר כפתור חדש. כל עמוד נראה קצת אחרת. כל רכיב נגע בצבע מעט שונה. המוצר שלהם, שהגיע לאחד ממותגי הטכנולוגיה הכי מוכרים בעולם, נראה כאילו הורכב מאלף חתיכות שונות.</p>
+      <p>בשנת 2017, Team העיצוב של Airbnb שישב על 30 מעצבים וכמאה מפתחים גילה משהו מדאיג: הם Bookו מעל 400 גרסLetter שונות של כפQueueים בLineד הפרודקשן שלהם. ארבע מLetter. לא ארבע — ארבע מLetter. כל מפתח שבנה משהו New Simple יצר כפQueue New. כל עמוד נראה קצת אחרת. כל רכיב נגע בColor מעט שונה. המוצר שלהם, שהגיע לאחד ממותגי הTechnology הכי מוכרים בעולם, נראה כאילו הורכב מאלף חתיכות שונות.</p>
 
-      <p>זה לא אירע בשל חוסר מקצועיות. זה אירע בגלל שלא היה להם מערכת עיצוב. וזה בדיוק מה שקורה בכל סטארטאפ שגדל מהר בלי שיטה.</p>
+      <p>This didn't happen due to lack of professionalism. It happened because they didn't have a Design System. And that's exactly what happens in every startup that grows fast without method.</p>
 
-      <p>אם אתם בונים מוצר דיגיטלי — בין אם אפליקציה, פלטפורמת תוכנה כשירות, אתר מסחר אלקטרוני, או כל מוצר טכנולוגי אחר — ואין לכם מערכת עיצוב, אתם עובדים קשה יותר ממה שצריך. כל יום שעובר בלי אחד הוא יום שמצטבר חוב. ובהמשך המאמר אסביר בדיוק מדוע.</p>
+      <p>אם אתם בונים מוצר דיגיטלי — בין אם Darkיקציה, פלטפורמת תוכנה כשירות, אתר מסחר אלקטרוני, או כל מוצר טכנולוגי אחר — ואין לכם Design System, אתם עובדים Hard יותר ממה שצריך. כל יום שעובר בלי אחד הוא יום שמצטבר חוב. ובהמשך הArticle אסביר בPrecision מדוע.</p>
 
-      <h2>מה זה בכלל מערכת עיצוב?</h2>
+      <h2>What Even Is a Design System?</h2>
 
-      <p>לפני שנצלול לפרטים, חשוב להבין מה מערכת עיצוב הוא — ומה הוא לא. הרבה אנשים חושבים ש-מערכת עיצוב זה "ספריית קומפוננטים ב-Figma". זה לא. מערכת עיצוב הוא הרבה יותר מזה.</p>
+      <p>לפני שנצלול לפרטים, חשוב להבין מה Design System הוא — ומה הוא לא. הרבה אנשים Senseבים ש-Design System זה "Bookיית Components ב-Figma". It's not. Design System הוא הרבה יותר מזה.</p>
 
-      <p><strong>מערכת עיצוב הוא השפה המשותפת של המוצר שלכם.</strong> זו מסגרת עבודה שמגדירה לא רק איך דברים נראים, אלא גם איך הם מתנהגים, איך קוראים להם, ומתי להשתמש בהם.</p>
+      <p><strong>A Design System is the common language of your product.</strong> It's a framework that defines not only how things look, but also how they behave, what they're called, and when to use them.</p>
 
-      <h3>ערכי עיצוב — הבסיס של הכול</h3>
+      <h3>Design Tokens — The Foundation of Everything</h3>
 
-      <p>ערכי עיצוב הם ערכים בסיסיים שמגדירים את ה-DNA החזותי של המוצר שלכם. הם כוללים:</p>
+      <p>Design tokens are basic values that define the visual DNA of your product. They include:</p>
 
       <ul>
-        <li><strong>צבעים:</strong> לא סתם "כחול" — אלא כחול ראשי (#0066FF), כחול פעיל (#0052CC), כחול רקע (#E8F0FE). כל גוון צבע עם שם ומטרה ברורה.</li>
-        <li><strong>טיפוגרפיה:</strong> גדלי פונט, משקלים, גובהי שורה, רווחים בין אותיות — הכל מוגדר ומתועד.</li>
-        <li><strong>רווחים:</strong> מרחקים ומרווחים לפי סקאלה קבועה (4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px).</li>
-        <li><strong>צללים ועיגולי פינות:</strong> עקביות ויזואלית בכל הממשק.</li>
-        <li><strong>תנועה ואנימציה:</strong> זמני מעבר, עקומות אנימציה, סוגי תנועה.</li>
+        <li><strong>Colors:</strong> לא סתם "כחול" — אלא כחול ראשי (#0066FF), כחול פעיל (#0052CC), כחול רקע (#E8F0FE). כל Shade Color עם שם ומטרה Clearה.</li>
+        <li><strong>Typography:</strong> גדלי פונט, Weightים, גובהי Line, Spaceים בין Letterיות — הכל Defined ומתועד.</li>
+        <li><strong>Spaceים:</strong> Distanceים וGapים לפי סקאלה קבועה (4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px).</li>
+        <li><strong>Shadows ועיגולי פינות:</strong> עקביות ויזואלית בכל הממשק.</li>
+        <li><strong>תנועה ואנימציה:</strong> זמני מעבר, עLineמות אנימציה, Typeי תנועה.</li>
       </ul>
 
       <h3>רכיבים — אבני הבניין</h3>
 
-      <p>רכיבים הם אלמנטי ממשק מוכנים לשימוש. כפתורים, שדות טקסט, תפריטים, כרטיסיות, חלוניות, טבלאות, לשוניות, תגיות, התרעות — כל אבן בניין ויזואלית שהמוצר שלכם יצטרך. כל רכיב מגיע עם:</p>
+      <p>רכיבים הם אלמנטי ממשק מוכנים לשימוש. כפQueueים, שדות Text, תפריטים, כרטיסיות, חלוניות, טבלLetter, לשוניות, תגיות, התרעות — כל אבן בניין ויזואלית שהמוצר שלכם יצטרך. כל רכיב מגיע עם:</p>
 
       <ul>
         <li>מצבים שונים (ריחוף, פעיל, מנוטרל, טעינה, שגיאה)</li>
-        <li>גרסאות שונות (ראשי, משני, קווי, הרסני)</li>
-        <li>גדלים שונים (small, medium, large)</li>
+        <li>גרסLetter שונות (ראשי, Secondary, Lineוי, הרסני)</li>
+        <li>Sizes שונים (small, medium, large)</li>
         <li>תיעוד שמסביר מתי ואיך להשתמש בכל אחד</li>
       </ul>
 
       <h3>תבניות — תבניות חוויית משתמש חוזרות</h3>
 
-      <p>תבניות הן פתרונות מוכחים לאתגרי חוויית משתמש נפוצים. איך מציגים טפסים ארוכים? איך מטפלים בשגיאות? מה קורה כשאין תוכן (מסכים ריקים)? איך מעצבים קליטת משתמשים? תבניות שונות מרכיבים כי הן עוסקות בתהליכים ובחוויה, לא רק בממשק.</p>
+      <p>תבניות הן Solutions מוכחים לאתגרי חוויית משתמש נפוצים. איך מציגים טפסים ארוכים? איך מטפלים בשגיLetter? מה Lineרה כשאין תוכן (מסכים ריקים)? איך מעצבים Easyיטת משתמשים? תבניות שונות מרכיבים כי הן עוסLineת בתהליכים ובחוויה, לא רק בממשק.</p>
 
-      <h3>תיעוד — מה שעושה את ההבדל</h3>
+      <h3>תיעוד — מה שעושה את הDifference</h3>
 
-      <p>זה החלק שרוב הסטארטאפים מדלגים עליו — ואחר כך בוכים. תיעוד טוב הוא מה שהופך מערכת עיצוב מ"כמה קבצי Figma" למשהו שהצוות כולו יכול להשתמש בו. התיעוד צריך לכלול: למה הרכיב קיים, מתי להשתמש בו, מתי לא להשתמש בו, דוגמאות קוד, והנחיות נגישות.</p>
+      <p>זה החלק שרוב הסטארטאפים מדלגים עליו — ואחר כך בוכים. תיעוד טוב הוא מה שהופך Design System מ"כמה קבצי Figma" למשהו שהTeam כולו יכול להשתמש בו. התיעוד צריך לכלול: למה הרכיב קיים, מתי להשתמש בו, מתי לא להשתמש בו, Examples Lineד, והנחיות Accessibility.</p>
 
       <div class="article-img" style="background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid rgba(255,255,255,0.08)">
         <i class="fa-solid fa-image" style="font-size:3rem;color:rgba(255,255,255,0.15)"></i>
       </div>
 
-      <h2>המחיר האמיתי של חיים בלי מערכת עיצוב</h2>
+      <h2>המחיר האמיתי של חיים בלי Design System</h2>
 
-      <p>בוא נדבר כסף. כי בסוף, זה הטיעון שמשכנע הנהלה.</p>
+      <p>בוא נדבר כסף. כי In the end, זה הטיעון שמשכנע הנהלה.</p>
 
       <blockquote style="border-right:4px solid #F5A623;padding:20px 28px;margin:40px 0;background:#1a1a1a;border-radius:0 12px 12px 0;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.85)">
-        "כל שעה שמעצב מבלה בעיצוב מחדש של קומפוננט שכבר קיים היא שעה שבוזבזה. מערכת עיצוב הופך שעות לדקות."
+        "כל שעה שמעצב מבלה בעיצוב מNew של Lineמפוננט שכבר קיים היא שעה שבוזבזה. Design System הופך שעות לדLineת."
       </blockquote>
 
       <h3>1. חוסר עקביות — שורש כל רע</h3>
 
-      <p>כשאין מערכת עיצוב, כל מעצב בצוות עובד לפי הבנתו שלו. אחד מעצב כפתורים בגובה 40px, השני ב-44px, השלישי ב-36px. אחד משתמש ב-border-radius של 8px, השני ב-12px, השלישי ב-4px. בכל sprint החדש, הממשק הופך פחות עקבי. המשתמשים מרגישים את זה — גם אם הם לא מצליחים לנסח בדיוק מה מפריע להם. הם פשוט מרגישים שמשהו לא "נכון".</p>
+      <p>כשאין Design System, כל מעצב בTeam עובד לפי הבנתו שלו. אחד מעצב כפQueueים בגובה 40px, השני ב-44px, השלישי ב-36px. אחד משתמש ב-border-radius של 8px, השני ב-12px, השלישי ב-4px. בכל sprint הNew, הממשק הופך פחות עקבי. המשתמשים מרגישים את זה — גם אם הם לא מצליחים לנסח בPrecision מה מפריע להם. הם Simple מרגישים שמשהו לא "Correct".</p>
 
-      <h3>2. פיתוח איטי יותר — הרבה יותר איטי</h3>
+      <h3>2. Development Slow יותר — הרבה יותר Slow</h3>
 
-      <p>ללא מערכת עיצוב, כל מפתח בונה קומפוננטים מחדש. הם כותבים CSS חדש, JavaScript חדש, לוגיקה חדשה — לכפתורים, לטפסים, לטבלאות. כל פיצ'ר חדש לוקח 30-50% יותר זמן מפני שהיסודות לא קיימים. הנתון הזה לא תיאורטי — הוא מגובה במחקרים של Nielsen Norman Group ו-Google.</p>
+      <p>ללא Design System, כל מפתח בונה Components מNew. הם כותבים CSS New, JavaScript New, לוגיקה Newה — לכפQueueים, לטפסים, לטבלLetter. כל פיצ'ר New לוקח 30-50% יותר זמן מפני שהיסודות לא קיימים. הGiven הIt's not תיאורטי — הוא מגובה במחCoolים של Nielsen Norman Group ו-Google.</p>
 
       <h3>3. חוב טכני שמתרבה</h3>
 
-      <p>כל רכיב שנכתב ידנית הוא עוד קוד שצריך לתחזק. בחצי שנה יש לכם עשרות גרסאות של "כפתור" בקוד. כשמחליטים לשנות את הצבע הראשי, צריך לעדכן אותו בעשרות מקומות. כשיש באג בכפתור, צריך לתקן אותו בעשרות גרסאות שונות. זה לא רק בזבוז זמן — זה סיכון תפעולי.</p>
+      <p>כל רכיב שנכתב ידנית הוא עוד Lineד שצריך לתחזק. בחצי שנה יש לכם עשרות גרסLetter של "כפQueue" בLineד. כשמחליטים לשנות את הColor הראשי, צריך לעדכן Letterו בעשרות מLineמות. כשיש באג בכפQueue, צריך לתקן Letterו בעשרות גרסLetter שונות. It's not רק בזבוז זמן — זה סיכון תפעולי.</p>
 
-      <h3>4. קליטה איטית לעובדים חדשים</h3>
+      <h3>4. Easyיטה Slowת לעובדים Newים</h3>
 
-      <p>כשמצטרף מעצב או מפתח חדש לצוות, כמה זמן לוקח לו להבין "איך אנחנו עושים דברים פה"? בלי מערכת עיצוב — שבועות. עם מערכת עיצוב טוב — ימים. ככל שהצוות גדל, התשואה הזו הולכת וגדלה.</p>
+      <p>כשמצטרף מעצב או מפתח New לTeam, כמה זמן לוקח לו להבין "איך אנחנו עושים דברים Mouth"? בלי Design System — שבועות. עם Design System טוב — ימים. ככל שהTeam גדל, התשואה הזו הולכת וגדלה.</p>
 
-      <h3>5. עיצוב מחדש עולה פי עשרה</h3>
+      <h3>5. עיצוב מNew עולה פי עשרה</h3>
 
-      <p>כשמחליטים לעדכן את המותג (צבעים, פונט, מרכיבים ויזואליים), בלי מערכת עיצוב זה פרויקט ענק שלוקח חודשים. עם מערכת עיצוב מסודר — עדכון ערכי העיצוב מסנן אוטומטית לכל הממשק. זה עשוי לקחת שעות במקום חודשים.</p>
+      <p>כשמחליטים לעדכן את המותג (Colors, פונט, מרכיבים ויזואליים), בלי Design System זה פרויקט ענק שלוקח חודשים. עם Design System מסודר — Update ערכי העיצוב מסנן אוטומטית לכל הממשק. זה עשוי לקחת שעות במLineם חודשים.</p>
 
       <div class="article-img" style="background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid rgba(255,255,255,0.08)">
         <i class="fa-solid fa-image" style="font-size:3rem;color:rgba(255,255,255,0.15)"></i>
       </div>
 
-      <h2>איך בונים מערכת עיצוב מאפס — המדריך המעשי</h2>
+      <h2>איך בונים Design System מאפס — המדריך המעשי</h2>
 
-      <p>אני אומר לכם כבר עכשיו: אין דרך "נכונה" אחת. אבל יש עקרונות שעובדים. בניתי מערכת עיצובs לסטארטאפים עם 5 עובדים ולחברות עם 500 עובדים — העקרונות הם אותם עקרונות.</p>
+      <p>אני אומר לכם כבר עכשיו: אין דרך "נכונה" אחת. אבל יש עCoolונות שעובדים. בניתי Design Systems לסטארטאפים עם 5 עובדים ולחברות עם 500 עובדים — העCoolונות הם Letterם עCoolונות.</p>
 
       <h3>שלב 1 — סקירה — ראו מה יש לכם</h3>
 
-      <p>לפני שבונים משהו חדש, צריך להבין מה קיים. הסקירה היא תהליך שבו מתעדים את כל מה שקיים כרגע בממשק. צרו קובץ Figma חדש וצלמו צילומי מסך של כל עמוד, כל רכיב, כל מצב. עכשיו תראו כמה גרסאות שונות יש לכם של כל רכיב. המספר הזה יהיה מפתיע — ולא לטובה.</p>
+      <p>לפני שבונים משהו New, צריך להבין מה קיים. הסקירה היא תהליך שבו מתעדים את כל מה שקיים כרגע בממשק. צרו File Figma New וצלמו צילומי Screen של כל עמוד, כל רכיב, כל מצב. עכשיו תראו כמה גרסLetter שונות יש לכם של כל רכיב. המBook הזה יהיה מפתיע — ולא לטובה.</p>
 
       <h3>שלב 2 — Atomic Design כמסגרת חשיבה</h3>
 
-      <p>Brad Frost פיתח בשנת 2013 את שיטת Atomic Design, וזו עדיין אחת השיטות הטובות ביותר לחשוב על מערכת עיצוב. השיטה מחלקת את ממשק המשתמש לחמש רמות:</p>
+      <p>Brad Frost פיתח בשנת 2013 את שיטת Atomic Design, וזו עדיין אחת השיטות הטובות ביותר לחשוב על Design System. השיטה מחלקת את ממשק המשתמש לחמש רמות:</p>
 
       <ul>
-        <li><strong>Atoms (אטומים):</strong> האלמנטים הקטנים ביותר — כפתור בודד, שדה טקסט, תגית, אייקון.</li>
-        <li><strong>Molecules (מולקולות):</strong> שילוב של מספר אטומים — שדה חיפוש עם כפתור, כרטיס עם כותרת וכפתור.</li>
-        <li><strong>Organisms (אורגניזמים):</strong> קבוצות מורכבות של מולקולות — header, footer, כרטיס מוצר שלם.</li>
-        <li><strong>Templates (תבניות):</strong> פריסת עמוד כללית ללא תוכן אמיתי.</li>
+        <li><strong>Atoms (אטומים):</strong> האלמנטים הקטנים ביותר — כפQueue בודד, שדה Text, תגית, אייLineן.</li>
+        <li><strong>Molecules (מולSoundות):</strong> Integration של מBook אטומים — שדה חיפוש עם כפQueue, כרטיס עם כותרת וכפQueue.</li>
+        <li><strong>Organisms (אורגניזמים):</strong> קבוצות Complexות של מולSoundות — header, footer, כרטיס מוצר שלם.</li>
+        <li><strong>Templates (תבניות):</strong> פריסת עמוד Universalת ללא תוכן אמיתי.</li>
         <li><strong>Pages (עמודים):</strong> התבנית עם תוכן אמיתי.</li>
       </ul>
 
@@ -314,168 +314,168 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
       <p>התחילו עם הבסיס. הגדירו את ערכי העיצוב הבאים לפני שנוגעים ברכיבים:</p>
 
       <ul>
-        <li><strong>לוח צבעים:</strong> צבעי מותג, צבעי מצב (הצלחה, שגיאה, אזהרה, מידע), צבעים ניטרליים (רקעים, גבולות, טקסט).</li>
-        <li><strong>סקאלת טיפוגרפיה:</strong> בחרו פונט אחד או שניים, הגדירו 5-7 גדלי פונט עם שמות (display, heading-1, heading-2, body-large, body, caption, label).</li>
-        <li><strong>סקאלת ריווח:</strong> השתמשו בבסיס 8 (8, 16, 24, 32, 48, 64, 96, 128).</li>
-        <li><strong>עיגול פינות:</strong> 2-3 ערכים לכל היותר (קטן, בינוני, גדול, גלולה).</li>
-        <li><strong>צללים:</strong> 3-4 רמות עומק (ללא, נמוך, בינוני, גבוה).</li>
+        <li><strong>Tablet Colors:</strong> Colorי מותג, Colorי מצב (הצלחה, שגיאה, אזהרה, מKnowledge), Colors ניטרליים (רקעים, גבולות, Text).</li>
+        <li><strong>סקאלת Typography:</strong> בחרו פונט אחד או שניים, הגדירו 5-7 גדלי פונט עם שמות (display, heading-1, heading-2, body-large, body, caption, label).</li>
+        <li><strong>סקאלת Spacing:</strong> השתמשו בבסיס 8 (8, 16, 24, 32, 48, 64, 96, 128).</li>
+        <li><strong>עיגול פינות:</strong> 2-3 ערכים לכל היותר (Small, בינוני, Large, גלולה).</li>
+        <li><strong>Shadows:</strong> 3-4 רמות Depth (ללא, נמוך, בינוני, גבוה).</li>
       </ul>
 
       <blockquote style="border-right:4px solid #F5A623;padding:20px 28px;margin:40px 0;background:#1a1a1a;border-radius:0 12px 12px 0;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.85)">
-        "ערכי עיצוב הם כמו DNA. הם מוגדרים פעם אחת, ומשפיעים על הכל. עדכנו אותם — הכל מתעדכן."
+        "ערכי עיצוב הם כמו DNA. הם Definedים פעם אחת, ומשפיעים על הכל. עדכנו Letterם — הכל מתעדכן."
       </blockquote>
 
-      <h3>שלב 4 — ארגון ב-Figma</h3>
+      <h3>שלב 4 — Organization ב-Figma</h3>
 
-      <p>ארגון הקבצים ב-Figma הוא קריטי. אני ממליץ על מבנה הבא:</p>
+      <p>Organization הקבצים ב-Figma הוא Critical. אני ממליץ על Structure הבא:</p>
 
       <ul>
-        <li><strong>📁 Foundation:</strong> ערכי עיצוב, טיפוגרפיה, צבעים, ריווח, אייקונים</li>
-        <li><strong>📁 רכיבים:</strong> מחולק לקטגוריות (כפתורים, טפסים, ניווט, משוב, הצגת נתונים)</li>
-        <li><strong>📁 תבניות:</strong> קליטת משתמשים, מסכים ריקים, מצבי שגיאה, טפסים</li>
-        <li><strong>📁 Templates:</strong> עמודי אפליקציה כלליים</li>
+        <li><strong>📁 Foundation:</strong> ערכי עיצוב, Typography, Colors, Spacing, אייLineנים</li>
+        <li><strong>📁 רכיבים:</strong> מחולק לקטגוריות (כפQueueים, טפסים, Navigation, משוב, הצגת נתונים)</li>
+        <li><strong>📁 תבניות:</strong> Easyיטת משתמשים, מסכים ריקים, מצבי שגיאה, טפסים</li>
+        <li><strong>📁 Templates:</strong> עמודי Darkיקציה Universalים</li>
         <li><strong>📁 תיעוד:</strong> הנחיות, מה לעשות ומה לא לעשות</li>
       </ul>
 
-      <p>השתמשו ב-Figma Variables לניהול ערכי העיצוב — זה מאפשר מצב כהה, ערכאות צבע, ועדכונים גלובליים בקלות. Figma Component Properties מאפשרות ליצור רכיבים גמישים עם מאפיינים, בדיוק כמו בקוד.</p>
+      <p>השתמשו ב-Figma Variables לניהול ערכי העיצוב — זה מאפשר מצב כהה, ערכLetter Color, ועדכונים גלובליים בEasyות. Figma Component Properties מOption ליצור רכיבים גמישים עם מאפיינים, בPrecision כמו בLineד.</p>
 
       <h3>שלב 5 — מוסכמות שמות</h3>
 
-      <p>השמות חשובים לא פחות מהויזואליות. רכיבים צריכים שמות ברורים, עקביים, וניתנים לחיפוש. הנה שיטה שעובדת:</p>
+      <p>השמות חשובים לא פחות מהויזואליות. רכיבים צריכים שמות Clearים, עקביים, וניתנים לחיפוש. הנה שיטה שעובדת:</p>
 
       <ul>
-        <li><strong>שמות סמנטיים לצבעים:</strong> לא "Blue-500" אלא "color-primary-default". לא "Gray-100" אלא "color-background-subtle".</li>
+        <li><strong>שמות סמנטיים לColors:</strong> לא "Blue-500" אלא "color-primary-default". לא "Gray-100" אלא "color-background-subtle".</li>
         <li><strong>BEM-style לרכיבים:</strong> Button/Primary/Large, Card/Default/Elevated</li>
-        <li><strong>עקביות בין Figma לקוד:</strong> אם ב-Figma קוראים לו "Button-Primary-Large", בקוד צריך להיות "ButtonPrimaryLarge" או "button-primary-lg".</li>
+        <li><strong>עקביות בין Figma לLineד:</strong> אם ב-Figma Lineראים לו "Button-Primary-Large", בLineד צריך להיות "ButtonPrimaryLarge" או "button-primary-lg".</li>
       </ul>
 
       <div class="article-img" style="background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid rgba(255,255,255,0.08)">
         <i class="fa-solid fa-image" style="font-size:3rem;color:rgba(255,255,255,0.15)"></i>
       </div>
 
-      <h2>הכלים — Storybook, Zeroheight, ועוד</h2>
+      <h2>הTools — Storybook, Zeroheight, ועוד</h2>
 
-      <p>אחרי שיש לכם את ה-מערכת עיצוב ב-Figma, השאלה הבאה היא: איך מתחברים עם הפיתוח? איך הקומפוננטים עוברים מ-Figma לקוד ונשארים מסונכרנים?</p>
+      <p>אחרי שיש לכם את ה-Design System ב-Figma, השאלה הבאה היא: איך מתחברים עם הDevelopment? איך הComponents עוברים מ-Figma לLineד ונשארים מסונכרנים?</p>
 
-      <h3>Storybook — המקום שבו עיצוב נפגש עם קוד</h3>
+      <h3>Storybook — המLineם שבו עיצוב נפגש עם Lineד</h3>
 
-      <p>Storybook הוא כלי open-source שמאפשר לפתח ולתעד קומפוננטי UI בבידוד. הוא יוצר גלריה אינטראקטיבית של כל הקומפוננטים עם כל המצבים שלהם. כל מפתח יכול לראות את הקומפוננט בפעולה, לשנות את ה-props שלו, ולהבין איך הוא עובד. Storybook הוא ה-"source of truth" לצד הפיתוח.</p>
+      <p>Storybook הוא כלי open-source שמאפשר לפתח ולתעד Lineמפוננטי UI בבידוד. הוא יוצר גלריה אינטראקטיבית של כל הComponents עם כל המצבים שלהם. כל מפתח יכול לרLetter את הLineמפוננט בפעולה, לשנות את ה-props שלו, ולהבין איך הוא עובד. Storybook הוא ה-"source of truth" לצד הDevelopment.</p>
 
-      <h3>Zeroheight — תיעוד מערכת העיצוב</h3>
+      <h3>Zeroheight — תיעוד System העיצוב</h3>
 
-      <p>Zeroheight מתחבר ל-Figma ויוצר אתר תיעוד אוטומטי. כשמעדכנים רכיב ב-Figma, התיעוד מתעדכן אוטומטית. זה מצוין עבור צוותים שצריכים שמעצבים, מפתחים ומנהלי מוצר יוכלו להסתכל על אותו מקום ולהבין את מערכת העיצוב.</p>
+      <p>Zeroheight מתחבר ל-Figma ויוצר אתר תיעוד אוטומטי. כשמעדכנים רכיב ב-Figma, התיעוד מתעדכן אוטומטית. זה מצוין עבור Teamים שצריכים שמעצבים, מפתחים ומנהלי מוצר יוכלו להסתכל על Letterו מLineם ולהבין את System העיצוב.</p>
 
       <h3>Figma Dev Mode</h3>
 
-      <p>ב-2023 Figma השיקה Dev Mode — מצב מיוחד שמאפשר למפתחים לקרוא מפרטים ישירות מ-Figma בלי להסתמך על מעצב. Dev Mode מציג ממדים, צבעים, ריווח, ואפילו קוד CSS אוטומטי. כשמערכת העיצוב מוגדרת נכון עם Variables ורכיבים, Dev Mode הופך לכלי מסירה לפיתוח רב עוצמה.</p>
+      <p>ב-2023 Figma השיקה Dev Mode — מצב מיוחד שמאפשר למפתחים לCoolוא מפרטים ישירות מ-Figma בלי להסתמך על מעצב. Dev Mode מציג ממדים, Colors, Spacing, ואפילו Lineד CSS אוטומטי. כשSystem העיצוב Definedת Correct עם Variables ורכיבים, Dev Mode הופך לכלי מסירה לDevelopment רב עוצמה.</p>
 
       <h3>Tokens Studio for Figma</h3>
 
-      <p>Tokens Studio (לשעבר Figma Tokens) הוא פלאגין שמאפשר ניהול ערכי עיצוב מתקדם ב-Figma, כולל ייצוא ל-JSON ואינטגרציה עם Style Dictionary לצד הפיתוח. אם אתם רוצים שערכי העיצוב יהיו מסונכרנים בין Figma לקוד — זה הכלי.</p>
+      <p>Tokens Studio (לשעבר Figma Tokens) הוא פלאגין שמאפשר ניהול ערכי עיצוב מתקדם ב-Figma, כולל ייצוא ל-JSON ואינטגרציה עם Style Dictionary לצד הDevelopment. אם אתם רוצים שערכי העיצוב יהיו מסונכרנים בין Figma לLineד — זה הכלי.</p>
 
-      <h2>איך מוכרים מערכת עיצוב להנהלה</h2>
+      <h2>איך מוכרים Design System להנהלה</h2>
 
-      <p>זה, לדעתי, החלק הכי קשה. לא טכנית — אלא אנושית. הנהלה רואה מערכת עיצוב כ"השקעה שלוקחת זמן עכשיו" ולא כ"חיסכון עצום בעתיד". הנה הטיעונים שעובדים:</p>
+      <p>זה, לדעתי, החלק הכי Hard. לא טכנית — אלא אנושית. הנהלה רואה Design System כ"השקעה שלוקחת זמן עכשיו" ולא כ"חיסכון עצום בעתיד". הנה הטיעונים שעובדים:</p>
 
-      <h3>דברו בשפה של כסף ומהירות</h3>
+      <h3>דברו בשMouth של כסף וFastות</h3>
 
-      <p>אל תגידו "אנחנו צריכים מערכת עיצוב כי זה best practice". תגידו: "כרגע כל פיצ'ר לוקח לנו X שעות עיצוב. עם מערכת עיצוב, פיצ'רים חדשים יקחו 40% פחות זמן. בשלושה חודשים נחזיר את ההשקעה, ומכאן — רק רווח."</p>
+      <p>אל תגידו "אנחנו צריכים Design System כי זה best practice". תגידו: "כרגע כל פיצ'ר לוקח לנו X שעות עיצוב. עם Design System, פיצ'רים Newים יקחו 40% פחות זמן. בשלושה חודשים נחזיר את ההשקעה, ומכאן — רק Space."</p>
 
       <h3>הראו את ה-inconsistency הקיימת</h3>
 
-      <p>צרו Figma board שמציג side-by-side את כל הגרסאות השונות של אותו קומפוננט שקיים כרגע במוצר. ארבעים גרסאות של כפתור. עשרים גרסאות של header. כשרואים את זה ויזואלית — ה-argument מוכיח את עצמו.</p>
+      <p>צרו Figma board שמציג side-by-side את כל הגרסLetter השונות של Letterו Lineמפוננט שקיים כרגע במוצר. ארבעים גרסLetter של כפQueue. עשרים גרסLetter של header. כשרואים את זה ויזואלית — ה-argument מוכיח את עצמו.</p>
 
-      <h3>התחילו קטן, הראו ערך מהיר</h3>
+      <h3>התחילו Small, הראו Value Fast</h3>
 
-      <p>אל תבואו עם תכנית שנתית. בואו עם ספרינט של שבועיים: "בשבועיים נבנה בסיס — צבעים, טיפוגרפיה, ו-5 רכיבים בסיסיים. כבר אחרי השבועיים הצוות יכול להשתמש בהם." הראו ניצחונות מהירים — וההסכמה הפנימית תגיע.</p>
+      <p>אל תבואו עם תכנית שנתית. בואו עם Bookינט של שבועיים: "בשבועיים נבנה בסיס — Colors, Typography, ו-5 רכיבים Basicים. כבר אחרי השבועיים הTeam יכול להשתמש בהם." הראו ניצחונות Fastים — וההסכמה הפנימית תגיע.</p>
 
       <div class="article-img" style="background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid rgba(255,255,255,0.08)">
         <i class="fa-solid fa-image" style="font-size:3rem;color:rgba(255,255,255,0.15)"></i>
       </div>
 
-      <h2>מערכת עיצובs של חברות גדולות — מה אפשר ללמוד</h2>
+      <h2>Design Systems של חברות Largeות — מה אפשר ללמוד</h2>
 
-      <p>כדאי להסתכל על מה שחברות גדולות בנו — לא לחקות אותן (הן בנו מה שמתאים להן), אלא ללמוד מהעקרונות.</p>
+      <p>כדאי להסתכל על מה שחברות Largeות בנו — לא לחLineת Letterן (הן בנו מה שמתאים להן), אלא ללמוד מהעCoolונות.</p>
 
-      <h3>מערכת העיצוב של Atlassian</h3>
+      <h3>System העיצוב של Atlassian</h3>
 
-      <p>Atlassian (יוצרי Jira ו-Confluence) בנו מערכת עיצוב שנקרא Atlassian Design System (ADS). מה שמייחד אותו: תיעוד מעמיק עם הנחיות נגישות לכל רכיב, ניהול ערכי עיצוב מסודר עם שמות סמנטיים, וממשק רכיב מוקפד שמאפשר גמישות. האתר שלהם (atlassian.design) הוא דוגמה מעולה לאיך תיעוד מערכת עיצוב צריך להיראות.</p>
+      <p>Atlassian (יוצרי Jira ו-Confluence) בנו Design System שנCoolא Atlassian Design System (ADS). מה שמייחד Letterו: תיעוד מעמיק עם הנחיות Accessibility לכל רכיב, ניהול ערכי עיצוב מסודר עם שמות סמנטיים, וממשק רכיב מוקפד שמאפשר גמישות. האתר שלהם (atlassian.design) הוא Example מעולה לאיך תיעוד Design System צריך להירLetter.</p>
 
       <h3>Google Material Design</h3>
 
-      <p>Material Design של גוגל הוא כנראה מערכת העיצוב הציבורי הנפוץ ביותר בעולם. מה שהופך אותו למיוחד: הוא לא רק מגדיר רכיבים, אלא מגדיר התנהגות. הוא מסביר את העקרונות מאחורי כל החלטה, כך שמפתחים ומעצבים יכולים ליישם אותם גם במצבים שהמערכת לא כיסתה. Material 3 (הגרסה הנוכחית) הוסיפה Dynamic Color — יכולת לערכאת צבע אוטומטית לפי טפט המשתמש.</p>
+      <p>Material Design של גוגל הוא כנראה System העיצוב הציבורי הנפוץ ביותר בעולם. מה שהופך Letterו למיוחד: הוא לא רק מגדיר רכיבים, אלא מגדיר התנהגות. הוא מסביר את העCoolונות מאחורי כל Decision, כך שמפתחים ומעצבים יכולים ליישם Letterם גם במצבים שהSystem לא כיסתה. Material 3 (הגרסה הנוכחית) הוסיMouth Dynamic Color — Capability לערכאת Color אוטומטית לפי טפט המשתמש.</p>
 
       <h3>Airbnb DLS</h3>
 
-      <p>אחרי משבר הכפתורים שציינתי בפתיחה, Airbnb בנו Design Language System (DLS) שהפך לנקודת ייחוס בתעשייה. החידוש שלהם: הם כתבו כלים שמייצרים אוטומטית קוד (iOS, Android, Web) ישירות ממערכת העיצוב. כלי ה-React Sketchapp שלהם, שיצאו בקוד פתוח, שינו את כל התעשייה.</p>
+      <p>אחרי משבר הכפQueueים שציינתי בפתיחה, Airbnb בנו Design Language System (DLS) שהפך לנLineדת ייחוס בתעשייה. החידוש שלהם: הם כתבו Tools שמייצרים אוטומטית Lineד (iOS, Android, Web) ישירות מSystem העיצוב. כלי ה-React Sketchapp שלהם, שיצאו בLineד פתוח, שינו את כל התעשייה.</p>
 
       <blockquote style="border-right:4px solid #F5A623;padding:20px 28px;margin:40px 0;background:#1a1a1a;border-radius:0 12px 12px 0;font-size:1.15rem;font-style:italic;color:rgba(255,255,255,0.85)">
-        "מערכת עיצוב טוב הוא לא מוצר — הוא מוצר של מוצר. הוא צריך product manager, roadmap, ו-versioning כמו כל מוצר אחר."
+        "Design System טוב הוא לא מוצר — הוא מוצר של מוצר. הוא צריך product manager, roadmap, ו-versioning כמו כל מוצר אחר."
       </blockquote>
 
-      <h2>איך מתחזקים ומפתחים מערכת עיצוב לאורך זמן</h2>
+      <h2>איך מתחזקים ומפתחים Design System לאורך זמן</h2>
 
-      <p>הבנייה היא חלק ממשי אחד. התחזוקה היא האתגר האמיתי. מערכת עיצובs מתים לא בגלל שנבנו רע — הם מתים בגלל שאף אחד לא לקח בעלות.</p>
+      <p>הבנייה היא חלק ממשי אחד. הMaintenance היא האתגר האמיתי. Design Systems מתים לא בגלל שנבנו רע — הם מתים בגלל שאף אחד לא לקח בCost.</p>
 
-      <h3>הגדירו בעלות</h3>
+      <h3>הגדירו בCost</h3>
 
-      <p>בסטארטאפ קטן, זה יכול להיות מעצב ומפתח שמחלקים את האחריות. בחברה גדולה יותר — Platform Team מוקדש. אבל חייב להיות מישהו שאחראי. בלי זה, ה-system מסתיים בדיוק איפה שהתחיל.</p>
+      <p>בסטארטאפ Small, זה יכול להיות מעצב ומפתח שמחלקים את הResponsibility. בCompany Largeה יותר — Platform Team מוקדש. אבל חייב להיות מישהו שאחראי. בלי זה, ה-system מסתיים בPrecision איMouth שהתחיל.</p>
 
-      <h3>ניהול גרסאות ויומן שינויים</h3>
+      <h3>ניהול גרסLetter ויומן Changes</h3>
 
-      <p>כמו כל ספרייה תוכנה, מערכת עיצוב צריך ניהול גרסאות. כשמשנים רכיב — צריך לדעת מה השתנה, מדוע, ומה ההשפעה על הצוות. Semantic Versioning (Major.Minor.Patch) עובד טוב: שינוי שבור = Major, פיצ'ר חדש = Minor, תיקון באג = Patch.</p>
+      <p>כמו כל Bookייה תוכנה, Design System צריך ניהול גרסLetter. כשSecondaryם רכיב — Need to know מה השתנה, מדוע, ומה הImpact על הTeam. Semantic Versioning (Major.Minor.Patch) עובד טוב: Change שבור = Major, פיצ'ר New = Minor, תיLineן באג = Patch.</p>
 
       <h3>מחזור סקירה קבוע</h3>
 
-      <p>קבעו פגישה קבועה — פעם בשבועיים או פעם בחודש — שבה הצוות מסתכל על מערכת העיצוב יחד. מה עובד? מה לא מספיק? אילו צרכים חדשים עלו? מערכת עיצוב הוא אורגניזם חי שצריך לגדול עם המוצר.</p>
+      <p>קבעו פגישה קבועה — פעם בשבועיים או פעם בחודש — שבה הTeam מסתכל על System העיצוב יחד. מה עובד? מה לא מספיק? אילו צרכים Newים עלו? Design System הוא אורגניזם חי שצריך לLarge עם המוצר.</p>
 
-      <h3>קבלת תרומות מהצוות</h3>
+      <h3>קבלת תרומות מהTeam</h3>
 
-      <p>מערכת עיצוב לא צריך להיות בבעלות צוות Platform בלבד. כשמפתחים ומעצבים אחרים בונים פיצ'ר חדש ויוצרים רכיב שלא קיים במערכת, יש תהליך ברור לאיך הרכיב הזה עולה למערכת. זה מגביר בעלות ומאיץ את הצמיחה של המערכת.</p>
+      <p>Design System לא צריך להיות בבCost Team Platform בלבד. כשמפתחים ומעצבים אחרים בונים פיצ'ר New ויוצרים רכיב שלא קיים בSystem, יש תהליך Clear לאיך הרכיב הזה עולה לSystem. זה מגביר בCost ומאיץ את הצמיחה של הSystem.</p>
 
-      <h2>טעויות נפוצות — מה לא לעשות</h2>
+      <h2>Common Mistakes — מה לא לעשות</h2>
 
-      <p>אחרי שעזרתי לבנות מערכת עיצובs בעשרות ארגונים, הנה הטעויות שאני רואה שוב ושוב:</p>
+      <p>אחרי שעזרתי לבנות Design Systems בעשרות ארגונים, הנה הטעויות שאני רואה שוב ושוב:</p>
 
-      <h3>טעות 1 — לבנות מערכת עיצוב מושלם לפני שמשתמשים בו</h3>
+      <h3>טעות 1 — לבנות Design System מושלם לפני שמשתמשים בו</h3>
 
-      <p>Perfect is the enemy of good. ראיתי צוותים שבילו שלושה חודשים בלבנות מערכת עיצוב מושלם לפני שמפתח אחד השתמש בו. תתחילו עם 10 קומפוננטים בסיסיים ותוציאו אותם לשימוש. הלמידה מהשימוש האמיתי שווה יותר מכל תכנון תיאורטי.</p>
+      <p>Perfect is the enemy of good. ראיתי Teamים שבילו שלושה חודשים בלבנות Design System מושלם לפני שמפתח אחד השתמש בו. תתחילו עם 10 Components Basicים ותוציאו Letterם לשימוש. הלמידה מהשימוש האמיתי שווה יותר מכל תכנון תיאורטי.</p>
 
-      <h3>טעות 2 — מערכת עיצוב ב-Figma בלבד</h3>
+      <h3>טעות 2 — Design System ב-Figma בלבד</h3>
 
-      <p>מערכת עיצוב שקיים רק ב-Figma הוא לא מערכת עיצוב — הוא Component Library. כדי שהוא יהיה effective, הוא חייב להיות implemented גם בקוד. אחרת, יש gap בין מה שמעצבים רואים למה שמפתחים בונים.</p>
+      <p>Design System שקיים רק ב-Figma הוא לא Design System — הוא Component Library. כדי שהוא יהיה effective, הוא חייב להיות implemented גם בLineד. אחרת, יש gap בין מה שמעצבים רואים למה שמפתחים בונים.</p>
 
       <h3>טעות 3 — שמות שלא קשורים לסמנטיקה</h3>
 
-      <p>צבע שנקרא "Blue-500" עובד כשיש רק כחול אחד. אבל מה קורה כשמחליפים את הכחול לסגול? כל השמות שגויים. תמיד תשתמשו ב-semantic names: "color-primary", "color-success", "color-background-subtle".</p>
+      <p>Color שנCoolא "Blue-500" עובד כשיש רק כחול אחד. אבל מה Lineרה כשמחליפים את הכחול לסגול? כל השמות Wrongים. תמיד תשתמשו ב-semantic names: "color-primary", "color-success", "color-background-subtle".</p>
 
-      <h3>טעות 4 — מערכת עיצוב שמסתיר גמישות</h3>
+      <h3>טעות 4 — Design System שמסתיר גמישות</h3>
 
-      <p>מערכת עיצוב שמגביל יותר מדי הופך לבעיה. מעצבים ומפתחים צריכים להרגיש שה-system עוזר להם — לא כולא אותם. הגדירו בבירור: מה "in-system" (חייבים להשתמש), מה "near-system" (אפשר להתאים), ומה "out-of-system" (כל דבר הולך). זה שומר על גמישות ועל עקביות.</p>
+      <p>Design System שמגביל יותר מדי הופך לבעיה. מעצבים ומפתחים צריכים להרגיש שה-system עוזר להם — לא כולא Letterם. הגדירו בבירור: מה "in-system" (חייבים להשתמש), מה "near-system" (אפשר להתאים), ומה "out-of-system" (כל דבר הולך). זה שומר על גמישות ועל עקביות.</p>
 
       <h3>טעות 5 — לא מתחזקים</h3>
 
-      <p>מערכת עיצוב שלא מתחזק מאבד relevance תוך חצי שנה. יתחילו להופיע קומפוננטים "חוץ מהסיסטם" כי ה-system לא עונה על הצרכים. אנשים יפסיקו להשתמש בו. ואז הוא מת. תחזוקה לא חייבת להיות יקרה — שעה שבועית של מעצב ומפתח יכולה לשמור system חי ורלוונטי.</p>
+      <p>Design System שלא מתחזק מאבד relevance תוך חצי שנה. יתחילו להופיע Components "חוץ מהסיסטם" כי ה-system לא עונה על הצרכים. אנשים יפסיLine להשתמש בו. ואז הוא מת. Maintenance לא חייבת להיות יCoolה — שעה שבועית של מעצב ומפתח יכולה לשמור system חי ורלוונטי.</p>
 
       <div class="article-img" style="background:#1a1a1a;border-radius:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin:40px 0;border:1px solid rgba(255,255,255,0.08)">
         <i class="fa-solid fa-image" style="font-size:3rem;color:rgba(255,255,255,0.15)"></i>
       </div>
 
-      <h2>סיכום — מערכת עיצוב הוא השקעה, לא הוצאה</h2>
+      <h2>סיכום — Design System הוא השקעה, לא הוצאה</h2>
 
       <p>אני יודע שאמרתי הרבה. אז הנה הסיכום הקצר:</p>
 
       <ul>
-        <li><strong>מערכת עיצוב הוא השפה המשותפת</strong> של העיצוב והפיתוח שלכם — ערכי עיצוב, רכיבים, תבניות, תיעוד.</li>
-        <li><strong>בלי מערכת עיצוב</strong> אתם מבזבזים 30-50% מזמן הפיתוח על בנייה חוזרת של אותם דברים, ויוצרים מוצר לא עקבי שמשתמשים לא אוהבים.</li>
-        <li><strong>כדי לבנות אחד נכון</strong> — התחילו עם סקירה, הגדירו ערכי עיצוב, השתמשו ב-Atomic Design, ארגנו נכון ב-Figma, וחברו לקוד עם Storybook.</li>
-        <li><strong>כדי לשרוד לאורך זמן</strong> — הגדירו בעלות, ניהול גרסאות, ומחזור סקירה קבוע.</li>
-        <li><strong>המחיר האמיתי</strong> הוא לא בנייה של מערכת עיצוב — המחיר האמיתי הוא לא לבנות אחד.</li>
+        <li><strong>Design System הוא השMouth המשותפת</strong> של העיצוב והDevelopment שלכם — ערכי עיצוב, רכיבים, תבניות, תיעוד.</li>
+        <li><strong>בלי Design System</strong> אתם מבזבזים 30-50% מזמן הDevelopment על בנייה חוזרת של Letterם דברים, ויוצרים מוצר לא עקבי שמשתמשים לא אוהבים.</li>
+        <li><strong>כדי לבנות אחד Correct</strong> — התחילו עם סקירה, הגדירו ערכי עיצוב, השתמשו ב-Atomic Design, ארגנו Correct ב-Figma, וחברו לLineד עם Storybook.</li>
+        <li><strong>כדי לשרוד לאורך זמן</strong> — הגדירו בCost, ניהול גרסLetter, ומחזור סקירה קבוע.</li>
+        <li><strong>המחיר האמיתי</strong> הוא לא בנייה של Design System — המחיר האמיתי הוא לא לבנות אחד.</li>
       </ul>
 
-      <p>אם יש לכם שאלות על מערכת עיצוב, או אם אתם רוצים לבנות אחד לאורגניזציה שלכם — <a href="../contact.html" style="color:#F5A623;text-decoration:underline">בואו נדבר</a>. בניתי מערכת עיצובs לעשרות חברות, ואשמח לעזור גם לכם.</p>
+      <p>אם יש לכם שאלות על Design System, או אם אתם רוצים לבנות אחד לאורגניזציה שלכם — <a href="../contact.html" style="color:#F5A623;text-decoration:underline">Let's Talk</a>. בניתי Design Systems לעשרות חברות, ואשמח לעזור גם לכם.</p>
 
-      <p>מערכת עיצוב טוב הוא לא luxury — הוא necessity. ואת הנקודה הזו, בשנת 2026, אין כמעט צוות טכנולוגי שיכול להרשות לעצמו להתווכח עליה.</p>
+      <p>Design System טוב הוא לא luxury — הוא necessity. ואת הנLineדה הזו, בשנת 2026, אין כמעט Team טכנולוגי שיכול להרשות לעצמו להתווכח עליה.</p>
 
     </div>
   </div>
@@ -486,7 +486,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
   <div class="wrap">
     <div class="newsletter-box reveal">
       <h2>רוצים לקבל תוכן כזה ישירות למייל?</h2>
-      <p>אחת לשבועיים — טיפ, תובנה או case study קצר. ללא ספאם, רק תוכן שווה.</p>
+      <p>אחת לשבועיים — Tip, תובנה או case study קצר. ללא ספאם, רק תוכן שווה.</p>
       <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
         <input type="email" placeholder="האימייל שלכם" required>
         <button type="submit">הרשמה</button>
@@ -503,28 +503,28 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
         <a href="../portfolio.html" class="footer-brand">Dror<span>Cohen</span></a>
       </div>
       <div class="footer-col">
-        <h4>ניווט</h4>
+        <h4>Navigation</h4>
         <ul>
-          <li><a href="../about.html">אני דרור</a></li>
-          <li><a href="../portfolio.html#services">מה אני עושה</a></li>
-          <li><a href="../portfolio.html#projects">פרויקטים</a></li>
-          <li><a href="../portfolio.html#testimonials">המלצות</a></li>
-          <li><a href="../blog.html">בלוג</a></li>
-          <li><a href="../contact.html">צור קשר</a></li>
+          <li><a href="../about.html">About Dror</a></li>
+          <li><a href="../portfolio.html#services">What I Do</a></li>
+          <li><a href="../portfolio.html#projects">Projects</a></li>
+          <li><a href="../portfolio.html#testimonials">Testimonials</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>שירותים</h4>
+        <h4>Services</h4>
         <ul>
-          <li><a href="../uxui.html">עיצוב ממשקים</a></li>
-          <li><a href="../portfolio.html#services">אפיון מוצר</a></li>
-          <li><a href="../portfolio.html#services">מערכת עיצוב</a></li>
-          <li><a href="../portfolio.html#services">מחקר משתמשים</a></li>
+          <li><a href="../uxui.html">Design Services</a></li>
+          <li><a href="../portfolio.html#services">Product Definition</a></li>
+          <li><a href="../portfolio.html#services">Design System</a></li>
+          <li><a href="../portfolio.html#services">מחCool משתמשים</a></li>
           <li><a href="../portfolio.html#services">בניית זהות</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>סושיאל</h4>
+        <h4>Social</h4>
         <ul>
           <li><a href="https://www.linkedin.com/in/droricohen/" target="_blank">LinkedIn <span class="ext">↗</span></a></li>
           <li><a href="https://wa.me/972547179000" target="_blank">WhatsApp <span class="ext">↗</span></a></li>
@@ -532,7 +532,7 @@ footer{padding:80px 0 0;border-top:1px solid rgba(255,255,255,0.08);background-c
       </div>
     </div>
     <div class="footer-bottom">
-      <p>כל הזכויות שמורות &copy; דרור כהן 2025</p>
+      <p>All rights reserved &copy; Dror Cohen 2025</p>
       <p>Made with ❤️ by Dror Cohen</p>
     </div>
   </div>
